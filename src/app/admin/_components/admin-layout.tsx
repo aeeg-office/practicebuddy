@@ -117,12 +117,12 @@ export function AdminLayout({
             className="flex h-9 w-9 items-center justify-center rounded-lg text-white text-sm font-bold shrink-0"
             style={{ backgroundColor: colors.primary }}
           >
-            A
+            PB
           </div>
           {sidebarOpen && (
             <div className="min-w-0">
               <div className="text-sm font-bold leading-tight truncate" style={{ color: colors.primary }}>
-                AEEG
+                Practice Buddy
               </div>
               <div className="text-[10px] leading-tight text-muted-foreground truncate">Admin Panel</div>
             </div>

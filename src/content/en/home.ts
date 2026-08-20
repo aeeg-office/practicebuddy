@@ -53,8 +53,8 @@ export const content = {
     description: "Schools and educational organizations that use Practice Buddy to power their assessment programs.",
     items: [
       {
-        name: "American Egyptian Education Group",
-        role: "Anchor Tenant · Cairo, Egypt",
+        name: "Institution Partner",
+        role: "Education · Cairo",
         quote: "Practice Buddy transformed how we deliver practice tests. The AI question generation saves us hours of manual work, and our students love the instant feedback.",
         rating: 5,
       },

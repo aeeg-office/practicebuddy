@@ -28,9 +28,9 @@ import { useLanguage } from "@/lib/i18n"
 
 const programStyles = [
   { icon: BookOpen, iconColor: "text-blue-600", borderColor: "border-blue-500", href: "/sat-prep" },
-  { icon: Globe, iconColor: "text-teal-600", borderColor: "border-teal-500", href: "/ielts-prep" },
-  { icon: GraduationCap, iconColor: "text-orange-600", borderColor: "border-orange-500", href: "/academic-english" },
-  { icon: Award, iconColor: "text-green-600", borderColor: "border-green-500", href: "/ib" },
+  { icon: Globe, iconColor: "text-teal-600", borderColor: "border-teal-500", href: "/mock-exams" },
+  { icon: BookOpen, iconColor: "text-orange-600", borderColor: "border-orange-500", href: "/practice" },
+  { icon: Award, iconColor: "text-green-600", borderColor: "border-green-500", href: "/admin/analytics" },
 ]
 
 const statIcons = [Award, Users, BarChart3, CheckCircle]

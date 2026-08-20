@@ -8,9 +8,6 @@ const footerColumns = [
     titleKey: "footer.programs",
     links: [
       { key: "nav.sat", href: "/sat-prep" },
-      { key: "nav.act", href: "/act-prep" },
-      { key: "nav.ielts", href: "/ielts-prep" },
-      { key: "nav.toefl", href: "/toefl-prep" },
       { key: "nav.subjects", href: "/subjects" },
     ],
   },
@@ -47,7 +44,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="/aeeg-logo.svg" alt="Practice Buddy Logo" className="h-10 w-auto brightness-0 invert" />
+                            <img src="/practice-buddy-logo.svg" alt="Practice Buddy Logo" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="text-sm text-blue-200 mb-4">
               {t("footer.tagline")}

@@ -24,17 +24,9 @@ export default function Header() {
         href: "#",
         children: [
           { label: t("nav.sat"), href: "/sat-prep" },
-          { label: t("nav.act"), href: "/act-prep" },
-          { label: t("nav.ielts"), href: "/ielts-prep" },
-          { label: t("nav.toefl"), href: "/toefl-prep" },
-          { label: t("nav.ib"), href: "/ib" },
-          { label: t("nav.igcse"), href: "/igcse" },
           { label: t("nav.subjects"), href: "/subjects" },
-          { label: t("nav.academicEnglish"), href: "/academic-english" },
-          { label: t("nav.det"), href: "/det" },
         ],
       },
-      { label: t("nav.about"), href: "/about" },
       { label: t("nav.practice"), href: "/practice" },
       { label: t("nav.blog"), href: "/blog" },
       { label: t("nav.faqs"), href: "/faqs" },
@@ -79,7 +71,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/aeeg-logo.svg" alt="Practice Buddy Logo" className="h-11 w-auto" />
+          <img src="/practice-buddy-logo.svg" alt="Practice Buddy Logo" className="h-11 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

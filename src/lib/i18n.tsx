@@ -22,13 +22,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Language>("en")
 
   useEffect(() => {
-    const saved = localStorage.getItem("aeeg-lang") as Language | null
+    const saved = localStorage.getItem("pb-lang") as Language | null
     if (saved === "ar" || saved === "en") setLangState(saved)
   }, [])
 
   const setLang = useCallback((newLang: Language) => {
     setLangState(newLang)
-    localStorage.setItem("aeeg-lang", newLang)
+    localStorage.setItem("pb-lang", newLang)
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr"
     document.documentElement.lang = newLang
   }, [])
@@ -54,37 +54,25 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Home",
     "nav.programs": "Programs",
     "nav.sat": "SAT Prep",
-    "nav.act": "ACT Prep",
-    "nav.ielts": "IELTS Prep",
-    "nav.toefl": "TOEFL Prep",
     "nav.subjects": "English & Math",
-    "nav.ib": "IB Program",
-    "nav.igcse": "IGCSE English",
-    "nav.academicEnglish": "Academic English",
-    "nav.det": "DET Prep",
-    "nav.about": "About Us",
     "nav.practice": "Practice",
     "nav.blog": "Blog",
     "nav.faqs": "FAQs",
     "nav.contact": "Contact",
     "nav.diagnostic": "Take a Diagnostic",
     "nav.login": "Login",
-    "nav.whatsapp": "WhatsApp",
 
     /* Hero */
-    "hero.badge": "Since 2011",
-    "hero.title": "American Egyptian Education Group",
-    "hero.subtitle": "Expert SAT, ACT, IELTS & TOEFL preparation. In-center and online.",
+    "hero.badge": "Multi-tenant · AI-powered · Gold-certified",
+    "hero.title": "Practice Buddy",
+    "hero.subtitle": "The AI-powered practice platform for schools and institutions.",
     "hero.cta.programs": "Explore Programs",
     "hero.cta.contact": "Contact Us",
 
     /* Programs */
     "programs.title": "Our Programs",
-    "programs.subtitle": "Comprehensive test preparation for academic success.",
+    "programs.subtitle": "Comprehensive practice for academic success.",
     "programs.sat": "SAT Prep",
-    "programs.act": "ACT Prep",
-    "programs.ielts": "IELTS Prep",
-    "programs.toefl": "TOEFL Prep",
     "programs.subjects": "English & Mathematics",
 
     /* Diagnostic */
@@ -192,37 +180,25 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "الرئيسية",
     "nav.programs": "البرامج",
     "nav.sat": "SAT",
-    "nav.act": "ACT",
-    "nav.ielts": "IELTS",
-    "nav.toefl": "TOEFL",
     "nav.subjects": "الإنجليزية والرياضيات",
-    "nav.ib": "البرنامج الدولي IB",
-    "nav.igcse": "IGCSE الإنجليزية",
-    "nav.academicEnglish": "الإنجليزية الأكاديمية",
-    "nav.det": "تحضير DET",
-    "nav.about": "من نحن",
     "nav.practice": "التدريب",
     "nav.blog": "المدونة",
     "nav.faqs": "الأسئلة الشائعة",
     "nav.contact": "اتصل بنا",
     "nav.diagnostic": "اختبار تشخيصي",
     "nav.login": "تسجيل الدخول",
-    "nav.whatsapp": "واتساب",
 
     /* Hero */
-    "hero.badge": "منذ 2011",
-    "hero.title": "مجموعة التعليم المصرية الأمريكية",
-    "hero.subtitle": "تحضير متخصص لاختبارات SAT، ACT، IELTS و TOEFL. في المركز وعبر الإنترنت.",
+    "hero.badge": "متعدد المستأجرين · مدعوم بالذكاء الاصطناعي · معتمد بالذهب",
+    "hero.title": "Practice Buddy",
+    "hero.subtitle": "منصة تدريب مدعومة بالذكاء الاصطناعي للمدارس والمؤسسات.",
     "hero.cta.programs": "استعرض البرامج",
     "hero.cta.contact": "اتصل بنا",
 
     /* Programs */
     "programs.title": "برامجنا",
-    "programs.subtitle": "تحضير شامل للاختبارات للنجاح الأكاديمي.",
+    "programs.subtitle": "تدريب شامل للنجاح الأكاديمي.",
     "programs.sat": "SAT",
-    "programs.act": "ACT",
-    "programs.ielts": "IELTS",
-    "programs.toefl": "TOEFL",
     "programs.subjects": "الإنجليزية والرياضيات",
 
     /* Diagnostic */

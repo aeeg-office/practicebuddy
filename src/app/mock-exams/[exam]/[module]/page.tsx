@@ -44,12 +44,6 @@ import { satReadingWritingQuestions } from "@/data/sat-reading-writing"
 import type { SATQuestion } from "@/data/sat-reading-writing"
 import { satMathQuestions } from "@/data/sat-math-questions"
 import type { SATMathQuestion } from "@/data/sat-math-questions"
-import { actQuestions } from "@/data/act-questions"
-import type { ACTQuestion } from "@/data/act-questions"
-import { ieltsQuestions } from "@/data/ielts-questions"
-import type { IELTSQuestion } from "@/data/ielts-questions"
-import { toeflQuestions } from "@/data/toefl-questions"
-import type { TOEFLQuestion } from "@/data/toefl-questions"
 
 /* ───────── Types ───────── */
 type ExamStep = "info" | "instructions" | "exam" | "results"
@@ -119,79 +113,7 @@ function loadQuestions(exam: MockExam, sectionId: string): (Question & { difficu
         }))
     }
   }
-
-  // ACT
-  if (subject === "act") {
-    const sectionNameMap: Record<string, string> = {
-      english: "English",
-      math: "Math",
-      reading: "Reading",
-      science: "Science",
-    }
-    const sectionName = sectionNameMap[sectionId] || sectionId
-    const sectionQuestions = actQuestions.filter((q) => q.section === sectionName)
-    const targetCount = exam.sections.find((s) => s.id === sectionId)?.questionCount ?? 10
-    return shuffle(sectionQuestions).slice(0, targetCount)
-      .map((q) => ({
-        id: q.id,
-        section: q.section,
-        text: q.text,
-        passage: q.passage,
-        options: q.options,
-        correctAnswer: q.correctAnswer ?? "",
-        difficulty: q.difficulty,
-        explanation: "",
-      }))
-  }
-
-  // IELTS
-  if (subject === "ielts") {
-    const sectionNameMap: Record<string, string> = {
-      listening: "Listening",
-      reading: "Reading",
-      writing: "Writing",
-      speaking: "Speaking",
-    }
-    const sectionName = sectionNameMap[sectionId] || sectionId
-    const sectionQuestions = ieltsQuestions.filter((q) => q.section === sectionName)
-    const targetCount = exam.sections.find((s) => s.id === sectionId)?.questionCount ?? 10
-    return shuffle(sectionQuestions).slice(0, targetCount)
-      .map((q) => ({
-        id: q.id,
-        section: q.section,
-        text: q.text,
-        passage: q.passage,
-        options: q.options,
-        correctAnswer: q.correctAnswer ?? "",
-        difficulty: q.difficulty,
-        explanation: "",
-      }))
-  }
-
-  // TOEFL
-  if (subject === "toefl") {
-    const sectionNameMap: Record<string, string> = {
-      reading: "Reading",
-      listening: "Listening",
-      speaking: "Speaking",
-      writing: "Writing",
-    }
-    const sectionName = sectionNameMap[sectionId] || sectionId
-    const sectionQuestions = toeflQuestions.filter((q) => q.section === sectionName)
-    const targetCount = exam.sections.find((s) => s.id === sectionId)?.questionCount ?? 10
-    return shuffle(sectionQuestions).slice(0, targetCount)
-      .map((q) => ({
-        id: q.id,
-        section: q.section,
-        text: q.text,
-        passage: q.passage,
-        options: q.options,
-        correctAnswer: q.correctAnswer ?? "",
-        difficulty: q.difficulty,
-        explanation: "",
-      }))
-  }
-
+  // Fallback
   return []
 }
 

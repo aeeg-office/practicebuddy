@@ -13,10 +13,10 @@ type FeatureFlag = { id: string; code: string; name: string; description: string
 
 type FormValues = Record<string, string>
 const fields = [
-  ["platform.name", "Platform name", "American Egyptian Education Group"],
-  ["platform.support-email", "Support email", "support@aeeg.edu"],
-  ["platform.support-phone", "Support phone", "+20 106 061 8899"],
-  ["platform.timezone", "Timezone", "Africa/Cairo"],
+  ["platform.name", "Platform name", "Practice Buddy Platform"],
+  ["platform.support-email", "Support email", "hello@practicebuddy.app"],
+  ["platform.support-phone", "Support phone", ""],
+  ["platform.timezone", "Timezone", "UTC"],
   ["platform.locale", "Default language", "en"],
 ] as const
 

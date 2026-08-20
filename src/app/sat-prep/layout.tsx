@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Digital SAT Prep Cairo — Expert Tutoring",
-  description: "Prepare for the Digital SAT with AEEG expert instructors in Cairo. Proven strategies, adaptive practice, and personalized score improvement plans.",
+  title: "Digital SAT Practice — Skill Practice & Test Simulation",
+  description: "Master the Digital SAT with targeted skill practice and realistic full-length test simulations. Practice by official domain with two-attempt learning and detailed explanations.",
   alternates: {
-    canonical: "https://aeeg.com/sat-prep",
+    canonical: "https://practicebuddy.app/sat-prep",
     languages: {
-      en: "https://aeeg.com/sat-prep",
-      ar: "https://aeeg.com/ar/sat-prep",
+      en: "https://practicebuddy.app/sat-prep",
+      ar: "https://practicebuddy.app/ar/sat-prep",
     },
   },
 }
@@ -16,30 +16,24 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How long is the SAT prep course at AEEG?","acceptedAnswer":{"@type":"Answer","text":"Our SAT prep programs range from 8 to 16 weeks depending on the format and intensity. We offer flexible scheduling to accommodate your timeline."}},
-    {"@type":"Question","name":"What score improvement can I expect?","acceptedAnswer":{"@type":"Answer","text":"On average, our students see a 150-250 point improvement on the SAT after completing our program. Results vary based on starting point and commitment level."}},
-    {"@type":"Question","name":"Are your tutors certified and experienced?","acceptedAnswer":{"@type":"Answer","text":"All AEEG tutors are American-educated professionals with years of experience in test preparation. They are native English speakers who hold degrees from top U.S. universities."}},
-    {"@type":"Question","name":"Do you offer both in-person and online SAT prep?","acceptedAnswer":{"@type":"Answer","text":"We offer Online Group Tutoring, In-Center Private Tutoring, and Online Private Tutoring. All formats follow the same rigorous curriculum."}},
-    {"@type":"Question","name":"What materials are included in the program?","acceptedAnswer":{"@type":"Answer","text":"All materials are included: official College Board practice tests, AEEG proprietary strategy guides, online practice platform access, and personalized progress tracking."}},
-    {"@type":"Question","name":"How do I get started with AEEG SAT prep?","acceptedAnswer":{"@type":"Answer","text":"Take our free SAT diagnostic test, then schedule a free consultation with our academic advisors to find the best program for your goals."}}
+    {"@type":"Question","name":"What is the difference between Skill Practice and Test Simulation?","acceptedAnswer":{"@type":"Answer","text":"Skill Practice is learning-oriented with two attempts, hints, and explanations. Test Simulation is assessment-oriented with one scored response per question and post-test analysis."}},
+    {"@type":"Question","name":"Is Practice Buddy affiliated with College Board?","acceptedAnswer":{"@type":"Answer","text":"No. Practice Buddy is an independent platform. Our SAT content follows the official skill taxonomy but uses original practice questions."}},
+    {"@type":"Question","name":"Can I use a calculator during SAT Math practice?","acceptedAnswer":{"@type":"Answer","text":"Yes. For Math skill practice and test simulation where calculators are permitted, you can use the integrated Desmos calculator or your own device."}},
+    {"@type":"Question","name":"How is my progress tracked?","acceptedAnswer":{"@type":"Answer","text":"Every practice session is saved server-side. Mastery is derived from actual attempt data — first-attempt accuracy, second-attempt recovery, difficulty, and recency."}}
   ],
 }
 
 const courseSchema = {
   "@context": "https://schema.org",
   "@type": "Course",
-  name: "Digital SAT Preparation Course",
-  description: "Comprehensive SAT preparation covering Evidence-Based Reading and Writing and Math with adaptive practice and expert instruction.",
+  name: "Digital SAT Practice Platform",
+  description: "Comprehensive SAT practice covering Reading & Writing and Math with skill-based practice and full-length test simulations.",
   provider: {
-    "@type": "EducationalOrganization",
-    name: "American Egyptian Education Group (AEEG)",
-    url: "https://aeeg.com",
+    "@type": "Organization",
+    name: "Practice Buddy",
+    url: "https://practicebuddy.app",
   },
-  url: "https://aeeg.com/sat-prep",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "USD",
-  },
+  url: "https://practicebuddy.app/sat-prep",
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

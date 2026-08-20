@@ -65,10 +65,10 @@ export interface SessionState {
 /* ─────────────── Storage keys ─────────────── */
 
 const KEYS = {
-  attempts: "aeeg-progress-attempts",
-  sessions: "aeeg-progress-sessions",
-  sessionState: "aeeg-progress-session-state",
-  streak: "aeeg-progress-streak",
+  attempts: "pb-progress-attempts",
+  sessions: "pb-progress-sessions",
+  sessionState: "pb-progress-session-state",
+  streak: "pb-progress-streak",
 } as const
 
 /* ─────────────── Attempt History ─────────────── */

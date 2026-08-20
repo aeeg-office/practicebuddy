@@ -17,7 +17,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
   try {
     const cookieStore = await cookies()
-    const sessionCookie = cookieStore.get("aeeg-admin-session")?.value
+    const sessionCookie = cookieStore.get("pb-admin-session")?.value
     if (sessionCookie) {
       const identity = await verifyAdminSessionToken(sessionCookie, getJwtSecret())
       if (identity) {

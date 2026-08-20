@@ -269,13 +269,13 @@ function loadSavedState(): {
   satSection: SATSection | null
 } | null {
   try {
-    const saved = localStorage.getItem("aeeg-diagnostic-state")
+    const saved = localStorage.getItem("pb-diagnostic-state")
     if (!saved) return null
     const parsed = JSON.parse(saved)
     const now = Date.now()
     // Expire after 24 hours
     if (parsed.timestamp && now - parsed.timestamp > 24 * 60 * 60 * 1000) {
-      localStorage.removeItem("aeeg-diagnostic-state")
+      localStorage.removeItem("pb-diagnostic-state")
       return null
     }
     return {
@@ -304,7 +304,7 @@ function saveState(
 ) {
   try {
     localStorage.setItem(
-      "aeeg-diagnostic-state",
+      "pb-diagnostic-state",
       JSON.stringify({
         answers,
         flagged,
@@ -615,7 +615,7 @@ export default function TakeDiagnosticPage() {
     setExamSubmitted(true)
     setStep("results")
     // Clear saved state
-    localStorage.removeItem("aeeg-diagnostic-state")
+    localStorage.removeItem("pb-diagnostic-state")
   }, [])
 
   const handleRestart = () => {
@@ -630,7 +630,7 @@ export default function TakeDiagnosticPage() {
     setModuleComplete(false)
     setShowCompletionModal(false)
     setExamStartTime(0)
-    localStorage.removeItem("aeeg-diagnostic-state")
+    localStorage.removeItem("pb-diagnostic-state")
   }
 
   const getTimerLimit = (): number => {

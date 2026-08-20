@@ -27,7 +27,7 @@ export async function authenticateAdminApi(request: Request, minimumRole: Role =
     if (request.headers.get("authorization")) {
       identity = requireAdminToken(request)
     } else {
-      const verified = await verifyAdminSessionToken(cookieValue(request, "aeeg-admin-session"), getJwtSecret())
+      const verified = await verifyAdminSessionToken(cookieValue(request, "pb-admin-session"), getJwtSecret())
       if (!verified) throw new AuthorizationError()
       identity = verified
     }

@@ -37,8 +37,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
 
   useEffect(() => {
-    const saved = localStorage.getItem("aeeg-token")
-    const savedUser = localStorage.getItem("aeeg-user")
+    const saved = localStorage.getItem("pb-token")
+    const savedUser = localStorage.getItem("pb-user")
     if (saved && savedUser) {
       setToken(saved)
       setUser(JSON.parse(savedUser))
@@ -56,8 +56,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const data = await res.json()
       if (!res.ok) return { success: false, error: data.error || "Login failed" }
 
-      localStorage.setItem("aeeg-token", data.token)
-      localStorage.setItem("aeeg-user", JSON.stringify(data.user))
+      localStorage.setItem("pb-token", data.token)
+      localStorage.setItem("pb-user", JSON.stringify(data.user))
       setToken(data.token)
       setUser(data.user)
       return { success: true }
@@ -76,8 +76,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const data = await res.json()
       if (!res.ok) return { success: false, error: data.error || "Registration failed" }
 
-      localStorage.setItem("aeeg-token", data.token)
-      localStorage.setItem("aeeg-user", JSON.stringify(data.user))
+      localStorage.setItem("pb-token", data.token)
+      localStorage.setItem("pb-user", JSON.stringify(data.user))
       setToken(data.token)
       setUser(data.user)
       return { success: true }
@@ -87,8 +87,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const logout = useCallback(() => {
-    localStorage.removeItem("aeeg-token")
-    localStorage.removeItem("aeeg-user")
+    localStorage.removeItem("pb-token")
+    localStorage.removeItem("pb-user")
     setToken(null)
     setUser(null)
     fetch("/api/auth/logout", { method: "POST" }).catch(() => {})

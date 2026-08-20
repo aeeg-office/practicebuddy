@@ -193,7 +193,7 @@ export default function MockExamPage() {
     const id = setInterval(() => {
       try {
         localStorage.setItem(
-          `aeeg-mock-${examId}-${sectionId}`,
+          `pb-mock-${examId}-${sectionId}`,
           JSON.stringify({
             answers: answersRef.current,
             flagged: Array.from(flaggedRef.current),
@@ -312,13 +312,13 @@ export default function MockExamPage() {
   const handleTimeUp = useCallback(() => {
     setExamSubmitted(true)
     setStep("results")
-    localStorage.removeItem(`aeeg-mock-${examId}-${sectionId}`)
+    localStorage.removeItem(`pb-mock-${examId}-${sectionId}`)
   }, [examId, sectionId])
 
   const handleSubmitExam = useCallback(() => {
     setExamSubmitted(true)
     setStep("results")
-    localStorage.removeItem(`aeeg-mock-${examId}-${sectionId}`)
+    localStorage.removeItem(`pb-mock-${examId}-${sectionId}`)
   }, [examId, sectionId])
 
   const handleRestart = () => {
@@ -328,7 +328,7 @@ export default function MockExamPage() {
     setFlagged(new Set())
     setExamSubmitted(false)
     setExamStartTime(0)
-    localStorage.removeItem(`aeeg-mock-${examId}-${sectionId}`)
+    localStorage.removeItem(`pb-mock-${examId}-${sectionId}`)
   }
 
   const timeLimit = section ? section.timeLimit * 60 : 0

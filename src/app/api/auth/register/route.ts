@@ -18,8 +18,8 @@ export async function POST(req: Request) {
 
     const passwordHash = await bcrypt.hash(password, 12)
 
-    // Find or create default tenant
-    const tenantSlug = email.includes('@aeeg') ? 'aeeg' : 'default'
+    // Use default tenant for all registrations (stand-alone platform)
+    const tenantSlug = 'default'
     let tenant = await prisma.tenant.findUnique({ where: { slug: tenantSlug } })
     if (!tenant) {
       tenant = await prisma.tenant.create({ data: { name: 'Default', slug: tenantSlug } })

@@ -1,0 +1,677 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================
+// TENANT
+// ============================================================
+model Tenant {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  domain    String?  @unique
+  isActive  Boolean  @default(true)
+  config    String?  // JSON blob for tenant-specific settings
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users             User[]
+  programs          Program[]
+  goldQuestions     GoldQuestion[]
+  questionFamilies  QuestionFamily[]
+  questions         Question[]
+  questionVersions  QuestionVersion[]
+  microSkills       MicroSkill[]
+  assignments       Assignment[]
+  studentAttempts   StudentAttempt[]
+  practiceSessions  PracticeSession[]
+  userSkillMasteries UserSkillMastery[]
+  courses           Course[]
+  exams             Exam[]
+  enrollments       Enrollment[]
+  teachers          Teacher[]
+  accessCodes       AccessCode[]
+
+  @@map("tenants")
+}
+
+// ============================================================
+// AUTH / USERS
+// ============================================================
+model User {
+  id             String   @id @default(cuid())
+  tenantId       String
+  tenant         Tenant   @relation(fields: [tenantId], references: [id])
+  email          String   @unique
+  name           String?
+  passwordHash   String?
+  role           String   @default("student") // "student" | "teacher" | "admin" | "superadmin"
+  isActive       Boolean  @default(true)
+  imageUrl       String?
+  lastLoginAt    DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  studentAttempts  StudentAttempt[]
+  practiceSessions PracticeSession[]
+  skillMasteries   UserSkillMastery[]
+  enrollments      Enrollment[]
+  teacher          Teacher?
+  assignments      Assignment[]       // teacher-created assignments
+  studentAssignments StudentAssignment[] // student's assigned work
+  accessRedemptions AccessCodeRedemption[]
+  payments          Payment[]
+
+  @@unique([tenantId, email])
+  @@map("users")
+}
+
+model Teacher {
+  id        String   @id @default(cuid())
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  bio       String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tenantId, userId])
+  @@map("teachers")
+}
+
+// ============================================================
+// ACCESS CODES (tenant-scoped invite system)
+// ============================================================
+model AccessCode {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  code        String   @unique
+  role        String   @default("student")
+  maxUses     Int      @default(1)
+  useCount    Int      @default(0)
+  expiresAt   DateTime?
+  isActive    Boolean  @default(true)
+  createdBy   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  redemptions AccessCodeRedemption[]
+
+  @@map("access_codes")
+}
+
+model AccessCodeRedemption {
+  id            String   @id @default(cuid())
+  accessCodeId  String
+  accessCode    AccessCode @relation(fields: [accessCodeId], references: [id])
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+  redeemedAt    DateTime @default(now())
+  ipAddress     String?
+
+  @@unique([accessCodeId, userId])
+  @@map("access_code_redemptions")
+}
+
+// ============================================================
+// PROGRAM ABSTRACTION (CRITICAL GAP #1)
+// Core / MAP / SAT — program is the top-level curriculum container
+// ============================================================
+model Program {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  code        String   // "core" | "map" | "sat" | "act" | "ielts"
+  name        String
+  description String?
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  grades      Grade[]
+  questions   Question[]
+  assignments Assignment[]  // Phase 2C
+
+  @@unique([tenantId, code])
+  @@map("programs")
+}
+
+model Grade {
+  id        String   @id @default(cuid())
+  programId String
+  program   Program  @relation(fields: [programId], references: [id])
+  level     Int      // 3-10 for Core, null/0 for MAP/SAT
+  label     String   // "Grade 3", "Grade 4", "SAT Math", "MAP"
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  skills    Skill[]
+
+  @@unique([programId, level])
+  @@map("grades")
+}
+
+// ============================================================
+// CURRICULUM: Skill (domain → category → subcategory → micro-skill)
+// ============================================================
+model Skill {
+  id          String   @id @default(cuid())
+  gradeId     String
+  grade       Grade    @relation(fields: [gradeId], references: [id])
+  code        String
+  name        String
+  description String?
+  subject     String   // "math" | "reading" | "writing" | "science"
+  domain      String   // e.g. "Algebra", "Craft and Structure"
+  category    String?  // e.g. "Linear Equations", "Words in Context"
+  subcategory String?  // e.g. "Linear Equations in One Variable"
+  difficulty  String   @default("medium") // "easy" | "medium" | "hard"
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  lesson      String?  // instructional content
+  strategy    String?  // strategy tips
+  commonMistakes String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  questions        Question[]
+  studentAttempts  StudentAttempt[]
+  skillMasteries   UserSkillMastery[]
+  microSkills      MicroSkill[]      // Phase 2B
+  assignmentItems  AssignmentItem[]  // Phase 2C
+
+  @@unique([gradeId, code])
+  @@map("skills")
+}
+
+// ============================================================
+// QUESTION SYSTEM (CRITICAL GAPS #2, #3, #7)
+// Gold-certified questions in DB with families + versions
+// ============================================================
+model GoldQuestion {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  microSkillId    String?
+  microSkill      MicroSkill? @relation(fields: [microSkillId], references: [id])
+  externalId      String?  // reference to original source
+  subject         String
+  domain          String
+  category        String?
+  subcategory     String?
+  difficulty      String   @default("medium")
+  format          String   @default("multiple-choice") // "multiple-choice" | "numeric" | "writing" | "essay"
+  passage         String?  // reading passage text
+  stem            String   // the question text
+  options         String?  // JSON array of answer choices
+  correctAnswer   String
+  acceptedResponses String? // JSON array for numeric
+  explanation     String?  // detailed explanation
+  skillCode       String?
+  tags            String?  // JSON array
+  hash            String   @unique // SHA-256 of stem + correctAnswer for dedup
+  goldStatus      String   @default("certified") // "draft" | "reviewed" | "certified" | "retired"
+  version         Int      @default(1)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  families        QuestionFamily[]
+  derivedQuestions Question[]
+
+  @@index([tenantId, goldStatus])
+  @@map("gold_questions")
+}
+
+model QuestionFamily {
+  id            String   @id @default(cuid())
+  tenantId      String
+  tenant        Tenant   @relation(fields: [tenantId], references: [id])
+  goldQuestionId String
+  goldQuestion  GoldQuestion @relation(fields: [goldQuestionId], references: [id])
+  name          String
+  description   String?
+  variationCount Int     @default(0)
+  difficulty    String   @default("medium")
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  questions     Question[]
+
+  @@index([tenantId, goldQuestionId])
+  @@map("question_families")
+}
+
+model Question {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  goldQuestionId  String?
+  goldQuestion    GoldQuestion? @relation(fields: [goldQuestionId], references: [id])
+  familyId        String?
+  family          QuestionFamily? @relation(fields: [familyId], references: [id])
+  skillId         String?
+  skill           Skill?   @relation(fields: [skillId], references: [id])
+  microSkillId    String?
+  microSkill      MicroSkill? @relation(fields: [microSkillId], references: [id])
+  programId       String?
+  program         Program? @relation(fields: [programId], references: [id])
+  externalId      String?
+  subject         String
+  domain          String
+  category        String?
+  subcategory     String?
+  difficulty      String   @default("medium")
+  format          String   @default("multiple-choice")
+  passage         String?
+  stem            String
+  options         String?  // JSON array
+  correctAnswer   String
+  acceptedResponses String?
+  explanation     String?
+  strategy        String?  // strategy/tips for solving
+  hint            String?  // hint for students
+  estimatedTime   Int?     // seconds
+  calculatorAllowed Boolean? @default(false)
+  figureUrl       String?
+  source          String?  // e.g. "official-sat-2023", "ai-generated"
+  rightsStatus    String   @default("original")
+  hash            String   // SHA-256 of stem + correctAnswer
+  questionStatus  String   @default("active") // "active" | "retired" | "flagged"
+  qualityStatus   String   @default("draft") // "draft" | "ready_for_review" | "published" | "archived" | "quarantined"
+  isActive        Boolean  @default(true)
+  version         Int      @default(1)
+  parentVersionId String?  // links to previous version
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  studentAttempts StudentAttempt[]
+  versions        QuestionVersion[]
+  assignmentItems AssignmentItem[]  // Phase 2C
+
+  @@index([tenantId, skillId])
+  @@index([hash]) // for dedup lookups
+  @@map("questions")
+}
+
+// ============================================================
+// QUESTION VERSIONING (Phase 2A — CRITICAL-05 fix)
+// Pins exact content presented at the time of each attempt
+// ============================================================
+model QuestionVersion {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  questionId      String
+  question        Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  versionNumber   Int
+  stem            String   // question text at version time
+  options         String?  // JSON array at version time
+  correctAnswer   String   // answer at version time
+  explanation     String?
+  strategy        String?
+  questionType    String   @default("multiple-choice")
+  difficulty      String   @default("medium")
+  format          String   @default("multiple-choice")
+  passage         String?
+  acceptedResponses String?
+  qualityStatus   String   @default("draft") // independent of question's current status
+  contentHash     String   // SHA-256 of stem + correctAnswer + options at version time
+  createdBy       String?
+  publishedAt     DateTime?
+  createdAt       DateTime @default(now())
+
+  studentAttempts StudentAttempt[]
+
+  @@unique([questionId, versionNumber])
+  @@index([questionId])
+  @@index([tenantId])
+  @@map("question_versions")
+}
+
+// ============================================================
+// MICRO-SKILL TAXONOMY (Phase 2B — CRITICAL-04 fix)
+// Lowest instructional unit in the curriculum hierarchy
+// ============================================================
+model MicroSkill {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  skillId     String
+  skill       Skill    @relation(fields: [skillId], references: [id])
+  code        String   // human-readable key, e.g. "G5-M-03-01"
+  name        String
+  description String?
+  learningObjective String?
+  difficulty  String   @default("medium")
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  questions        Question[]
+  goldQuestions    GoldQuestion[]
+  studentAttempts  StudentAttempt[]
+  skillMasteries   UserSkillMastery[]
+  assignmentItems  AssignmentItem[]
+
+  @@unique([tenantId, skillId, code])
+  @@index([tenantId, skillId])
+  @@map("micro_skills")
+}
+
+// ============================================================
+// ASSIGNMENT MODELS (Phase 2C — CRITICAL-06 fix)
+// Teacher creates assignments, assigns to classes/students
+// ============================================================
+model Assignment {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  teacherId   String
+  teacher     User     @relation(fields: [teacherId], references: [id])
+  classId     String?
+  courseId    String?
+  course      Course?  @relation(fields: [courseId], references: [id])
+  title       String
+  description String?
+  programId   String?
+  program     Program? @relation(fields: [programId], references: [id])
+  dueAt       DateTime?
+  totalQuestions Int    @default(0)
+  mode        String   @default("independent") // independent | guided | live
+  status      String   @default("draft") // draft | published | closed
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  items       AssignmentItem[]
+  studentAssignments StudentAssignment[]
+
+  @@index([tenantId, teacherId])
+  @@map("assignments")
+}
+
+model AssignmentItem {
+  id            String   @id @default(cuid())
+  assignmentId  String
+  assignment    Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  skillId       String?
+  skill         Skill?   @relation(fields: [skillId], references: [id])
+  microSkillId  String?
+  microSkill    MicroSkill? @relation(fields: [microSkillId], references: [id])
+  questionId    String?
+  question      Question? @relation(fields: [questionId], references: [id])
+  seq           Int      @default(1)
+  createdAt     DateTime @default(now())
+
+  @@index([assignmentId])
+  @@map("assignment_items")
+}
+
+model StudentAssignment {
+  id            String   @id @default(cuid())
+  assignmentId  String
+  assignment    Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  studentId     String
+  student       User     @relation(fields: [studentId], references: [id])
+  status        String   @default("assigned") // assigned | in_progress | completed | overdue
+  startedAt     DateTime?
+  completedAt   DateTime?
+  score         Int?
+  totalQuestions Int    @default(0)
+  correctCount  Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([assignmentId, studentId])
+  @@index([studentId, status])
+  @@map("student_assignments")
+}
+
+// ============================================================
+// IMMUTABLE STUDENT ATTEMPT (CRITICAL GAP #6)
+// Append-only — no updates allowed, hash-verified
+// ============================================================
+model StudentAttempt {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  questionId      String
+  question        Question @relation(fields: [questionId], references: [id])
+  questionVersionId String?
+  questionVersion QuestionVersion? @relation(fields: [questionVersionId], references: [id])
+  skillId         String?
+  skill           Skill?   @relation(fields: [skillId], references: [id])
+  microSkillId    String?
+  microSkill      MicroSkill? @relation(fields: [microSkillId], references: [id])
+  sessionId       String?
+  session         PracticeSession? @relation(fields: [sessionId], references: [id])
+  answer          String   // the student's submitted answer
+  isCorrect       Boolean
+  timeSpent       Int?     // seconds
+  hintsUsed       Int      @default(0)
+  attemptNumber   Int      @default(1) // 1st, 2nd, etc.
+  snapshotHash    String   // SHA-256 of (userId + questionId + answer + attemptNumber + createdAt)
+  ipAddress       String?
+  userAgent       String?
+  createdAt       DateTime @default(now()) // immutable creation timestamp
+
+  @@index([tenantId, userId, skillId])
+  @@index([sessionId])
+  @@index([questionVersionId])
+  @@map("student_attempts")
+}
+
+model PracticeSession {
+  id        String   @id @default(cuid())
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  type      String   // "practice" | "mock-exam" | "diagnostic"
+  status    String   @default("in-progress") // "in-progress" | "completed" | "abandoned"
+  startedAt DateTime @default(now())
+  completedAt DateTime?
+  totalQuestions Int    @default(0)
+  correctCount   Int    @default(0)
+  totalTimeSpent Int?   // seconds
+
+  attempts StudentAttempt[]
+
+  @@index([tenantId, userId, status])
+  @@map("practice_sessions")
+}
+
+model UserSkillMastery {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id])
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  skillId         String
+  skill           Skill    @relation(fields: [skillId], references: [id])
+  microSkillId    String?
+  microSkill      MicroSkill? @relation(fields: [microSkillId], references: [id])
+  level           String   @default("not-assessed") // "not-assessed" | "beginning" | "developing" | "approaching" | "mastered" | "needs-review"
+  confidence      Float?   // 0.0 - 1.0 statistical confidence in this level
+  attemptsCount   Int      @default(0)
+  correctCount    Int      @default(0)
+  lastAttemptAt   DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([tenantId, userId, skillId])
+  @@map("user_skill_masteries")
+}
+
+// ============================================================
+// COURSES / ENROLLMENT
+// ============================================================
+model Course {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  name        String
+  description String?
+  code        String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  enrollments Enrollment[]
+  exams       Exam[]
+  assignments Assignment[]
+
+  @@unique([tenantId, code])
+  @@map("courses")
+}
+
+model Enrollment {
+  id        String   @id @default(cuid())
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id])
+  role      String   @default("student") // "student" | "assistant" | "observer"
+  enrolledAt DateTime @default(now())
+  expiresAt DateTime?
+  isActive  Boolean  @default(true)
+
+  @@unique([tenantId, userId, courseId])
+  @@map("enrollments")
+}
+
+// ============================================================
+// EXAMS (Mock exams / assessments)
+// ============================================================
+model Exam {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  courseId    String?
+  course      Course?  @relation(fields: [courseId], references: [id])
+  title       String
+  description String?
+  type        String   // "mock" | "quiz" | "diagnostic" | "final"
+  duration    Int?     // minutes
+  totalMarks  Int?
+  passingMarks Int?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([tenantId, type])
+  @@map("exams")
+}
+
+// ============================================================
+// FEATURE FLAGS / ENTITLEMENTS (tenant-aware)
+// ============================================================
+model FeatureFlag {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  label       String
+  description String?
+  isActive    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("feature_flags")
+}
+
+model SubscriptionPlan {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  price       Decimal  @default(0)
+  currency    String   @default("EGP")
+  interval    String   @default("monthly") // "monthly" | "yearly"
+  isActive    Boolean  @default(true)
+  features    String?  // JSON array of feature keys
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  subscriptions UserSubscription[]
+  @@map("subscription_plans")
+}
+
+model UserSubscription {
+  id                String   @id @default(cuid())
+  userId            String
+  planId            String
+  plan              SubscriptionPlan @relation(fields: [planId], references: [id])
+  status            String   @default("active") // "active" | "cancelled" | "expired"
+  currentPeriodStart DateTime @default(now())
+  currentPeriodEnd  DateTime
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([userId, planId])
+  @@map("user_subscriptions")
+}
+
+// ============================================================
+// PAYMENTS
+// ============================================================
+model Payment {
+  id                  String   @id @default(cuid())
+  userId              String
+  user                User     @relation(fields: [userId], references: [id])
+  subscriptionPlanId  String?
+  amount              Decimal
+  currency            String   @default("EGP")
+  status              String   @default("pending") // "pending" | "completed" | "failed" | "refunded"
+  paymentMethod       String?  // "card" | "wallet" | "bank-transfer"
+  transactionId       String?  // external payment gateway ID
+  paidAt              DateTime?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("payments")
+}
+
+// ============================================================
+// AUDIT
+// ============================================================
+model AdminAuditEvent {
+  id        String   @id @default(cuid())
+  adminId   String
+  action    String   // "create" | "update" | "delete" | "login" | "import"
+  entity    String   // "user" | "question" | "course" | "exam"
+  entityId  String?
+  details   String?  // JSON with before/after state
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([adminId, createdAt])
+  @@map("admin_audit_events")
+}
+
+model PlatformSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  type      String   @default("string") // "string" | "number" | "boolean" | "json"
+  group     String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("platform_settings")
+}

@@ -1,0 +1,1681 @@
+{
+  "generated": "2026-07-31",
+  "description": "SAT Question Bank Content Inventory",
+  "summary": {
+    "total_files": 181,
+    "by_domain": {
+      "english": 67,
+      "math": 114
+    },
+    "by_domain_category": {
+      "english": {
+        "Craft and Structure": 21,
+        "Expression of Ideas": 12,
+        "Information and Ideas": 14,
+        "Standard English Conventions": 20
+      },
+      "math": {
+        "Advanced Math": 18,
+        "Algebra": 30,
+        "Geometry and Trigonometry": 24,
+        "Problem-Solving and Data Analysis": 42
+      }
+    },
+    "by_domain_type": {
+      "english": {
+        "question": 40,
+        "answer": 27
+      },
+      "math": {
+        "question": 57,
+        "answer": 57
+      }
+    },
+    "by_domain_difficulty": {
+      "english": {
+        "easy": 11,
+        "hard": 29,
+        "easy-medium": 14,
+        "medium": 11,
+        "challenging": 2
+      },
+      "math": {
+        "easy": 36,
+        "hard": 39,
+        "medium": 36,
+        "easy-medium": 2
+      }
+    }
+  },
+  "files": [
+    {
+      "name": "SAT Suite Question Bank - 123 Word in Context Questions - Easy",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 123 Word in Context Questions - Easy.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 123 Word in Context Questions - Easy - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 123 Word in Context Questions - Easy - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 17 Cross Text Connections Questions - Hard",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 17 Cross Text Connections Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 17 Cross Text Connections Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 17 Cross Text Connections Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 21 Text Structure and Purpose Questions - Hard",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 21 Text Structure and Purpose Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 21 Text Structure and Purpose Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 21 Text Structure and Purpose Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 26 Cross Text Connections Questions - Easy & Medium",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 26 Cross Text Connections Questions - Easy & Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 26 Cross Text Connections Questions - Easy & Medium - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 26 Cross Text Connections Questions - Easy & Medium - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 28 Word in Context Questions - Hard",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 28 Word in Context Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 28 Word in Context Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 28 Word in Context Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 29 Word in Context Questions - Medium",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 29 Word in Context Questions - Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 29 Word in Context Questions - Medium - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 29 Word in Context Questions - Medium - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 51 Text Structure and Purpose Questions - Easy & Medium",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Craft and Structure/SAT Suite Question Bank - 51 Text Structure and Purpose Questions - Easy & Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 51 Text Structure and Purpose Questions - Easy & Medium - Answer Key",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Craft and Structure/SAT Suite Question Bank - 51 Text Structure and Purpose Questions - Easy & Medium - Answer Key.pdf"
+    },
+    {
+      "name": "AEEG SAT Cross Text Connections Easy Medium Worksheet",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Cross Text Connections Question",
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Craft and Structure/Cross Text Connections Question/AEEG SAT Cross Text Connections Easy Medium Worksheet.pdf"
+    },
+    {
+      "name": "AEEG SAT Cross Text Connections Hard Worksheet",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Cross Text Connections Question",
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Craft and Structure/Cross Text Connections Question/AEEG SAT_Cross_Text_Connections_Hard Worksheet.pdf"
+    },
+    {
+      "name": "AEEG SAT Text Structure and Purpose Easy Medium Workbook",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Text Structure and Purpose Questions",
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Craft and Structure/Text Structure and Purpose Questions/AEEG_SAT_Text_Structure_and_Purpose_ Easy Medium Workbook.pdf"
+    },
+    {
+      "name": "AEEG SAT Text Structure and Purpose Hard Workbook",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Text Structure and Purpose Questions",
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Craft and Structure/Text Structure and Purpose Questions/AEEG_SAT_Text_Structure_and_Purpose_Hard_Workbook.pdf"
+    },
+    {
+      "name": "AEEG SAT Words in Context Easy 123 Worksheet",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Word in Context Questions",
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Craft and Structure/Word in Context Questions/AEEG_SAT_Words_in_Context_Easy_123_Worksheet.pdf"
+    },
+    {
+      "name": "AEEG SAT Words in Context Hard Workbook",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Word in Context Questions",
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Craft and Structure/Word in Context Questions/AEEG_SAT_Words_in_Context_Hard_Workbook.pdf"
+    },
+    {
+      "name": "AEEG SAT Words in Context Medium Workbook",
+      "domain": "english",
+      "category": "Craft and Structure",
+      "subcategory": "Word in Context Questions",
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Craft and Structure/Word in Context Questions/AEEG_SAT_Words_in_Context_Medium_Workbook.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 17 Transition Questions - Hard",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 17 Transition Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 17 Transition Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 17 Transition Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 19 Rhetorical Synthesis Questions - Easy",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 19 Rhetorical Synthesis Questions - Easy.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 19 Rhetorical Synthesis Questions - Easy - Answer Key",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 19 Rhetorical Synthesis Questions - Easy - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 25 Rhetorical Synthesis Questions - Hard",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 25 Rhetorical Synthesis Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 25 Rhetorical Synthesis Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 25 Rhetorical Synthesis Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 46 Rhetorical Synthesis Questions Challenging",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "challenging",
+      "type": "question",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 46 Rhetorical Synthesis Questions Challenging.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 46 Rhetorical Synthesis Questions Challenging Answers",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "challenging",
+      "type": "answer",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 46 Rhetorical Synthesis Questions Challenging Answers.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 59 Rhetorical Synthesis Questions - Medium",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 59 Rhetorical Synthesis Questions - Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 59 Rhetorical Synthesis Questions - Medium - Answer Key",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 59 Rhetorical Synthesis Questions - Medium - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 69 Transition Questions - Easy & Medium",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 69 Transition Questions - Easy & Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 69 Transition Questions - Easy & Medium - Answer Key",
+      "domain": "english",
+      "category": "Expression of Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Expression of Ideas/SAT Suite Question Bank - 69 Transition Questions - Easy & Medium - Answer Key.pdf"
+    },
+    {
+      "name": "1 SAT Suite Question Bank - 20 Central Idea and Details Questions - Hard",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Information and Ideas/1 SAT Suite Question Bank - 20 Central Idea and Details Questions - Hard.pdf"
+    },
+    {
+      "name": "1 SAT Suite Question Bank - 20 Central Idea and Details Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Information and Ideas/1 SAT Suite Question Bank - 20 Central Idea and Details Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "1 SAT Suite Question Bank - 46 Central Idea and Details Questions - Easy and Medium",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Information and Ideas/1 SAT Suite Question Bank - 46 Central Idea and Details Questions - Easy and Medium.pdf"
+    },
+    {
+      "name": "1 SAT Suite Question Bank - 46 Central Idea and Details Questions - Easy and Medium - Answer Key",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Information and Ideas/1 SAT Suite Question Bank - 46 Central Idea and Details Questions - Easy and Medium - Answer Key.pdf"
+    },
+    {
+      "name": "2 SAT Suite Question Bank - 35 Inference Questions - Hard",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Information and Ideas/2 SAT Suite Question Bank - 35 Inference Questions - Hard.pdf"
+    },
+    {
+      "name": "2 SAT Suite Question Bank - 35 Inference Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Information and Ideas/2 SAT Suite Question Bank - 35 Inference Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "2 SAT Suite Question Bank - 39 Inference Questions - Easy and Medium - Answer Key - New",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Information and Ideas/2 SAT Suite Question Bank - 39 Inference Questions - Easy and Medium - Answer Key - New.PDF"
+    },
+    {
+      "name": "2 SAT Suite Question Bank - 39 Inference Questions - Easy and Medium - New",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Information and Ideas/2 SAT Suite Question Bank - 39 Inference Questions - Easy and Medium - New.PDF"
+    },
+    {
+      "name": "2-1 SAT Suite Question Bank - 57 Inference Questions - Hard",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Information and Ideas/2-1 SAT Suite Question Bank - 57 Inference Questions - Hard.pdf"
+    },
+    {
+      "name": "2-1 SAT Suite Question Bank - 57 Inference Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Information and Ideas/2-1 SAT Suite Question Bank - 57 Inference Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "3 SAT Suite Question Bank - 64 Command of Evidence Questions - Hard",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Information and Ideas/3 SAT Suite Question Bank - 64 Command of Evidence Questions - Hard.pdf"
+    },
+    {
+      "name": "3 SAT Suite Question Bank - 64 Command of Evidence Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Information and Ideas/3 SAT Suite Question Bank - 64 Command of Evidence Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "3 SAT Suite Question Bank - 87 Command of Evidence Questions - Easy and Medium",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Information and Ideas/3 SAT Suite Question Bank - 87 Command of Evidence Questions - Easy and Medium.pdf"
+    },
+    {
+      "name": "3 SAT Suite Question Bank - 87 Command of Evidence Questions - Easy and Medium - Answer Key",
+      "domain": "english",
+      "category": "Information and Ideas",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Information and Ideas/3 SAT Suite Question Bank - 87 Command of Evidence Questions - Easy and Medium - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 22 Form Structure and Sense Questions - Hard",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 22 Form Structure and Sense Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 22 Form Structure and Sense Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 22 Form Structure and Sense Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 27 Form Structure and Sense Questions - Medium",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 27 Form Structure and Sense Questions - Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 27 Form Structure and Sense Questions - Medium - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 27 Form Structure and Sense Questions - Medium - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 34 Boundary Punctuation Questions - Easy",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 34 Boundary Punctuation Questions - Easy.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 34 Boundary Punctuation Questions - Easy - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 34 Boundary Punctuation Questions - Easy - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 34 Boundary Punctuation Questions - Medium",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 34 Boundary Punctuation Questions - Medium.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 34 Boundary Punctuation Questions - Medium - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 34 Boundary Punctuation Questions - Medium - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 39 Boundary Punctuation Questions - Hard",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 39 Boundary Punctuation Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 39 Boundary Punctuation Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 39 Boundary Punctuation Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 55 Form Structure and Sense Questions - Easy",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 55 Form Structure and Sense Questions - Easy.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 55 Form Structure and Sense Questions - Easy - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 55 Form Structure and Sense Questions - Easy - Answer Key.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 77 Boundary Punctuation Questions - Hard",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 77 Boundary Punctuation Questions - Hard.pdf"
+    },
+    {
+      "name": "SAT Suite Question Bank - 77 Boundary Punctuation Questions - Hard - Answer Key",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Standard English Conventions/SAT Suite Question Bank - 77 Boundary Punctuation Questions - Hard - Answer Key.pdf"
+    },
+    {
+      "name": "AEEG Boundary Punctuation Hard 39Q Student FINAL",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": "Boundary Punctuation",
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Standard English Conventions/Boundary Punctuation/AEEG_Boundary_Punctuation_Hard_39Q_Student_FINAL.pdf"
+    },
+    {
+      "name": "sat boundary punctuation easy",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": "Boundary Punctuation",
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Standard English Conventions/Boundary Punctuation/sat_boundary_punctuation_easy.pdf"
+    },
+    {
+      "name": "sat boundary punctuation medium",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": "Boundary Punctuation",
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Standard English Conventions/Boundary Punctuation/sat_boundary_punctuation_medium.pdf"
+    },
+    {
+      "name": "AEEG Form Structure Sense Easy 55Q Teacher (1)",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": "Form Structure and Sense",
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Standard English Conventions/Form Structure and Sense/AEEG_Form_Structure_Sense_Easy_55Q_Teacher (1).pdf"
+    },
+    {
+      "name": "AEEG Form Structure Sense Hard 22Q Teacher",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": "Form Structure and Sense",
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Standard English Conventions/Form Structure and Sense/AEEG_Form_Structure_Sense_Hard_22Q_Teacher.pdf"
+    },
+    {
+      "name": "AEEG Form Structure Sense Medium 27Q Teacher",
+      "domain": "english",
+      "category": "Standard English Conventions",
+      "subcategory": "Form Structure and Sense",
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Standard English Conventions/Form Structure and Sense/AEEG_Form_Structure_Sense_Medium_27Q_Teacher.pdf"
+    },
+    {
+      "name": "Equivalent Expressions (Easy)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Advanced Math/Equivalent Expressions (Easy).pdf"
+    },
+    {
+      "name": "Equivalent Expressions (Easy) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Advanced Math/Equivalent Expressions (Easy) Answers.pdf"
+    },
+    {
+      "name": "Equivalent Expressions (Hard)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Advanced Math/Equivalent Expressions (Hard).pdf"
+    },
+    {
+      "name": "Equivalent Expressions (Hard) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Advanced Math/Equivalent Expressions (Hard) Answers.pdf"
+    },
+    {
+      "name": "Equivalent Expressions (Medium)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Advanced Math/Equivalent Expressions (Medium).pdf"
+    },
+    {
+      "name": "Equivalent Expressions (Medium) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Advanced Math/Equivalent Expressions (Medium) Answers.pdf"
+    },
+    {
+      "name": "Nonlinear Equations and Systems of Equations (Easy)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Advanced Math/Nonlinear Equations and Systems of Equations (Easy).pdf"
+    },
+    {
+      "name": "Nonlinear Equations and Systems of Equations (Easy) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Advanced Math/Nonlinear Equations and Systems of Equations (Easy) Answers.pdf"
+    },
+    {
+      "name": "Nonlinear Equations and Systems of Equations (Hard)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Advanced Math/Nonlinear Equations and Systems of Equations (Hard).pdf"
+    },
+    {
+      "name": "Nonlinear Equations and Systems of Equations (Hard) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Advanced Math/Nonlinear Equations and Systems of Equations (Hard) Answers.pdf"
+    },
+    {
+      "name": "Nonlinear Equations and Systems of Equations (Medium)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Advanced Math/Nonlinear Equations and Systems of Equations (Medium).pdf"
+    },
+    {
+      "name": "Nonlinear Equations and Systems of Equations (Medium) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Advanced Math/Nonlinear Equations and Systems of Equations (Medium) Answers.pdf"
+    },
+    {
+      "name": "Nonlinear Functions (Easy)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Advanced Math/Nonlinear Functions (Easy).pdf"
+    },
+    {
+      "name": "Nonlinear Functions (Easy) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Advanced Math/Nonlinear Functions (Easy) Answers.pdf"
+    },
+    {
+      "name": "Nonlinear Functions (Hard)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Advanced Math/Nonlinear Functions (Hard).pdf"
+    },
+    {
+      "name": "Nonlinear Functions (Hard) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Advanced Math/Nonlinear Functions (Hard) Answers.pdf"
+    },
+    {
+      "name": "Nonlinear Functions (Medium)",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Advanced Math/Nonlinear Functions (Medium).pdf"
+    },
+    {
+      "name": "Nonlinear Functions (Medium) Answers",
+      "domain": "math",
+      "category": "Advanced Math",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Advanced Math/Nonlinear Functions (Medium) Answers.pdf"
+    },
+    {
+      "name": "1-Linear Equations in One Variable (Easy)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Algebra/1-Linear Equations in One Variable (Easy).pdf"
+    },
+    {
+      "name": "10-Linear Inequalities (Easy)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Algebra/10-Linear Inequalities (Easy).pdf"
+    },
+    {
+      "name": "11-Linear Inequalities (Medium)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Algebra/11-Linear Inequalities (Medium).pdf"
+    },
+    {
+      "name": "12-Linear Inequalities (Hard)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Algebra/12-Linear Inequalities (Hard).pdf"
+    },
+    {
+      "name": "13-Systems of Linear Equations (Easy)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Algebra/13-Systems of Linear Equations (Easy).pdf"
+    },
+    {
+      "name": "14-Systems of Linear Equations (Medium)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Algebra/14-Systems of Linear Equations (Medium).pdf"
+    },
+    {
+      "name": "15-Systems of Linear Equations (Hard)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Algebra/15-Systems of Linear Equations (Hard).pdf"
+    },
+    {
+      "name": "2-Linear Equations in One Variable (Medium)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Algebra/2-Linear Equations in One Variable (Medium).pdf"
+    },
+    {
+      "name": "3-Linear Equations in One Variable (Hard)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Algebra/3-Linear Equations in One Variable (Hard).pdf"
+    },
+    {
+      "name": "4-Linear Equations in Two Variables (Easy)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Algebra/4-Linear Equations in Two Variables (Easy).pdf"
+    },
+    {
+      "name": "5-Linear Equations in Two Variables (Medium)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Algebra/5-Linear Equations in Two Variables (Medium).pdf"
+    },
+    {
+      "name": "6-Linear Equations in Two Variables (Hard)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Algebra/6-Linear Equations in Two Variables (Hard).pdf"
+    },
+    {
+      "name": "7-Linear Functions (Easy)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Algebra/7-Linear Functions (Easy).pdf"
+    },
+    {
+      "name": "8-Linear Functions (Medium)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Algebra/8-Linear Functions (Medium).pdf"
+    },
+    {
+      "name": "9-Linear Functions (Hard)",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Algebra/9-Linear Functions (Hard).pdf"
+    },
+    {
+      "name": "A1-Linear Equations in One Variable (Easy) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Algebra/A1-Linear Equations in One Variable (Easy) Answers.pdf"
+    },
+    {
+      "name": "A10-Linear Inequalities (Easy) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Algebra/A10-Linear Inequalities (Easy) Answers.pdf"
+    },
+    {
+      "name": "A11-Linear Inequalities (Medium) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Algebra/A11-Linear Inequalities (Medium) Answers.pdf"
+    },
+    {
+      "name": "A12-Linear Inequalities (Hard) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Algebra/A12-Linear Inequalities (Hard) Answers.pdf"
+    },
+    {
+      "name": "A13-Systems of Linear Equations (Easy) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Algebra/A13-Systems of Linear Equations (Easy) Answers.pdf"
+    },
+    {
+      "name": "A14-Systems of Linear Equations (Medium) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Algebra/A14-Systems of Linear Equations (Medium) Answers.pdf"
+    },
+    {
+      "name": "A15-Systems of Linear Equations (Hard) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Algebra/A15-Systems of Linear Equations (Hard) Answers.pdf"
+    },
+    {
+      "name": "A2-Linear Equations in One Variable (Medium) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Algebra/A2-Linear Equations in One Variable (Medium) Answers.pdf"
+    },
+    {
+      "name": "A3-Linear Equations in One Variable (Hard) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Algebra/A3-Linear Equations in One Variable (Hard) Answers.pdf"
+    },
+    {
+      "name": "A4-Linear Equations in Two Variables (Easy) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Algebra/A4-Linear Equations in Two Variables (Easy) Answers.pdf"
+    },
+    {
+      "name": "A5-Linear Equations in Two Variables (Medium) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Algebra/A5-Linear Equations in Two Variables (Medium) Answers.pdf"
+    },
+    {
+      "name": "A6-Linear Equations in Two Variables (Hard) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Algebra/A6-Linear Equations in Two Variables (Hard) Answers.pdf"
+    },
+    {
+      "name": "A7-Linear Functions (Easy) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Algebra/A7-Linear Functions (Easy) Answers.pdf"
+    },
+    {
+      "name": "A8-Linear Functions (Medium) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Algebra/A8-Linear Functions (Medium) Answers.pdf"
+    },
+    {
+      "name": "A9-Linear Functions (Hard) Answers",
+      "domain": "math",
+      "category": "Algebra",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Algebra/A9-Linear Functions (Hard) Answers.pdf"
+    },
+    {
+      "name": "Area and Volume (Easy)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Area and Volume (Easy).pdf"
+    },
+    {
+      "name": "Area and Volume (Easy) Answers)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Area and Volume (Easy) Answers).pdf"
+    },
+    {
+      "name": "Area and Volume (Hard)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Area and Volume (Hard).pdf"
+    },
+    {
+      "name": "Area and Volume (Hard) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Area and Volume (Hard) Answers.pdf"
+    },
+    {
+      "name": "Area and Volume (Medium)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Area and Volume (Medium).pdf"
+    },
+    {
+      "name": "Area and Volume (Medium) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Area and Volume (Medium) Answers.pdf"
+    },
+    {
+      "name": "Circles (Easy and Medium)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Circles (Easy and Medium).pdf"
+    },
+    {
+      "name": "Circles (Easy and Medium) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy-medium",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Circles (Easy and Medium) Answers.pdf"
+    },
+    {
+      "name": "Circles (Hard)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Circles (Hard).pdf"
+    },
+    {
+      "name": "Circles (Hard) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Circles (Hard) Answers.pdf"
+    },
+    {
+      "name": "Copy of Circles (Hard) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Copy of Circles (Hard) Answers.pdf"
+    },
+    {
+      "name": "Lines, Angles, and Triangles (Easy)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Lines, Angles, and Triangles (Easy).pdf"
+    },
+    {
+      "name": "Lines, Angles, and Triangles (Easy) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Lines, Angles, and Triangles (Easy) Answers.pdf"
+    },
+    {
+      "name": "Lines, Angles, and Triangles (Hard)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Lines, Angles, and Triangles (Hard).pdf"
+    },
+    {
+      "name": "Lines, Angles, and Triangles (Hard) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Lines, Angles, and Triangles (Hard) Answers.pdf"
+    },
+    {
+      "name": "Lines, Angles, and Triangles (Medium)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Lines, Angles, and Triangles (Medium).pdf"
+    },
+    {
+      "name": "Lines, Angles, and Triangles (Medium) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Lines, Angles, and Triangles (Medium) Answers.pdf"
+    },
+    {
+      "name": "Right Triangles and Trigonometry (Easy)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Right Triangles and Trigonometry (Easy).pdf"
+    },
+    {
+      "name": "Right Triangles and Trigonometry (Easy) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Right Triangles and Trigonometry (Easy) Answers.pdf"
+    },
+    {
+      "name": "Right Triangles and Trigonometry (Hard)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Right Triangles and Trigonometry (Hard).pdf"
+    },
+    {
+      "name": "Right Triangles and Trigonometry (Hard) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Right Triangles and Trigonometry (Hard) Answers.pdf"
+    },
+    {
+      "name": "Right Triangles and Trigonometry (Medium)",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Geometry and Trigonometry/Right Triangles and Trigonometry (Medium).pdf"
+    },
+    {
+      "name": "Right Triangles and Trigonometry (Medium) Answers",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Geometry and Trigonometry/Right Triangles and Trigonometry (Medium) Answers.pdf"
+    },
+    {
+      "name": "area and volume rules cover",
+      "domain": "math",
+      "category": "Geometry and Trigonometry",
+      "subcategory": null,
+      "difficulty": null,
+      "type": "question",
+      "path": "Geometry and Trigonometry/area and volume rules cover.pdf"
+    },
+    {
+      "name": "Evaluating Statistical Claims (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Evaluating Statistical Claims (Easy).pdf"
+    },
+    {
+      "name": "Evaluating Statistical Claims (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Evaluating Statistical Claims (Easy) Answers.pdf"
+    },
+    {
+      "name": "Evaluating Statistical Claims (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Evaluating Statistical Claims (Hard).pdf"
+    },
+    {
+      "name": "Evaluating Statistical Claims (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Evaluating Statistical Claims (Hard) Answers.pdf"
+    },
+    {
+      "name": "Evaluating Statistical Claims (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Evaluating Statistical Claims (Medium).pdf"
+    },
+    {
+      "name": "Evaluating Statistical Claims (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Evaluating Statistical Claims (Medium) Answers.pdf"
+    },
+    {
+      "name": "One-Variable Data (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/One-Variable Data (Easy).pdf"
+    },
+    {
+      "name": "One-Variable Data (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/One-Variable Data (Easy) Answers.pdf"
+    },
+    {
+      "name": "One-Variable Data (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/One-Variable Data (Hard).pdf"
+    },
+    {
+      "name": "One-Variable Data (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/One-Variable Data (Hard) Answers.pdf"
+    },
+    {
+      "name": "One-Variable Data (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/One-Variable Data (Medium).pdf"
+    },
+    {
+      "name": "One-Variable Data (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/One-Variable Data (Medium) Answers.pdf"
+    },
+    {
+      "name": "Percentages (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Percentages (Easy).pdf"
+    },
+    {
+      "name": "Percentages (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Percentages (Easy) Answers.pdf"
+    },
+    {
+      "name": "Percentages (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Percentages (Hard).pdf"
+    },
+    {
+      "name": "Percentages (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Percentages (Hard) Answers.pdf"
+    },
+    {
+      "name": "Percentages (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Percentages (Medium).pdf"
+    },
+    {
+      "name": "Percentages (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Percentages (Medium) Answers.pdf"
+    },
+    {
+      "name": "Probability (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Probability (Easy).pdf"
+    },
+    {
+      "name": "Probability (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Probability (Easy) Answers.pdf"
+    },
+    {
+      "name": "Probability (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Probability (Hard).pdf"
+    },
+    {
+      "name": "Probability (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Probability (Hard) Answers.pdf"
+    },
+    {
+      "name": "Probability (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Probability (Medium).pdf"
+    },
+    {
+      "name": "Probability (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Probability (Medium) Answers.pdf"
+    },
+    {
+      "name": "Ratios, Rates, Proportions, and Units (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Ratios, Rates, Proportions, and Units (Easy).pdf"
+    },
+    {
+      "name": "Ratios, Rates, Proportions, and Units (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Ratios, Rates, Proportions, and Units (Easy) Answers.pdf"
+    },
+    {
+      "name": "Ratios, Rates, Proportions, and Units (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Ratios, Rates, Proportions, and Units (Hard).pdf"
+    },
+    {
+      "name": "Ratios, Rates, Proportions, and Units (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Ratios, Rates, Proportions, and Units (Hard) Answers.pdf"
+    },
+    {
+      "name": "Ratios, Rates, Proportions, and Units (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Ratios, Rates, Proportions, and Units (Medium).pdf"
+    },
+    {
+      "name": "Ratios, Rates, Proportions, and Units (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Ratios, Rates, Proportions, and Units (Medium) Answers.pdf"
+    },
+    {
+      "name": "Sample Statistics (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Sample Statistics (Easy).pdf"
+    },
+    {
+      "name": "Sample Statistics (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Sample Statistics (Easy) Answers.pdf"
+    },
+    {
+      "name": "Sample Statistics (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Sample Statistics (Hard).pdf"
+    },
+    {
+      "name": "Sample Statistics (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Sample Statistics (Hard) Answers.pdf"
+    },
+    {
+      "name": "Sample Statistics (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Sample Statistics (Medium).pdf"
+    },
+    {
+      "name": "Sample Statistics (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Sample Statistics (Medium) Answers.pdf"
+    },
+    {
+      "name": "Two-Variable Data (Easy)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Two-Variable Data (Easy).pdf"
+    },
+    {
+      "name": "Two-Variable Data (Easy) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "easy",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Two-Variable Data (Easy) Answers.pdf"
+    },
+    {
+      "name": "Two-Variable Data (Hard)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Two-Variable Data (Hard).pdf"
+    },
+    {
+      "name": "Two-Variable Data (Hard) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "hard",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Two-Variable Data (Hard) Answers.pdf"
+    },
+    {
+      "name": "Two-Variable Data (Medium)",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "question",
+      "path": "Problem-Solving and Data Analysis/Two-Variable Data (Medium).pdf"
+    },
+    {
+      "name": "Two-Variable Data (Medium) Answers",
+      "domain": "math",
+      "category": "Problem-Solving and Data Analysis",
+      "subcategory": null,
+      "difficulty": "medium",
+      "type": "answer",
+      "path": "Problem-Solving and Data Analysis/Two-Variable Data (Medium) Answers.pdf"
+    }
+  ]
+}

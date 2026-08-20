@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <rect x="0" y="0" width="44" height="44" rx="10" fill="#4720b7"/>
+  <text x="22" y="32" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="800" fill="white" text-anchor="middle">PB</text>
+  <text x="56" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#1e1e2e">Practice</text>
+  <text x="56" y="32" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="300" fill="#4720b7" dx="95">Buddy</text>
+</svg>

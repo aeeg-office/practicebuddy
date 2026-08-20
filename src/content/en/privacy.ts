@@ -1,0 +1,107 @@
+export const content = {
+  hero: {
+    badge: "Your Privacy Matters",
+    title: "Privacy Policy",
+    description: "We take your privacy seriously. Learn how we collect, use, and protect your personal information.",
+    lastUpdated: "Last updated: January 2024",
+  },
+  backToHome: "Back to Home",
+  onThisPageTitle: "On This Page",
+  sections: [
+    {
+      id: "information-collect",
+      title: "1. Information We Collect",
+      content: "American Egyptian Education Group ('AEEG,' 'we,' 'us,' or 'our') collects information you provide directly, including:",
+      items: [
+        "Name, email address, phone number, and mailing address",
+        "Academic information including grade level, school, and test scores",
+        "Payment information (processed securely through Stripe — we never store full credit card numbers)",
+        "Communication history between you, our tutors, and our AI assistant",
+        "Uploaded documents including identification and academic records",
+      ],
+    },
+    {
+      id: "how-we-use",
+      title: "2. How We Use Your Information",
+      content: null,
+      items: [
+        "To provide and improve our educational services",
+        "To process enrollments, payments, and generate invoices",
+        "To communicate about schedules, results, and announcements",
+        "To personalize learning recommendations using AI analysis",
+        "To comply with legal obligations and prevent fraud",
+      ],
+    },
+    {
+      id: "data-security",
+      title: "3. Data Storage and Security",
+      content: "Your data is stored on secure servers with encryption at rest and in transit. We implement industry-standard security measures including:",
+      items: [
+        "Row-Level Security in our database — your data is only accessible to authorized personnel",
+        "PCI-DSS compliant payment processing through Stripe",
+        "Regular security audits and penetration testing",
+        "30-day point-in-time recovery for database backups",
+      ],
+    },
+    {
+      id: "data-retention",
+      title: "4. Data Retention",
+      content: "We retain your personal data for as long as your account is active or as needed to provide services. You may request deletion of your data at any time by contacting us.",
+      items: [],
+    },
+    {
+      id: "your-rights",
+      title: "5. Your Rights",
+      content: "You have the right to:",
+      items: [
+        "Access your personal data",
+        "Correct inaccurate data",
+        "Delete your data (subject to legal obligations)",
+        "Export your data in a portable format",
+        "Opt out of marketing communications",
+        "Withdraw consent where processing is based on consent",
+      ],
+    },
+    {
+      id: "ai-processing",
+      title: "6. AI and Automated Processing",
+      content: "Our platform uses artificial intelligence to provide personalized recommendations, automated grading, and chatbot assistance. AI processing is governed by strict data minimization principles. Conversations with our AI assistant are logged for quality improvement and may be reviewed by staff. You can opt out of AI-powered features while still using our core services.",
+      items: [],
+    },
+    {
+      id: "third-party",
+      title: "7. Third-Party Services",
+      content: "We use the following third-party service providers:",
+      items: [
+        "Stripe — Payment processing (see their privacy policy for card data handling)",
+        "Resend — Email delivery",
+        "Twilio — SMS notifications",
+        "Vercel — Hosting and infrastructure",
+        "Supabase — Database and authentication",
+      ],
+    },
+    {
+      id: "cookies",
+      title: "8. Cookies",
+      content: "We use essential cookies for authentication and security. Analytics cookies are used only with your consent. You can manage cookie preferences in your browser settings.",
+      items: [],
+    },
+    {
+      id: "contact",
+      title: "9. Contact",
+      content: "For privacy-related inquiries, contact us at:",
+      items: [],
+      contactInfo: {
+        organization: "American Egyptian Education Group",
+        address: "5th Settlement, Cairo, Egypt",
+        email: "info@americanegyptianedugroup.com",
+        phone: "+20 1060618899",
+      },
+    },
+  ],
+  cta: {
+    title: "Have Questions About Privacy?",
+    description: "We're happy to answer any questions about how we handle your data. Reach out to us anytime — we're here to help.",
+    buttons: { primary: "Contact Us", secondary: "Chat on WhatsApp" },
+  },
+}

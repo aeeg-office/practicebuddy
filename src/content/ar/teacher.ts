@@ -1,0 +1,102 @@
+export const content = {
+  dashboard: {
+    greeting: "مرحباً بعودتك،",
+    instructorName: "د. أحمد",
+    subtitle: "إليك ما يحدث اليوم",
+    portalName: "Practice Buddy",
+    portalSubtitle: "بوابة المدرّسين",
+  },
+  sidebar: {
+    logo: "PB",
+    brand: "Practice Buddy",
+    subtitle: "بوابة المدرّسين",
+    navigation: [
+      { label: "نظرة عامة", href: "/teacher", active: true },
+      { label: "جدولي", href: "/teacher/schedule" },
+      { label: "طلابي", href: "/teacher/students" },
+      { label: "أدوات الذكاء الاصطناعي", href: "/teacher/ai-tools", badge: "جديد" },
+      { label: "الموارد", href: "/teacher/resources" },
+      { label: "التقارير", href: "/teacher/reports" },
+      { label: "الرسائل", href: "/teacher/messages", badge: "3" },
+    ],
+    footer: {
+      whatsapp: "دعم WhatsApp",
+      logout: "تسجيل الخروج",
+    },
+  },
+  topBar: {
+    searchPlaceholder: "ابحث عن طلاب، فصول...",
+    instructorName: "د. أحمد خليل",
+    instructorRole: "مدرّس أول",
+  },
+  stats: [
+    { label: "إجمالي الطلاب", value: "24", trend: "12%+", trendUp: true },
+    { label: "الحصص هذا الأسبوع", value: "14", trend: "8%+", trendUp: true },
+    { label: "الحصص القادمة", value: "6", trend: "2%-", trendUp: false },
+    { label: "استخدام الذكاء الاصطناعي", value: "89", trend: "24%+", trendUp: true },
+  ],
+  todaySchedule: {
+    title: "جدول اليوم",
+    date: "الثلاثاء، 28 يوليو 2026",
+    viewAll: "عرض الكل",
+    items: [
+      { time: "09:00 – 10:30", student: "ليلى إبراهيم", course: "SAT Math Intensive", room: "قاعة 204", status: "completed" },
+      { time: "11:00 – 12:30", student: "عمر حسن", course: "IELTS Speaking", room: "قاعة 108", status: "completed" },
+      { time: "13:00 – 14:30", student: "نور الدين", course: "ACT English Prep", room: "قاعة 301", status: "upcoming" },
+      { time: "15:00 – 16:00", student: "مريم يوسف", course: "TOEFL Writing", room: "قاعة 205", status: "upcoming" },
+      { time: "17:00 – 18:30", student: "يوسف علي", course: "SAT Math Intensive", room: "قاعة 204", status: "cancelled" },
+      { time: "19:00 – 20:00", student: "سارة منصور", course: "IELTS Reading", room: "قاعة 108", status: "upcoming" },
+    ],
+  },
+  quickActions: {
+    title: "إجراءات سريعة",
+    items: [
+      { label: "إضافة طالب", color: "hover:border-primary/30" },
+      { label: "تقرير جديد", color: "hover:border-accent/30" },
+      { label: "الحضور", color: "hover:border-emerald-500/30" },
+      { label: "رسالة", color: "hover:border-blue-500/30" },
+    ],
+  },
+  monthlyStats: {
+    label: "هذا الشهر",
+    value: "42",
+    sublabel: "حصّة مكتملة",
+    trend: "أعلى بنسبة 12% عن الشهر الماضي",
+  },
+  myStudents: {
+    title: "طلابي",
+    subtitle: "الطلاب المسجّلون في مساقاتك",
+    viewAll: "عرض الكل",
+    columns: ["الطالب", "المساق", "الدرجة", "الحصة القادمة", "التقدّم"],
+    items: [
+      { name: "ليلى إبراهيم", course: "SAT Math Intensive", lastScore: "720", nextSession: "غداً، 9:00 صباحاً", progress: 75 },
+      { name: "عمر حسن", course: "IELTS Speaking", lastScore: "6.5", nextSession: "اليوم، 11:00 صباحاً", progress: 60 },
+      { name: "نور الدين", course: "ACT English Prep", lastScore: "28", nextSession: "اليوم، 1:00 مساءً", progress: 85 },
+      { name: "مريم يوسف", course: "TOEFL Writing", lastScore: "24", nextSession: "اليوم، 3:00 مساءً", progress: 45 },
+      { name: "يوسف علي", course: "SAT Math Intensive", lastScore: "680", nextSession: "ملغاة", progress: 50 },
+      { name: "سارة منصور", course: "IELTS Reading", lastScore: "7.0", nextSession: "اليوم، 7:00 مساءً", progress: 90 },
+      { name: "كريم عادل", course: "ACT Science Prep", lastScore: "26", nextSession: "الأربعاء، 10:00 صباحاً", progress: 35 },
+      { name: "دنيا مصطفى", course: "TOEFL Listening", lastScore: "22", nextSession: "الخميس، 2:00 مساءً", progress: 70 },
+    ],
+  },
+  recentActivity: {
+    title: "آخر النشاطات",
+    items: [
+      { text: "سجّل حضور ليلى إبراهيم — SAT Math", time: "منذ 10 دقائق" },
+      { text: "قدّم تقرير تقدّم لعمر حسن", time: "منذ ساعة" },
+      { text: "أرسل ملاحظات إلى والدي نور الدين", time: "منذ ساعتين" },
+      { text: "سارة منصور حصلت على 7.0 في اختبار IELTS التجريبي", time: "منذ 3 ساعات" },
+      { text: "الطالب الجديد يوسف علي سجّل في SAT Math", time: "أمس" },
+    ],
+  },
+  aiTools: {
+    title: "مساعد التدريس بالذكاء الاصطناعي",
+    subtitle: "أنشئ اختبارات وخططاً والمزيد",
+    buttons: ["مخطّط الدروس", "مولّد الاختبارات"],
+  },
+  generateReports: {
+    title: "إنشاء تقارير التقدّم",
+    description: "أنشئ تقارير تقدّم شاملة لجميع طلابك مع رؤى مدعومة بالذكاء الاصطناعي",
+    button: "إنشاء التقارير",
+  },
+}

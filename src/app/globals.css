@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f6f6f6;
+  --color-foreground: #281a39;
+  --color-card: #ffffff;
+  --color-card-foreground: #281a39;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #281a39;
+  --color-primary: #4720b7;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1e2761;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #c5c5c5;
+  --color-muted-foreground: #626262;
+  --color-accent: #f5a623;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e5e7eb;
+  --color-input: #e5e7eb;
+  --color-ring: #4720b7;
+  --radius: 0.5rem;
+  --container-padding: 1rem;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  overflow-x: hidden;
+}
+
+/* Consistent container with symmetrical margins */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Prevent horizontal scroll on all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth section transitions */
+section {
+  overflow: hidden;
+}
+
+/* RTL Support */
+[dir="rtl"] .container {
+  direction: rtl;
+}
+
+[dir="rtl"] .rotate-180 {
+  transform: rotate(180deg);
+}

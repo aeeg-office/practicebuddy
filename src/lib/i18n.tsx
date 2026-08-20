@@ -55,6 +55,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.programs": "Programs",
     "nav.sat": "SAT Prep",
     "nav.subjects": "English & Math",
+    "nav.about": "About Us",
     "nav.practice": "Practice",
     "nav.blog": "Blog",
     "nav.faqs": "FAQs",
@@ -181,6 +182,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.programs": "البرامج",
     "nav.sat": "SAT",
     "nav.subjects": "الإنجليزية والرياضيات",
+    "nav.about": "من نحن",
     "nav.practice": "التدريب",
     "nav.blog": "المدونة",
     "nav.faqs": "الأسئلة الشائعة",
@@ -293,7 +295,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     /* FAQ */
     "faq.title": "الأسئلة الشائعة",
-    "faq.subtitle": "كل ما تحتاج معرفته عن برامج AEEG ومنهجها.",
+    "faq.subtitle": "كل ما تحتاج معرفته عن منصة Practice Buddy.",
 
     /* Language */
     "lang.switch": "English",

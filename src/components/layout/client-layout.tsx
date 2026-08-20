@@ -5,8 +5,6 @@ import { ExamModeProvider, useExamMode } from "@/lib/exam-mode-context"
 import { AuthProvider } from "@/lib/auth-context"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
-import Chatbot from "@/components/layout/chatbot"
-import WhatsAppButton from "@/components/layout/whatsapp-button"
 import AnalyticsProvider from "@/lib/analytics"
 
 function LayoutChrome({ children }: { children: React.ReactNode }) {
@@ -17,8 +15,6 @@ function LayoutChrome({ children }: { children: React.ReactNode }) {
       {!isExamMode && <Header />}
       <main className="flex-1">{children}</main>
       {!isExamMode && <Footer />}
-      {!isExamMode && <Chatbot />}
-      {!isExamMode && <WhatsAppButton />}
     </div>
   )
 }

@@ -14,9 +14,12 @@
  */
 
 import { PrismaClient } from "@prisma/client"
+import { PrismaPg } from "@prisma/adapter-pg"
 import * as crypto from "crypto"
 
-const prisma = new PrismaClient()
+const connectionString = process.env.DATABASE_URL || "postgresql://practice_buddy:***@localhost:5432/practice_buddy"
+const adapter = new PrismaPg({ connectionString })
+const prisma = new PrismaClient({ adapter })
 
 // ─── Types ───
 

@@ -142,10 +142,12 @@ async function main() {
     const skill = await prisma.skill.findFirst({ where: { code: gq.skillCode, gradeId: { not: undefined } } })
     if (!skill) continue
 
-    // Create Gold Question
+    // Create Gold Question (upsert to handle existing data)
     const goldHash = require("crypto").createHash("sha256").update(gq.stem + gq.correctAnswer).digest("hex")
-    const gold = await prisma.goldQuestion.create({
-      data: {
+    const gold = await prisma.goldQuestion.upsert({
+      where: { hash: goldHash },
+      update: { goldStatus: "certified" },
+      create: {
         tenantId: aeeg.id, subject: gq.subject, domain: gq.domain, category: gq.category, subcategory: gq.subcategory,
         difficulty: gq.difficulty, format: gq.format, stem: gq.stem, options: gq.options,
         correctAnswer: gq.correctAnswer, explanation: gq.explanation,
@@ -153,27 +155,34 @@ async function main() {
       },
     })
 
-    // Create Question Family
-    const family = await prisma.questionFamily.create({
-      data: {
-        tenantId: aeeg.id, goldQuestionId: gold.id,
-        name: `${gq.skillCode}-${gq.domain.substring(0, 3).toUpperCase()}`,
-        difficulty: gq.difficulty,
-      },
-    })
+    // Create Question Family (idempotent)
+    const familyName = `${gq.skillCode}-${gq.domain.substring(0, 3).toUpperCase()}`
+    let family = await prisma.questionFamily.findFirst({ where: { name: familyName, goldQuestionId: gold.id } })
+    if (!family) {
+      family = await prisma.questionFamily.create({
+        data: {
+          tenantId: aeeg.id, goldQuestionId: gold.id,
+          name: familyName,
+          difficulty: gq.difficulty,
+        },
+      })
+    }
 
     // Create the actual Question
     const hash = require("crypto").createHash("sha256").update(gq.stem + gq.correctAnswer).digest("hex")
-    await prisma.question.create({
-      data: {
-        tenantId: aeeg.id, goldQuestionId: gold.id, familyId: family.id,
-        skillId: skill.id, programId: satProgram.id,
-        subject: gq.subject, domain: gq.domain, category: gq.category, subcategory: gq.subcategory,
-        difficulty: gq.difficulty, format: gq.format, stem: gq.stem, options: gq.options,
-        correctAnswer: gq.correctAnswer, explanation: gq.explanation,
-        hash, qualityStatus: "published", isActive: true,
-      },
-    })
+    const existingQuestion = await prisma.question.findFirst({ where: { hash } })
+    if (!existingQuestion) {
+      await prisma.question.create({
+        data: {
+          tenantId: aeeg.id, goldQuestionId: gold.id, familyId: family.id,
+          skillId: skill.id, programId: satProgram.id,
+          subject: gq.subject, domain: gq.domain, category: gq.category, subcategory: gq.subcategory,
+          difficulty: gq.difficulty, format: gq.format, stem: gq.stem, options: gq.options,
+          correctAnswer: gq.correctAnswer, explanation: gq.explanation,
+          hash, qualityStatus: "published", isActive: true,
+        },
+      })
+    }
   }
   console.log(`  Gold Questions: ${goldQuestions.length} created with families`)
 

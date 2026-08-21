@@ -10,9 +10,12 @@
  */
 
 import { PrismaClient } from "@prisma/client"
+import { PrismaPg } from "@prisma/adapter-pg"
 import * as crypto from "crypto"
 
-const prisma = new PrismaClient()
+const connectionString = process.env.DATABASE_URL || "postgresql://practice_buddy:***@localhost:5432/practice_buddy"
+const adapter = new PrismaPg({ connectionString })
+const prisma = new PrismaClient({ adapter })
 
 // ─── Question Templates ───
 // These are sample question templates for each domain.
@@ -359,9 +362,11 @@ async function main() {
       // Create hash
       const hash = crypto.createHash("sha256").update(v.stem + v.correctAnswer).digest("hex")
 
-      // Create Gold Question
-      const gold = await prisma.goldQuestion.create({
-        data: {
+      // Create Gold Question (upsert to handle existing data)
+      const gold = await prisma.goldQuestion.upsert({
+        where: { hash },
+        update: { goldStatus: "certified" },
+        create: {
           tenantId: tenant.id,
           microSkillId: ms.id,
           subject: skill.subject,
@@ -381,47 +386,50 @@ async function main() {
       })
       totalGoldQuestions++
 
-      // Create Question Family
-      const family = await prisma.questionFamily.create({
-        data: {
-          tenantId: tenant.id,
-          goldQuestionId: gold.id,
-          name: `${skill.code}-${skill.domain.substring(0, 3).toUpperCase()}`,
-          difficulty: v.difficulty,
-          variationCount: 3,
-        },
-      })
-
-      // Create 3 question variations
-      for (let vIdx = 0; vIdx < 3; vIdx++) {
-        const qHash = crypto.createHash("sha256").update(v.stem + v.correctAnswer + vIdx).digest("hex")
-
-        const question = await prisma.question.create({
+      // Create Question Family (idempotent)
+      const familyName = `${skill.code}-${skill.domain.substring(0, 3).toUpperCase()}`
+      let family = await prisma.questionFamily.findFirst({ where: { name: familyName, goldQuestionId: gold.id } })
+      if (!family) {
+        family = await prisma.questionFamily.create({
           data: {
             tenantId: tenant.id,
             goldQuestionId: gold.id,
-            familyId: family.id,
-            skillId: skill.id,
-            microSkillId: ms.id,
-            programId: skill.grade.programId,
-            subject: skill.subject,
-            domain: skill.domain,
-            category: skill.category,
-            subcategory: skill.subcategory,
+            name: familyName,
             difficulty: v.difficulty,
-            format: "multiple-choice",
-            stem: v.stem + (vIdx > 0 ? ` (Variant ${vIdx + 1})` : ""),
-            options: v.options,
-            correctAnswer: v.correctAnswer,
-            explanation: v.explanation,
-            hash: qHash,
-            qualityStatus: "published",
-            isActive: true,
-            questionStatus: "active",
-            version: 1,
+            variationCount: 3,
           },
         })
-        totalQuestions++
+      }
+
+      // Create 3 question variations (idempotent)
+      for (let vIdx = 0; vIdx < 3; vIdx++) {
+        const qHash = crypto.createHash("sha256").update(v.stem + v.correctAnswer + vIdx).digest("hex")
+        let question = await prisma.question.findFirst({ where: { hash: qHash } })
+        if (!question) {
+          question = await prisma.question.create({
+            data: {
+              tenantId: tenant.id,
+              goldQuestionId: gold.id,
+              familyId: family.id,
+              skillId: skill.id,
+              microSkillId: ms.id,
+              programId: skill.grade?.programId ?? "",
+              category: skill.category,
+              subcategory: skill.subcategory,
+              difficulty: v.difficulty,
+              format: "multiple-choice",
+              stem: v.stem + (vIdx > 0 ? ` (Variant ${vIdx + 1})` : ""),
+              options: v.options,
+              correctAnswer: v.correctAnswer,
+              explanation: v.explanation,
+              hash: qHash,
+              qualityStatus: "published",
+              isActive: true,
+              questionStatus: "active",
+              version: 1,
+            },
+          })
+          totalQuestions++
 
         // Create QuestionVersion
         const vHash = crypto.createHash("sha256")

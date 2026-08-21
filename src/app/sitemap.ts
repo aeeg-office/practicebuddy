@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://practicebuddy.app"
+  const baseUrl = "https://lumaani.com"
 
   const staticRoutes = [
     { path: "/", priority: 1.0, changeFrequency: "weekly" as const },

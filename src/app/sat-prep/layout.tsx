@@ -31,9 +31,9 @@ const courseSchema = {
   provider: {
     "@type": "Organization",
     name: "Lumaani",
-    url: "https://practicebuddy.app",
+    url: "https://lumaani.com",
   },
-  url: "https://practicebuddy.app/sat-prep",
+  url: "https://lumaani.com/sat-prep",
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

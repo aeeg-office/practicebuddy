@@ -237,10 +237,14 @@ function loadTSQuestions(): AdminQuestion[] {
 
 /* ───────── Load DB questions ───────── */
 
-async function loadDBQuestions(): Promise<AdminQuestion[]> {
+async function loadDBQuestions(tenantId?: string, skip = 0, take = 100): Promise<AdminQuestion[]> {
   try {
+    const where: Record<string, unknown> = { isActive: true }
+    if (tenantId) where.tenantId = tenantId
     const dbQuestions = await prisma.question.findMany({
-      where: { isActive: true },
+      where: where as any,
+      skip,
+      take,
       orderBy: [{ updatedAt: "desc" }, { id: "asc" }],
     })
     return dbQuestions.map((q) => ({
@@ -334,9 +338,10 @@ export async function GET(request: Request) {
     const url = new URL(request.url)
     const { page, limit, skip } = pagination(url.searchParams)
 
-    // Load from TS files and DB
+    // Load from TS files and DB (scoped to admin's tenant)
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
     const tsQuestions = loadTSQuestions()
-    const dbQuestions = await loadDBQuestions()
+    const dbQuestions = await loadDBQuestions(adminUser?.tenantId ?? undefined, skip, limit)
 
     // Merge: DB questions override TS questions with same ID
     const dbIds = new Set(dbQuestions.map((q) => q.id))

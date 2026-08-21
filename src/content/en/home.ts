@@ -50,12 +50,12 @@ export const content = {
   },
   testimonials: {
     title: "Trusted by Institutions",
-    description: "Schools and educational organizations that use Practice Buddy to power their assessment programs.",
+    description: "Schools and educational organizations that use Lumaani to power their assessment programs.",
     items: [
       {
         name: "Institution Partner",
         role: "Education · Cairo",
-        quote: "Practice Buddy transformed how we deliver practice tests. The AI question generation saves us hours of manual work, and our students love the instant feedback.",
+        quote: "Lumaani transformed how we deliver practice tests. The AI question generation saves us hours of manual work, and our students love the instant feedback.",
         rating: 5,
       },
       {
@@ -67,22 +67,22 @@ export const content = {
       {
         name: "Independent Educators",
         role: "Tutors & Small Schools",
-        quote: "I use Practice Buddy with all my students. The skills practice and analytics help me identify exactly where each student needs more work. It's like having a teaching assistant.",
+        quote: "I use Lumaani with all my students. The skills practice and analytics help me identify exactly where each student needs more work. It's like having a teaching assistant.",
         rating: 5,
       },
     ],
   },
   faqs: [
     {
-      question: "What is Practice Buddy?",
-      answer: "Practice Buddy is a multi-tenant, AI-powered practice platform designed for schools, institutions, and educational organizations. It provides gold-certified question banks, mock exams, skills practice, and detailed analytics — all in one integrated platform.",
+      question: "What is Lumaani?",
+      answer: "Lumaani is a multi-tenant, AI-powered practice platform designed for schools, institutions, and educational organizations. It provides gold-certified question banks, mock exams, skills practice, and detailed analytics — all in one integrated platform.",
     },
     {
       question: "How does the AI Question Factory work?",
       answer: "Our AI generates practice questions based on your curriculum standards and difficulty preferences. Each question is gold-certified (reviewed and validated) before being published. Questions are auto-tagged by skill, subject, and difficulty level.",
     },
     {
-      question: "Is Practice Buddy multi-tenant?",
+      question: "Is Lumaani multi-tenant?",
       answer: "Yes! Each institution gets its own isolated portal with custom branding, separate data, and independent user management. Admins manage their own students, teachers, and content — all from a single unified dashboard.",
     },
     {
@@ -96,7 +96,7 @@ export const content = {
   ],
   cta: {
     title: "Ready to power your practice program?",
-    description: "Schedule a demo and see how Practice Buddy can transform assessment delivery at your institution.",
+    description: "Schedule a demo and see how Lumaani can transform assessment delivery at your institution.",
     buttons: {
       primary: "Request a Demo",
       secondary: "Contact Sales",

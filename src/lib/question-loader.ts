@@ -1,5 +1,5 @@
 /**
- * Practice Buddy question-loader
+ * Lumaani question loader
  *
  * Database-backed question loading for the practice system.
  * Subjects: math, reading, writing, science

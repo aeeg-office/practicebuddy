@@ -1,5 +1,5 @@
 /**
- * Practice Buddy skill definitions
+ * Lumaani skill definitions
  *
  * Maps subjects → domains → skills for the practice system.
  * Primary subjects: math, reading, writing, science

@@ -11,7 +11,7 @@ export const content = {
   features: {
     badge: "SAT Practice Features",
     title: "Prepare Your Way",
-    description: "Practice Buddy offers two complementary modes for SAT preparation — skill practice for learning and test simulation for assessment.",
+    description: "Lumaani offers two complementary modes for SAT preparation — skill practice for learning and test simulation for assessment.",
     items: [
       {
         title: "Skill Practice",
@@ -81,8 +81,8 @@ export const content = {
       a: "Skill Practice is learning-oriented — you get two attempts, hints, strategy support, and explanations. Test Simulation is assessment-oriented — one scored response per question, no feedback during the module, and post-test analysis after completion.",
     },
     {
-      q: "Is Practice Buddy affiliated with College Board?",
-      a: "No. Practice Buddy is an independent educational platform. Our SAT content follows the official skill taxonomy but uses original practice questions. We do not reproduce College Board's proprietary test materials, scoring algorithms, or protected interface designs.",
+      q: "Is Lumaani affiliated with College Board?",
+      a: "No. Lumaani is an independent educational platform. Our SAT content follows the official skill taxonomy but uses original practice questions. We do not reproduce College Board's proprietary test materials, scoring algorithms, or protected interface designs.",
     },
     {
       q: "Can I use a calculator during SAT Math practice?",

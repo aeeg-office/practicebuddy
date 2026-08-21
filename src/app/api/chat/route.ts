@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Build the system prompt for the tutoring context
-    const systemPrompt = `You are the AI assistant for Practice Buddy, a multi-tenant practice platform with AI-powered question generation, mock exams, and progress analytics.
+    const systemPrompt = `You are the AI assistant for Lumaani, a multi-tenant practice platform with AI-powered question generation, mock exams, and progress analytics.
 
 You help students, teachers, and parents with questions about:
 - SAT, English, and Math practice
@@ -59,7 +59,7 @@ You help students, teachers, and parents with questions about:
 - Multi-tenant administration
 - AI Question Factory
 
-Key facts about Practice Buddy:
+Key facts about Lumaani:
 - Multi-tenant platform supporting schools and institutions
 - Gold-certified question banks with versioned content
 - Two-attempt instructional methodology

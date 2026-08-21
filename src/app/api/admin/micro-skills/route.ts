@@ -34,9 +34,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "skillId, code, and name are required" }, { status: 400 })
     }
 
+    // Look up the admin's tenantId
+    const admin = await prisma.user.findUnique({
+      where: { id: identity.userId },
+      select: { tenantId: true },
+    })
+    if (!admin) {
+      return NextResponse.json({ error: "Admin not found" }, { status: 404 })
+    }
+
     const microSkill = await prisma.microSkill.create({
       data: {
-        tenantId: identity.userId,
+        tenantId: admin.tenantId,
         skillId: String(data.skillId),
         code: String(data.code),
         name: String(data.name),

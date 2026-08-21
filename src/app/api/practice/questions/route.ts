@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server"
+import * as jwt from "jsonwebtoken"
 import { VALID_SUBJECTS } from "@/data/practice-skills"
 import type { SubjectKey } from "@/lib/question-loader"
 import { getQuestions } from "@/lib/question-loader"
+import { getJwtSecret } from "@/lib/auth-server"
 
 /**
  * GET /api/practice/questions
@@ -13,9 +15,22 @@ import { getQuestions } from "@/lib/question-loader"
  *   limit      — max results, default 10 (optional)
  *
  * Returns questions from the database, mapped to a consistent response format.
+ * Auth: Requires JWT Bearer token (fixes PARTIAL — was missing auth).
  */
 export async function GET(request: Request) {
   try {
+    // Authenticate — require valid JWT
+    const authHeader = request.headers.get("authorization")
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 })
+    }
+    const token = authHeader.split(" ")[1]
+    try {
+      jwt.verify(token, getJwtSecret())
+    } catch {
+      return NextResponse.json({ error: "Invalid token" }, { status: 401 })
+    }
+
     const { searchParams } = new URL(request.url)
     const rawSubject = searchParams.get("subject")
     const skill = searchParams.get("skill") ?? undefined

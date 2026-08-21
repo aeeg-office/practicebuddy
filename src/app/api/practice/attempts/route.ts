@@ -96,7 +96,7 @@ export async function POST(request: Request) {
     // Get the user's tenant and question's skillId
     const user = await prisma.user.findUnique({ where: { id: payload.userId }, select: { tenantId: true } })
     const questionDb = await prisma.question.findUnique({ where: { id: questionId }, select: { skillId: true } })
-    const snapshotHash = crypto.createHash('sha256').update(`${payload.userId}:${questionId}:${answer}:${Date.now()}`).digest('hex')
+    const snapshotHash = crypto.createHash('sha256').update(`${payload.userId}:${questionId}:${answer}`).digest('hex')
 
     // 4️⃣ Save attempt to the StudentAttempt table (immutable, append-only)
     await prisma.studentAttempt.create({

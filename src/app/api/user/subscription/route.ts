@@ -1,17 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as jwt from "jsonwebtoken";
 import prisma from "@/lib/prisma";
+import { getJwtSecret } from "@/lib/auth-server";
 
 /**
  * GET /api/user/subscription?userId=xxx
  * Get the current subscription details for a user.
+ * Requires authentication. Users can only view their own subscription.
  */
 export async function GET(request: NextRequest) {
   try {
+    const authHeader = request.headers.get("authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+
+    let payload: { userId: string; role: string };
+    try {
+      payload = jwt.verify(authHeader.split(" ")[1], getJwtSecret()) as { userId: string; role: string };
+    } catch {
+      return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get("userId");
 
     if (!userId) {
       return NextResponse.json({ error: "userId query parameter is required" }, { status: 400 });
+    }
+
+    // Enforce access control: users can only see their own subscription.
+    const isAdmin = payload.role === "admin" || payload.role === "school_admin";
+    if (payload.userId !== userId && !isAdmin) {
+      return NextResponse.json({ error: "Not authorized" }, { status: 403 });
     }
 
     // Find the most recent active subscription for this user
@@ -57,14 +78,33 @@ export async function GET(request: NextRequest) {
  * POST /api/user/subscription
  * Create or change a user's subscription plan.
  * Body: { userId, planName }
+ * Requires authentication. Users can only change their own subscription.
  */
 export async function POST(request: NextRequest) {
   try {
+    const authHeader = request.headers.get("authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+
+    let payload: { userId: string; role: string };
+    try {
+      payload = jwt.verify(authHeader.split(" ")[1], getJwtSecret()) as { userId: string; role: string };
+    } catch {
+      return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+    }
+
     const body = await request.json();
     const { userId, planName } = body as { userId: string; planName: string };
 
     if (!userId || !planName) {
       return NextResponse.json({ error: "userId and planName are required" }, { status: 400 });
+    }
+
+    // Enforce access control: users can only change their own subscription.
+    const isAdmin = payload.role === "admin" || payload.role === "school_admin";
+    if (payload.userId !== userId && !isAdmin) {
+      return NextResponse.json({ error: "Not authorized" }, { status: 403 });
     }
 
     const plan = await prisma.subscriptionPlan.findUnique({ where: { name: planName } });

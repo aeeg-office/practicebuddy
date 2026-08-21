@@ -68,6 +68,9 @@ export default function SkillPracticePage() {
   const [saving, setSaving] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const { token, isAuthenticated } = useAuth()
+  // Two-attempt state (fixes PARTIAL — practice flow now offers retry)
+  const [attemptNumber, setAttemptNumber] = useState(1)
+  const [attemptFeedback, setAttemptFeedback] = useState<{ correct: boolean; showCorrectAnswer: boolean } | null>(null)
 
   useEffect(() => {
     setIsLoggedIn(isAuthenticated)
@@ -267,17 +270,34 @@ export default function SkillPracticePage() {
 
   const handleAnswer = (idx: number) => {
     if (answered) return
-    const newResults = [...results, { qIdx: currentQ, correct: parsedOptions[idx]?.id === correctOptionId, selected: idx }]
-    setSelectedAnswer(idx)
-    setAnswered(true)
-    setResults(newResults)
-    // Persist session state so a page refresh doesn't lose progress
-    saveSessionState({
-      currentQuestion: currentQ,
-      answers: newResults,
-      startedAt: startTime,
-      questions: questions.map((q) => ({ id: q.id })),
-    })
+    const isCorrect = parsedOptions[idx]?.id === correctOptionId
+    if (attemptNumber === 1 && !isCorrect) {
+      // Attempt 1 incorrect — store feedback but allow retry (don't reveal answer yet)
+      setSelectedAnswer(idx)
+      setAnswered(true)
+      setAttemptFeedback({ correct: false, showCorrectAnswer: false })
+    } else if (attemptNumber === 2 || isCorrect) {
+      // Attempt 1 correct OR Attempt 2 — final feedback with correct answer
+      const newResults = [...results, { qIdx: currentQ, correct: isCorrect, selected: idx }]
+      setSelectedAnswer(idx)
+      setAnswered(true)
+      setAttemptFeedback({ correct: isCorrect, showCorrectAnswer: true })
+      setResults(newResults)
+      // Persist session state
+      saveSessionState({
+        currentQuestion: currentQ,
+        answers: newResults,
+        startedAt: startTime,
+        questions: questions.map((q) => ({ id: q.id })),
+      })
+    }
+  }
+
+  const handleRetry = () => {
+    setSelectedAnswer(null)
+    setAnswered(false)
+    setAttemptNumber(2)
+    setAttemptFeedback(null)
   }
 
   const handleNext = () => {
@@ -285,6 +305,8 @@ export default function SkillPracticePage() {
       setCurrentQ(currentQ + 1)
       setSelectedAnswer(null)
       setAnswered(false)
+      setAttemptNumber(1)
+      setAttemptFeedback(null)
     } else {
       setSessionComplete(true)
     }
@@ -520,28 +542,45 @@ export default function SkillPracticePage() {
       </Card>
 
       {/* Explanation (shown after answering) */}
-      {answered && (
-        <Card className="border border-border/50 shadow-sm mb-6 bg-gradient-to-r from-[#1a237e]/5 to-transparent">
+      {answered && attemptFeedback && (
+        <Card className={`border shadow-sm mb-6 bg-gradient-to-r from-transparent ${
+          attemptFeedback.correct
+            ? "border-emerald-500/30 to-emerald-50/50"
+            : attemptFeedback.showCorrectAnswer
+            ? "border-red-500/30 to-red-50/50"
+            : "border-amber-500/30 to-amber-50/50"
+        }`}>
           <CardContent className="p-6">
             <div className="flex items-start gap-3">
-              {selectedAnswer !== null && parsedOptions[selectedAnswer]?.id === correctOptionId ? (
+              {attemptFeedback.correct ? (
                 <CheckCircle className="h-6 w-6 text-emerald-500 shrink-0 mt-0.5" />
-              ) : (
+              ) : attemptFeedback.showCorrectAnswer ? (
                 <XCircle className="h-6 w-6 text-red-500 shrink-0 mt-0.5" />
+              ) : (
+                <HelpCircle className="h-6 w-6 text-amber-500 shrink-0 mt-0.5" />
               )}
               <div>
-                <p className="font-semibold text-foreground mb-1">
-                  {selectedAnswer !== null && parsedOptions[selectedAnswer]?.id === correctOptionId ? "Correct!" : "Incorrect"}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  The correct answer is <strong>{correctOptionId}</strong>: {correctOption?.text ?? ""}
-                </p>
-                {question.explanation ? (
-                  <p className="text-sm text-muted-foreground mt-2">{question.explanation}</p>
+                {attemptFeedback.showCorrectAnswer ? (
+                  <>
+                    <p className="font-semibold text-foreground mb-1">
+                      {attemptFeedback.correct ? "Correct!" : "Incorrect"}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      The correct answer is <strong>{correctOptionId}</strong>: {correctOption?.text ?? ""}
+                    </p>
+                    {question.explanation ? (
+                      <p className="text-sm text-muted-foreground mt-2">{question.explanation}</p>
+                    ) : (
+                      <p className="text-sm text-muted-foreground mt-2">
+                        This question tests your understanding of <strong>{skillName}</strong>. Practice more questions in this skill area to improve your mastery level.
+                      </p>
+                    )}
+                  </>
                 ) : (
-                  <p className="text-sm text-muted-foreground mt-2">
-                    This question tests your understanding of <strong>{skillName}</strong>. Practice more questions in this skill area to improve your mastery level.
-                  </p>
+                  <>
+                    <p className="font-semibold text-amber-800 mb-1">Not quite. Take another look.</p>
+                    <p className="text-sm text-amber-700">Review your answer and try again. You have one more attempt.</p>
+                  </>
                 )}
               </div>
             </div>
@@ -549,18 +588,23 @@ export default function SkillPracticePage() {
         </Card>
       )}
 
-      {/* Next button */}
+      {/* Next button / Retry button */}
       <div className="flex justify-between items-center">
         <p className="text-sm text-muted-foreground">
           {results.filter((r) => r.correct).length} / {results.length} correct
         </p>
-        {answered && (
+        {answered && attemptFeedback?.showCorrectAnswer && (
           <Button onClick={handleNext} variant="default" size="lg" className="bg-[#1a237e] hover:bg-[#3a1a9c] font-semibold shadow-md">
             {currentQ < questions.length - 1 ? (
               <>Next Question <ArrowRight className="ml-2 h-4 w-4" /></>
             ) : (
               <>View Results <Award className="ml-2 h-4 w-4" /></>
             )}
+          </Button>
+        )}
+        {answered && attemptNumber === 1 && !attemptFeedback?.showCorrectAnswer && (
+          <Button onClick={handleRetry} variant="accent" size="lg" className="font-semibold shadow-md">
+            <RotateCcw className="mr-2 h-4 w-4" /> Try Again
           </Button>
         )}
       </div>

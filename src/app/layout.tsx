@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        <meta name="theme-color" content="#1a237e" />
+        <meta name="theme-color" content="#0d4f4f" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />

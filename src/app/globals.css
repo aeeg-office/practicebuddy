@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #f6f6f6;
+  --color-background: #f4f6f9;
   --color-foreground: #1a1a2e;
   --color-surface: #ffffff;
   --color-elevated: #fafafa;
-  --color-border: #e5e7eb;
-  --color-input: #e5e7eb;
+  --color-border: #e2e6ed;
+  --color-input: #e2e6ed;
 
-  /* Lumaani brand — deep navy + gold */
-  --color-primary: #1a237e;
-  --color-primary-hover: #151b64;
-  --color-primary-active: #101450;
+  /* Lumaani brand — Deep Teal + Warm Gold ("Luminous" palette) */
+  --color-primary: #0d4f4f;
+  --color-primary-hover: #0a3d3d;
+  --color-primary-active: #072e2e;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #0d2137;
-  --color-secondary-hover: #0a1a2c;
+  --color-secondary: #1a3a4a;
+  --color-secondary-hover: #142e3a;
   --color-secondary-foreground: #ffffff;
 
-  --color-accent: #f5a623;
-  --color-accent-hover: #d4921e;
+  --color-accent: #e8b84b;
+  --color-accent-hover: #d4a43c;
   --color-accent-foreground: #1a1a2e;
 
   --color-muted: #9ca3af;

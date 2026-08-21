@@ -19,6 +19,7 @@ export default function Header() {
       { label: t("nav.home"), href: "/" },
       { label: t("nav.practice"), href: "/practice" },
       { label: t("nav.sat"), href: "/sat-prep" },
+      { label: t("nav.map"), href: "/map-prep" },
       { label: t("nav.subjects"), href: "/subjects" },
     ],
     [t],

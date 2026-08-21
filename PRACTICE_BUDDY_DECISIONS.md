@@ -116,3 +116,17 @@ DATE | DECISION | REQUESTED BY | REASON | PREVIOUS BEHAVIOR | NEW BEHAVIOR | AFF
 | **New Behavior** | 7 state files: PROJECT_STATE, DEFECT_LEDGER, ACTIVE_WORKSTREAMS, TEST_STATE, DEPLOYMENT_STATE, CHANGELOG, DECISIONS |
 | **Affected Modules** | All — operational workflow |
 | **Migration Implications** | Files to be committed after initial Git setup |
+
+### DEC-009: Brand Replacement Gate for Phase 22
+
+| Field | Value |
+|-------|-------|
+| **Date** | 2026-08-21 |
+| **Decision** | Public brand name change is a formal gate before Phase 22 production deployment |
+| **Requested By** | Brand research project |
+| **Reason** | Practice Buddy scored 51/100 — generic, juvenile for SAT, Arabic transliteration issues, .com unavailable. Brand research complete with 15 scored alternatives. Owner must select before production. |
+| **Previous Behavior** | No brand gate defined |
+| **New Behavior** | Phase 22 deployment blocked until: (1) Owner selects new brand from final pool, (2) Professional trademark search, (3) Logo/wordmark design, (4) Surface-level rename applied |
+| **Affected Modules** | Branding, Deployment, Marketing |
+| **Migration Implications** | See BRAND_RESEARCH/PRACTICE_BUDDY_BRAND_RESEARCH.md §9 Engineering Impact Assessment |
+| **⚠️ Correction (2026-08-21)** | Re-running the conflict check on the REAL finalists (placeholders were used in the original subagent run) found live conflicts the draft missed: Ascenda = active funded fintech (not squatted), Erudia = erudia.io active AI-learning platform, Siraj = Qatar Foundation edutainment, Veridia = crowded. **Recommended winner revised to LUMAANI (80/100, lumaani.com AVAILABLE).** See SHORTLIST.md REVISED. |

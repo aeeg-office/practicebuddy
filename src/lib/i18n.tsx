@@ -53,6 +53,7 @@ const translations: Record<Language, Record<string, string>> = {
     /* Navigation */
     "nav.home": "Home",
     "nav.sat": "SAT Prep",
+    "nav.map": "MAP Test Prep",
     "nav.subjects": "English & Math",
     "nav.practice": "Practice",
     "nav.login": "Login",
@@ -137,6 +138,7 @@ const translations: Record<Language, Record<string, string>> = {
     /* Navigation */
     "nav.home": "الرئيسية",
     "nav.sat": "SAT",
+    "nav.map": "MAP",
     "nav.subjects": "الإنجليزية والرياضيات",
     "nav.practice": "التدريب",
     "nav.login": "تسجيل الدخول",

@@ -35,6 +35,7 @@
 3. ✅ UI snapshot across 30+ pages
 4. ✅ Identified AEEG contamination in navigation, footer, routes, content, data, i18n
 5. 🔄 Forensic audit in progress (delegate)
+6. ✅ **Comprehensive brand naming research** — 100+ candidate pool → 15 finalists scored (0-100), Domain WHOIS checks, competitive landscape, MENA cultural/linguistic analysis, trademark screening. Recommendation: REPLACE Practice Buddy with **Lumaani** (80/100, lumaani.com AVAILABLE) or **Najhat** (68/100, najhat.com AVAILABLE). *(Corrected 2026-08-21: live conflict check on real finalists demoted Ascenda/Erudia — Ascenda is an active fintech, Erudia an active AI-learning platform. See BRAND_RESEARCH/PRACTICE_BUDDY_BRAND_SHORTLIST.md REVISED.)* See BRAND_RESEARCH/ for full deliverables.
 
 ### Next: Phase 1 — AEEG Decoupling
 

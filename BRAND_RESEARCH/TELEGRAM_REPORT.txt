@@ -1,0 +1,28 @@
+PRACTICE BUDDY — BRAND RESEARCH COMPLETE
+
+Existing Name: Practice Buddy — REPLACE (51/100)
+Generic/descriptive, juvenile for SAT, Arabic transliteration issues (P→B = "Biraktis Badi"), .com unavailable, MusicNotes "Practice Buddy Music" app dominates search.
+
+Top 5 (conflict-screened, LIVE):
+1. Lumaani — 80/100 — .com AVAILABLE NOW — clean trademark screen
+2. Najhat — 68/100 — .com AVAILABLE — distinguish from Najahi/Najih apps
+3. Nurical — 60/100 — .com AVAILABLE — light+knowledge, region-clean
+4. Ascenda — 55/100 (corrected ▼) — .com registered — ACTIVE fintech brand, conflict risk
+5. Erudia — 50/100 (corrected ▼) — .com registered — erudia.io is an ACTIVE AI learning platform
+
+Corrected verdict: Earlier draft recommended Ascenda/Erudia based on a placeholder-name conflict check. Re-running on the REAL finalists found real conflicts (Ascenda = funded fintech; Erudia = active AI-learning site; Siraj = Qatar Foundation edutainment; Veridia = crowded). Honest clean winner is:
+
+RECOMMENDED: Lumaani (80/100)
+Domain: lumaani.com — AVAILABLE NOW (WHOIS-confirmed 2026-08-21)
+Why: Arabic-root "لوم/نور" (light/luminous) resonates in MENA; single invented-sounding word, 2 syllables, no competing brand found, no negative Arabic meaning. Warm + credible — fills the "friendly AND exam-trusted" gap. Renders لوماني cleanly.
+
+Best Alternative: Najhat (68/100)
+Domain: najhat.com — AVAILABLE
+Why: Arabic "successes" — instant MENA parent understanding. Caution: distinguish from existing Najahi/Najih e-learning apps in app-store listings.
+
+Full pool: 15 researched finalists in BRAND_RESEARCH/PRACTICE_BUDDY_BRAND_SHORTLIST.md (REVISED)
+Full research: BRAND_RESEARCH/PRACTICE_BUDDY_BRAND_RESEARCH.md (45.6 KB, correction banner added)
+
+No domain has been purchased. Owner decision REQUIRED before Phase 22 public-brand deployment.
+
+Next: Select brand → professional trademark search → logo → domain registration (owner approval) → rename → Phase 22 gate

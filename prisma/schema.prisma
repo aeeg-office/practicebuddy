@@ -36,6 +36,7 @@ model Tenant {
   teachers            Teacher[]
   userSkillMasteries  UserSkillMastery[]
   users               User[]
+  ritBands            RITBand[]
 
   @@map("tenants")
 }
@@ -175,6 +176,7 @@ model Skill {
   grade                                               Grade              @relation(fields: [gradeId], references: [id])
   studentAttempts                                     StudentAttempt[]
   skillMasteries                                      UserSkillMastery[]
+  ritSkillMappings                                    RITSkillMapping[]
 
   @@unique([gradeId, code])
   @@map("skills")
@@ -339,6 +341,7 @@ model MicroSkill {
   student_attempts_student_attempts_micro_skill_idTomicro_skills         StudentAttempt[]   @relation("student_attempts_micro_skill_idTomicro_skills")
   skillMasteries                                                         UserSkillMastery[]
   user_skill_masteries_user_skill_masteries_micro_skill_idTomicro_skills UserSkillMastery[] @relation("user_skill_masteries_micro_skill_idTomicro_skills")
+  ritSkillMappings                                                       RITSkillMapping[]
 
   @@unique([tenantId, skillId, code])
   @@index([tenantId, skillId])
@@ -768,6 +771,40 @@ model Payment {
   @@index([status])
   @@index([userId, status])
   @@map("payments")
+}
+
+model RITBand {
+  id          String   @id @default(cuid())
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  code        String   // e.g. "rit-151-160", "rit-161-170"
+  label       String   // e.g. "151-160"
+  minScore    Int
+  maxScore    Int
+  subject     String   // "math" | "reading" | "language-usage" | "science"
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  skillMappings RITSkillMapping[]
+
+  @@unique([tenantId, code])
+  @@map("rit_bands")
+}
+
+model RITSkillMapping {
+  id          String   @id @default(cuid())
+  ritBandId   String
+  ritBand     RITBand  @relation(fields: [ritBandId], references: [id], onDelete: Cascade)
+  microSkillId String
+  microSkill  MicroSkill @relation(fields: [microSkillId], references: [id], onDelete: Cascade)
+  skillId     String
+  skill       Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  programId   String   // "map-math" | "map-reading" | "map-language-usage"
+  createdAt   DateTime @default(now())
+
+  @@unique([ritBandId, microSkillId])
+  @@index([programId, ritBandId])
+  @@map("rit_skill_mappings")
 }
 
 model AdminAuditEvent {

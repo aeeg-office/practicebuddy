@@ -67,7 +67,7 @@ export default function WritingPage() {
       {/* HERO                                     */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(71,32,183)] via-[rgb(60,25,160)] to-[rgb(30,39,97)] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(60,25,160)] to-[rgb(13,33,55)] p-8 md:p-12">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
             <div className="absolute -bottom-24 -left-24 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
@@ -92,8 +92,8 @@ export default function WritingPage() {
       {/* SUBJECT SELECTOR                         */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <h2 className="text-lg font-bold text-[rgb(30,39,97)] mb-4 flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-[rgb(71,32,183)]" />
+        <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
+          <BookOpen className="h-5 w-5 text-[rgb(26,35,126)]" />
           Select Exam Type
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -103,14 +103,14 @@ export default function WritingPage() {
               onClick={() => setSelectedSubject(subject.key)}
               className={`relative overflow-hidden rounded-xl border-2 p-4 text-left transition-all duration-300 ${
                 selectedSubject === subject.key
-                  ? "border-[rgb(71,32,183)] bg-[rgb(71,32,183)]/5 shadow-md"
-                  : "border-gray-200 bg-white hover:border-[rgb(71,32,183)]/30 hover:shadow-sm"
+                  ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5 shadow-md"
+                  : "border-gray-200 bg-white hover:border-[rgb(26,35,126)]/30 hover:shadow-sm"
               }`}
             >
               <div className="text-2xl mb-2">{subject.icon}</div>
               <h3
                 className={`text-sm font-bold ${
-                  selectedSubject === subject.key ? "text-[rgb(71,32,183)]" : "text-[rgb(30,39,97)]"
+                  selectedSubject === subject.key ? "text-[rgb(26,35,126)]" : "text-[rgb(13,33,55)]"
                 }`}
               >
                 {subject.label}
@@ -127,8 +127,8 @@ export default function WritingPage() {
       <div className="grid md:grid-cols-2 gap-6">
         {/* Task Type */}
         <div>
-          <h2 className="text-lg font-bold text-[rgb(30,39,97)] mb-4 flex items-center gap-2">
-            <FileText className="h-5 w-5 text-[rgb(71,32,183)]" />
+          <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
+            <FileText className="h-5 w-5 text-[rgb(26,35,126)]" />
             Task Type
           </h2>
           <div className="space-y-2">
@@ -138,14 +138,14 @@ export default function WritingPage() {
                 onClick={() => setSelectedTask(task.key)}
                 className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all duration-200 ${
                   selectedTask === task.key
-                    ? "border-[rgb(71,32,183)] bg-[rgb(71,32,183)]/5"
+                    ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
                 <div
                   className={`flex h-9 w-9 items-center justify-center rounded-lg text-sm font-bold ${
                     selectedTask === task.key
-                      ? "bg-[rgb(71,32,183)] text-white"
+                      ? "bg-[rgb(26,35,126)] text-white"
                       : "bg-gray-100 text-gray-600"
                   }`}
                 >
@@ -154,7 +154,7 @@ export default function WritingPage() {
                 <div>
                   <p
                     className={`text-sm font-semibold ${
-                      selectedTask === task.key ? "text-[rgb(71,32,183)]" : "text-gray-800"
+                      selectedTask === task.key ? "text-[rgb(26,35,126)]" : "text-gray-800"
                     }`}
                   >
                     {task.label}
@@ -168,7 +168,7 @@ export default function WritingPage() {
 
         {/* Timer Options + Quick Info */}
         <div>
-          <h2 className="text-lg font-bold text-[rgb(30,39,97)] mb-4 flex items-center gap-2">
+          <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
             <Clock className="h-5 w-5 text-[rgb(245,166,35)]" />
             Time Limit
           </h2>
@@ -179,7 +179,7 @@ export default function WritingPage() {
                 onClick={() => setSelectedTimer(opt.value)}
                 className={`flex items-center justify-center gap-2 p-3 rounded-xl border-2 text-sm font-semibold transition-all duration-200 ${
                   selectedTimer === opt.value
-                    ? "border-[rgb(245,166,35)] bg-[rgb(245,166,35)]/10 text-[rgb(30,39,97)]"
+                    ? "border-[rgb(245,166,35)] bg-[rgb(245,166,35)]/10 text-[rgb(13,33,55)]"
                     : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
                 }`}
               >
@@ -194,11 +194,11 @@ export default function WritingPage() {
             <Card className="border-gray-200 bg-white">
               <CardContent className="p-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[rgb(71,32,183)]/10 text-lg shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[rgb(26,35,126)]/10 text-lg shrink-0">
                     {selectedSubjectData.icon}
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-[rgb(30,39,97)]">{selectedSubjectData.label}</p>
+                    <p className="text-sm font-bold text-[rgb(13,33,55)]">{selectedSubjectData.label}</p>
                     <p className="text-xs text-gray-500 mt-0.5">
                       {selectedSubjectData.description} — {selectedTimer} min, {selectedTask} format
                     </p>
@@ -217,7 +217,7 @@ export default function WritingPage() {
         <Link href={`/writing/${selectedTask}?subject=${selectedSubject}&timer=${selectedTimer}`}>
           <Button
             size="xl"
-            className="w-full md:w-auto font-bold text-base gap-2 shadow-lg shadow-[rgb(71,32,183)]/20"
+            className="w-full md:w-auto font-bold text-base gap-2 shadow-lg shadow-[rgb(26,35,126)]/20"
           >
             <Edit className="h-5 w-5" />
             Start Writing
@@ -233,7 +233,7 @@ export default function WritingPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="border-gray-200 bg-white">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(30,39,97)]">
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
                 <Sparkles className="h-4 w-4 text-[rgb(245,166,35)]" />
                 Writing Tips
               </CardTitle>
@@ -252,18 +252,18 @@ export default function WritingPage() {
 
           <Card className="border-gray-200 bg-white">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(30,39,97)]">
-                <HelpCircle className="h-4 w-4 text-[rgb(71,32,183)]" />
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
+                <HelpCircle className="h-4 w-4 text-[rgb(26,35,126)]" />
                 What to Expect
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-start gap-3 p-3 rounded-lg bg-gray-50">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(71,32,183)]/10 shrink-0">
-                  <Pen className="h-4 w-4 text-[rgb(71,32,183)]" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(26,35,126)]/10 shrink-0">
+                  <Pen className="h-4 w-4 text-[rgb(26,35,126)]" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-[rgb(30,39,97)]">AI-Powered Feedback</p>
+                  <p className="text-sm font-semibold text-[rgb(13,33,55)]">AI-Powered Feedback</p>
                   <p className="text-xs text-gray-500">Get instant analysis of structure, grammar, vocabulary, and coherence</p>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function WritingPage() {
                   <Timer className="h-4 w-4 text-[rgb(245,166,35)]" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-[rgb(30,39,97)]">Timed Practice</p>
+                  <p className="text-sm font-semibold text-[rgb(13,33,55)]">Timed Practice</p>
                   <p className="text-xs text-gray-500">Simulate real test conditions with countdown and auto-submit</p>
                 </div>
               </div>
@@ -281,7 +281,7 @@ export default function WritingPage() {
                   <FileText className="h-4 w-4 text-emerald-600" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-[rgb(30,39,97)]">Score Report</p>
+                  <p className="text-sm font-semibold text-[rgb(13,33,55)]">Score Report</p>
                   <p className="text-xs text-gray-500">Detailed breakdown by criteria with band scores and suggestions</p>
                 </div>
               </div>
@@ -294,7 +294,7 @@ export default function WritingPage() {
       {/* WHATSAPP CTA                              */}
       {/* ════════════════════════════════════════ */}
       <section className="pb-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(30,39,97)] to-[rgb(71,32,183)] p-8 md:p-10 text-center shadow-xl">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(13,33,55)] to-[rgb(26,35,126)] p-8 md:p-10 text-center shadow-xl">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-white/5 blur-3xl" />

@@ -38,9 +38,9 @@ function getTimeStatus(remaining: number, total: number): {
   }
   return {
     color: "green",
-    barColor: "bg-[rgb(71,32,183)]",
+    barColor: "bg-[rgb(26,35,126)]",
     bgClass: "bg-white border-gray-200",
-    textClass: "text-[rgb(30,39,97)]",
+    textClass: "text-[rgb(13,33,55)]",
   }
 }
 
@@ -96,7 +96,7 @@ export default function Timer({ timeLimit, onTimeUp, paused = false }: TimerProp
           className={cn("h-4 w-4 transition-colors duration-500", {
             "text-red-500": status.color === "red",
             "text-yellow-500": status.color === "yellow",
-            "text-[rgb(71,32,183)]": status.color === "green",
+            "text-[rgb(26,35,126)]": status.color === "green",
           })}
         />
         <span

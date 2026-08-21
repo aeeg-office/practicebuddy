@@ -164,11 +164,11 @@ export default function ListeningAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(71,32,183)]/10">
-            <Headphones className="h-5 w-5 text-[rgb(71,32,183)]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(26,35,126)]/10">
+            <Headphones className="h-5 w-5 text-[rgb(26,35,126)]" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-[rgb(30,39,97)]">Listening Assessment</h1>
+            <h1 className="text-lg font-bold text-[rgb(13,33,55)]">Listening Assessment</h1>
             <p className="text-xs text-gray-500">
               {subjectLabel[subject] || subject} &middot; {sectionLabel[section] || section} &middot;{" "}
               {difficultyLabel[difficulty] || difficulty}
@@ -192,18 +192,18 @@ export default function ListeningAssessmentPage() {
       <Card className="border-gray-200 overflow-hidden">
         <div
           className={`p-6 md:p-8 text-center transition-all duration-500 ${
-            audioStarted ? "bg-gradient-to-b from-[rgb(71,32,183)]/5 to-transparent" : "bg-gray-50"
+            audioStarted ? "bg-gradient-to-b from-[rgb(26,35,126)]/5 to-transparent" : "bg-gray-50"
           }`}
         >
           {!audioStarted ? (
             <div className="space-y-4">
               <div className="flex justify-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[rgb(71,32,183)]/10 animate-pulse">
-                  <Headphones className="h-10 w-10 text-[rgb(71,32,183)]" />
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[rgb(26,35,126)]/10 animate-pulse">
+                  <Headphones className="h-10 w-10 text-[rgb(26,35,126)]" />
                 </div>
               </div>
               <div>
-                <p className="text-base font-bold text-[rgb(30,39,97)]">Audio Track Ready</p>
+                <p className="text-base font-bold text-[rgb(13,33,55)]">Audio Track Ready</p>
                 <p className="text-sm text-gray-500 mt-1">
                   Audio track would play here — click play to begin
                 </p>
@@ -224,7 +224,7 @@ export default function ListeningAssessmentPage() {
                 {Array.from({ length: 40 }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-1.5 rounded-full bg-[rgb(71,32,183)] transition-all duration-300"
+                    className="w-1.5 rounded-full bg-[rgb(26,35,126)] transition-all duration-300"
                     style={{
                       height: `${20 + Math.sin((i + audioProgress / 2) * 0.3) * 20 + Math.random() * 10}px`,
                       opacity: i < audioProgress * 0.4 ? 1 : 0.2,
@@ -236,7 +236,7 @@ export default function ListeningAssessmentPage() {
               {/* Progress bar */}
               <div className="w-full max-w-md mx-auto h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-[rgb(71,32,183)] to-[rgb(245,166,35)] transition-all duration-300"
+                  className="h-full rounded-full bg-gradient-to-r from-[rgb(26,35,126)] to-[rgb(245,166,35)] transition-all duration-300"
                   style={{ width: `${audioProgress}%` }}
                 />
               </div>
@@ -253,8 +253,8 @@ export default function ListeningAssessmentPage() {
       {/* QUESTIONS                                */}
       {/* ════════════════════════════════════════ */}
       <div className="space-y-4">
-        <h2 className="text-lg font-bold text-[rgb(30,39,97)] flex items-center gap-2">
-          <Volume2 className="h-5 w-5 text-[rgb(71,32,183)]" />
+        <h2 className="text-lg font-bold text-[rgb(13,33,55)] flex items-center gap-2">
+          <Volume2 className="h-5 w-5 text-[rgb(26,35,126)]" />
           Answer the Questions
         </h2>
 
@@ -274,7 +274,7 @@ export default function ListeningAssessmentPage() {
               }`}
             >
               <CardContent className="p-5">
-                <p className="text-sm font-semibold text-[rgb(30,39,97)] mb-3">
+                <p className="text-sm font-semibold text-[rgb(13,33,55)] mb-3">
                   {q.id}. {q.question}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-2">
@@ -294,7 +294,7 @@ export default function ListeningAssessmentPage() {
                             : submitted && isThisWrong
                             ? "border-red-300 bg-red-50 text-red-700"
                             : isSelected && !submitted
-                            ? "border-[rgb(71,32,183)] bg-[rgb(71,32,183)]/5 text-[rgb(30,39,97)]"
+                            ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5 text-[rgb(13,33,55)]"
                             : "border-gray-200 hover:border-gray-300 text-gray-700 bg-white"
                         }`}
                       >
@@ -305,7 +305,7 @@ export default function ListeningAssessmentPage() {
                           <XCircle className="h-4 w-4 text-red-500 shrink-0" />
                         )}
                         {!submitted && isSelected && (
-                          <CheckCircle className="h-4 w-4 text-[rgb(71,32,183)] shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-[rgb(26,35,126)] shrink-0" />
                         )}
                         <span>{opt}</span>
                       </button>
@@ -336,7 +336,7 @@ export default function ListeningAssessmentPage() {
       ) : (
         <div className="space-y-4">
           {/* Score card */}
-          <Card className="bg-gradient-to-r from-[rgb(71,32,183)]/5 to-[rgb(30,39,97)]/5 border-[rgb(71,32,183)]/20">
+          <Card className="bg-gradient-to-r from-[rgb(26,35,126)]/5 to-[rgb(13,33,55)]/5 border-[rgb(26,35,126)]/20">
             <CardContent className="p-6 text-center">
               <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Your Score</p>
               <p className={`text-4xl font-extrabold ${scoreColor}`}>

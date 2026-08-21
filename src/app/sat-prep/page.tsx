@@ -61,7 +61,7 @@ export default function SatPrepPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#4720b7] via-[#3a1a9a] to-[#1e2761]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a237e] via-[#3a1a9a] to-[#1e2761]">
         {/* Decorative orbs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
@@ -152,10 +152,10 @@ export default function SatPrepPage() {
               return (
                 <Card
                   key={item.title}
-                  className="group border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#4720b7]/20"
+                  className="group border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#1a237e]/20"
                 >
                   <CardContent className="p-8">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#4720b7]/10 text-[#4720b7] transition-colors group-hover:bg-[#4720b7] group-hover:text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1a237e]/10 text-[#1a237e] transition-colors group-hover:bg-[#1a237e] group-hover:text-white">
                       <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="mt-6 text-lg font-semibold text-[#1e2761]">{item.title}</h3>
@@ -191,14 +191,14 @@ export default function SatPrepPage() {
                   key={program.id}
                   className={`relative flex flex-col rounded-2xl bg-card transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
                     program.popular
-                      ? "border-2 border-[#4720b7] shadow-lg"
+                      ? "border-2 border-[#1a237e] shadow-lg"
                       : "border border-border/60 shadow-sm"
                   }`}
                 >
                   {/* Popular badge */}
                   {program.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#4720b7] px-5 py-1.5 text-xs font-semibold text-white shadow-md">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a237e] px-5 py-1.5 text-xs font-semibold text-white shadow-md">
                         <Sparkles className="h-3.5 w-3.5" />
                         MOST POPULAR
                       </span>
@@ -211,7 +211,7 @@ export default function SatPrepPage() {
                       className={`flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg ${
                         program.popular
                           ? "bg-gradient-to-br from-[#f5a623] to-[#d48e1c]"
-                          : "bg-gradient-to-br from-[#4720b7] to-[#3a1a9a]"
+                          : "bg-gradient-to-br from-[#1a237e] to-[#3a1a9a]"
                       } text-white`}
                     >
                       <Icon className="h-8 w-8" />
@@ -223,7 +223,7 @@ export default function SatPrepPage() {
                   {/* Pricing */}
                   <div className="border-t border-border/60 px-8 py-6">
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-3xl font-bold text-[#4720b7]">{program.price}</span>
+                      <span className="text-3xl font-bold text-[#1a237e]">{program.price}</span>
                       <span className="text-muted-foreground">{program.period}</span>
                     </div>
 
@@ -231,7 +231,7 @@ export default function SatPrepPage() {
                     <ul className="mt-6 space-y-3">
                       {program.features.map((feature: string) => (
                         <li key={feature} className="flex items-start gap-3 text-sm text-muted-foreground">
-                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#4720b7]" />
+                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#1a237e]" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -243,7 +243,7 @@ export default function SatPrepPage() {
                         <Button
                           variant={program.popular ? "default" : "outline"}
                           className={`w-full font-semibold ${
-                            program.popular ? "" : "border-[#4720b7]/30 text-[#4720b7] hover:bg-[#4720b7] hover:text-white"
+                            program.popular ? "" : "border-[#1a237e]/30 text-[#1a237e] hover:bg-[#1a237e] hover:text-white"
                           }`}
                         >
                           {program.cta}
@@ -285,7 +285,7 @@ export default function SatPrepPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-gradient-to-r from-[#4720b7] to-[#1e2761]">
+                  <tr className="bg-gradient-to-r from-[#1a237e] to-[#1e2761]">
                     <th className="px-6 py-4 text-sm font-semibold text-white">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4" />
@@ -304,13 +304,13 @@ export default function SatPrepPage() {
                   {satTestDates.map((row: any, index: number) => (
                     <tr
                       key={row.date}
-                      className={`border-b border-border/60 transition-colors hover:bg-[#4720b7]/5 ${
+                      className={`border-b border-border/60 transition-colors hover:bg-[#1a237e]/5 ${
                         index % 2 === 0 ? "bg-card" : "bg-muted/20"
                       }`}
                     >
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#4720b7]/10 text-[#4720b7]">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a237e]/10 text-[#1a237e]">
                             <Clock className="h-5 w-5" />
                           </div>
                           <span className="font-medium text-foreground">{row.date}</span>
@@ -354,7 +354,7 @@ export default function SatPrepPage() {
                 key={index}
                 className={`rounded-2xl border bg-card shadow-sm transition-all duration-200 ${
                   openFaq === index
-                    ? "border-[#4720b7]/30 shadow-md"
+                    ? "border-[#1a237e]/30 shadow-md"
                     : "border-border/60"
                 }`}
               >
@@ -365,7 +365,7 @@ export default function SatPrepPage() {
                   <span className="text-base font-semibold text-[#1e2761]">{faq.question}</span>
                   <ChevronDown
                     className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-                      openFaq === index ? "rotate-180 text-[#4720b7]" : ""
+                      openFaq === index ? "rotate-180 text-[#1a237e]" : ""
                     }`}
                   />
                 </button>
@@ -385,7 +385,7 @@ export default function SatPrepPage() {
       </section>
 
       {/* ==================== CTA SECTION ==================== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#4720b7] via-[#3a1a9a] to-[#1e2761]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a237e] via-[#3a1a9a] to-[#1e2761]">
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-white/5 blur-3xl" />

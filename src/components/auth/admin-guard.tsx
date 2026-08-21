@@ -24,7 +24,7 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#f6f6f6]">
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-10 w-10 animate-spin text-[rgb(71,32,183)]" />
+          <Loader2 className="h-10 w-10 animate-spin text-[rgb(26,35,126)]" />
           <p className="text-sm text-muted-foreground">Verifying access...</p>
         </div>
       </div>

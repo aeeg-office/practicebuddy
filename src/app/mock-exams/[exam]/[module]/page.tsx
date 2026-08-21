@@ -340,7 +340,7 @@ export default function MockExamPage() {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-5">
           <AlertTriangle className="h-8 w-8 text-red-500" />
         </div>
-        <h1 className="text-2xl font-bold text-[rgb(30,39,97)] mb-3">Exam Not Found</h1>
+        <h1 className="text-2xl font-bold text-[rgb(13,33,55)] mb-3">Exam Not Found</h1>
         <p className="text-gray-500 mb-6">
           The mock exam or section you&apos;re looking for doesn&apos;t exist.
         </p>
@@ -376,10 +376,10 @@ export default function MockExamPage() {
         <div className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-40">
           <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
             <Link href="/mock-exams" className="flex items-center gap-2.5 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(71,32,183)] text-white text-xs font-bold transition-transform group-hover:scale-105">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(26,35,126)] text-white text-xs font-bold transition-transform group-hover:scale-105">
                 A
               </div>
-              <span className="text-sm font-bold text-[rgb(71,32,183)]">Mock Exam</span>
+              <span className="text-sm font-bold text-[rgb(26,35,126)]">Mock Exam</span>
             </Link>
             {step !== "results" && (
               <div className="flex items-center gap-2 text-xs text-gray-500">
@@ -388,7 +388,7 @@ export default function MockExamPage() {
                     <div
                       className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold transition-all duration-300 ${
                         stepNumber === s
-                          ? "bg-[rgb(71,32,183)] text-white shadow-sm shadow-[rgb(71,32,183)]/30 scale-110"
+                          ? "bg-[rgb(26,35,126)] text-white shadow-sm shadow-[rgb(26,35,126)]/30 scale-110"
                           : stepNumber > s
                             ? "bg-emerald-500 text-white shadow-sm shadow-emerald-300"
                             : "bg-gray-100 text-gray-400"
@@ -422,10 +422,10 @@ export default function MockExamPage() {
       {step === "info" && (
         <div className="max-w-2xl mx-auto px-6 py-16">
           <div className="text-center mb-10">
-            <Badge className="mb-5 px-4 py-1.5 text-xs tracking-wider uppercase bg-[rgb(71,32,183)] text-white">
+            <Badge className="mb-5 px-4 py-1.5 text-xs tracking-wider uppercase bg-[rgb(26,35,126)] text-white">
               {exam.name} — {sectionName}
             </Badge>
-            <h1 className="text-3xl md:text-4xl font-bold text-[rgb(30,39,97)] mb-3 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] mb-3 tracking-tight">
               Student Information
             </h1>
             <p className="text-gray-500 text-base">
@@ -436,7 +436,7 @@ export default function MockExamPage() {
           <Card className="border-gray-200/60 shadow-sm">
             <CardContent className="p-7 space-y-5">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-semibold text-[rgb(30,39,97)] block">
+                <label htmlFor="name" className="text-sm font-semibold text-[rgb(13,33,55)] block">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -453,7 +453,7 @@ export default function MockExamPage() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-semibold text-[rgb(30,39,97)] block">
+                <label htmlFor="email" className="text-sm font-semibold text-[rgb(13,33,55)] block">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -471,7 +471,7 @@ export default function MockExamPage() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-semibold text-[rgb(30,39,97)] block">
+                <label htmlFor="phone" className="text-sm font-semibold text-[rgb(13,33,55)] block">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -488,7 +488,7 @@ export default function MockExamPage() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="grade" className="text-sm font-semibold text-[rgb(30,39,97)] block">
+                <label htmlFor="grade" className="text-sm font-semibold text-[rgb(13,33,55)] block">
                   Grade / Year <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -512,7 +512,7 @@ export default function MockExamPage() {
                 <ArrowLeft className="h-4 w-4" /> Back
               </Button>
             </Link>
-            <Button onClick={handleInfoSubmit} className="gap-2 shadow-sm shadow-[rgb(71,32,183)]/20">
+            <Button onClick={handleInfoSubmit} className="gap-2 shadow-sm shadow-[rgb(26,35,126)]/20">
               Continue <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
@@ -525,10 +525,10 @@ export default function MockExamPage() {
       {step === "instructions" && (
         <div className="max-w-2xl mx-auto px-6 py-16">
           <div className="text-center mb-10">
-            <Badge className="mb-5 px-4 py-1.5 text-xs tracking-wider uppercase bg-[rgb(71,32,183)] text-white">
+            <Badge className="mb-5 px-4 py-1.5 text-xs tracking-wider uppercase bg-[rgb(26,35,126)] text-white">
               Step 2 of {totalSteps} — Get Ready
             </Badge>
-            <h1 className="text-3xl md:text-4xl font-bold text-[rgb(30,39,97)] mb-3 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] mb-3 tracking-tight">
               Exam Instructions
             </h1>
             <p className="text-gray-500 text-base">
@@ -538,13 +538,13 @@ export default function MockExamPage() {
 
           <Card className="border-gray-200/60 shadow-sm overflow-hidden">
             {/* Header banner */}
-            <div className="bg-gradient-to-r from-[rgb(71,32,183)]/5 to-[rgb(71,32,183)]/10 border-b border-gray-200/40 px-7 py-5">
+            <div className="bg-gradient-to-r from-[rgb(26,35,126)]/5 to-[rgb(26,35,126)]/10 border-b border-gray-200/40 px-7 py-5">
               <div className="flex items-center gap-3">
                 <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${subjectInfo.color === "text-blue-600" ? "bg-blue-100" : subjectInfo.color === "text-emerald-600" ? "bg-emerald-100" : subjectInfo.color === "text-orange-600" ? "bg-orange-100" : "bg-teal-100"} shrink-0`}>
                   <Icon className={`h-5 w-5 ${subjectInfo.color}`} />
                 </div>
                 <div>
-                  <CardTitle className="text-lg text-[rgb(71,32,183)]">
+                  <CardTitle className="text-lg text-[rgb(26,35,126)]">
                     {exam.name}
                   </CardTitle>
                   <CardDescription>{sectionName} Section</CardDescription>
@@ -555,31 +555,31 @@ export default function MockExamPage() {
             <CardContent className="p-7 space-y-6">
               {/* Key info boxes */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="rounded-xl bg-[rgb(71,32,183)]/5 border border-[rgb(71,32,183)]/10 p-5 text-center">
+                <div className="rounded-xl bg-[rgb(26,35,126)]/5 border border-[rgb(26,35,126)]/10 p-5 text-center">
                   <FileText className={`h-6 w-6 ${subjectInfo.color} mx-auto mb-2`} />
-                  <p className="text-2xl font-bold text-[rgb(30,39,97)]">{totalQuestions}</p>
+                  <p className="text-2xl font-bold text-[rgb(13,33,55)]">{totalQuestions}</p>
                   <p className="text-xs text-gray-500">Questions</p>
                 </div>
                 <div className="rounded-xl bg-[rgb(245,166,35)]/10 border border-[rgb(245,166,35)]/20 p-5 text-center">
                   <Clock className="h-6 w-6 text-[rgb(245,166,35)] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[rgb(30,39,97)]">{section.timeLimit}:00</p>
+                  <p className="text-2xl font-bold text-[rgb(13,33,55)]">{section.timeLimit}:00</p>
                   <p className="text-xs text-gray-500">Time Limit</p>
                 </div>
                 <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-5 text-center">
                   <Layers className="h-6 w-6 text-emerald-600 mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[rgb(30,39,97)]">{section.name}</p>
+                  <p className="text-2xl font-bold text-[rgb(13,33,55)]">{section.name}</p>
                   <p className="text-xs text-gray-500">Section</p>
                 </div>
                 <div className="rounded-xl bg-purple-50 border border-purple-200 p-5 text-center">
                   <BarChart3 className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                  <p className="text-sm font-bold text-[rgb(30,39,97)]">{exam.difficulty}</p>
+                  <p className="text-sm font-bold text-[rgb(13,33,55)]">{exam.difficulty}</p>
                   <p className="text-xs text-gray-500">Difficulty</p>
                 </div>
               </div>
 
               {/* Rules */}
               <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-[rgb(30,39,97)] flex items-center gap-2">
+                <h3 className="text-sm font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
                   <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[rgb(245,166,35)]/10 text-[rgb(245,166,35)]">
                     <AlertTriangle className="h-3.5 w-3.5" />
                   </div>
@@ -616,11 +616,11 @@ export default function MockExamPage() {
               {/* Summary */}
               <div className="rounded-xl bg-gray-50 border border-gray-200/70 p-5">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(71,32,183)]/10 text-[rgb(71,32,183)] shrink-0 mt-0.5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(26,35,126)]/10 text-[rgb(26,35,126)] shrink-0 mt-0.5">
                     <Target className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[rgb(30,39,97)] mb-0.5">
+                    <p className="text-sm font-semibold text-[rgb(13,33,55)] mb-0.5">
                       You selected: {exam.name} — {sectionName}
                     </p>
                     <p className="text-xs text-gray-500 leading-relaxed">
@@ -639,7 +639,7 @@ export default function MockExamPage() {
             <Button
               onClick={handleStartExam}
               size="lg"
-              className="gap-2 shadow-sm shadow-[rgb(71,32,183)]/20"
+              className="gap-2 shadow-sm shadow-[rgb(26,35,126)]/20"
             >
               Start Exam <ArrowRight className="h-4 w-4" />
             </Button>
@@ -658,12 +658,12 @@ export default function MockExamPage() {
               {/* Left: Exam name + progress */}
               <div className="flex items-center gap-3 min-w-0">
                 <Link href="/mock-exams" className="flex items-center gap-2 shrink-0">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[rgb(71,32,183)] text-white text-[10px] font-bold">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[rgb(26,35,126)] text-white text-[10px] font-bold">
                     A
                   </div>
                 </Link>
                 <div className="hidden sm:block">
-                  <span className="text-sm font-bold text-[rgb(30,39,97)]">
+                  <span className="text-sm font-bold text-[rgb(13,33,55)]">
                     {exam.name}
                   </span>
                   <span className="text-xs text-gray-500 ml-2">{sectionName}</span>
@@ -823,8 +823,8 @@ export default function MockExamPage() {
           {/* ── CTA Section ── */}
           <div className="mt-10 space-y-5">
             {/* Main CTA */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(71,32,183)] via-[rgb(60,25,160)] to-[rgb(30,39,97)] p-1 shadow-xl">
-              <div className="relative rounded-2xl bg-gradient-to-br from-[rgb(71,32,183)]/95 via-[rgb(60,25,160)/95] to-[rgb(30,39,97)/95] px-8 py-10 md:py-12 md:px-12">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(60,25,160)] to-[rgb(13,33,55)] p-1 shadow-xl">
+              <div className="relative rounded-2xl bg-gradient-to-br from-[rgb(26,35,126)]/95 via-[rgb(60,25,160)/95] to-[rgb(13,33,55)/95] px-8 py-10 md:py-12 md:px-12">
                 <div className="text-center">
                   <Sparkles className="h-8 w-8 text-[rgb(245,166,35)] mx-auto mb-4" />
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
@@ -887,12 +887,12 @@ export default function MockExamPage() {
                   href="https://wa.me/201060618899"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[rgb(71,32,183)] hover:text-[rgb(55,25,150)] font-medium underline underline-offset-2"
+                  className="text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] font-medium underline underline-offset-2"
                 >
                   WhatsApp
                 </a>{" "}
                 or visit our{" "}
-                <Link href="/contact" className="text-[rgb(71,32,183)] hover:text-[rgb(55,25,150)] font-medium underline underline-offset-2">
+                <Link href="/contact" className="text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] font-medium underline underline-offset-2">
                   Contact page
                 </Link>.
               </p>

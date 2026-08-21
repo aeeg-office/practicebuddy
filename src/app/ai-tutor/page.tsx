@@ -40,7 +40,7 @@ interface SubjectOption {
 }
 
 const subjects: SubjectOption[] = [
-  { key: "sat", label: "SAT", icon: "🎯", color: "bg-[#4720b7]/10 text-[#4720b7]" },
+  { key: "sat", label: "SAT", icon: "🎯", color: "bg-[#1a237e]/10 text-[#1a237e]" },
   { key: "act", label: "ACT", icon: "📝", color: "bg-[#1e2761]/10 text-[#1e2761]" },
   { key: "ielts", label: "IELTS", icon: "🌍", color: "bg-emerald-500/10 text-emerald-600" },
   { key: "toefl", label: "TOEFL", icon: "🗽", color: "bg-[#f5a623]/10 text-[#f5a623]" },
@@ -230,7 +230,7 @@ export default function AITutorPage() {
           <div className="relative">
             <button
               onClick={() => setShowSubjectDropdown(!showSubjectDropdown)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold border border-gray-200 hover:border-[#4720b7]/30 transition-colors ${
+              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold border border-gray-200 hover:border-[#1a237e]/30 transition-colors ${
                 currentSubject.color
               }`}
             >
@@ -248,8 +248,8 @@ export default function AITutorPage() {
                     <button
                       key={s.key}
                       onClick={() => handleSubjectChange(s.key)}
-                      className={`flex items-center gap-3 w-full px-4 py-3 text-sm font-medium transition-colors hover:bg-[#4720b7]/5 ${
-                        subject === s.key ? "bg-[#4720b7]/5 text-[#4720b7]" : "text-gray-700"
+                      className={`flex items-center gap-3 w-full px-4 py-3 text-sm font-medium transition-colors hover:bg-[#1a237e]/5 ${
+                        subject === s.key ? "bg-[#1a237e]/5 text-[#1a237e]" : "text-gray-700"
                       }`}
                     >
                       <span>{s.icon}</span>
@@ -267,7 +267,7 @@ export default function AITutorPage() {
           {/* Subject badge */}
           <Badge
             variant="outline"
-            className="text-xs font-medium border-[#4720b7]/20 text-[#4720b7] bg-[#4720b7]/5"
+            className="text-xs font-medium border-[#1a237e]/20 text-[#1a237e] bg-[#1a237e]/5"
           >
             <GraduationCap className="h-3 w-3 mr-1" />
             {currentSubject.label} Practice Buddy
@@ -285,7 +285,7 @@ export default function AITutorPage() {
                 <div
                   className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center text-sm ${
                     msg.sender === "user"
-                      ? "bg-[#4720b7] text-white"
+                      ? "bg-[#1a237e] text-white"
                       : "bg-[#f5a623] text-white"
                   }`}
                 >
@@ -297,7 +297,7 @@ export default function AITutorPage() {
                   <div
                     className={`rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                       msg.sender === "user"
-                        ? "bg-[#4720b7] text-white rounded-tr-md"
+                        ? "bg-[#1a237e] text-white rounded-tr-md"
                         : "bg-white border border-gray-200 text-gray-800 rounded-tl-md shadow-sm"
                     }`}
                   >
@@ -325,7 +325,7 @@ export default function AITutorPage() {
                         <button
                           key={suggestion}
                           onClick={() => handleSuggestionClick(suggestion)}
-                          className="text-xs px-2.5 py-1.5 rounded-full bg-[#4720b7]/5 text-[#4720b7] border border-[#4720b7]/15 hover:bg-[#4720b7]/10 hover:border-[#4720b7]/30 transition-all"
+                          className="text-xs px-2.5 py-1.5 rounded-full bg-[#1a237e]/5 text-[#1a237e] border border-[#1a237e]/15 hover:bg-[#1a237e]/10 hover:border-[#1a237e]/30 transition-all"
                         >
                           {suggestion}
                         </button>
@@ -346,7 +346,7 @@ export default function AITutorPage() {
                 </div>
                 <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-md px-4 py-3 shadow-sm">
                   <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Loader2 className="h-4 w-4 animate-spin text-[#4720b7]" />
+                    <Loader2 className="h-4 w-4 animate-spin text-[#1a237e]" />
                     Thinking...
                   </div>
                 </div>
@@ -368,7 +368,7 @@ export default function AITutorPage() {
                 <button
                   key={preset.label}
                   onClick={() => handlePresetClick(preset.message)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 hover:bg-[#4720b7]/5 hover:border-[#4720b7]/20 hover:text-[#4720b7] transition-all"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 hover:bg-[#1a237e]/5 hover:border-[#1a237e]/20 hover:text-[#1a237e] transition-all"
                   disabled={isLoading}
                 >
                   {preset.icon}
@@ -393,14 +393,14 @@ export default function AITutorPage() {
                 placeholder={`Ask your ${currentSubject.label} tutor anything...`}
                 rows={1}
                 disabled={isLoading}
-                className="w-full resize-none rounded-xl border border-gray-300 bg-white px-4 py-3 pr-12 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4720b7]/30 focus:border-[#4720b7] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="w-full resize-none rounded-xl border border-gray-300 bg-white px-4 py-3 pr-12 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1a237e]/30 focus:border-[#1a237e] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 style={{ minHeight: "44px", maxHeight: "120px" }}
               />
             </div>
             <Button
               onClick={() => handleSend()}
               disabled={isLoading || !input.trim()}
-              className="h-11 w-11 rounded-xl bg-[#4720b7] hover:bg-[#3a1a9c] disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+              className="h-11 w-11 rounded-xl bg-[#1a237e] hover:bg-[#3a1a9c] disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
             >
               {isLoading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -417,7 +417,7 @@ export default function AITutorPage() {
 
       {/* ── WhatsApp CTA (bottom of chat, only after scrolling down) ── */}
       {messages.length >= 6 && (
-        <div className="px-4 md:px-8 py-4 bg-gradient-to-r from-[#1e2761] to-[#4720b7]">
+        <div className="px-4 md:px-8 py-4 bg-gradient-to-r from-[#1e2761] to-[#1a237e]">
           <div className="max-w-4xl mx-auto flex items-center justify-between">
             <div>
               <p className="text-white text-sm font-semibold">Need more personalized help?</p>

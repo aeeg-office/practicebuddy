@@ -166,8 +166,8 @@ export default function SpeakingAssessmentPage() {
       label: "Fluency & Coherence",
       score: "7.0",
       comment: "Good flow with logical progression of ideas. Minor hesitations noted.",
-      color: "text-[rgb(71,32,183)]",
-      bg: "bg-[rgb(71,32,183)]/10",
+      color: "text-[rgb(26,35,126)]",
+      bg: "bg-[rgb(26,35,126)]/10",
     },
     {
       label: "Pronunciation",
@@ -201,11 +201,11 @@ export default function SpeakingAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(71,32,183)]/10">
-            <Mic className="h-5 w-5 text-[rgb(71,32,183)]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(26,35,126)]/10">
+            <Mic className="h-5 w-5 text-[rgb(26,35,126)]" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-[rgb(30,39,97)]">Speaking Assessment</h1>
+            <h1 className="text-lg font-bold text-[rgb(13,33,55)]">Speaking Assessment</h1>
             <p className="text-xs text-gray-500">
               {subjectLabel[subject] || subject} &middot; {taskLabel[task] || task}
             </p>
@@ -238,14 +238,14 @@ export default function SpeakingAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       {/* PROMPT DISPLAY                           */}
       {/* ════════════════════════════════════════ */}
-      <Card className="border-[rgb(71,32,183)]/20 bg-gradient-to-r from-[rgb(71,32,183)]/5 to-transparent">
+      <Card className="border-[rgb(26,35,126)]/20 bg-gradient-to-r from-[rgb(26,35,126)]/5 to-transparent">
         <CardContent className="p-5">
           <div className="flex items-start gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(71,32,183)] text-white text-xs font-bold shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(26,35,126)] text-white text-xs font-bold shrink-0">
               Q
             </div>
             <div>
-              <p className="text-sm font-bold text-[rgb(30,39,97)] mb-1">{promptData.title}</p>
+              <p className="text-sm font-bold text-[rgb(13,33,55)] mb-1">{promptData.title}</p>
               <p className="text-sm text-gray-700 leading-relaxed">{promptData.instructions}</p>
             </div>
           </div>
@@ -263,12 +263,12 @@ export default function SpeakingAssessmentPage() {
           <Card className="border-gray-200">
             <CardContent className="p-8 text-center space-y-4">
               <div className="flex justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[rgb(71,32,183)]/10">
-                  <Mic className="h-12 w-12 text-[rgb(71,32,183)]" />
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[rgb(26,35,126)]/10">
+                  <Mic className="h-12 w-12 text-[rgb(26,35,126)]" />
                 </div>
               </div>
               <div>
-                <h2 className="text-xl font-bold text-[rgb(30,39,97)]">Ready to Record?</h2>
+                <h2 className="text-xl font-bold text-[rgb(13,33,55)]">Ready to Record?</h2>
                 <p className="text-sm text-gray-500 mt-2 max-w-md mx-auto">
                   Recording functionality requires microphone permission. Click the button below
                   to start your preparation countdown.
@@ -333,7 +333,7 @@ export default function SpeakingAssessmentPage() {
                   {prepTimer.minutes > 0 ? `${prepTimer.minutes}:` : ""}
                   {String(prepTimer.seconds).padStart(2, "0")}
                 </p>
-                <p className="text-sm font-semibold text-[rgb(30,39,97)] mt-2">Preparation Time</p>
+                <p className="text-sm font-semibold text-[rgb(13,33,55)] mt-2">Preparation Time</p>
                 <p className="text-xs text-gray-500 mt-1">Plan your response — outline 2-3 key points</p>
               </div>
               {/* Progress ring */}
@@ -438,8 +438,8 @@ export default function SpeakingAssessmentPage() {
           {/* Transcript placeholder */}
           <Card className="border-gray-200">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(30,39,97)]">
-                <BookOpen className="h-4 w-4 text-[rgb(71,32,183)]" />
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
+                <BookOpen className="h-4 w-4 text-[rgb(26,35,126)]" />
                 Transcript
               </CardTitle>
             </CardHeader>
@@ -470,10 +470,10 @@ export default function SpeakingAssessmentPage() {
           ) : (
             <>
               {/* Overall score */}
-              <Card className="border-gray-200 bg-gradient-to-br from-[rgb(71,32,183)]/5 to-[rgb(30,39,97)]/5">
+              <Card className="border-gray-200 bg-gradient-to-br from-[rgb(26,35,126)]/5 to-[rgb(13,33,55)]/5">
                 <CardContent className="p-6 text-center">
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Overall Speaking Score</p>
-                  <p className="text-5xl font-extrabold text-[rgb(30,39,97)]">{overallScore}</p>
+                  <p className="text-5xl font-extrabold text-[rgb(13,33,55)]">{overallScore}</p>
                   <p className="text-sm text-gray-500 mt-1">Estimate &middot; IELTS equivalent</p>
                   <div className="w-full max-w-xs mx-auto mt-4 h-2.5 rounded-full bg-gray-200 overflow-hidden">
                     <div
@@ -490,7 +490,7 @@ export default function SpeakingAssessmentPage() {
                   <Card key={cat.label} className="border-gray-200">
                     <CardContent className="p-5">
                       <div className="flex items-center justify-between mb-2">
-                        <p className="text-sm font-bold text-[rgb(30,39,97)]">{cat.label}</p>
+                        <p className="text-sm font-bold text-[rgb(13,33,55)]">{cat.label}</p>
                         <Badge className={`${cat.bg} ${cat.color} border-0`}>{cat.score}</Badge>
                       </div>
                       <p className="text-xs text-gray-600 leading-relaxed">{cat.comment}</p>
@@ -502,7 +502,7 @@ export default function SpeakingAssessmentPage() {
               {/* Improvement suggestions */}
               <Card className="border-gray-200 bg-gradient-to-r from-[rgb(245,166,35)]/5 to-transparent">
                 <CardContent className="p-5">
-                  <h3 className="text-sm font-bold text-[rgb(30,39,97)] mb-3 flex items-center gap-2">
+                  <h3 className="text-sm font-bold text-[rgb(13,33,55)] mb-3 flex items-center gap-2">
                     <Sparkles className="h-4 w-4 text-[rgb(245,166,35)]" />
                     Suggested Improvements
                   </h3>
@@ -534,7 +534,7 @@ export default function SpeakingAssessmentPage() {
             <div className="flex items-center gap-3">
               <Avatar fallback="AEEG" size="sm" />
               <div>
-                <p className="text-sm font-semibold text-[rgb(30,39,97)]">Instructor Review Available</p>
+                <p className="text-sm font-semibold text-[rgb(13,33,55)]">Instructor Review Available</p>
                 <p className="text-xs text-gray-500">Responses can be reviewed by AEEG instructors for detailed feedback</p>
               </div>
             </div>

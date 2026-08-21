@@ -24,7 +24,7 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="border-t bg-[rgb(30,39,97)] text-white">
+    <footer className="border-t bg-[rgb(13,33,55)] text-white">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}

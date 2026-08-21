@@ -54,7 +54,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
             P
           </div>
           <div>
-            <div className="text-sm font-bold leading-tight text-[#4720b7]">Practice</div>
+            <div className="text-sm font-bold leading-tight text-[#1a237e]">Practice</div>
             <div className="text-[10px] leading-tight text-muted-foreground">Skill Platform</div>
           </div>
         </Link>
@@ -72,13 +72,13 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
                 href={link.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-[#4720b7]/10 text-[#4720b7] shadow-sm"
+                    ? "bg-[#1a237e]/10 text-[#1a237e] shadow-sm"
                     : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                 }`}
               >
-                <link.icon className={`h-5 w-5 shrink-0 ${isActive ? "text-[#4720b7]" : ""}`} />
+                <link.icon className={`h-5 w-5 shrink-0 ${isActive ? "text-[#1a237e]" : ""}`} />
                 {link.label}
-                {isActive && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#4720b7]" />}
+                {isActive && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#1a237e]" />}
               </Link>
             )
           })}
@@ -87,14 +87,14 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
         {/* Bottom section — Progress + Support */}
         <div className="px-3 pb-4 space-y-3 border-t border-border pt-4">
           {/* Progress mini-card */}
-          <div className="px-3 py-3 rounded-lg bg-gradient-to-r from-[#4720b7]/5 to-[#1e2761]/5">
+          <div className="px-3 py-3 rounded-lg bg-gradient-to-r from-[#1a237e]/5 to-[#1e2761]/5">
             <div className="flex items-center justify-between text-xs mb-2">
               <span className="font-semibold text-foreground">Mastery Progress</span>
-              <span className="font-bold text-[#4720b7]">{masteredSkills}/{totalSkills}</span>
+              <span className="font-bold text-[#1a237e]">{masteredSkills}/{totalSkills}</span>
             </div>
             <div className="w-full h-1.5 rounded-full bg-muted/60 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-[#4720b7] to-[#f5a623]"
+                className="h-full rounded-full bg-gradient-to-r from-[#1a237e] to-[#f5a623]"
                 style={{ width: `${progressPct}%` }}
               />
             </div>
@@ -142,7 +142,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
 
             {/* Breadcrumbs */}
             <nav className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-[#4720b7] transition-colors">
+              <Link href="/" className="hover:text-[#1a237e] transition-colors">
                 <Home className="h-4 w-4" />
               </Link>
               {breadcrumbs.map((crumb, i) => (
@@ -153,7 +153,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
                   ) : (
                     <Link
                       href={crumb.href}
-                      className="hover:text-[#4720b7] transition-colors"
+                      className="hover:text-[#1a237e] transition-colors"
                     >
                       {crumb.label}
                     </Link>
@@ -168,7 +168,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
             <div className="hidden sm:flex items-center gap-2">
               <div className="w-24 h-2 rounded-full bg-muted/60 overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-[#4720b7] to-[#f5a623]"
+                  className="h-full rounded-full bg-gradient-to-r from-[#1a237e] to-[#f5a623]"
                   style={{ width: `${progressPct}%` }}
                 />
               </div>

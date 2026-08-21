@@ -31,7 +31,7 @@ function getQuestionState(
 function stateStyles(state: QuestionState): string {
   switch (state) {
     case "current":
-      return "bg-[rgb(71,32,183)] text-white ring-2 ring-[rgb(71,32,183)] ring-offset-1"
+      return "bg-[rgb(26,35,126)] text-white ring-2 ring-[rgb(26,35,126)] ring-offset-1"
     case "answered":
       return "bg-green-500 text-white hover:bg-green-600"
     case "flagged":
@@ -69,7 +69,7 @@ export default function QuestionPalette({
       <CardHeader className={cn("pb-3", compact && "px-4 py-3")}>
         <CardTitle
           className={cn(
-            "font-semibold text-[rgb(30,39,97)]",
+            "font-semibold text-[rgb(13,33,55)]",
             compact ? "text-xs" : "text-sm",
           )}
         >

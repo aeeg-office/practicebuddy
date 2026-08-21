@@ -105,7 +105,7 @@ export default function MockExamsPage() {
     <div className="max-w-7xl mx-auto px-6 py-8 space-y-10">
       {/* ── Hero Section ── */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(71,32,183)] via-[rgb(60,25,160)] to-[rgb(30,39,97)] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(60,25,160)] to-[rgb(13,33,55)] p-8 md:p-12">
           {/* Decorative elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
@@ -164,7 +164,7 @@ export default function MockExamsPage() {
                   <subject.Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-[rgb(30,39,97)]">{subject.title}</h2>
+                  <h2 className="text-xl font-bold text-[rgb(13,33,55)]">{subject.title}</h2>
                   <p className="text-xs text-gray-500">{subject.description}</p>
                 </div>
               </div>
@@ -177,12 +177,12 @@ export default function MockExamsPage() {
               {exams.map((exam) => (
                 <Card
                   key={exam.id}
-                  className="group border-gray-200/70 hover:border-[rgb(71,32,183)]/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
+                  className="group border-gray-200/70 hover:border-[rgb(26,35,126)]/30 hover:shadow-lg transition-all duration-300 overflow-hidden"
                 >
                   <CardContent className="p-6 space-y-4">
                     {/* Top: Exam name + difficulty */}
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-base font-bold text-[rgb(30,39,97)] leading-tight group-hover:text-[rgb(71,32,183)] transition-colors">
+                      <h3 className="text-base font-bold text-[rgb(13,33,55)] leading-tight group-hover:text-[rgb(26,35,126)] transition-colors">
                         {exam.name}
                       </h3>
                       <Badge
@@ -203,7 +203,7 @@ export default function MockExamsPage() {
                     {/* Stats row */}
                     <div className="flex items-center gap-4 text-xs text-gray-500">
                       <div className="flex items-center gap-1">
-                        <Clock className="h-3.5 w-3.5 text-[rgb(71,32,183)]" />
+                        <Clock className="h-3.5 w-3.5 text-[rgb(26,35,126)]" />
                         <span>{formatDuration(exam.duration)}</span>
                       </div>
                       <div className="flex items-center gap-1">
@@ -262,7 +262,7 @@ export default function MockExamsPage() {
 
       {/* ── WhatsApp CTA ── */}
       <section className="text-center py-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(30,39,97)] to-[rgb(71,32,183)] p-8 shadow-xl">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(13,33,55)] to-[rgb(26,35,126)] p-8 shadow-xl">
           <div className="relative">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Need Help With Your Prep?

@@ -97,8 +97,8 @@ export default function QuestionPreview({ question, open, onClose, meta }: Quest
         </button>
 
         <div className="mb-6 flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#4720b7]/10">
-            <Eye className="h-4 w-4 text-[#4720b7]" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1a237e]/10">
+            <Eye className="h-4 w-4 text-[#1a237e]" />
           </div>
           <div>
             <h2 className="text-lg font-bold text-foreground leading-tight">Preview as Student</h2>
@@ -129,7 +129,7 @@ export default function QuestionPreview({ question, open, onClose, meta }: Quest
                 {options.map((option, idx) => {
                   const isCorrectOption = option.id === correctOptionId
                   const isSelected = idx === selectedIdx
-                  let borderClass = "border-border/60 hover:border-[#4720b7]/30 hover:bg-[#4720b7]/5"
+                  let borderClass = "border-border/60 hover:border-[#1a237e]/30 hover:bg-[#1a237e]/5"
                   if (answered) {
                     if (isCorrectOption) {
                       borderClass = "border-emerald-500 bg-emerald-50"
@@ -139,7 +139,7 @@ export default function QuestionPreview({ question, open, onClose, meta }: Quest
                       borderClass = "border-border/30 opacity-60"
                     }
                   } else if (isSelected) {
-                    borderClass = "border-[#4720b7] bg-[#4720b7]/5"
+                    borderClass = "border-[#1a237e] bg-[#1a237e]/5"
                   }
 
                   return (
@@ -181,7 +181,7 @@ export default function QuestionPreview({ question, open, onClose, meta }: Quest
 
         {/* Explanation (shown after answering) */}
         {answered && (
-          <Card className="border border-border/50 shadow-sm mb-6 bg-gradient-to-r from-[#4720b7]/5 to-transparent">
+          <Card className="border border-border/50 shadow-sm mb-6 bg-gradient-to-r from-[#1a237e]/5 to-transparent">
             <CardContent className="p-6">
               <div className="flex items-start gap-3">
                 {isCorrect ? (
@@ -218,7 +218,7 @@ export default function QuestionPreview({ question, open, onClose, meta }: Quest
 
         {/* Close */}
         <div className="flex justify-end">
-          <Button variant="default" onClick={onClose} className="bg-[#4720b7] hover:bg-[#3a1a9c]">
+          <Button variant="default" onClick={onClose} className="bg-[#1a237e] hover:bg-[#3a1a9c]">
             Close Preview
           </Button>
         </div>

@@ -97,7 +97,7 @@ export default function ListeningPage() {
       {/* HERO                                     */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(71,32,183)] via-[rgb(60,25,160)] to-[rgb(30,39,97)] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(60,25,160)] to-[rgb(13,33,55)] p-8 md:p-12">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
             <div className="absolute -bottom-24 -left-24 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
@@ -122,8 +122,8 @@ export default function ListeningPage() {
       {/* SUBJECT SELECTOR                         */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <h2 className="text-lg font-bold text-[rgb(30,39,97)] mb-4 flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-[rgb(71,32,183)]" />
+        <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
+          <BookOpen className="h-5 w-5 text-[rgb(26,35,126)]" />
           Select Exam Type
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
@@ -133,14 +133,14 @@ export default function ListeningPage() {
               onClick={() => setSelectedSubject(subject.key)}
               className={`relative overflow-hidden rounded-xl border-2 p-4 text-left transition-all duration-300 ${
                 selectedSubject === subject.key
-                  ? "border-[rgb(71,32,183)] bg-[rgb(71,32,183)]/5 shadow-md"
-                  : "border-gray-200 bg-white hover:border-[rgb(71,32,183)]/30 hover:shadow-sm"
+                  ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5 shadow-md"
+                  : "border-gray-200 bg-white hover:border-[rgb(26,35,126)]/30 hover:shadow-sm"
               }`}
             >
               <div className="text-2xl mb-2">{subject.icon}</div>
               <h3
                 className={`text-sm font-bold ${
-                  selectedSubject === subject.key ? "text-[rgb(71,32,183)]" : "text-[rgb(30,39,97)]"
+                  selectedSubject === subject.key ? "text-[rgb(26,35,126)]" : "text-[rgb(13,33,55)]"
                 }`}
               >
                 {subject.label}
@@ -157,8 +157,8 @@ export default function ListeningPage() {
       <div className="grid md:grid-cols-2 gap-6">
         {/* Section selector */}
         <div>
-          <h2 className="text-lg font-bold text-[rgb(30,39,97)] mb-4 flex items-center gap-2">
-            <Layers className="h-5 w-5 text-[rgb(71,32,183)]" />
+          <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
+            <Layers className="h-5 w-5 text-[rgb(26,35,126)]" />
             Section Type
           </h2>
           <div className="space-y-2">
@@ -168,14 +168,14 @@ export default function ListeningPage() {
                 onClick={() => setSelectedSection(section.key)}
                 className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all duration-200 ${
                   selectedSection === section.key
-                    ? "border-[rgb(71,32,183)] bg-[rgb(71,32,183)]/5"
+                    ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
                 <div
                   className={`flex h-9 w-9 items-center justify-center rounded-lg text-sm font-bold ${
                     selectedSection === section.key
-                      ? "bg-[rgb(71,32,183)] text-white"
+                      ? "bg-[rgb(26,35,126)] text-white"
                       : "bg-gray-100 text-gray-600"
                   }`}
                 >
@@ -184,7 +184,7 @@ export default function ListeningPage() {
                 <div>
                   <p
                     className={`text-sm font-semibold ${
-                      selectedSection === section.key ? "text-[rgb(71,32,183)]" : "text-gray-800"
+                      selectedSection === section.key ? "text-[rgb(26,35,126)]" : "text-gray-800"
                     }`}
                   >
                     {section.label}
@@ -198,7 +198,7 @@ export default function ListeningPage() {
 
         {/* Difficulty selector */}
         <div>
-          <h2 className="text-lg font-bold text-[rgb(30,39,97)] mb-4 flex items-center gap-2">
+          <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
             <Clock className="h-5 w-5 text-[rgb(245,166,35)]" />
             Difficulty
           </h2>
@@ -249,7 +249,7 @@ export default function ListeningPage() {
               <Link href={`/listening/${selectedSubject}/${selectedSection}/${selectedDifficulty}`}>
                 <Button
                   size="xl"
-                  className="w-full font-bold text-base gap-2 shadow-lg shadow-[rgb(71,32,183)]/20"
+                  className="w-full font-bold text-base gap-2 shadow-lg shadow-[rgb(26,35,126)]/20"
                 >
                   <Headphones className="h-5 w-5" />
                   Start Listening
@@ -262,13 +262,13 @@ export default function ListeningPage() {
           {/* Mock Questions Preview */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-sm font-bold text-[rgb(30,39,97)] flex items-center gap-2">
-                <HelpCircle className="h-4 w-4 text-[rgb(71,32,183)]" />
+              <h3 className="text-sm font-bold text-[rgb(13,33,55)] flex items-center gap-2">
+                <HelpCircle className="h-4 w-4 text-[rgb(26,35,126)]" />
                 Sample Questions
               </h3>
               <button
                 onClick={() => setShowQuestions(!showQuestions)}
-                className="text-xs text-[rgb(71,32,183)] font-medium hover:underline"
+                className="text-xs text-[rgb(26,35,126)] font-medium hover:underline"
               >
                 {showQuestions ? "Hide" : "Show"}
               </button>
@@ -278,7 +278,7 @@ export default function ListeningPage() {
                 {mockQuestions.map((q) => (
                   <Card key={q.id} className="border-gray-200 bg-white">
                     <CardContent className="p-3">
-                      <p className="text-sm font-medium text-[rgb(30,39,97)] mb-2">
+                      <p className="text-sm font-medium text-[rgb(13,33,55)] mb-2">
                         {q.id}. {q.question}
                       </p>
                       <div className="grid grid-cols-2 gap-1.5">
@@ -306,7 +306,7 @@ export default function ListeningPage() {
       <section>
         <Card className="border-gray-200 bg-white">
           <CardHeader>
-            <CardTitle className="text-base flex items-center gap-2 text-[rgb(30,39,97)]">
+            <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
               <Sparkles className="h-4 w-4 text-[rgb(245,166,35)]" />
               Listening Tips
             </CardTitle>
@@ -335,7 +335,7 @@ export default function ListeningPage() {
       {/* WHATSAPP CTA                              */}
       {/* ════════════════════════════════════════ */}
       <section className="pb-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(30,39,97)] to-[rgb(71,32,183)] p-8 md:p-10 text-center shadow-xl">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(13,33,55)] to-[rgb(26,35,126)] p-8 md:p-10 text-center shadow-xl">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-white/5 blur-3xl" />

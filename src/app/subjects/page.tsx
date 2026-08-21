@@ -57,11 +57,11 @@ function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: b
     <div className="border border-border rounded-xl overflow-hidden transition-all duration-200 bg-white">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between px-6 py-5 text-left font-medium text-[rgb(30,39,97)] hover:bg-muted/20 transition-colors gap-4"
+        className="flex w-full items-center justify-between px-6 py-5 text-left font-medium text-[rgb(13,33,55)] hover:bg-muted/20 transition-colors gap-4"
       >
         <span className="text-sm md:text-base leading-snug">{q}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-[rgb(71,32,183)] transition-transform duration-300 ${
+          className={`h-5 w-5 shrink-0 text-[rgb(26,35,126)] transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -116,12 +116,12 @@ export default function SubjectsPage() {
       {/* ════════════════════════════════════════ */}
       {/* HERO SECTION                            */}
       {/* ════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[rgb(71,32,183)] via-[rgb(50,26,140)] to-[rgb(30,39,97)]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(50,26,140)] to-[rgb(13,33,55)]">
         {/* Decorative orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[rgb(245,166,35)]/8 blur-3xl" />
           <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] rounded-full bg-[rgb(71,32,183)]/40 blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] rounded-full bg-[rgb(26,35,126)]/40 blur-3xl" />
         </div>
 
         {/* Grid pattern overlay */}
@@ -197,7 +197,7 @@ export default function SubjectsPage() {
               <Badge variant="secondary" className="mb-3 text-xs px-3 py-1">
                 {c.english?.badge}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(30,39,97)] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
                 {c.english?.title}
               </h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
@@ -206,7 +206,7 @@ export default function SubjectsPage() {
             </div>
             <Link
               href="/take-diagnostic"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(71,32,183)] hover:text-[rgb(55,25,150)] transition-colors group"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] transition-colors group"
             >
               {c.english?.linkText}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -222,10 +222,10 @@ export default function SubjectsPage() {
                   className="border border-border/60 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 bg-white"
                 >
                   <CardHeader className="pb-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(71,32,183)]/10 group-hover:bg-[rgb(71,32,183)]/20 transition-colors mb-2">
-                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(71,32,183)]" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(26,35,126)]/10 group-hover:bg-[rgb(26,35,126)]/20 transition-colors mb-2">
+                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(26,35,126)]" />
                     </div>
-                    <CardTitle className="text-base text-[rgb(30,39,97)]">{topic.title}</CardTitle>
+                    <CardTitle className="text-base text-[rgb(13,33,55)]">{topic.title}</CardTitle>
                     <CardDescription className="mt-1 text-xs leading-relaxed">{topic.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -255,7 +255,7 @@ export default function SubjectsPage() {
               <Badge variant="secondary" className="mb-3 text-xs px-3 py-1">
                 {c.math?.badge}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(30,39,97)] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
                 {c.math?.title}
               </h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
@@ -264,7 +264,7 @@ export default function SubjectsPage() {
             </div>
             <Link
               href="/take-diagnostic"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(71,32,183)] hover:text-[rgb(55,25,150)] transition-colors group"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] transition-colors group"
             >
               {c.math?.linkText}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -280,10 +280,10 @@ export default function SubjectsPage() {
                   className="border border-border/60 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 bg-white"
                 >
                   <CardHeader className="pb-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(30,39,97)]/10 group-hover:bg-[rgb(30,39,97)]/20 transition-colors mb-2">
-                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(30,39,97)]" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(13,33,55)]/10 group-hover:bg-[rgb(13,33,55)]/20 transition-colors mb-2">
+                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(13,33,55)]" />
                     </div>
-                    <CardTitle className="text-base text-[rgb(30,39,97)]">{topic.title}</CardTitle>
+                    <CardTitle className="text-base text-[rgb(13,33,55)]">{topic.title}</CardTitle>
                     <CardDescription className="mt-1 text-xs leading-relaxed">{topic.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -302,7 +302,7 @@ export default function SubjectsPage() {
           </div>
 
           {/* CTA banner within math section */}
-          <div className="mt-12 rounded-2xl bg-gradient-to-r from-[rgb(71,32,183)] to-[rgb(30,39,97)] p-8 md:p-10 text-center relative overflow-hidden">
+          <div className="mt-12 rounded-2xl bg-gradient-to-r from-[rgb(26,35,126)] to-[rgb(13,33,55)] p-8 md:p-10 text-center relative overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
               <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-white/5 blur-3xl" />
@@ -335,7 +335,7 @@ export default function SubjectsPage() {
             <Badge variant="default" className="mb-3 text-xs px-3 py-1">
               {c.formats?.badge}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(30,39,97)] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
               {c.formats?.title}
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -363,11 +363,11 @@ export default function SubjectsPage() {
                     </div>
                   )}
                   <CardHeader className={`pb-3 ${format.badge === "Most Popular" ? "pt-8" : "pt-7"}`}>
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgb(71,32,183)]/10 mb-3">
-                      <FormatIcon className="h-7 w-7 text-[rgb(71,32,183)]" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgb(26,35,126)]/10 mb-3">
+                      <FormatIcon className="h-7 w-7 text-[rgb(26,35,126)]" />
                     </div>
                     <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg text-[rgb(30,39,97)]">{format.title}</CardTitle>
+                      <CardTitle className="text-lg text-[rgb(13,33,55)]">{format.title}</CardTitle>
                       {format.badge !== "Most Popular" && (
                         <Badge variant={badgeVariant} className="text-[10px] px-2 py-0">
                           {format.badge}
@@ -410,7 +410,7 @@ export default function SubjectsPage() {
             <Badge variant="secondary" className="mb-3 text-xs px-3 py-1">
               {c.faqs?.badge}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(30,39,97)] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
               {c.faqs?.title}
             </h2>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
@@ -441,7 +441,7 @@ export default function SubjectsPage() {
       {/* ════════════════════════════════════════ */}
       {/* FINAL CTA — WhatsApp                    */}
       {/* ════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[rgb(71,32,183)] to-[rgb(30,39,97)] py-16 md:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-r from-[rgb(26,35,126)] to-[rgb(13,33,55)] py-16 md:py-20">
         {/* Decorative orbs */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 -translate-y-1/2 left-0 w-64 h-64 rounded-full bg-[rgb(245,166,35)]/8 blur-3xl" />

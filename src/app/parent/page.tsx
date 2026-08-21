@@ -72,11 +72,11 @@ export default function ParentDashboardPage() {
       <aside className="hidden lg:flex lg:flex-col w-64 shrink-0 bg-white border-r border-gray-200">
         {/* Logo */}
         <Link href="/parent" className="flex items-center gap-3 px-6 h-16 border-b border-gray-100">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[rgb(71,32,183)] to-[rgb(30,39,97)] text-white text-sm font-bold">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[rgb(26,35,126)] to-[rgb(13,33,55)] text-white text-sm font-bold">
             {sidebar.logo}
           </div>
           <div>
-            <div className="text-sm font-bold leading-tight text-[rgb(71,32,183)]">{sidebar.brand}</div>
+            <div className="text-sm font-bold leading-tight text-[rgb(26,35,126)]">{sidebar.brand}</div>
             <div className="text-[10px] leading-tight text-gray-500">{sidebar.subtitle}</div>
           </div>
         </Link>
@@ -91,7 +91,7 @@ export default function ParentDashboardPage() {
                 href={link.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   link.active
-                    ? "bg-[rgb(71,32,183)]/10 text-[rgb(71,32,183)]"
+                    ? "bg-[rgb(26,35,126)]/10 text-[rgb(26,35,126)]"
                     : "text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 }`}
               >
@@ -135,8 +135,8 @@ export default function ParentDashboardPage() {
         {/* ── Top Bar ── */}
         <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 md:px-8 h-16 flex items-center justify-between">
           <div>
-            <h1 className="text-lg md:text-xl font-bold text-[rgb(30,39,97)]">
-              {dashboard.greeting} <span className="text-[rgb(71,32,183)]">{dashboard.userName}</span>
+            <h1 className="text-lg md:text-xl font-bold text-[rgb(13,33,55)]">
+              {dashboard.greeting} <span className="text-[rgb(26,35,126)]">{dashboard.userName}</span>
             </h1>
             <p className="text-xs text-gray-500 hidden sm:block">{dashboard.subtitle}</p>
           </div>
@@ -157,10 +157,10 @@ export default function ParentDashboardPage() {
             {/* Avatar */}
             <div className="flex items-center gap-3 pl-2 border-l border-gray-200">
               <div className="hidden text-right sm:block">
-                <p className="text-sm font-medium text-[rgb(30,39,97)] leading-tight">{topBar.userName}</p>
+                <p className="text-sm font-medium text-[rgb(13,33,55)] leading-tight">{topBar.userName}</p>
                 <p className="text-[11px] text-gray-500">{topBar.userRole}</p>
               </div>
-              <Avatar fallback="SP" size="md" className="ring-2 ring-[rgb(71,32,183)]/20" />
+              <Avatar fallback="SP" size="md" className="ring-2 ring-[rgb(26,35,126)]/20" />
             </div>
           </div>
         </header>
@@ -173,7 +173,7 @@ export default function ParentDashboardPage() {
               {(stats ?? []).map((stat: { label: string; value: string | number }, idx: number) => {
                 const statIcons = [Users, Award, Calendar, MessageSquare]
                 const iconColors = [
-                  "bg-gradient-to-br from-[rgb(71,32,183)]/10 to-[rgb(30,39,97)]/10 text-[rgb(71,32,183)]",
+                  "bg-gradient-to-br from-[rgb(26,35,126)]/10 to-[rgb(13,33,55)]/10 text-[rgb(26,35,126)]",
                   "bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 text-emerald-600",
                   "bg-gradient-to-br from-[rgb(245,166,35)]/10 to-amber-600/10 text-[rgb(245,166,35)]",
                   "bg-gradient-to-br from-blue-500/10 to-blue-600/10 text-blue-600",
@@ -187,7 +187,7 @@ export default function ParentDashboardPage() {
                           <Icon className="h-6 w-6" />
                         </div>
                       </div>
-                      <p className="mt-3 text-2xl font-bold text-[rgb(30,39,97)]">{stat.value}</p>
+                      <p className="mt-3 text-2xl font-bold text-[rgb(13,33,55)]">{stat.value}</p>
                       <p className="text-xs text-gray-500 mt-0.5">{stat.label}</p>
                     </CardContent>
                   </Card>
@@ -217,7 +217,7 @@ export default function ParentDashboardPage() {
                 <Card key={child.name} className="border border-gray-100 shadow-sm overflow-hidden">
                   <div className="md:flex">
                     {/* Child Header (left panel) */}
-                    <div className="md:w-56 bg-gradient-to-br from-[rgb(71,32,183)] to-[rgb(30,39,97)] p-6 text-white flex flex-col items-center md:items-start justify-start">
+                    <div className="md:w-56 bg-gradient-to-br from-[rgb(26,35,126)] to-[rgb(13,33,55)] p-6 text-white flex flex-col items-center md:items-start justify-start">
                       <Avatar src={child.avatar} alt={child.name} fallback={child.initials || child.name.charAt(0)} className="h-16 w-16 ring-4 ring-white/20" />
                       <h3 className="text-lg font-bold mt-3">{child.name}</h3>
                       <p className="text-sm text-white/70">{child.grade}</p>
@@ -244,7 +244,7 @@ export default function ParentDashboardPage() {
                     <div className="flex-1 p-5">
                       {/* Recent Scores */}
                       <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-[rgb(30,39,97)] mb-3 flex items-center gap-1.5">
+                        <h4 className="text-sm font-semibold text-[rgb(13,33,55)] mb-3 flex items-center gap-1.5">
                           <Award className="h-4 w-4 text-[rgb(245,166,35)]" />
                           Recent Scores
                         </h4>
@@ -255,7 +255,7 @@ export default function ParentDashboardPage() {
                               <div key={score.subject} className="bg-gray-50 rounded-lg p-3 border border-gray-100">
                                 <p className="text-xs text-gray-500">{score.subject}</p>
                                 <div className="flex items-baseline gap-1 mt-1">
-                                  <span className="text-xl font-bold text-[rgb(30,39,97)]">{score.score}</span>
+                                  <span className="text-xl font-bold text-[rgb(13,33,55)]">{score.score}</span>
                                   <span className="text-xs text-gray-400">/{score.maxScore}</span>
                                 </div>
                                 <div className="w-full h-1.5 rounded-full bg-gray-200 mt-2 overflow-hidden">
@@ -264,7 +264,7 @@ export default function ParentDashboardPage() {
                                       pct >= 90
                                         ? "bg-emerald-500"
                                         : pct >= 75
-                                        ? "bg-[rgb(71,32,183)]"
+                                        ? "bg-[rgb(26,35,126)]"
                                         : pct >= 60
                                         ? "bg-[rgb(245,166,35)]"
                                         : "bg-red-400"
@@ -280,8 +280,8 @@ export default function ParentDashboardPage() {
 
                       {/* Upcoming Sessions */}
                       <div>
-                        <h4 className="text-sm font-semibold text-[rgb(30,39,97)] mb-3 flex items-center gap-1.5">
-                          <Calendar className="h-4 w-4 text-[rgb(71,32,183)]" />
+                        <h4 className="text-sm font-semibold text-[rgb(13,33,55)] mb-3 flex items-center gap-1.5">
+                          <Calendar className="h-4 w-4 text-[rgb(26,35,126)]" />
                           Upcoming Sessions
                         </h4>
                         <div className="space-y-2">
@@ -291,13 +291,13 @@ export default function ParentDashboardPage() {
                               className="flex items-center gap-4 p-3 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors"
                             >
                               <div className="flex flex-col items-center w-16 shrink-0">
-                                <span className="text-[10px] font-semibold text-[rgb(71,32,183)] uppercase leading-tight">
+                                <span className="text-[10px] font-semibold text-[rgb(26,35,126)] uppercase leading-tight">
                                   {session.date.split(",")[0]}
                                 </span>
                                 <span className="text-[9px] text-gray-500">{session.time}</span>
                               </div>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-[rgb(30,39,97)] truncate">{session.subject}</p>
+                                <p className="text-sm font-medium text-[rgb(13,33,55)] truncate">{session.subject}</p>
                                 <p className="text-xs text-gray-500">{session.teacher}</p>
                               </div>
                               <Badge
@@ -313,17 +313,17 @@ export default function ParentDashboardPage() {
 
                       {/* Teacher Comment & Recommendation */}
                       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div className="rounded-lg bg-[rgb(71,32,183)]/[0.04] border border-[rgb(71,32,183)]/10 p-3">
+                        <div className="rounded-lg bg-[rgb(26,35,126)]/[0.04] border border-[rgb(26,35,126)]/10 p-3">
                           <div className="flex items-center gap-2 mb-1.5">
-                            <MessageSquare className="h-3.5 w-3.5 text-[rgb(71,32,183)]" />
-                            <span className="text-[11px] font-semibold text-[rgb(30,39,97)]">Teacher Comment</span>
+                            <MessageSquare className="h-3.5 w-3.5 text-[rgb(26,35,126)]" />
+                            <span className="text-[11px] font-semibold text-[rgb(13,33,55)]">Teacher Comment</span>
                           </div>
                           <p className="text-xs text-gray-600 leading-relaxed">{child.teacherComment}</p>
                         </div>
                         <div className="rounded-lg bg-amber-50 border border-amber-100 p-3">
                           <div className="flex items-center gap-2 mb-1.5">
                             <Star className="h-3.5 w-3.5 text-[rgb(245,166,35)]" />
-                            <span className="text-[11px] font-semibold text-[rgb(30,39,97)]">Recommendation</span>
+                            <span className="text-[11px] font-semibold text-[rgb(13,33,55)]">Recommendation</span>
                           </div>
                           <p className="text-xs text-gray-600 leading-relaxed">{child.teacherRecommendation}</p>
                         </div>
@@ -339,8 +339,8 @@ export default function ParentDashboardPage() {
               {/* Quick Actions */}
               <Card className="border border-gray-100 shadow-sm">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base font-semibold text-[rgb(30,39,97)] flex items-center gap-2">
-                    <BookOpen className="h-4 w-4 text-[rgb(71,32,183)]" />
+                  <CardTitle className="text-base font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
+                    <BookOpen className="h-4 w-4 text-[rgb(26,35,126)]" />
                     {quickActions.title}
                   </CardTitle>
                 </CardHeader>
@@ -377,7 +377,7 @@ export default function ParentDashboardPage() {
               <Card className="border border-gray-100 shadow-sm">
                 <CardHeader className="pb-3 flex flex-row items-center justify-between">
                   <div>
-                    <CardTitle className="text-sm font-semibold text-[rgb(30,39,97)]">{paymentSummary.title}</CardTitle>
+                    <CardTitle className="text-sm font-semibold text-[rgb(13,33,55)]">{paymentSummary.title}</CardTitle>
                     <CardDescription className="text-[11px]">{paymentSummary.subtitle}</CardDescription>
                   </div>
                   <Link href="/parent/payments">
@@ -398,12 +398,12 @@ export default function ParentDashboardPage() {
                             <CreditCard className="h-4 w-4 text-emerald-600" />
                           </div>
                           <div>
-                            <p className="text-xs font-medium text-[rgb(30,39,97)] truncate max-w-[140px]">{payment.description}</p>
+                            <p className="text-xs font-medium text-[rgb(13,33,55)] truncate max-w-[140px]">{payment.description}</p>
                             <p className="text-[10px] text-gray-400">{payment.date}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-[rgb(30,39,97)]">${payment.amount}</span>
+                          <span className="text-xs font-bold text-[rgb(13,33,55)]">${payment.amount}</span>
                           <Badge variant="success" className="text-[9px] px-1.5 py-0 h-4">
                             {payment.status}
                           </Badge>
@@ -420,12 +420,12 @@ export default function ParentDashboardPage() {
                           <AlertCircle className="h-4 w-4 text-amber-600" />
                         </div>
                         <div>
-                          <p className="text-xs font-semibold text-[rgb(30,39,97)]">Next Payment</p>
+                          <p className="text-xs font-semibold text-[rgb(13,33,55)]">Next Payment</p>
                           <p className="text-[10px] text-gray-500">Due {paymentSummary.nextPayment.dueDate}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-bold text-[rgb(30,39,97)]">${paymentSummary.nextPayment.amount}</p>
+                        <p className="text-sm font-bold text-[rgb(13,33,55)]">${paymentSummary.nextPayment.amount}</p>
                         <Link href="/parent/payments">
                           <Button variant="accent" size="sm" className="text-[10px] h-6 px-2 mt-0.5">
                             {paymentSummary.nextPayment.button || "Pay Now"}
@@ -441,8 +441,8 @@ export default function ParentDashboardPage() {
               {/* Teacher Comments Feed */}
               <Card className="border border-gray-100 shadow-sm">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold text-[rgb(30,39,97)] flex items-center gap-2">
-                    <MessageSquare className="h-4 w-4 text-[rgb(71,32,183)]" />
+                  <CardTitle className="text-sm font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
+                    <MessageSquare className="h-4 w-4 text-[rgb(26,35,126)]" />
                     {teacherComments.title}
                   </CardTitle>
                 </CardHeader>
@@ -453,11 +453,11 @@ export default function ParentDashboardPage() {
                         <Avatar fallback={item.avatar} size="sm" className="ring-1 ring-gray-200 shrink-0" />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-semibold text-[rgb(30,39,97)]">{item.teacher}</span>
+                            <span className="text-xs font-semibold text-[rgb(13,33,55)]">{item.teacher}</span>
                             <span className="text-[10px] text-gray-400">{item.date}</span>
                           </div>
                           <p className="text-xs text-gray-600 mt-0.5 leading-relaxed">
-                            <span className="font-medium text-[rgb(71,32,183)]">@{item.child}</span> — {item.comment}
+                            <span className="font-medium text-[rgb(26,35,126)]">@{item.child}</span> — {item.comment}
                           </p>
                         </div>
                       </div>
@@ -473,7 +473,7 @@ export default function ParentDashboardPage() {
               </Card>
 
               {/* Tip Card */}
-              <Card className="border-0 bg-gradient-to-br from-[rgb(71,32,183)] to-[rgb(30,39,97)] shadow-md">
+              <Card className="border-0 bg-gradient-to-br from-[rgb(26,35,126)] to-[rgb(13,33,55)] shadow-md">
                 <CardContent className="p-5">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
@@ -507,7 +507,7 @@ export default function ParentDashboardPage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-sm font-semibold text-[rgb(30,39,97)]">WhatsApp Support</h4>
+                  <h4 className="text-sm font-semibold text-[rgb(13,33,55)]">WhatsApp Support</h4>
                   <p className="text-xs text-gray-500">Chat with our support team</p>
                 </div>
                 <ChevronRight className="h-4 w-4 text-gray-400" />
@@ -520,8 +520,8 @@ export default function ParentDashboardPage() {
             {(overallStats ?? []).map((stat: { label: string; value: string | number }, idx: number) => {
               const overallIcons = [Users, BarChart3, CheckCircle2, CreditCard]
               const iconColors = [
-                "bg-[rgb(71,32,183)]/10 text-[rgb(71,32,183)]",
-                "bg-[rgb(30,39,97)]/10 text-[rgb(30,39,97)]",
+                "bg-[rgb(26,35,126)]/10 text-[rgb(26,35,126)]",
+                "bg-[rgb(13,33,55)]/10 text-[rgb(13,33,55)]",
                 "bg-emerald-500/10 text-emerald-600",
                 "bg-[rgb(245,166,35)]/10 text-[rgb(245,166,35)]",
               ]
@@ -534,7 +534,7 @@ export default function ParentDashboardPage() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-500">{stat.label}</p>
-                      <p className="text-lg font-bold text-[rgb(30,39,97)]">{stat.value}</p>
+                      <p className="text-lg font-bold text-[rgb(13,33,55)]">{stat.value}</p>
                     </div>
                   </CardContent>
                 </Card>

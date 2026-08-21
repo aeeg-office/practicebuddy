@@ -1,49 +1,48 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import ClientLayout from "@/components/layout/client-layout"
-import { AnalyticsScripts } from "@/lib/analytics"
 import Script from "next/script"
 
 export const metadata: Metadata = {
   title: {
-    default: "Practice Buddy — Practice Platform",
-    template: "%s | Practice Buddy",
+    default: "Lumaani — Practice. Learn. Master.",
+    template: "%s | Lumaani",
   },
-  description: "Practice platform for Grades 3-10 English, Math, MAP, and SAT preparation.",
-  metadataBase: new URL("https://practicebuddy.app"),
+  description: "Practice, learn, and master English, Math, MAP, and SAT preparation. Personalized learning for Grades 3–10.",
+  metadataBase: new URL("https://lumaani.com"),
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
-    title: "Practice Buddy",
+    title: "Lumaani",
     statusBarStyle: "black-translucent",
   },
   icons: {
     icon: [
-      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icons/icon-384x384.png", sizes: "384x384", type: "image/png" },
+      { url: "/lumaani-icon-192.svg", sizes: "192x192", type: "image/svg+xml" },
+      { url: "/lumaani-icon.svg", sizes: "512x512", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/lumaani-icon-192.svg", sizes: "192x192", type: "image/svg+xml" },
     ],
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Practice Buddy",
-    title: "Practice Buddy — Practice Platform",
-    description: "Practice platform for Grades 3-10 English, Math, MAP, and SAT preparation.",
-    url: "https://practicebuddy.app",
-    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630 }],
+    siteName: "Lumaani",
+    title: "Lumaani — Practice. Learn. Master.",
+    description: "Personalized learning platform for Grades 3–10 English, Math, MAP, and SAT preparation.",
+    url: "https://lumaani.com",
+    images: [{ url: "/lumaani-icon.svg", width: 512, height: 512 }],
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "https://practicebuddy.app",
+    canonical: "https://lumaani.com",
     languages: {
-      "en": "https://practicebuddy.app",
-      "ar": "https://practicebuddy.app/ar",
+      "en": "https://lumaani.com",
+      "ar": "https://lumaani.com/ar",
     },
   },
 }

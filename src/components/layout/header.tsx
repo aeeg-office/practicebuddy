@@ -30,7 +30,10 @@ export default function Header() {
       <div className="container flex h-14 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/practice-buddy-logo.svg" alt="Practice Buddy" className="h-9 w-auto brightness-0 invert" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold shrink-0">
+            L
+          </div>
+          <span className="text-lg font-bold tracking-tight">Lumaani</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">

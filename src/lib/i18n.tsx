@@ -93,7 +93,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.programs": "Platform",
     "footer.resources": "Resources",
     "footer.dashboard": "Student Dashboard",
-    "footer.copyright": "Practice Buddy. All rights reserved.",
+    "footer.copyright": "Lumaani. All rights reserved.",
 
     /* General */
     "general.learnMore": "Learn More",
@@ -178,7 +178,7 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.programs": "المنصة",
     "footer.resources": "الموارد",
     "footer.dashboard": "لوحة الطالب",
-    "footer.copyright": "Practice Buddy. جميع الحقوق محفوظة.",
+    "footer.copyright": "Lumaani. جميع الحقوق محفوظة.",
 
     /* General */
     "general.learnMore": "اعرف المزيد",

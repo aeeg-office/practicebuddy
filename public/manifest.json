@@ -1,7 +1,7 @@
 {
-  "name": "Practice Buddy",
-  "short_name": "PB",
-  "description": "Intelligent practice platform for Grades 3-10 English, Math, MAP, and SAT preparation",
+  "name": "Lumaani",
+  "short_name": "Lumaani",
+  "description": "Practice, learn, and master English, Math, MAP, and SAT preparation — personalized learning platform for Grades 3–10.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f6f6f6",
@@ -10,26 +10,19 @@
   "scope": "/",
   "icons": [
     {
-      "src": "/icons/icon-192x192.svg",
+      "src": "/lumaani-icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-384x384.svg",
-      "sizes": "384x384",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icons/icon-512x512.svg",
+      "src": "/lumaani-icon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ],
   "categories": ["education", "practice", "testing"],
-  "screenshots": [],
   "lang": "en",
   "dir": "ltr"
 }

@@ -30,15 +30,16 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="/practice-buddy-logo.svg" alt="Practice Buddy Logo" className="h-10 w-auto brightness-0 invert" />
-            </Link>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold shrink-0">L</div>
+                          <span className="text-sm font-bold leading-tight">Lumaani</span>
+                        </Link>
             <p className="text-sm text-blue-200 mb-4">
               {t("footer.tagline")}
             </p>
             <div className="text-sm text-blue-200 space-y-1">
               <p>{t("footer.address")}</p>
-              <p className="text-white underline underline-offset-2">hello@practicebuddy.app</p>
+              <p className="text-white underline underline-offset-2">hello@lumaani.com</p>
             </div>
           </div>
 

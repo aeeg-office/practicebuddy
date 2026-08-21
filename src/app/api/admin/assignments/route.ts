@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import prisma from "@/lib/prisma"
-import { apiError, authenticateAdminApi } from "@/lib/admin-api"
+import { apiError, apiResponseError, authenticateAdminApi, pagination } from "@/lib/admin-api"
 
 export async function GET(request: Request) {
   const identity = await authenticateAdminApi(request)
@@ -8,24 +8,30 @@ export async function GET(request: Request) {
 
   try {
     const url = new URL(request.url)
+    const { page, limit, skip } = pagination(url.searchParams)
     const teacherId = url.searchParams.get("teacherId")
     const classId = url.searchParams.get("classId")
     const where: Record<string, unknown> = {}
     if (teacherId) where.teacherId = teacherId
     if (classId) where.classId = classId
 
-    const assignments = await prisma.assignment.findMany({
-      where: where as any,
-      include: {
-        teacher: { select: { name: true, email: true } },
-        course: { select: { name: true } },
-        items: { include: { skill: { select: { name: true } }, question: { select: { stem: true } } } },
-        _count: { select: { studentAssignments: true } },
-      },
-      orderBy: { createdAt: "desc" },
-    })
+    const [total, assignments] = await Promise.all([
+      prisma.assignment.count({ where: where as any }),
+      prisma.assignment.findMany({
+        where: where as any,
+        skip,
+        take: limit,
+        include: {
+          teacher: { select: { name: true, email: true } },
+          course: { select: { name: true } },
+          items: { include: { skill: { select: { name: true } }, question: { select: { stem: true } } } },
+          _count: { select: { studentAssignments: true } },
+        },
+        orderBy: { createdAt: "desc" },
+      }),
+    ])
 
-    return NextResponse.json({ assignments, total: assignments.length })
+    return NextResponse.json({ assignments, total, page, limit, totalPages: Math.ceil(total / limit) })
   } catch (error) {
     return apiError(error, "Failed to list assignments")
   }

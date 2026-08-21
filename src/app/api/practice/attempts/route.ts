@@ -5,6 +5,7 @@ import prisma from "@/lib/prisma"
 import { getQuestionById, getQuestionAnswer } from "@/lib/question-loader"
 import { getJwtSecret } from "@/lib/auth-server"
 import { recalculateSkillMastery } from "@/lib/mastery-engine"
+import { rateLimitMiddleware } from "@/lib/rate-limit"
 
 
 /**
@@ -31,6 +32,10 @@ export async function POST(request: Request) {
     } catch {
       return NextResponse.json({ error: "Invalid token" }, { status: 401 })
     }
+
+    // Rate limit: 30 attempts per minute per user
+    const rateLimitResponse = rateLimitMiddleware(request, { maxRequests: 30, windowMs: 60000 })
+    if (rateLimitResponse) return rateLimitResponse
 
     // 2️⃣ Parse and validate body
     const body = await request.json()

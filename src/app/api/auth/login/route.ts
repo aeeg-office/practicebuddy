@@ -3,9 +3,13 @@ import * as bcrypt from "bcryptjs"
 import * as jwt from "jsonwebtoken"
 import prisma from "@/lib/prisma"
 import { getJwtSecret } from "@/lib/auth-server"
+import { rateLimitMiddleware } from "@/lib/rate-limit"
 
 export async function POST(req: Request) {
   try {
+    const rateLimitResponse = rateLimitMiddleware(req, { windowMs: 60_000, maxRequests: 10 })
+    if (rateLimitResponse) return rateLimitResponse
+
     const { email, password } = await req.json()
 
     if (!email || !password) {

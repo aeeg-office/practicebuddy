@@ -99,17 +99,15 @@ export async function GET(request: Request) {
       }),
 
       // Duplicate question candidates (same stem + subject)
-      prisma.$queryRawUnsafe<
-        { stem: string; subject: string; count: number; ids: string[] }[]
-      >(
-        `SELECT stem, subject, COUNT(*)::int as count, ARRAY_AGG(id::text) as ids
+      prisma.$queryRaw<
+        { stem: string; subject: string; count: bigint; ids: string[] }[]
+      >`SELECT stem, subject, COUNT(*)::int as count, ARRAY_AGG(id::text) as ids
          FROM "questions"
          WHERE "questionStatus" = 'active' AND stem != ''
          GROUP BY stem, subject
          HAVING COUNT(*) > 1
          ORDER BY count DESC
-         LIMIT 50`
-      ),
+         LIMIT 50`,
 
       // User count
       prisma.user.count({ where: { isActive: true } }),

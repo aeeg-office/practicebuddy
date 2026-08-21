@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { rateLimitMiddleware } from "@/lib/rate-limit"
 
 /**
  * AI Tutor API — template-based educational responses.
@@ -260,6 +261,10 @@ function detectIntent(message: string): "hint" | "explain" | "practice" | "recom
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 20 requests per minute per IP (unauthenticated endpoint)
+    const rateLimitResponse = rateLimitMiddleware(request, { maxRequests: 20, windowMs: 60000 })
+    if (rateLimitResponse) return rateLimitResponse
+
     const body: TutorRequest = await request.json()
 
     if (!body.message || typeof body.message !== "string") {

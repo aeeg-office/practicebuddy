@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Practice Buddy — Mobile Wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #1a237e;
+  --color-primary-hover: #151b64;
+  --color-secondary: #0d2137;
+  --color-accent: #f5a623;
+  --color-accent-hover: #d4921e;
+  --color-correct: #16a34a;
+  --color-incorrect: #dc2626;
+  --color-surface: #ffffff;
+  --color-bg: #f6f6f6;
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Lexend', 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  padding: 16px;
+}
+
+.header {
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+.header h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+.header .meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.header .meta span {
+  background: var(--color-surface);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.section {
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title .badge {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--color-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.section-subtitle {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+/* Phone frame */
+.phone-frame {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin-bottom: 16px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Phone mockup header */
+.phone-notch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 4px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+.phone-notch .time { font-weight: 600; }
+.phone-notch .icons { display: flex; gap: 4px; font-size: 10px; }
+
+/* Phone screen content */
+.phone-screen {
+  padding: 0;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Phone status bar */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+.status-bar .signal { display: flex; gap: 2px; align-items: center; }
+
+/* Phone top bar */
+.phone-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--color-primary);
+  color: white;
+  min-height: 48px;
+}
+.phone-topbar .logo {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+}
+.phone-topbar .logo-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.phone-topbar .back {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.phone-topbar .actions {
+  display: flex;
+  gap: 8px;
+}
+.phone-topbar .action-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Phone content area */
+.phone-content {
+  padding: 16px;
+  flex: 1;
+}
+
+/* Phone bottom tab bar */
+.phone-tabs {
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+.phone-tabs .tab {
+  text-align: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+}
+.phone-tabs .tab.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.phone-tabs .tab-icon {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Card */
+.card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 8px;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.card-label { font-size: 12px; font-weight: 500; }
+.card-value { font-size: 12px; color: var(--color-text-muted); }
+
+/* Program card */
+.program-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.program-card .icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.program-card .info { flex: 1; }
+.program-card .info .title { font-size: 13px; font-weight: 600; }
+.program-card .info .desc { font-size: 11px; color: var(--color-text-muted); }
+.program-card .arrow { font-size: 16px; color: var(--color-text-muted); }
+
+/* Assignment card */
+.assignment-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  margin-bottom: 8px;
+}
+.assignment-card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.assignment-card .title { font-size: 13px; font-weight: 600; }
+.assignment-card .meta { font-size: 11px; color: var(--color-text-muted); }
+.assignment-card .progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  flex: 1;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+.progress-fill.gold { background: var(--color-accent); }
+.progress-fill.green { background: var(--color-correct); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: default;
+  border: none;
+  min-height: 40px;
+  min-width: 44px;
+}
+.btn-primary { background: var(--color-primary); color: white; }
+.btn-outline { background: transparent; border: 1.5px solid var(--color-primary); color: var(--color-primary); }
+.btn-ghost { background: transparent; color: var(--color-text-muted); }
+.btn-accent { background: var(--color-accent); color: var(--color-secondary); }
+.btn-sm { padding: 6px 12px; font-size: 11px; min-height: 36px; }
+.btn-block { width: 100%; }
+.btn-success { background: var(--color-correct); color: white; }
+.btn-danger { background: var(--color-incorrect); color: white; }
+
+/* Status badges */
+.status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.status-due { background: rgba(220,38,38,0.08); color: var(--color-incorrect); }
+.status-active { background: rgba(22,163,74,0.08); color: var(--color-correct); }
+.status-pending { background: rgba(245,166,35,0.1); color: var(--color-accent); }
+
+/* Question block */
+.question-block {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 10px;
+}
+.question-stem {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.passage-box {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+.option {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+.option .radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+}
+.option.selected .radio {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: inset 0 0 0 4px white;
+}
+.option.correct .radio {
+  border-color: var(--color-correct);
+  background: var(--color-correct);
+  box-shadow: inset 0 0 0 4px white;
+}
+.option.correct {
+  background: rgba(22,163,74,0.06);
+  border-color: var(--color-correct);
+}
+.option.incorrect .radio {
+  border-color: var(--color-incorrect);
+  background: var(--color-incorrect);
+  box-shadow: inset 0 0 0 4px white;
+}
+.option.incorrect {
+  background: rgba(220,38,38,0.06);
+  border-color: var(--color-incorrect);
+}
+
+/* Strategy box */
+.strategy-box {
+  background: rgba(245,166,35,0.08);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.strategy-box .st-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+.strategy-box .st-text {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Explanation box */
+.explanation-box {
+  background: rgba(22,163,74,0.06);
+  border: 1px solid var(--color-correct);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.explanation-box .exp-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-correct);
+  margin-bottom: 4px;
+}
+.explanation-box .exp-text {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Timer */
+.timer-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #fef3c7;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-secondary);
+}
+
+/* Score badge */
+.score-badge {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+}
+.score-badge .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+.score-badge .score { font-size: 36px; font-weight: 700; }
+.score-badge .detail { font-size: 12px; opacity: 0.8; }
+
+/* Skill bar */
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.skill-bar .name { font-size: 11px; width: 90px; flex-shrink: 0; text-align: right; }
+.skill-bar .track { flex: 1; height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden; }
+.skill-bar .fill { height: 100%; border-radius: 3px; }
+.skill-bar .pct { font-size: 10px; color: var(--color-text-muted); width: 30px; text-align: right; }
+
+/* Stats widget */
+.widget {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+.widget-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--color-text-muted); margin-bottom: 4px; }
+.stat-value { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-primary); }
+.stat-label { font-size: 10px; color: var(--color-text-muted); }
+
+/* Tag */
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+/* Form field */
+.form-field { margin-bottom: 10px; }
+.form-field label { display: block; font-size: 11px; font-weight: 600; color: var(--color-text-muted); margin-bottom: 4px; }
+.form-field .input-mock { width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 13px; background: white; min-height: 40px; }
+
+/* Legend */
+.legend { display: flex; gap: 12px; padding: 6px 0; font-size: 10px; color: var(--color-text-muted); }
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* Swatch */
+.swatch { width: 24px; height: 24px; border-radius: var(--radius-sm); border: 2px solid var(--color-border); display: inline-block; }
+
+/* Score marker */
+.score-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.score-marker.green { background: rgba(22,163,74,0.1); color: var(--color-correct); }
+.score-marker.amber { background: rgba(245,166,35,0.1); color: var(--color-accent); }
+.score-marker.red { background: rgba(220,38,38,0.1); color: var(--color-incorrect); }
+
+/* Section label */
+.section-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  color: var(--color-text);
+}
+.section-label:first-child { margin-top: 0; }
+
+/* Grid */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+/* Legend */
+.legend-row { display: flex; gap: 16px; font-size: 10px; color: var(--color-text-muted); margin-bottom: 8px; }
+.legend-row span { display: flex; align-items: center; gap: 4px; }
+
+/* Description */
+.desc { font-size: 11px; color: var(--color-text-muted); margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Practice Buddy</h1>
+  <p class="subtitle">Mobile Wireframes — 320–639px · Student, Teacher, Admin</p>
+  <div class="meta">
+    <span>📱 19 screens</span>
+    <span>🎨 Dark blue + gold</span>
+    <span>🧭 Bottom tab nav</span>
+    <span>📐 44px touch targets</span>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 1: STUDENT -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">
+    Student <span class="badge">10 screens</span>
+  </div>
+  <p class="section-subtitle">Core practice flow — Grade 3–10, MAP, SAT</p>
+
+  <!-- M01: Student Dashboard -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Practice Buddy</span>
+        <span class="action-icon">👤</span>
+      </div>
+      <div class="phone-content">
+        <div style="font-size:15px;font-weight:600;margin-bottom:2px;">Hi, Alex! 👋</div>
+        <div style="font-size:11px;color:var(--color-text-muted);margin-bottom:12px;">What would you like to practice?</div>
+
+        <div class="program-card">
+          <div class="icon-box" style="background:var(--color-primary)/10;color:var(--color-primary);">📐</div>
+          <div class="info">
+            <div class="title">Core Math</div>
+            <div class="desc">Grade 4 · 8 skills</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+        <div class="program-card">
+          <div class="icon-box" style="background:var(--color-secondary)/10;color:var(--color-secondary);">📖</div>
+          <div class="info">
+            <div class="title">Core English</div>
+            <div class="desc">Grade 5 · 6 skills</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+        <div class="program-card" style="border-color:var(--color-correct);">
+          <div class="icon-box" style="background:rgba(22,163,74,0.1);color:var(--color-correct);">📊</div>
+          <div class="info">
+            <div class="title">MAP Math</div>
+            <div class="desc">RIT 211–220 · 4 skills</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+        <div class="program-card">
+          <div class="icon-box" style="background:var(--color-accent)/10;color:var(--color-accent);">🎯</div>
+          <div class="info">
+            <div class="title">SAT Practice</div>
+            <div class="desc">Reading & Writing · Math</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+
+        <div class="section-label">Continue</div>
+        <div class="card" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;">
+          <div>
+            <div style="font-size:11px;color:var(--color-text-muted);">Last practiced</div>
+            <div style="font-size:13px;font-weight:600;">Multiplication, Day 3</div>
+          </div>
+          <span class="btn btn-primary btn-sm">Continue</span>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab active"><span class="tab-icon">🏠</span>Home</span>
+        <span class="tab"><span class="tab-icon">📋</span>Assign</span>
+        <span class="tab"><span class="tab-icon">📊</span>Progress</span>
+        <span class="tab"><span class="tab-icon">👤</span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M02: Assignments List -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Assignments</span>
+        <span class="action-icon">👤</span>
+      </div>
+      <div class="phone-content">
+        <div class="assignment-card">
+          <div class="top">
+            <span class="title">Fractions Quiz</span>
+            <span class="status status-due">Due tomorrow</span>
+          </div>
+          <div class="meta">Ms. Johnson · 10 questions</div>
+          <div class="progress-row">
+            <div class="progress-bar"><div class="progress-fill" style="width:40%;"></div></div>
+            <span style="font-size:10px;color:var(--color-text-muted);">4/10</span>
+            <span class="btn btn-primary btn-sm">Continue</span>
+          </div>
+        </div>
+        <div class="assignment-card" style="border-left-color:var(--color-correct);">
+          <div class="top">
+            <span class="title">Reading Comp</span>
+            <span class="status status-active">Completed</span>
+          </div>
+          <div class="meta">Core English · 8 questions · 85%</div>
+        </div>
+        <div class="assignment-card" style="border-left-color:var(--color-primary);">
+          <div class="top">
+            <span class="title">Multiplication Drill</span>
+            <span class="status status-pending">Due in 3 days</span>
+          </div>
+          <div class="meta">Mr. Ahmed · 15 questions</div>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab"><span class="tab-icon">🏠</span>Home</span>
+        <span class="tab active"><span class="tab-icon">📋</span>Assign</span>
+        <span class="tab"><span class="tab-icon">📊</span>Progress</span>
+        <span class="tab"><span class="tab-icon">👤</span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M03: Practice Session — Question -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:500;">Core Math · Grade 4</span>
+        <span style="font-size:12px;font-weight:600;">3 / 10</span>
+      </div>
+      <div class="phone-content">
+        <div class="question-block">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <span class="tag">Multiple Choice</span>
+            <span style="font-size:10px;color:var(--color-text-muted);">Attempt 1 of 2</span>
+          </div>
+          <div class="question-stem">
+            A bakery has 245 cookies. They pack them into boxes of 12. How many full boxes can they make, and how many are left over?
+          </div>
+          <div class="option"><span class="radio"></span> 20 boxes, 5 leftover</div>
+          <div class="option selected"><span class="radio"></span> 20 boxes, 5 leftover</div>
+          <div class="option"><span class="radio"></span> 21 boxes, 3 leftover</div>
+          <div class="option"><span class="radio"></span> 19 boxes, 17 leftover</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <span class="btn btn-ghost btn-sm" style="flex:0;">🔖</span>
+          <span class="btn btn-primary btn-sm" style="flex:1;">Submit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- M04: After Attempt 1 — Error + Strategy -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:500;">Core Math · Grade 4</span>
+        <span style="font-size:12px;font-weight:600;">3 / 10</span>
+      </div>
+      <div class="phone-content">
+        <div class="question-block">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <span class="status status-due" style="font-size:10px;">✗ Incorrect</span>
+            <span style="font-size:10px;color:var(--color-text-muted);">Attempt 1 of 2</span>
+          </div>
+          <div class="question-stem" style="font-size:13px;">A bakery has 245 cookies...</div>
+          <div class="option incorrect"><span class="radio"></span> <span style="text-decoration:line-through;">21 boxes, 3 leftover</span></div>
+          <div class="option"><span class="radio"></span> 20 boxes, 5 leftover</div>
+          <div class="option"><span class="radio"></span> 19 boxes, 17 leftover</div>
+          <div class="option"><span class="radio"></span> 18 boxes, 29 leftover</div>
+        </div>
+        <div class="strategy-box">
+          <div class="st-title">💡 Strategy</div>
+          <div class="st-text">Think about division as repeated subtraction. How many groups of 12 fit into 245? Start by estimating: 12 × 20 = 240, which is close to 245.</div>
+        </div>
+        <span class="btn btn-primary btn-block">Try Again</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M05: After Attempt 2 — Correct + Explanation -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:500;">Core Math · Grade 4</span>
+        <span style="font-size:12px;font-weight:600;">3 / 10</span>
+      </div>
+      <div class="phone-content">
+        <div class="question-block">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <span class="status status-active" style="font-size:10px;">✓ Correct!</span>
+            <span style="font-size:10px;color:var(--color-text-muted);">Attempt 2 of 2</span>
+          </div>
+          <div class="question-stem" style="font-size:13px;">A bakery has 245 cookies...</div>
+          <div class="option incorrect" style="opacity:0.5;"><span class="radio"></span> <span style="text-decoration:line-through;">21 boxes, 3 leftover</span></div>
+          <div class="option correct"><span class="radio"></span> 20 boxes, 5 leftover ✓</div>
+        </div>
+        <div class="explanation-box">
+          <div class="exp-title">✓ Explanation</div>
+          <div class="exp-text">245 ÷ 12 = 20 remainder 5. Since 12 × 20 = 240 and 245 − 240 = 5, there are 20 full boxes with 5 cookies left over.</div>
+        </div>
+        <span class="btn btn-primary btn-block">Next Question →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M06: Session Summary -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Session Complete</span>
+        <span class="action-icon">🏁</span>
+      </div>
+      <div class="phone-content">
+        <div class="score-badge">
+          <div class="label">Session Complete</div>
+          <div class="score">7 / 10</div>
+          <div class="detail">70% · 4 min 23 sec</div>
+        </div>
+        <div class="section-label">Micro-skill Breakdown</div>
+        <div class="skill-bar">
+          <span class="name">Multiplication</span>
+          <div class="track"><div class="fill" style="width:80%;background:var(--color-correct);"></div></div>
+          <span class="pct">4/5</span>
+        </div>
+        <div class="skill-bar">
+          <span class="name">Division</span>
+          <div class="track"><div class="fill" style="width:60%;background:var(--color-accent);"></div></div>
+          <span class="pct">3/5</span>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <span class="btn btn-primary btn-sm" style="flex:1;">Practice More</span>
+          <span class="btn btn-outline btn-sm" style="flex:1;">View Progress</span>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab"><span class="tab-icon">🏠</span>Home</span>
+        <span class="tab"><span class="tab-icon">📋</span>Assign</span>
+        <span class="tab active"><span class="tab-icon">📊</span>Progress</span>
+        <span class="tab"><span class="tab-icon">👤</span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M07: Student Progress Dashboard -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Progress</span>
+        <span class="action-icon">👤</span>
+      </div>
+      <div class="phone-content">
+        <div style="font-size:15px;font-weight:600;margin-bottom:8px;">My Progress — Core Math · Grade 4</div>
+        <div class="grid-2">
+          <div class="widget">
+            <div class="widget-title">Accuracy</div>
+            <div class="stat-value" style="font-size:24px;">78%</div>
+            <div class="stat-label">↑ 5% this week</div>
+          </div>
+          <div class="widget">
+            <div class="widget-title">Questions</div>
+            <div class="stat-value" style="font-size:24px;">142</div>
+            <div class="stat-label">This month</div>
+          </div>
+        </div>
+        <div class="section-label">Skill Mastery</div>
+        <div class="skill-bar">
+          <span class="name">Number &amp; Ops</span>
+          <div class="track"><div class="fill" style="width:85%;background:var(--color-correct);"></div></div>
+          <span class="pct" style="width:auto;font-size:10px;">Mastered</span>
+        </div>
+        <div class="skill-bar">
+          <span class="name">Fractions</span>
+          <div class="track"><div class="fill" style="width:55%;background:var(--color-accent);"></div></div>
+          <span class="pct" style="width:auto;font-size:10px;">Practicing</span>
+        </div>
+        <div class="skill-bar">
+          <span class="name">Geometry</span>
+          <div class="track"><div class="fill" style="width:30%;background:var(--color-incorrect);"></div></div>
+          <span class="pct" style="width:auto;font-size:10px;">Needs Practice</span>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab"><span class="tab-icon">🏠</span>Home</span>
+        <span class="tab"><span class="tab-icon">📋</span>Assign</span>
+        <span class="tab active"><span class="tab-icon">📊</span>Progress</span>
+        <span class="tab"><span class="tab-icon">👤</span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M08: MAP Practice -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:#0d6e3e;">
+        <span class="logo-icon">📊</span>
+        <span style="font-size:12px;font-weight:500;">MAP Math Practice</span>
+        <span class="action-icon">👤</span>
+      </div>
+      <div class="phone-content">
+        <div style="font-size:14px;font-weight:600;margin-bottom:2px;">Select your RIT band</div>
+        <div style="font-size:11px;color:var(--color-text-muted);margin-bottom:10px;">Recommended: 211–220</div>
+        <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;">
+          <div class="card" style="min-width:100px;text-align:center;padding:14px;border:2px solid var(--color-primary);flex-shrink:0;">
+            <div style="font-size:16px;font-weight:700;color:var(--color-primary);">211–220</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Recommended</div>
+            <span class="btn btn-primary btn-sm" style="margin-top:6px;">Start</span>
+          </div>
+          <div class="card" style="min-width:100px;text-align:center;padding:14px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:700;">201–210</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Building</div>
+          </div>
+          <div class="card" style="min-width:100px;text-align:center;padding:14px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:700;">221–230</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Challenge</div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab"><span class="tab-icon">🏠</span>Home</span>
+        <span class="tab active"><span class="tab-icon">📊</span>MAP</span>
+        <span class="tab"><span class="tab-icon">📈</span>Progress</span>
+        <span class="tab"><span class="tab-icon">👤</span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M09: SAT Timed Practice -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-primary);">
+        <span class="back">←</span>
+        <span style="font-size:11px;font-weight:500;">SAT · Reading &amp; Writing</span>
+        <span style="font-size:11px;font-weight:600;">Q 7/27</span>
+      </div>
+      <div class="phone-content">
+        <div class="timer-bar">
+          <span>⏱</span>
+          <span class="timer-text">32:14 remaining</span>
+        </div>
+        <div class="question-block">
+          <div class="passage-box" style="font-size:11px;max-height:80px;overflow:hidden;">
+            The author argues that the industrial revolution fundamentally changed the relationship between workers and the means of production. Prior to this period, artisans owned their tools and controlled their craft...
+          </div>
+          <div class="question-stem" style="font-size:13px;">The primary purpose of the passage is to:</div>
+          <div class="option" style="font-size:12px;padding:8px 10px;"><span class="radio" style="width:16px;height:16px;"></span> Describe technological innovations</div>
+          <div class="option selected" style="font-size:12px;padding:8px 10px;"><span class="radio" style="width:16px;height:16px;"></span> Analyze a shift in economic relationships</div>
+          <div class="option" style="font-size:12px;padding:8px 10px;"><span class="radio" style="width:16px;height:16px;"></span> Critique working conditions</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <span class="btn btn-ghost btn-sm">🔖 Flag</span>
+          <span class="btn btn-primary btn-sm" style="flex:1;">Next →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- M10: Login / Signup -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-content" style="padding:40px 24px;">
+        <div style="text-align:center;margin-bottom:20px;">
+          <div style="width:48px;height:48px;background:var(--color-primary);border-radius:12px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;">PB</div>
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:600;">Practice Buddy</div>
+          <div style="font-size:12px;color:var(--color-text-muted);">Sign in to continue</div>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <div class="input-mock">student@example.com</div>
+        </div>
+        <div class="form-field">
+          <label>Password</label>
+          <div class="input-mock">••••••••</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:12px;">
+          <label style="display:flex;align-items:center;gap:4px;font-weight:400;">
+            <span style="width:16px;height:16px;border:1px solid var(--color-border);border-radius:3px;display:inline-block;"></span> Remember me
+          </label>
+          <span style="color:var(--color-primary);font-weight:500;">Forgot password?</span>
+        </div>
+        <span class="btn btn-primary btn-block">Sign In</span>
+        <div style="text-align:center;font-size:11px;color:var(--color-text-muted);margin-top:12px;">
+          Don't have an account? <span style="color:var(--color-primary);font-weight:500;">Sign up</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 2: TEACHER -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">
+    Teacher <span class="badge">5 screens</span>
+  </div>
+  <p class="section-subtitle">Class management, assignments, guided instruction</p>
+
+  <!-- M11: Teacher Dashboard -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Ms. Johnson</span>
+        <span class="action-icon">👤</span>
+      </div>
+      <div class="phone-content">
+        <div style="font-size:15px;font-weight:600;margin-bottom:8px;">Welcome back, Ms. Johnson</div>
+        <div class="grid-2">
+          <div class="widget">
+            <div class="widget-title">Classes</div>
+            <div class="stat-value" style="font-size:22px;">4</div>
+            <div class="stat-label">87 students</div>
+          </div>
+          <div class="widget">
+            <div class="widget-title">Due</div>
+            <div class="stat-value" style="font-size:22px;color:var(--color-accent);">3</div>
+            <div class="stat-label">This week</div>
+          </div>
+        </div>
+        <div class="section-label">Recent Activity</div>
+        <div class="card" style="padding:10px;">
+          <div style="font-size:11px;"><strong>Grade 4A</strong> — 8 completed Fractions Quiz</div>
+          <div style="font-size:10px;color:var(--color-text-muted);">Avg 76% · 2 min ago</div>
+        </div>
+        <div class="card" style="padding:10px;">
+          <div style="font-size:11px;"><strong>Grade 5B</strong> — Drill due tomorrow</div>
+          <div style="font-size:10px;color:var(--color-text-muted);">14 of 22 submitted</div>
+        </div>
+        <span class="btn btn-primary btn-block" style="margin-top:6px;">Create Assignment</span>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab active"><span class="tab-icon">📊</span>Dashboard</span>
+        <span class="tab"><span class="tab-icon">👥</span>Classes</span>
+        <span class="tab"><span class="tab-icon">📝</span>Assign</span>
+        <span class="tab"><span class="tab-icon">📈</span>Reports</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M12: Class Roster -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:500;">Grade 4A · Core Math</span>
+        <span style="font-size:11px;">22 students</span>
+      </div>
+      <div class="phone-content">
+        <div class="legend-row">
+          <span><span class="legend-dot" style="background:var(--color-correct);"></span> Mastered</span>
+          <span><span class="legend-dot" style="background:var(--color-accent);"></span> Practicing</span>
+          <span><span class="legend-dot" style="background:var(--color-incorrect);"></span> Needs Support</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:10px;padding:10px 12px;">
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--color-bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;">AM</span>
+          <div style="flex:1;">
+            <div style="font-size:12px;font-weight:600;">Alex M.</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">82% · 142 questions</div>
+          </div>
+          <span class="score-marker green">✓</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:10px;padding:10px 12px;">
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--color-bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;">SK</span>
+          <div style="flex:1;">
+            <div style="font-size:12px;font-weight:600;">Sarah K.</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">68% · 98 questions</div>
+          </div>
+          <span class="score-marker amber">◉</span>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:10px;padding:10px 12px;">
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--color-bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;">OH</span>
+          <div style="flex:1;">
+            <div style="font-size:12px;font-weight:600;">Omar H.</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">45% · 76 questions</div>
+          </div>
+          <span class="score-marker red">✗</span>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab"><span class="tab-icon">📊</span>Dashboard</span>
+        <span class="tab active"><span class="tab-icon">👥</span>Classes</span>
+        <span class="tab"><span class="tab-icon">📝</span>Assign</span>
+        <span class="tab"><span class="tab-icon">📈</span>Reports</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M13: Student Detail -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:500;">Omar H. · Grade 4A</span>
+        <span class="action-icon">📋</span>
+      </div>
+      <div class="phone-content">
+        <div class="grid-2">
+          <div class="widget">
+            <div class="widget-title">Accuracy</div>
+            <div class="stat-value" style="font-size:20px;color:var(--color-accent);">45%</div>
+          </div>
+          <div class="widget">
+            <div class="widget-title">Questions</div>
+            <div class="stat-value" style="font-size:20px;">76</div>
+          </div>
+        </div>
+        <div class="section-label">Micro-skill Details</div>
+        <div class="skill-bar">
+          <span class="name">Multiplication</span>
+          <div class="track"><div class="fill" style="width:70%;background:var(--color-accent);"></div></div>
+          <span class="pct">7/10</span>
+        </div>
+        <div class="skill-bar">
+          <span class="name">Division</span>
+          <div class="track"><div class="fill" style="width:30%;background:var(--color-incorrect);"></div></div>
+          <span class="pct">3/10</span>
+        </div>
+        <div class="skill-bar">
+          <span class="name">Fractions</span>
+          <div class="track"><div class="fill" style="width:40%;background:var(--color-accent);"></div></div>
+          <span class="pct">4/10</span>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <span class="btn btn-primary btn-sm" style="flex:1;">View History</span>
+          <span class="btn btn-outline btn-sm" style="flex:1;">Assign More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- M14: Create Assignment -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="back">←</span>
+        <span class="logo">Create Assignment</span>
+        <span style="font-size:12px;font-weight:600;opacity:0.8;">Save</span>
+      </div>
+      <div class="phone-content">
+        <div class="form-field">
+          <label>Title</label>
+          <div class="input-mock">Fractions Quiz Week 4</div>
+        </div>
+        <div class="form-field">
+          <label>Class</label>
+          <div class="input-mock">Grade 4A · Core Math</div>
+        </div>
+        <div class="form-field">
+          <label>Due Date</label>
+          <div class="input-mock">Aug 22, 2026</div>
+        </div>
+        <div class="form-field">
+          <label>Question Count</label>
+          <div class="input-mock">10 questions</div>
+        </div>
+        <div class="form-field">
+          <label>Micro-skills</label>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:4px;">
+            <span class="tag" style="background:rgba(26,35,126,0.1);color:var(--color-primary);">Fractions: Add/Subtract ✕</span>
+            <span class="tag" style="background:rgba(26,35,126,0.1);color:var(--color-primary);">Fractions: Compare ✕</span>
+          </div>
+          <div style="font-size:11px;color:var(--color-text-muted);">+ Add micro-skill</div>
+        </div>
+        <span class="btn btn-primary btn-block" style="margin-top:4px;">Create Assignment</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M15: Guided Instruction — Teacher -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-accent);color:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:600;">📘 Guided: Omar H.</span>
+        <span style="font-size:11px;font-weight:600;">Q 3/8</span>
+      </div>
+      <div class="phone-content">
+        <div class="question-block" style="padding:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+            <span class="tag" style="font-size:9px;">Multiple Choice</span>
+            <span style="font-size:9px;color:var(--color-text-muted);">Attempt 1</span>
+          </div>
+          <div class="question-stem" style="font-size:12px;">What is ¾ of 24?</div>
+          <div class="option" style="font-size:11px;padding:6px 8px;"><span class="radio" style="width:14px;height:14px;"></span> 6</div>
+          <div class="option correct" style="font-size:11px;padding:6px 8px;"><span class="radio" style="width:14px;height:14px;"></span> 18</div>
+          <div class="option" style="font-size:11px;padding:6px 8px;"><span class="radio" style="width:14px;height:14px;"></span> 12</div>
+        </div>
+        <div style="display:flex;gap:4px;margin-bottom:8px;">
+          <span class="btn btn-sm" style="flex:1;background:var(--color-correct);color:white;font-size:10px;">Show Strategy</span>
+          <span class="btn btn-sm" style="flex:1;background:var(--color-secondary);color:white;font-size:10px;">Show Explanation</span>
+        </div>
+        <div style="display:flex;gap:4px;">
+          <span class="btn btn-ghost btn-sm" style="flex:1;font-size:10px;">Skip</span>
+          <span class="btn btn-primary btn-sm" style="flex:1;font-size:10px;">Next →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 3: ADMIN -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">
+    Admin <span class="badge">2 screens</span>
+  </div>
+  <p class="section-subtitle">Organization management, tenant branding, oversight</p>
+
+  <!-- M16: Admin Dashboard -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Admin</span>
+        <span class="action-icon">⚙️</span>
+      </div>
+      <div class="phone-content">
+        <div style="font-size:15px;font-weight:600;margin-bottom:8px;">Org Overview</div>
+        <div class="grid-2">
+          <div class="widget">
+            <div class="widget-title">Schools</div>
+            <div class="stat-value" style="font-size:20px;">4</div>
+            <div class="stat-label">12 classes</div>
+          </div>
+          <div class="widget">
+            <div class="widget-title">Students</div>
+            <div class="stat-value" style="font-size:20px;">342</div>
+            <div class="stat-label">Active this month</div>
+          </div>
+        </div>
+        <div class="section-label">Program Utilization</div>
+        <div class="skill-bar">
+          <span class="name">Core Math</span>
+          <div class="track"><div class="fill" style="width:90%;background:var(--color-correct);"></div></div>
+          <span class="pct">90%</span>
+        </div>
+        <div class="skill-bar">
+          <span class="name">Core English</span>
+          <div class="track"><div class="fill" style="width:65%;background:var(--color-accent);"></div></div>
+          <span class="pct">65%</span>
+        </div>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab active"><span class="tab-icon">📊</span>Overview</span>
+        <span class="tab"><span class="tab-icon">🏫</span>Schools</span>
+        <span class="tab"><span class="tab-icon">👤</span>Users</span>
+        <span class="tab"><span class="tab-icon">⚙️</span>Settings</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M17: Curriculum Taxonomy Browser -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar" style="background:var(--color-secondary);">
+        <span class="back">←</span>
+        <span style="font-size:12px;font-weight:500;">Content · Core Math</span>
+        <span style="font-size:11px;">+ Add</span>
+      </div>
+      <div class="phone-content">
+        <div class="card" style="padding:8px 12px;display:flex;align-items:center;gap:6px;">
+          <span style="font-size:10px;">▼</span>
+          <span style="font-size:12px;font-weight:600;">Core Math · Grade 4</span>
+        </div>
+        <div class="card" style="padding:8px 12px 8px 28px;display:flex;align-items:center;gap:6px;">
+          <span style="font-size:10px;">▼</span>
+          <span style="font-size:12px;">Number &amp; Operations</span>
+        </div>
+        <div class="card" style="padding:8px 12px 8px 44px;display:flex;align-items:center;gap:6px;">
+          <span style="font-size:10px;color:var(--color-correct);">▶</span>
+          <span style="font-size:12px;">Multiplication</span>
+        </div>
+        <div class="card" style="padding:8px 12px 8px 60px;display:flex;align-items:center;gap:6px;border-left:2px solid var(--color-correct);">
+          <span style="font-size:10px;color:var(--color-correct);">✦</span>
+          <span style="font-size:11px;font-weight:500;">Multiply multi-digit numbers</span>
+          <span class="tag" style="font-size:9px;margin-left:auto;">12</span>
+        </div>
+        <div class="card" style="padding:8px 12px 8px 60px;display:flex;align-items:center;gap:6px;">
+          <span style="font-size:10px;color:var(--color-accent);">✦</span>
+          <span style="font-size:11px;">Multiply by powers of 10</span>
+          <span class="tag" style="font-size:9px;margin-left:auto;">8</span>
+        </div>
+        <div class="card" style="padding:8px 12px 8px 44px;display:flex;align-items:center;gap:6px;">
+          <span style="font-size:10px;color:var(--color-accent);">▶</span>
+          <span style="font-size:12px;">Division</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:6px;">
+          <span class="btn btn-outline btn-sm" style="flex:1;">Add Micro-skill</span>
+          <span class="btn btn-outline btn-sm" style="flex:1;">Edit Prerequisites</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 4: CROSS-CUTTING -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">
+    Layout &amp; Patterns <span class="badge">2 screens</span>
+  </div>
+  <p class="section-subtitle">Navigation patterns, empty states, responsive behavior</p>
+
+  <!-- M18: Bottom Tab Navigation -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Practice Buddy</span>
+        <span class="action-icon">👤</span>
+      </div>
+      <div class="phone-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;color:var(--color-text-muted);">
+        <div style="font-size:48px;margin-bottom:8px;">📱</div>
+        <div style="font-size:14px;font-weight:600;color:var(--color-text);">No Assignments Yet</div>
+        <div style="font-size:11px;text-align:center;margin-top:4px;">Your teacher hasn't assigned any work yet.<br>Try some practice in the meantime!</div>
+        <span class="btn btn-primary btn-sm" style="margin-top:12px;">Start Practicing</span>
+      </div>
+      <div class="phone-tabs">
+        <span class="tab"><span class="tab-icon">🏠</span>Home</span>
+        <span class="tab active"><span class="tab-icon">📋</span>Assign</span>
+        <span class="tab"><span class="tab-icon">📊</span>Progress</span>
+        <span class="tab"><span class="tab-icon">👤</span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M19: Touch Target Guide -->
+  <div class="phone-frame">
+    <div class="phone-notch">
+      <span class="time">9:41</span>
+      <span class="icons">📶 📶 🔋</span>
+    </div>
+    <div class="phone-screen">
+      <div class="phone-topbar">
+        <span class="logo-icon">PB</span>
+        <span class="logo">Touch Targets</span>
+        <span class="action-icon">📐</span>
+      </div>
+      <div class="phone-content">
+        <div style="text-align:center;margin-bottom:12px;">
+          <div style="font-size:13px;font-weight:600;">All touch targets ≥ 44×44px</div>
+          <div style="font-size:11px;color:var(--color-text-muted);">No hover dependency · 8px minimum gap</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px;">
+          <div style="width:44px;height:44px;background:var(--color-primary);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:white;font-size:10px;">44</div>
+          <div style="width:44px;height:44px;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:10px;">44</div>
+          <div style="width:44px;height:44px;background:var(--color-accent);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--color-secondary);font-size:10px;">44</div>
+          <div style="width:44px;height:44px;background:var(--color-correct);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:white;font-size:10px;">44</div>
+        </div>
+        <div class="section-label">Answer Options</div>
+        <div class="option" style="min-height:48px;font-size:13px;"><span class="radio"></span> Option A — 48px tall</div>
+        <div class="option selected" style="min-height:48px;font-size:13px;"><span class="radio"></span> Option B — 48px tall</div>
+        <div class="section-label">Bottom Navigation</div>
+        <div style="display:flex;gap:4px;">
+          <span class="btn btn-primary btn-sm" style="flex:1;height:44px;">44px</span>
+          <span class="btn btn-outline btn-sm" style="flex:1;height:44px;">44px</span>
+          <span class="btn btn-accent btn-sm" style="flex:1;height:44px;">44px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<div class="section" style="border-top:1px solid var(--color-border);padding-top:24px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;font-size:11px;">
+    <div>
+      <strong>Student</strong><br>
+      M01 Dashboard<br>
+      M02 Assignments<br>
+      M03 Practice Question<br>
+      M04 Error + Strategy<br>
+      M05 Correct + Explanation<br>
+      M06 Session Summary<br>
+      M07 Progress Dashboard<br>
+      M08 MAP Practice<br>
+      M09 SAT Timed<br>
+      M10 Login
+    </div>
+    <div>
+      <strong>Teacher</strong><br>
+      M11 Dashboard<br>
+      M12 Class Roster<br>
+      M13 Student Detail<br>
+      M14 Create Assignment<br>
+      M15 Guided Instruction
+    </div>
+    <div>
+      <strong>Admin</strong><br>
+      M16 Dashboard<br>
+      M17 Taxonomy Browser
+    </div>
+    <div>
+      <strong>Patterns</strong><br>
+      M18 Empty State<br>
+      M19 Touch Targets
+    </div>
+  </div>
+  <div style="text-align:center;font-size:10px;color:var(--color-text-muted);margin-top:24px;">
+    Practice Buddy · Mobile Wireframes · Dark Blue + Gold · 19 screens · 320–639px · 44px touch targets
+  </div>
+</div>
+
+</body>
+</html>

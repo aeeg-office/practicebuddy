@@ -1,43 +1,29 @@
 # Practice Buddy — Design System
 
-**Version:** 1.0 — Phase 0 Architectural Revision  
-**Status:** Authoritative — all front-end components must comply  
-**Source:** AEEG Brand Identity (extracted 2026-08-16)
+**Version:** 1.1 — Standalone Identity  
+**Status:** Authoritative — all front-end components must comply
 
 ---
 
-## 1. Brand Relationship
+## 1. Brand Identity
 
-Practice Buddy is an independent educational SaaS product in the AEEG product family. The visual system inherits from AEEG but is purpose-built for educational technology.
+Practice Buddy is a **standalone educational practice platform** with a distinct visual identity. It is **not** an AEEG product. The brand is:
 
-```
-AEEG Brand (authoritative)
-  └── Practice Buddy Design System (educational software variant)
-        └── Tenant Branding Layer (organization-specific: logo, primary)
-```
-
-### Inherited from AEEG:
-- Primary: `#4720b7`
-- Secondary: `#1e2761`
-- Accent: `#f5a623`
-- System font stack
-
-### Modernized for Education:
-- Expanded neutral palette for readability
-- Dedicated semantic colors
-- Larger spacing for touch targets
-- Educational component library
-- Role-specific navigation architecture
+- **Dark Navy Blue** primary — `#1a237e`
+- **Gold** accent — `#f5a623`
+- **No purple** — the AEEG purple is not used
+- **Student-first** — the product prioritizes the student practice experience over B2B/institutional marketing
 
 ---
 
-## 2. Visual Principles (in priority order)
+## 2. Visual Principles
 
 1. **Clarity** — Primary task dominates the screen
 2. **Readability** — Typography is infrastructure, not decoration
 3. **Uncluttered** — No decorative cards, borders, gradients, shadows, badges, or animations
 4. **Low cognitive load** — Predictable, consistent, obvious actions
 5. **Age-neutral** — Friendly + modern + professional + calm (not childish, not intimidating)
+6. **Distinct identity** — Not AEEG. Not purple. Dark blue + gold.
 
 ---
 
@@ -45,128 +31,70 @@ AEEG Brand (authoritative)
 
 ### 3.1 Brand Colors
 
-| Token | HEX | RGB | Usage |
-|-------|-----|-----|-------|
-| `--color-primary` | `#4720b7` | `71,32,183` | Primary actions, links, active states |
-| `--color-primary-hover` | `#3a1a9a` | `58,26,154` | Primary button hover |
-| `--color-primary-active` | `#2e157d` | `46,21,125` | Primary button active |
-| `--color-primary-foreground` | `#ffffff` | `255,255,255` | Text on primary backgrounds |
-| `--color-secondary` | `#1e2761` | `30,39,97` | Secondary actions, header backgrounds |
-| `--color-secondary-hover` | `#161e4d` | `22,30,77` | Secondary hover |
-| `--color-secondary-foreground` | `#ffffff` | `255,255,255` | Text on secondary backgrounds |
-| `--color-accent` | `#f5a623` | `245,166,35` | Highlights, CTAs, selected states |
-| `--color-accent-hover` | `#d4921e` | `212,146,30` | Accent hover |
-| `--color-accent-foreground` | `#1e2761` | `30,39,97` | Text on accent backgrounds |
+| Token | HEX | Usage |
+|-------|-----|-------|
+| `--color-primary` | `#1a237e` | Primary actions, header, active states |
+| `--color-primary-hover` | `#151b64` | Primary button hover |
+| `--color-primary-active` | `#101450` | Primary button active |
+| `--color-primary-foreground` | `#ffffff` | Text on primary backgrounds |
+| `--color-secondary` | `#0d2137` | Deep navy for depth |
+| `--color-secondary-hover` | `#0a1a2c` | Secondary hover |
+| `--color-secondary-foreground` | `#ffffff` | Text on secondary backgrounds |
+| `--color-accent` | `#f5a623` | Gold — CTAs, highlights |
+| `--color-accent-hover` | `#d4921e` | Accent hover |
+| `--color-accent-foreground` | `#1a1a2e` | Text on accent backgrounds |
 
-### 3.2 Neutral Palette
-
-| Token | HEX | RGB | Usage |
-|-------|-----|-----|-------|
-| `--color-background` | `#f6f6f6` | `246,246,246` | Main page background |
-| `--color-surface` | `#ffffff` | `255,255,255` | Cards, containers, question areas |
-| `--color-elevated` | `#fafafa` | `250,250,250` | Secondary surfaces |
-| `--color-border` | `#e5e7eb` | `229,231,235` | Dividers, borders |
-| `--color-input` | `#e5e7eb` | `229,231,235` | Input borders |
-| `--color-foreground` | `#281a39` | `40,26,57` | Primary body text |
-| `--color-muted-foreground` | `#626262` | `98,98,98` | Secondary/helper text |
-| `--color-muted` | `#9ca3af` | `156,163,175` | Placeholder, disabled text |
-| `--color-disabled` | `#d1d5db` | `209,213,219` | Disabled backgrounds |
-
-### 3.3 Semantic Colors
+### 3.2 Semantic Colors
 
 | Token | HEX | Meaning |
 |-------|-----|---------|
-| `--color-success` | `#16a34a` | Correct answer, completed |
-| `--color-success-light` | `#dcfce7` | Success background tint |
-| `--color-error` | `#dc2626` | Incorrect answer, error |
-| `--color-error-light` | `#fef2f2` | Error background tint |
+| `--color-success` | `#16a34a` | Correct answer |
+| `--color-error` | `#dc2626` | Incorrect answer |
 | `--color-warning` | `#d97706` | Warning, second attempt |
-| `--color-warning-light` | `#fef3c7` | Warning background tint |
-| `--color-info` | `#2563eb` | Information, hints, strategies |
-| `--color-info-light` | `#dbeafe` | Info background tint |
+| `--color-info` | `#2563eb` | Hints, strategies |
 
 **Rule:** Green = correct. Red = incorrect. Never use semantic colors as decoration.
 
 ---
 
-## 4. Typography
+## 4. Product Scope
 
-### 4.1 Font Stack
-```
---font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-             "Helvetica Neue", "Noto Sans", Arial, sans-serif,
-             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-             "Noto Color Emoji"
-```
+Practice Buddy is a **student-first** practice platform. It does NOT include:
 
-No custom webfonts. System stack = maximum performance, zero FOUT.
+- Diagnostic tests
+- Blog or news sections
+- Marketing pages (about, contact, FAQs, pricing comparison)
+- B2B marketing landing pages
+- AEEG branding or identity
 
-### 4.2 Type Scale
-
-| Token | Size | Weight | Line Ht | Usage |
-|-------|------|--------|---------|-------|
-| `--text-display` | 2.5rem/40px | 700 | 1.2 | Page titles |
-| `--text-h1` | 2rem/32px | 700 | 1.25 | Section headings |
-| `--text-h2` | 1.5rem/24px | 600 | 1.3 | Card headings |
-| `--text-h3` | 1.25rem/20px | 600 | 1.4 | Subsection headings |
-| `--text-body-large` | 1.125rem/18px | 400 | 1.6 | Reading passages, question text |
-| `--text-body` | 1rem/16px | 400 | 1.5 | Default body text |
-| `--text-body-small` | 0.875rem/14px | 400 | 1.5 | Metadata, secondary |
-| `--text-caption` | 0.75rem/12px | 400 | 1.4 | Captions, timestamps |
-| `--text-label` | 0.875rem/14px | 600 | 1.4 | Form labels, buttons |
-| `--text-question` | 1.125rem/18px | 500 | 1.6 | Question text |
-| `--text-passage` | 1rem/16px | 400 | 1.75 | Extended reading |
+The homepage is a **student dashboard** — not a marketing site.
 
 ---
 
-## 5. Spacing System
+## 5. Typography
 
-4px grid basis. `--spacing` = 0.25rem.
+System font stack only. No custom webfonts.
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-1` | 0.25rem/4px | Tight icon gaps |
-| `--space-2` | 0.5rem/8px | Micro spacing |
-| `--space-3` | 0.75rem/12px | Small component gap |
-| `--space-4` | 1rem/16px | Default component spacing |
-| `--space-5` | 1.25rem/20px | Between grouped elements |
-| `--space-6` | 1.5rem/24px | Section padding, card padding |
-| `--space-8` | 2rem/32px | Between sections |
-| `--space-10` | 2.5rem/40px | Page section gaps |
-| `--space-12` | 3rem/48px | Major section separation |
-| `--space-16` | 4rem/64px | Page padding |
+- Question text: 18px (1.125rem), weight 500, line-height 1.6
+- Body: 16px (1rem), weight 400, line-height 1.5
+- Labels: 14px (0.875rem), weight 600
 
 ---
 
-## 6. Motion
+## 6. Component Specs
 
-- Maximum duration: 300ms
-- Respect `prefers-reduced-motion`
-- **DISALLOWED:** confetti, background animation, spinning logos, autoplay video, parallax, decorative continuous motion
+- **Button**: min-height 44px, radius 0.375rem, font-weight 600
+- **Card**: bg white, border 1px, radius 0.5rem, shadow-sm
+- **Question Container**: bg white, max-width 45rem, centered, padding 1.5rem
+- **Answer Choice**: full-width row, min-height 48px, border 1px
+- **Touch targets**: 44×44px minimum
 
 ---
 
-## 7. Component Specifications
+## 7. Navigation
 
-### 7.1 Button
-- `--radius-md` (0.375rem), font-weight 600, min-height 44px
-- Variants: default (primary), secondary, outline, ghost, accent, destructive
-
-### 7.2 Card
-- `--radius-lg` (0.5rem), bg white, border 1px, shadow-sm, padding 1.5rem
-
-### 7.3 Input
-- bg white, border 1px, radius-md, focus ring primary
-
-### 7.4 Question Container
-- bg white, radius-lg, padding 1.5rem, max-width 45rem, centered
-
-### 7.5 Answer Choice
-- Full-width row, min-height 48px, border 1px, radius-md
-- Selected: 2px primary border, light tint
-- Correct: 2px success border, success tint
-- Incorrect: 2px error border, error tint
-- Eliminated: opacity 0.4, strikethrough
+Student navigation is minimal: Home, Practice, SAT, Subjects, Login/Profile
+No marketing pages. No diagnostic. No blog. No contact.
 
 ---
 
@@ -174,6 +102,5 @@ No custom webfonts. System stack = maximum performance, zero FOUT.
 
 - WCAG AA minimum
 - Color never communicates meaning alone (always + icon + text)
-- Touch targets: 44×44px minimum
 - Keyboard navigation with visible focus ring
-- Respect `prefers-reduced-motion`, `prefers-contrast: more`
+- Respect `prefers-reduced-motion`

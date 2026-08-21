@@ -2,23 +2,23 @@
 
 @theme {
   --color-background: #f6f6f6;
-  --color-foreground: #281a39;
+  --color-foreground: #1a1a2e;
   --color-surface: #ffffff;
   --color-elevated: #fafafa;
   --color-border: #e5e7eb;
   --color-input: #e5e7eb;
-  --color-primary: #4720b7;
-  --color-primary-hover: #3a1a9a;
-  --color-primary-active: #2e157d;
+  --color-primary: #1a237e;
+  --color-primary-hover: #151b64;
+  --color-primary-active: #101450;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #1e2761;
-  --color-secondary-hover: #161e4d;
+  --color-secondary: #0d2137;
+  --color-secondary-hover: #0a1a2c;
   --color-secondary-foreground: #ffffff;
   --color-accent: #f5a623;
   --color-accent-hover: #d4921e;
-  --color-accent-foreground: #1e2761;
+  --color-accent-foreground: #1a1a2e;
   --color-muted: #9ca3af;
-  --color-muted-foreground: #626262;
+  --color-muted-foreground: #6b7280;
   --color-success: #16a34a;
   --color-success-light: #dcfce7;
   --color-error: #dc2626;
@@ -29,7 +29,7 @@
   --color-info-light: #dbeafe;
   --color-destructive: #dc2626;
   --color-destructive-foreground: #ffffff;
-  --color-ring: #4720b7;
+  --color-ring: #1a237e;
   --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
@@ -39,7 +39,6 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* ───────── Body defaults ───────── */
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -49,7 +48,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ───────── Container ───────── */
 .container {
   max-width: 1200px;
   margin-left: auto;
@@ -66,11 +64,9 @@ body {
   .container { padding-left: 2.5rem; padding-right: 2.5rem; }
 }
 
-/* ───────── Utilities ───────── */
 .text-balance { text-wrap: balance; }
 .text-pretty { text-wrap: pretty; }
 
-/* ───────── Reduced motion ───────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -79,17 +75,14 @@ body {
   }
 }
 
-/* ───────── Selection ───────── */
 ::selection {
-  background-color: rgba(71, 32, 183, 0.15);
+  background-color: rgba(26, 35, 126, 0.15);
   color: var(--color-foreground);
 }
 
-/* ───────── Focus ───────── */
 :focus-visible {
   outline: 2px solid var(--color-ring);
   outline-offset: 2px;
 }
 
-/* ───────── RTL ───────── */
 [dir="rtl"] .container { direction: rtl; }

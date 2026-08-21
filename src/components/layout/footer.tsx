@@ -12,23 +12,10 @@ const footerColumns = [
     ],
   },
   {
-    titleKey: "footer.company",
-    links: [
-      { key: "nav.about", href: "/about" },
-      { key: "nav.blog", href: "/blog" },
-      { key: "nav.faqs", href: "/faqs" },
-      { key: "nav.contact", href: "/contact" },
-      { key: "footer.privacy", href: "/privacy" },
-    ],
-  },
-  {
     titleKey: "footer.resources",
     links: [
-      { key: "nav.diagnostic", href: "/take-diagnostic" },
       { key: "nav.practice", href: "/practice" },
       { key: "footer.dashboard", href: "/dashboard" },
-      { key: "footer.compare", href: "/compare" },
-      { key: "footer.pricing", href: "/pricing" },
     ],
   },
 ]

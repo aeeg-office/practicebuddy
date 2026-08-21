@@ -52,34 +52,10 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     /* Navigation */
     "nav.home": "Home",
-    "nav.programs": "Programs",
     "nav.sat": "SAT Prep",
     "nav.subjects": "English & Math",
-    "nav.about": "About Us",
     "nav.practice": "Practice",
-    "nav.blog": "Blog",
-    "nav.faqs": "FAQs",
-    "nav.contact": "Contact",
-    "nav.diagnostic": "Take a Diagnostic",
     "nav.login": "Login",
-
-    /* Hero */
-    "hero.badge": "Multi-tenant · AI-powered · Gold-certified",
-    "hero.title": "Practice Buddy",
-    "hero.subtitle": "The AI-powered practice platform for schools and institutions.",
-    "hero.cta.programs": "Explore Programs",
-    "hero.cta.contact": "Contact Us",
-
-    /* Programs */
-    "programs.title": "Our Programs",
-    "programs.subtitle": "Comprehensive practice for academic success.",
-    "programs.sat": "SAT Prep",
-    "programs.subjects": "English & Mathematics",
-
-    /* Diagnostic */
-    "diagnostic.title": "Diagnostic Testing",
-    "diagnostic.subtitle": "Discover your strengths and areas for improvement.",
-    "diagnostic.cta": "Take a Diagnostic",
 
     /* Practice */
     "practice.title": "Practice Platform",
@@ -110,32 +86,17 @@ const translations: Record<Language, Record<string, string>> = {
     "speaking.title": "Speaking Practice",
     "speaking.subtitle": "Build your speaking confidence.",
 
-    /* About */
-    "about.title": "About Practice Buddy",
-    "about.mission": "Empowering Students Worldwide",
-
-    /* Contact */
-    "contact.title": "Contact Us",
-    "contact.subtitle": "Get in touch with our team.",
-
     /* Footer */
-    "footer.tagline": "Multi-tenant, AI-powered practice platform with gold-certified question banks.",
+    "footer.tagline": "Practice smarter. Track your progress. Master every skill.",
     "footer.address": "Online — Worldwide",
     "footer.programs": "Platform",
-    "footer.company": "Company",
-    "footer.resources": "Student Resources",
-    "footer.privacy": "Privacy Policy",
+    "footer.resources": "Resources",
     "footer.dashboard": "Student Dashboard",
-    "footer.compare": "Compare Programs",
-    "footer.pricing": "Pricing",
     "footer.copyright": "Practice Buddy. All rights reserved.",
 
     /* General */
     "general.learnMore": "Learn More",
     "general.getStarted": "Get Started",
-    "general.enroll": "Enroll Now",
-    "general.contactUs": "Contact Us",
-    "general.whatsapp": "Chat on WhatsApp",
     "general.loading": "Loading...",
     "general.error": "Something went wrong.",
     "general.back": "Back",
@@ -166,10 +127,6 @@ const translations: Record<Language, Record<string, string>> = {
     "general.complete": "Complete",
     "general.retry": "Try Again",
 
-    /* FAQ */
-    "faq.title": "Frequently Asked Questions",
-    "faq.subtitle": "Everything you need to know about Practice Buddy's programs and approach.",
-
     /* Language */
     "lang.switch": "العربية",
     "lang.english": "English",
@@ -179,34 +136,10 @@ const translations: Record<Language, Record<string, string>> = {
   ar: {
     /* Navigation */
     "nav.home": "الرئيسية",
-    "nav.programs": "البرامج",
     "nav.sat": "SAT",
     "nav.subjects": "الإنجليزية والرياضيات",
-    "nav.about": "من نحن",
     "nav.practice": "التدريب",
-    "nav.blog": "المدونة",
-    "nav.faqs": "الأسئلة الشائعة",
-    "nav.contact": "اتصل بنا",
-    "nav.diagnostic": "اختبار تشخيصي",
     "nav.login": "تسجيل الدخول",
-
-    /* Hero */
-    "hero.badge": "متعدد المستأجرين · مدعوم بالذكاء الاصطناعي · معتمد بالذهب",
-    "hero.title": "Practice Buddy",
-    "hero.subtitle": "منصة تدريب مدعومة بالذكاء الاصطناعي للمدارس والمؤسسات.",
-    "hero.cta.programs": "استعرض البرامج",
-    "hero.cta.contact": "اتصل بنا",
-
-    /* Programs */
-    "programs.title": "برامجنا",
-    "programs.subtitle": "تدريب شامل للنجاح الأكاديمي.",
-    "programs.sat": "SAT",
-    "programs.subjects": "الإنجليزية والرياضيات",
-
-    /* Diagnostic */
-    "diagnostic.title": "الاختبارات التشخيصية",
-    "diagnostic.subtitle": "اكتشف نقاط قوتك ومجالات التحسين.",
-    "diagnostic.cta": "إجراء اختبار تشخيصي",
 
     /* Practice */
     "practice.title": "منصة التدريب",
@@ -237,32 +170,17 @@ const translations: Record<Language, Record<string, string>> = {
     "speaking.title": "تدريب التحدث",
     "speaking.subtitle": "ابنِ ثقتك في التحدث.",
 
-    /* About */
-    "about.title": "عن Practice Buddy",
-    "about.mission": "تمكين الطلاب في جميع أنحاء العالم",
-
-    /* Contact */
-    "contact.title": "اتصل بنا",
-    "contact.subtitle": "تواصل مع فريقنا.",
-
     /* Footer */
-    "footer.tagline": "منصة ممارسة متعددة المستأجرين مدعومة بالذكاء الاصطناعي مع بنوك أسئلة معتمدة ذهبياً.",
+    "footer.tagline": "تدرب بذكاء. تابع تقدمك. أتقن كل مهارة.",
     "footer.address": "عبر الإنترنت — في جميع أنحاء العالم",
     "footer.programs": "المنصة",
-    "footer.company": "الشركة",
-    "footer.resources": "موارد الطلاب",
-    "footer.privacy": "سياسة الخصوصية",
+    "footer.resources": "الموارد",
     "footer.dashboard": "لوحة الطالب",
-    "footer.compare": "مقارنة البرامج",
-    "footer.pricing": "الأسعار",
     "footer.copyright": "Practice Buddy. جميع الحقوق محفوظة.",
 
     /* General */
     "general.learnMore": "اعرف المزيد",
     "general.getStarted": "ابدأ الآن",
-    "general.enroll": "سجل الآن",
-    "general.contactUs": "اتصل بنا",
-    "general.whatsapp": "تحدث عبر واتساب",
     "general.loading": "جارٍ التحميل...",
     "general.error": "حدث خطأ ما.",
     "general.back": "رجوع",
@@ -292,10 +210,6 @@ const translations: Record<Language, Record<string, string>> = {
     "general.continue": "استمر",
     "general.complete": "اكتمل",
     "general.retry": "حاول مرة أخرى",
-
-    /* FAQ */
-    "faq.title": "الأسئلة الشائعة",
-    "faq.subtitle": "كل ما تحتاج معرفته عن منصة Practice Buddy.",
 
     /* Language */
     "lang.switch": "English",

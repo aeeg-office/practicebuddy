@@ -23,21 +23,21 @@ const config: Config = {
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
         primary: {
-          DEFAULT: "rgb(71 32 183)",
+          DEFAULT: "rgb(26 35 126)",
           foreground: "rgb(255 255 255)",
-          hover: "rgb(55 25 150)",
+          hover: "rgb(21 27 100)",
         },
         secondary: {
-          DEFAULT: "rgb(30 39 97)",
+          DEFAULT: "rgb(13 33 55)",
           foreground: "rgb(255 255 255)",
         },
         accent: {
           DEFAULT: "rgb(245 166 35)",
-          foreground: "rgb(255 255 255)",
+          foreground: "rgb(26 26 46)",
         },
         muted: {
-          DEFAULT: "rgb(197 197 197)",
-          foreground: "rgb(98 98 98)",
+          DEFAULT: "rgb(156 163 175)",
+          foreground: "rgb(107 114 128)",
         },
         destructive: {
           DEFAULT: "rgb(239 68 68)",
@@ -45,7 +45,7 @@ const config: Config = {
         },
         card: {
           DEFAULT: "rgb(255 255 255)",
-          foreground: "rgb(40 26 57)",
+          foreground: "rgb(26 26 46)",
         },
       },
       borderRadius: {
@@ -54,7 +54,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Calibri", "Arial", "sans-serif"],
+        sans: ["-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Roboto", '"Helvetica Neue"', "Arial", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

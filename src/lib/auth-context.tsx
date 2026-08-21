@@ -30,6 +30,27 @@ const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
 })
 
+/**
+ * Parse a JWT payload client-side to check expiry without a network call.
+ * Returns null for invalid/unparseable tokens.
+ */
+function parseJwtPayload(token: string): { exp?: number } | null {
+  try {
+    const payload = token.split(".")[1]
+    if (!payload) return null
+    return JSON.parse(atob(payload.replace(/-/g, "+").replace(/_/g, "/"))) as { exp?: number }
+  } catch {
+    return null
+  }
+}
+
+/** Returns true when the token has passed its `exp` claim (if present). */
+function isTokenExpired(token: string): boolean {
+  const parsed = parseJwtPayload(token)
+  if (!parsed || typeof parsed.exp !== "number") return false
+  return Date.now() >= parsed.exp * 1000
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [token, setToken] = useState<string | null>(null)
@@ -40,8 +61,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const saved = localStorage.getItem("pb-token")
     const savedUser = localStorage.getItem("pb-user")
     if (saved && savedUser) {
-      setToken(saved)
-      setUser(JSON.parse(savedUser))
+      // Discard expired tokens immediately — don't show the user as logged in
+      // when the JWT has already expired.
+      if (isTokenExpired(saved)) {
+        localStorage.removeItem("pb-token")
+        localStorage.removeItem("pb-user")
+      } else {
+        setToken(saved)
+        setUser(JSON.parse(savedUser))
+      }
     }
     setIsLoading(false)
   }, [])

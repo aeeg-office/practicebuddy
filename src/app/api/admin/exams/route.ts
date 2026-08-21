@@ -126,6 +126,11 @@ export async function PATCH(request: NextRequest) {
     const data = examData(input, true)
     if (data instanceof Response) return data
     if (!Object.keys(data).length) return apiResponseError("At least one editable field is required", 400)
+    // Verify the exam belongs to the admin's tenant
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+    if (!adminUser?.tenantId) return apiResponseError("Admin has no tenant", 403)
+    const existing = await prisma.exam.findUnique({ where: { id }, select: { tenantId: true } })
+    if (!existing || existing.tenantId !== adminUser.tenantId) return apiResponseError("Exam not found", 404)
     const exam = await prisma.exam.update({ where: { id }, data: data as Prisma.ExamUncheckedUpdateInput })
     await writeAdminAuditEvent({ request, actorId: identity.userId, action: "update", entityType: "exam", entityId: exam.id, metadata: { fields: Object.keys(data) } })
     return NextResponse.json({ exam })
@@ -143,6 +148,11 @@ export async function DELETE(request: NextRequest) {
   const id = new URL(request.url).searchParams.get("id")
   if (!id) return apiResponseError("id is required", 400)
   try {
+    // Verify the exam belongs to the admin's tenant
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+    if (!adminUser?.tenantId) return apiResponseError("Admin has no tenant", 403)
+    const existing = await prisma.exam.findUnique({ where: { id }, select: { tenantId: true } })
+    if (!existing || existing.tenantId !== adminUser.tenantId) return apiResponseError("Exam not found", 404)
     const exam = await prisma.exam.update({ where: { id }, data: { isActive: false } })
     await writeAdminAuditEvent({ request, actorId: identity.userId, action: "delete", entityType: "exam", entityId: exam.id, metadata: { title: exam.title } })
     return NextResponse.json({ success: true })

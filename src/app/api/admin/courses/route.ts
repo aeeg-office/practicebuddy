@@ -4,6 +4,7 @@ import { NextResponse } from "next/server"
 import prisma from "@/lib/prisma"
 import {
   apiError,
+  apiResponseError,
   authenticateAdminApi,
   pagination,
   requireSafeAdminMutationOrigin,
@@ -92,7 +93,9 @@ export async function GET(request: Request) {
     const { page, limit, skip } = pagination(url.searchParams)
     const search = url.searchParams.get("search")?.trim()
     const published = url.searchParams.get("published")
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
     const where: Prisma.CourseWhereInput = {
+      tenantId: adminUser?.tenantId ?? "",
       ...(search ? { OR: [{ code: { contains: search, mode: "insensitive" } }, { name: { contains: search, mode: "insensitive" } }] } : {}),
       ...(published === "true" ? { isActive: true } : published === "false" ? { isActive: false } : {}),
     }
@@ -120,8 +123,12 @@ export async function POST(request: Request) {
     return validationError(error)
   }
 
+  // Resolve tenant for tenant-scoped course creation
+  const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+  if (!adminUser?.tenantId) return apiResponseError("Admin has no tenant", 403)
+
   try {
-    const course = await prisma.course.create({ data: data as Prisma.CourseUncheckedCreateInput })
+    const course = await prisma.course.create({ data: { ...data, tenantId: adminUser.tenantId } as Prisma.CourseUncheckedCreateInput })
     await writeAdminAuditEvent({ actorId: identity.userId, request, action: "create", entityType: "course", entityId: course.id, metadata: { code: course.code } })
     return NextResponse.json({ course }, { status: 201 })
   } catch (error) {

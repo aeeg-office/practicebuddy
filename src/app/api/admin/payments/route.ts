@@ -24,7 +24,9 @@ export async function GET(request: Request) {
     const status = params.get("status")
     if (status && !STATUSES.has(status)) return apiResponseError("status is invalid", 400)
     const search = params.get("search")?.trim()
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
     const where: Prisma.PaymentWhereInput = {
+      ...(adminUser?.tenantId ? { user: { tenantId: adminUser.tenantId } } : {}),
       ...(status ? { status } : {}),
       ...(search ? { OR: [{ transactionId: { contains: search, mode: "insensitive" } }, { userId: { contains: search, mode: "insensitive" } }] } : {}),
     }

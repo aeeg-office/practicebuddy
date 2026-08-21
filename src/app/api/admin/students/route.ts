@@ -75,8 +75,11 @@ export async function GET(request: Request) {
     const { page, limit, skip } = pagination(url.searchParams)
     const search = url.searchParams.get("search")?.trim()
     const isActive = url.searchParams.get("active")
+    // Look up the authenticated admin's tenant for tenant isolation
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
     const where: Prisma.UserWhereInput = {
       role: "student",
+      tenantId: adminUser?.tenantId ?? "",
       ...(search ? { OR: [
         { name: { contains: search, mode: "insensitive" } },
         { email: { contains: search, mode: "insensitive" } },
@@ -108,7 +111,12 @@ export async function POST(request: Request) {
   }
 
   try {
-    const student = await prisma.user.create({ data, include: studentInclude })
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+    if (!adminUser?.tenantId) return apiResponseError("Admin has no tenant", 403)
+    const student = await prisma.user.create({
+      data: { ...data, tenantId: adminUser.tenantId } as Prisma.UserCreateInput,
+      include: studentInclude,
+    })
     await writeAdminAuditEvent({ actorId: identity.userId, request, action: "create", entityType: "student", entityId: student.id, metadata: { email: student.email } })
     return NextResponse.json({ student }, { status: 201 })
   } catch (error) {

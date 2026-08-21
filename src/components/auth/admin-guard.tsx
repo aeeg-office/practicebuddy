@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
+import { canAccessRoute } from "@/lib/rbac"
 import { Loader2 } from "lucide-react"
 
 export function AdminGuard({ children }: { children: React.ReactNode }) {
@@ -13,7 +14,7 @@ export function AdminGuard({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (isLoading) return
 
-    if (!isAuthenticated || user?.role !== "admin") {
+    if (!isAuthenticated || !user || !canAccessRoute(user.role, "school_admin")) {
       router.push("/login")
     } else {
       setChecked(true)

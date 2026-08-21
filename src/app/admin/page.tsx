@@ -13,7 +13,7 @@ export default function AdminDashboardPage() {
   const [data, setData] = useState<Dashboard | null>(null)
   const [error, setError] = useState<string | null>(null)
   useEffect(() => { void (async () => { try { const response = await fetch("/api/admin/analytics", { credentials: "same-origin" }); const payload = await response.json(); if (!response.ok) throw new Error(payload.error ?? "Unable to load dashboard"); setData(payload) } catch (reason) { setError(reason instanceof Error ? reason.message : "Unable to load dashboard") } })() }, [])
-  return <AdminLayout activeSidebar="Overview" pageTitle="Admin dashboard" pageDescription="Live AEEG operations overview">
+  return <AdminLayout activeSidebar="Overview" pageTitle="Admin dashboard" pageDescription="Platform operations overview">
     {error && <p role="alert" className="rounded-md bg-red-50 p-3 text-sm text-red-700">{error}</p>}
     {!data ? <p className="text-sm text-muted-foreground">Loading authenticated dashboard…</p> : <>
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[

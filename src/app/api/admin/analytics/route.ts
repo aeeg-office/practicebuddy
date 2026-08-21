@@ -26,16 +26,20 @@ export async function GET(request: Request) {
     })
     const indexedMonths = new Map(months.map((month) => [month.key, month]))
 
+    // Resolve admin's tenant for tenant-scoped analytics
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+    const tenantId = adminUser?.tenantId ?? ""
+
     const [totalUsers, activeStudents, courseCount, paidRevenue, users, payments, sessions, recentStudents, recentPayments] = await Promise.all([
-      prisma.user.count(),
-      prisma.user.count({ where: { role: "student", isActive: true } }),
-      prisma.course.count({ where: { isActive: true } }),
-      prisma.payment.aggregate({ where: { status: "paid" }, _sum: { amount: true } }),
-      prisma.user.findMany({ where: { createdAt: { gte: start } }, select: { createdAt: true } }),
-      prisma.payment.findMany({ where: { status: "paid", paidAt: { gte: start } }, select: { amount: true, paidAt: true } }),
-      prisma.practiceSession.findMany({ where: { startedAt: { gte: start } }, select: { startedAt: true, completedAt: true, correctCount: true, totalQuestions: true } }),
-      prisma.user.findMany({ where: { role: "student" }, take: 8, orderBy: [{ createdAt: "desc" }, { id: "asc" }], select: { id: true, name: true, email: true, isActive: true, createdAt: true, enrollments: { take: 1, orderBy: { enrolledAt: "desc" }, select: { course: { select: { name: true } } } } } }),
-      prisma.payment.findMany({ take: 8, orderBy: [{ createdAt: "desc" }, { id: "asc" }], select: { id: true, amount: true, currency: true, status: true, createdAt: true, user: { select: { name: true, email: true } } } }),
+      prisma.user.count({ where: { tenantId } }),
+      prisma.user.count({ where: { role: "student", isActive: true, tenantId } }),
+      prisma.course.count({ where: { isActive: true, tenantId } }),
+      prisma.payment.aggregate({ where: { status: "paid", user: { tenantId } }, _sum: { amount: true } }),
+      prisma.user.findMany({ where: { createdAt: { gte: start }, tenantId }, select: { createdAt: true } }),
+      prisma.payment.findMany({ where: { status: "paid", paidAt: { gte: start }, user: { tenantId } }, select: { amount: true, paidAt: true } }),
+      prisma.practiceSession.findMany({ where: { startedAt: { gte: start }, tenantId }, select: { startedAt: true, completedAt: true, correctCount: true, totalQuestions: true } }),
+      prisma.user.findMany({ where: { role: "student", tenantId }, take: 8, orderBy: [{ createdAt: "desc" }, { id: "asc" }], select: { id: true, name: true, email: true, isActive: true, createdAt: true, enrollments: { take: 1, orderBy: { enrolledAt: "desc" }, select: { course: { select: { name: true } } } } } }),
+      prisma.payment.findMany({ where: { user: { tenantId } }, take: 8, orderBy: [{ createdAt: "desc" }, { id: "asc" }], select: { id: true, amount: true, currency: true, status: true, createdAt: true, user: { select: { name: true, email: true } } } }),
     ])
 
     for (const user of users) {

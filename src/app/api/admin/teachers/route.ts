@@ -92,7 +92,9 @@ export async function GET(request: Request) {
     const { page, limit, skip } = pagination(url.searchParams)
     const search = url.searchParams.get("search")?.trim()
     const active = url.searchParams.get("active")
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
     const where: Prisma.TeacherWhereInput = {
+      tenantId: adminUser?.tenantId ?? "",
       ...(search ? { OR: [
         { user: { name: { contains: search, mode: "insensitive" } } },
         { user: { email: { contains: search, mode: "insensitive" } } },
@@ -126,9 +128,11 @@ export async function POST(request: Request) {
   const userId = data.userId
   if (!userId) return apiResponseError("userId is required", 400)
   try {
-    const user = await prisma.user.findUnique({ where: { id: userId }, select: { id: true } })
+    const user = await prisma.user.findUnique({ where: { id: userId }, select: { id: true, tenantId: true } })
     if (!user) return apiResponseError("User not found", 404)
-    const teacher = await prisma.teacher.create({ data, include: teacherInclude })
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+    if (!adminUser?.tenantId) return apiResponseError("Admin has no tenant", 403)
+    const teacher = await prisma.teacher.create({ data: { ...data, tenantId: adminUser.tenantId }, include: teacherInclude })
     await writeAdminAuditEvent({ actorId: identity.userId, request, action: "create", entityType: "teacher", entityId: teacher.id, metadata: { userId: teacher.userId } })
     return NextResponse.json({ teacher }, { status: 201 })
   } catch (error) {
@@ -157,7 +161,13 @@ export async function PATCH(request: Request) {
   }
 
   try {
-    const teacher = await prisma.teacher.update({ where: { id }, data, include: teacherInclude })
+    const adminUser = await prisma.user.findUnique({ where: { id: identity.userId }, select: { tenantId: true } })
+    if (!adminUser?.tenantId) return apiResponseError("Admin has no tenant", 403)
+    const teacher = await prisma.teacher.update({
+      where: { id, tenantId: adminUser.tenantId },
+      data,
+      include: teacherInclude,
+    })
     await writeAdminAuditEvent({ actorId: identity.userId, request, action: "update", entityType: "teacher", entityId: teacher.id, metadata: { fields: Object.keys(data) } })
     return NextResponse.json({ teacher })
   } catch (error) {

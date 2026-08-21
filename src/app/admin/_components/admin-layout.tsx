@@ -58,11 +58,14 @@ export function getSidebarLinks(activeLabel: string, userRole: string = "admin")
     { label: "Payments", href: "/admin/payments", icon: CreditCard, active: activeLabel === "Payments", minRole: "admin" },
     { label: "Exams", href: "/admin/exams", icon: FileText, active: activeLabel === "Exams", minRole: "teacher" },
     { label: "Questions", href: "/admin/questions", icon: HelpCircle, active: activeLabel === "Questions", minRole: "teacher" },
+    { label: "Review Queue", href: "/admin/review-queue", icon: FileText, active: activeLabel === "Review Queue", minRole: "school_admin" },
     { label: "AI Factory", href: "/admin/ai-factory", icon: Zap, active: activeLabel === "AI Factory", minRole: "teacher" },
     { label: "Curriculum", href: "/admin/curriculum", icon: BookMarked, active: activeLabel === "Curriculum", minRole: "school_admin" },
     { label: "Database", href: "/admin/database", icon: Database, active: activeLabel === "Database", minRole: "admin" },
     { label: "Analytics", href: "/admin/analytics", icon: BarChart3, active: activeLabel === "Analytics", minRole: "school_admin" },
     { label: "Users & Roles", href: "/admin/users", icon: Shield, active: activeLabel === "Users & Roles", minRole: "admin" },
+    { label: "Organizations", href: "/admin/organizations", icon: Settings, active: activeLabel === "Organizations", minRole: "admin" },
+    { label: "Audit Log", href: "/admin/audit-log", icon: FileText, active: activeLabel === "Audit Log", minRole: "admin" },
     { label: "Settings", href: "/admin/settings", icon: Settings, active: activeLabel === "Settings", minRole: "school_admin" },
   ]
   return links.filter((link) => canAccessRoute(userRole, link.minRole))
@@ -153,20 +156,8 @@ export function AdminLayout({
           ))}
         </nav>
 
-        {/* WhatsApp Link + Back to Site */}
+        {/* Back to Site */}
         <div className="px-3 pb-4 space-y-2 border-t pt-4" style={{ borderColor: colors.border }}>
-          <a
-            href="https://wa.me/201060618899"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-500 hover:text-green-600 hover:bg-green-50 transition-colors ${
-              !sidebarOpen && "justify-center px-2"
-            }`}
-            title={!sidebarOpen ? "WhatsApp Support" : undefined}
-          >
-            <MessageCircle className="h-5 w-5 shrink-0" />
-            {sidebarOpen && <span className="truncate">WhatsApp Support</span>}
-          </a>
           <Link
             href="/"
             className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors ${

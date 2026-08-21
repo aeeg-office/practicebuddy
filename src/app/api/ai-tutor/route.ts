@@ -192,7 +192,7 @@ Would you like me to walk through the Integrated Writing structure step by step,
 
 const defaultTemplate = (subject: string): string => {
   if (subject === "sat")
-    return `I'm your SAT Practice Buddy! I can help you with:
+    return `I'm your SAT Lumaani! I can help you with:
 • Explaining SAT math and verbal concepts
 • Giving strategic hints for tough questions
 • Creating practice questions tailored to specific skills
@@ -200,7 +200,7 @@ const defaultTemplate = (subject: string): string => {
 
 Just let me know what you need — "Explain this concept," "Give me a hint," "Create a practice question," or "What should I study next?" I'm here to help!`
   if (subject === "act")
-    return `I'm your ACT Practice Buddy! I can help you with:
+    return `I'm your ACT Lumaani! I can help you with:
 • Explaining ACT English, Math, Reading, and Science concepts
 • Giving efficient strategies and hints
 • Creating timed practice questions
@@ -209,7 +209,7 @@ Just let me know what you need — "Explain this concept," "Give me a hint," "Cr
 What would you like help with today?`
 
   if (subject === "ielts")
-    return `I'm your IELTS Practice Buddy! I can help you with:
+    return `I'm your IELTS Lumaani! I can help you with:
 • Explaining IELTS Writing, Speaking, Reading, and Listening strategies
 • Giving hints for each section
 • Creating practice essay prompts and speaking topics
@@ -218,7 +218,7 @@ What would you like help with today?`
 How can I assist with your IELTS preparation?`
 
   if (subject === "toefl")
-    return `I'm your TOEFL Practice Buddy! I can help you with:
+    return `I'm your TOEFL Lumaani! I can help you with:
 • Explaining integrated and independent tasks
 • Giving note-taking and time management hints
 • Creating practice speaking and writing prompts
@@ -226,7 +226,7 @@ How can I assist with your IELTS preparation?`
 
 What would you like to practice?`
 
-  return `I'm your AI Practice Buddy! I can help you prepare for SAT, ACT, IELTS, and TOEFL. Choose a subject above, then ask me to explain a concept, give you a hint, create a practice question, or recommend your next skill to study.`
+  return `I'm your AI Lumaani! I can help you prepare for SAT, ACT, IELTS, and TOEFL. Choose a subject above, then ask me to explain a concept, give you a hint, create a practice question, or recommend your next skill to study.`
 }
 
 // ── Subject-aware greeting messages for conversation start ──

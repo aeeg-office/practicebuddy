@@ -72,7 +72,7 @@ const translations: Record<Language, Record<string, string>> = {
     "mock.subtitle": "Simulate the real test experience.",
 
     /* AI Tutor */
-    "ai.title": "AI Practice Buddy",
+    "ai.title": "AI Lumaani",
     "ai.subtitle": "Get help with hints, explanations, and practice questions.",
 
     /* Writing */

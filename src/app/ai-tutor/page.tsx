@@ -270,7 +270,7 @@ export default function AITutorPage() {
             className="text-xs font-medium border-[#1a237e]/20 text-[#1a237e] bg-[#1a237e]/5"
           >
             <GraduationCap className="h-3 w-3 mr-1" />
-            {currentSubject.label} Practice Buddy
+            {currentSubject.label} Lumaani
           </Badge>
         </div>
       </div>

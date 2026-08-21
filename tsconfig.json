@@ -42,6 +42,7 @@
     "tests/**/*.spec.ts",
     "tests/playwright.config.ts",
     "prisma.config.ts",
-    "scripts"
+    "scripts",
+    "prisma"
   ]
 }

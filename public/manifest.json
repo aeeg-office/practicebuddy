@@ -1,0 +1,35 @@
+{
+  "name": "Practice Buddy",
+  "short_name": "PB",
+  "description": "Intelligent practice platform for Grades 3-10 English, Math, MAP, and SAT preparation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f6f6",
+  "theme_color": "#1a237e",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384x384.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "practice", "testing"],
+  "screenshots": [],
+  "lang": "en",
+  "dir": "ltr"
+}

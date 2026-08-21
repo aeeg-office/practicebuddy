@@ -1,7 +1,7 @@
 export const content = {
   hero: {
     badge: "Multi-tenant · AI-powered · Gold-certified",
-    title: "Practice Buddy",
+    title: "Lumaani",
     subtitle: "The AI-powered practice platform for schools and institutions. Gold-certified question banks, mock exams, and real-time progress analytics — all in one place.",
     ctas: {
       primary: "Start Practicing",

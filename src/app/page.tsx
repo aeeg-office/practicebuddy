@@ -21,7 +21,7 @@ export default function Home() {
       <section className="bg-primary py-16 md:py-20">
         <div className="container">
           <h1 className="text-3xl font-bold text-white md:text-4xl">
-            {isAuthenticated ? `Hi, ${user?.name?.split(" ")[0] || "there"}!` : "Welcome to Practice Buddy"}
+            {isAuthenticated ? `Hi, ${user?.name?.split(" ")[0] || "there"}!` : "Welcome to Lumaani"}
           </h1>
           <p className="mt-2 text-lg text-white/80">
             {isAuthenticated ? "What would you like to practice today?" : "Practice smarter. Track your progress. Master every skill."}

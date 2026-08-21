@@ -19,7 +19,7 @@ export default function AITutorLayout({ children }: { children: React.ReactNode 
           </div>
           <div>
             <div className="text-sm font-bold leading-tight text-[#1a237e]">AI Tutor</div>
-            <div className="text-[10px] leading-tight text-gray-500">Practice Buddy</div>
+            <div className="text-[10px] leading-tight text-gray-500">Lumaani</div>
           </div>
         </Link>
 

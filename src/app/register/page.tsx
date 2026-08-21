@@ -49,7 +49,7 @@ export default function RegisterPage() {
             PB
           </div>
           <h1 className="text-2xl font-bold text-foreground">Create Account</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Register to get started with Practice Buddy</p>
+          <p className="mt-1 text-sm text-muted-foreground">Register to get started with Lumaani</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

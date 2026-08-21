@@ -109,28 +109,27 @@ export function AdminLayout({
         style={{ borderColor: colors.border }}
       >
         {/* Logo */}
-        <Link
-          href="/admin"
-          className={`flex items-center gap-2 h-16 border-b transition-all ${
-            sidebarOpen ? "px-6" : "px-4 justify-center"
-          }`}
-          style={{ borderColor: colors.border }}
-        >
-          <div
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-white text-sm font-bold shrink-0"
-            style={{ backgroundColor: colors.primary }}
-          >
-            PB
-          </div>
-          {sidebarOpen && (
-            <div className="min-w-0">
-              <div className="text-sm font-bold leading-tight truncate" style={{ color: colors.primary }}>
-                Practice Buddy
-              </div>
-              <div className="text-[10px] leading-tight text-muted-foreground truncate">Admin Panel</div>
-            </div>
-          )}
-        </Link>
+                <Link
+                  href="/admin"
+                  className={`flex items-center gap-2 h-16 border-b transition-all ${
+                    sidebarOpen ? "px-6" : "px-4 justify-center"
+                  }`}
+                  style={{ borderColor: colors.border }}
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg text-white text-sm font-bold shrink-0"
+                    style={{ backgroundColor: colors.primary }}
+                  >
+                    L
+                  </div>
+                  {sidebarOpen && (
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold leading-tight truncate" style={{ color: colors.primary }}>
+                        Lumaani
+                      </div>
+                      <div className="text-[10px] leading-tight text-muted-foreground truncate">Admin Panel</div>
+                    </div>
+                  )}
+                </Link>
 
         {/* Navigation */}
         <nav className="flex-1 py-4 px-3 space-y-1 overflow-y-auto">

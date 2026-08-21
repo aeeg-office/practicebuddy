@@ -13,8 +13,8 @@ type FeatureFlag = { id: string; code: string; name: string; description: string
 
 type FormValues = Record<string, string>
 const fields = [
-  ["platform.name", "Platform name", "Practice Buddy Platform"],
-  ["platform.support-email", "Support email", "hello@practicebuddy.app"],
+  ["platform.name", "Platform name", "Lumaani Platform"],
+  ["platform.support-email", "Support email", "hello@lumaani.com"],
   ["platform.support-phone", "Support phone", ""],
   ["platform.timezone", "Timezone", "UTC"],
   ["platform.locale", "Default language", "en"],

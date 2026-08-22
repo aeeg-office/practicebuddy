@@ -1,9 +1,9 @@
 # Practice Buddy Project State
 
 ## Last Updated
-- **Timestamp:** 2026-08-21 21:30 EEST
+- **Timestamp:** 2026-08-22 14:30 EEST
 - **Machine:** M2 (Hermes Desktop)
-- **Status:** POST-COMPLETION — All 23 Phases Executed
+- **Status:** POST-COMPLETION — All 23 Phases Executed + Nightly Assurance Installed
 - **Public Brand:** Lumaani
 
 ---
@@ -232,3 +232,29 @@ See `PRACTICE_BUDDY_DEPLOYMENT_STATE.md` for full deployment procedure.
 | `LUMAANI_DESIGN_SYSTEM.md` | Design tokens/palette, 27KB |
 | `LUMAANI_LOGO_RESEARCH.md` | Logo concepts/selection, 35KB |
 | `Lumaani_BRAND_VERIFICATION.md` | Independent audit, 10/10 PASS |
+| `LUMAANI_NIGHTLY_ASSURANCE.md` | **Nightly system documentation** |
+| `LUMAANI_NIGHTLY_RUNNER.sh` | **Nightly runner script** |
+
+---
+
+## Nightly Assurance System
+
+**Status:** ✅ INSTALLED
+**Schedule:** 03:30 Cairo time daily (cron: `30 3 * * *`)
+**Orchestrator:** M2 (Hermes Desktop) via Hermes cron job
+**Job ID:** `128a394ef9ef` — "Lumaani Nightly Assurance"
+**Run ID Format:** `LUMAANI-NA-YYYYMMDD-RUNID`
+**Report Format:** `LUMAANI_NIGHTLY_ASSURANCE_YYYYMMDD_RUNID.md`
+
+### Pipeline
+
+Repository/Production Baseline → Architecture Check → Functional Audit → Content Integrity Audit → Regression Comparison → Security/Performance Audit → Issue Classification → Root Cause → Repair Gate → Controlled Repair → Targeted Testing → Affected Workflow Testing → Regression Testing → Production Verification → Report → Telegram
+
+### Safety Period
+First 3–7 runs: **conservative mode** — baseline building, no auto-repair except for exceptionally clear, localized, low-risk defects.
+
+### Telegram
+**Not yet configured.** The cron job delivers locally (`deliver: local`). When a Telegram channel is configured for Lumaani, update the cron job's `deliver` parameter.
+
+### Logs
+`/home/qadir/.hermes/profiles/practice-buddy/nightly-assurance/logs/`

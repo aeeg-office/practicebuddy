@@ -73,3 +73,32 @@ Complete platform build-out across 23 phases: decoupling, database architecture,
 - Logo system, PWA icons, metadata
 - Zero public "Practice Buddy" references
 - Independent verification: 10/10 PASS
+
+---
+
+## Nightly Assurance System — 2026-08-22
+**Job ID:** `128a394ef9ef` — "Lumaani Nightly Assurance"
+**Schedule:** 03:30 Cairo time daily
+
+### System Installed
+- Hermes cron job with full 30-stage pipeline
+- Pre-run baseline script with run ID tracking
+- `lumaani-nightly-assurance` skill with complete domain knowledge
+- Archive: `/home/qadir/.hermes/profiles/practice-buddy/nightly-assurance/`
+- Report format: `LUMAANI_NIGHTLY_ASSURANCE_{DATE}_{RUNID}.md`
+
+### Config Changes
+- Updated `nightly-qa-config.yaml`: replaced Practice Buddy (PLANNED) with Lumaani (LOCAL_DEV at localhost:3099)
+- Updated `practice-buddy-manifest.md`: v2.0 reflecting post-23-phase reality
+- Created `LUMAANI_NIGHTLY_ASSURANCE.md`: system documentation
+- Created `LUMAANI_NIGHTLY_RUNNER.sh`: runner script
+
+### State Files Updated
+- `PRACTICE_BUDDY_DECISIONS.md`: Added Decision 19 — Nightly Assurance
+- `PRACTICE_BUDDY_PROJECT_STATE.md`: Added Nightly Assurance section
+- `PRACTICE_BUDDY_CHANGELOG.md`: This entry
+
+### Delivery
+- Local delivery (Telegram not yet configured)
+- Next scheduled run: 2026-08-23 03:30 Cairo
+- First 3–7 runs in conservative baseline mode

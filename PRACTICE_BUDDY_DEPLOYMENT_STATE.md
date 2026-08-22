@@ -1,88 +1,67 @@
-# Practice Buddy Deployment State
+# Lumaani Deployment State
 
 ## Environment Status
 | Environment | Status | URL | Notes |
 |-------------|--------|-----|-------|
-| **Local Dev** | ✅ RUNNING | http://localhost:3099 | Next.js dev server |
-| **Production** | ⚠️ DOCUMENTED | — | Release tag created, deployment procedure documented |
-| **Staging** | ❌ NOT CONFIGURED | — | No staging environment |
-| **VPS** | ❌ NOT CONFIGURED | — | VPS at 191.218.165.228 exists but PB not deployed |
-
----
-
-## Local Dev Environment
-| Component | Detail |
-|-----------|--------|
-| **Server** | Next.js dev server (via `npx next dev -p 3099`) |
-| **Port** | 3099 |
-| **Database** | PostgreSQL `practice_buddy` on localhost:5432 |
-| **DB Provider** | PostgreSQL (Prisma ORM) |
-| **Auth** | JWT/bcrypt, local |
-| **Build** | ✅ Compiled successfully, 0 errors |
-| **Routes** | 87 (43 admin, 44 student/teacher/public) |
-| **DB Tables** | 38 |
+| **Local Dev** | ✅ RUNNING | http://localhost:3099 | Next.js dev server, build ✅ |
+| **Production** | ⚠️ NOT DEPLOYED | lumaani.com | Runbook ready (LUMAANI_VPS_DEPLOYMENT_RUNBOOK.md) |
+| **Staging** | ❌ NOT CONFIGURED | — | — |
+| **VPS** | ❌ NOT DEPLOYED | 191.218.165.228 | VPS exists, PB not deployed |
 
 ---
 
 ## Deployment History
 | # | Date | Environment | Commit | Schema Version | Status |
 |---|------|-------------|--------|---------------|--------|
-| 1 | 2026-08-21 | Release Tag | (latest) | 6 migrations | ✅ Tagged: practice-buddy-release-1-2026-08-21 |
+| — | — | — | — | — | No deployments yet |
 
 ---
 
-## Production Deployment Procedure
+## Production-Ready Commit
+**Commit:** `f4a4ad07` — Lumaani rebrand: independent verification 10/10 PASS  
+**Tag:** `practice-buddy-release-1-2026-08-21`  
+**Build:** ✅ 0 errors  
+**DB:** ✅ 7 migrations, 40 tables, all seeds run  
 
-### Prerequisites
-- Node.js 22+ (or compatible)
-- PostgreSQL 15+
-- Environment variables configured
+---
 
-### Steps
+## Deployment Procedure
+Full runbook: `LUMAANI_VPS_DEPLOYMENT_RUNBOOK.md`
+
+### Quick Start
 ```bash
-# 1. Clone and install
-git clone git@github.com:aeeg-office/practicebuddy.git
-cd practicebuddy
-npm install
-
-# 2. Configure environment
-cp .env.example .env
-# Edit .env: set DATABASE_URL, JWT_SECRET, etc.
-
-# 3. Run database migrations
-npx prisma migrate deploy
-
-# 4. Build and start
-npm run build
-npm start
-
-# 5. Verify
-curl http://localhost:3099
+# VPS prerequisites: Node.js 22, PostgreSQL 15, Nginx
+# 1. Clone repo
+# 2. Configure .env (DATABASE_URL, JWT_SECRET, NODE_ENV=production)
+# 3. Run migrations: npx prisma migrate deploy
+# 4. Build: npm run build
+# 5. Start: npm start (or pm2)
+# 6. Proxy: nginx → localhost:3099
+# 7. SSL: certbot
 ```
 
-### Rollback
-```bash
-# Git rollback
-git revert HEAD --no-edit
-git push origin main
+---
 
-# Database rollback
-npx prisma migrate down 1
+## Rollback Procedure
+```bash
+git revert HEAD --no-edit
+npm run build
+pm2 restart lumaani
 ```
 
 ---
 
 ## Known Production Issues
-None — not yet deployed to production.
+- None — not yet deployed to production
 
 ## Production Verification Checklist
-- [ ] Build passes
-- [ ] Migrations apply
-- [ ] Login works
-- [ ] Student practice works
-- [ ] Teacher dashboard works
-- [ ] Admin back office works
-- [ ] API routes respond
-- [ ] No console errors
-- [ ] Responsive layout
-- [ ] PWA installable
+- [x] Build passes (0 errors)
+- [x] Route regression (87 routes verified)
+- [x] Security (0 Critical)
+- [x] Brand verification (10/10 PASS)
+- [x] Deployment runbook written
+- [ ] DNS configured (lumaani.com → VPS)
+- [ ] SSL certificate obtained
+- [ ] Production .env prepared
+- [ ] VPS deployment executed
+- [ ] Smoke test passed

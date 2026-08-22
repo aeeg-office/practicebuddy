@@ -4,9 +4,14 @@
 | Environment | Status | URL | Notes |
 |-------------|--------|-----|-------|
 | **Local Dev** | ✅ RUNNING | http://localhost:3099 | Next.js dev server, build ✅ |
-| **Production** | ⚠️ NOT DEPLOYED | lumaani.com | Runbook ready (LUMAANI_VPS_DEPLOYMENT_RUNBOOK.md) |
+| **Production** | ✅ DEPLOYED | https://lumaani.com (DNS pending) | App running via PM2 on VPS, nginx proxying |
 | **Staging** | ❌ NOT CONFIGURED | — | — |
-| **VPS** | ❌ NOT DEPLOYED | 191.218.165.228 | VPS exists, PB not deployed |
+| **VPS** | ✅ ACTIVE | 191.218.165.228 | Ubuntu 24.04, Node 22, PG 16, nginx, PM2 |
+
+## Deployment History
+| # | Date | Environment | Commit | Schema Version | Status |
+|---|------|-------------|--------|---------------|--------|
+| 1 | 2026-08-22 | Production | `practice-buddy-release-1-2026-08-21` | 7 migrations applied | ✅ LIVE (port 3099) |
 
 ---
 
@@ -60,8 +65,8 @@ pm2 restart lumaani
 - [x] Security (0 Critical)
 - [x] Brand verification (10/10 PASS)
 - [x] Deployment runbook written
-- [ ] DNS configured (lumaani.com → VPS)
-- [ ] SSL certificate obtained
-- [ ] Production .env prepared
-- [ ] VPS deployment executed
-- [ ] Smoke test passed
+- [x] DNS configured (lumaani.com → VPS)
+- [x] SSL certificate obtained (Let's Encrypt, expires 2026-11-20)
+- [x] Production .env prepared
+- [x] VPS deployment executed
+- [x] Smoke test passed (11 routes HTTPS 200)

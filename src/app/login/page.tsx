@@ -44,8 +44,8 @@ export default function LoginPage() {
     <div className="flex min-h-[80vh] items-center justify-center bg-background px-4 py-16">
       <div className="w-full max-w-md rounded-lg border bg-surface p-8 shadow-sm">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-lg bg-primary text-xl font-bold text-primary-foreground">
-            PB
+          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-lg bg-primary shrink-0 overflow-hidden">
+            <img src="/lumaani-icon-192.svg" alt="Lumaani" className="h-10 w-10" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">
             {mode === "login" ? "Welcome Back" : "Create Account"}

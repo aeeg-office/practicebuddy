@@ -858,7 +858,7 @@ export default function MockExamPage() {
                       <Button
                         variant="outline"
                         size="xl"
-                        className="border-white/30 text-white hover:bg-white/15 hover:text-white gap-2 group"
+                        className="border-white/30 bg-transparent text-white hover:bg-white/15 hover:text-white gap-2 group"
                       >
                         <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />
                         Chat on WhatsApp

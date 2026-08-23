@@ -35,7 +35,7 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/sat-prep">
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white hover:text-primary">
+                <Button variant="outline" size="lg" className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary">
                   Explore SAT
                 </Button>
               </Link>

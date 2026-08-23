@@ -1,4 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect x="0" y="0" width="32" height="32" rx="7" fill="#4720b7"/>
-  <text x="16" y="23" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="800" fill="white" text-anchor="middle">PB</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Lumaani Favicon — Simplified Illuminated L -->
+  
+  <!-- L Body — Dark Navy (#1a237e) -->
+  <path d="M 12 8 L 12 48 L 50 48" 
+        fill="none" stroke="#1a237e" stroke-width="22" 
+        stroke-linecap="round" stroke-linejoin="miter" />
+
+  <!-- Gold Flame — Simplified dot/flame at the L's interior corner -->
+  <path d="M 22 40 L 22 18 Q 22 12 28 10 Q 34 8 38 16 L 46 40 Z" 
+        fill="#f5a623" />
+
+  <!-- Gold Base Bar — Simplified -->
+  <rect x="22" y="52" width="36" height="3" rx="1.5" fill="#f5a623" />
 </svg>

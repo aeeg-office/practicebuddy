@@ -30,9 +30,7 @@ export default function Header() {
       <div className="container flex h-14 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold shrink-0">
-            L
-          </div>
+          <img src="/lumaani-icon-192.svg" alt="Lumaani" className="h-9 w-9 shrink-0" />
           <span className="text-lg font-bold tracking-tight">Lumaani</span>
         </Link>
 
@@ -82,7 +80,7 @@ export default function Header() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-white/30 text-white hover:bg-white hover:text-primary"
+                className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary"
                 onClick={logout}
               >
                 <LogOut className="mr-1 h-3.5 w-3.5" />
@@ -91,7 +89,7 @@ export default function Header() {
             </div>
           ) : (
             <Link href="/login">
-              <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white hover:text-primary">
+              <Button variant="outline" size="sm" className="border-white/30 bg-transparent text-white hover:bg-white hover:text-primary">
                 {t("nav.login")}
               </Button>
             </Link>
@@ -138,7 +136,7 @@ export default function Header() {
                   )}
                   <Button
                     variant="outline"
-                    className="w-full text-xs border-white/30 text-white hover:bg-white hover:text-primary"
+                    className="w-full text-xs border-white/30 bg-transparent text-white hover:bg-white hover:text-primary"
                     onClick={() => { logout(); setMobileOpen(false); }}
                   >
                     <LogOut className="mr-1 h-3.5 w-3.5" />
@@ -147,7 +145,7 @@ export default function Header() {
                 </>
               ) : (
                 <Link href="/login" onClick={() => setMobileOpen(false)}>
-                  <Button variant="outline" className="w-full border-white/30 text-white hover:bg-white hover:text-primary">{t("nav.login")}</Button>
+                  <Button variant="outline" className="w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-primary">{t("nav.login")}</Button>
                 </Link>
               )}
             </div>

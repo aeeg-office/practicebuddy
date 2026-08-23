@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1a3a4a"/>
-      <stop offset="100%" stop-color="#0d4f4f"/>
-    </linearGradient>
-  </defs>
-  <rect width="192" height="192" rx="36" fill="url(#bg)"/>
-  <g transform="translate(60,48)">
-    <rect x="8" y="8" width="15" height="82" rx="5" fill="#e8b84b"/>
-    <rect x="8" y="75" width="75" height="15" rx="5" fill="#e8b84b"/>
-    <path d="M38 8 Q49 4 60 15 Q71 26 68 45" stroke="#e8b84b" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!-- Lumaani App Icon 192px — The Illuminated L -->
+  
+  <!-- L Body — Dark Navy (#1a237e) -->
+  <path d="M 50 8 L 50 142 L 162 142" 
+        fill="none" stroke="#1a237e" stroke-width="62" 
+        stroke-linecap="round" stroke-linejoin="miter" />
+
+  <!-- Gold Flame — Light element inside the L -->
+  <path d="M 77 124 
+           L 77 40 
+           Q 77 20 100 14 
+           Q 123 8 133 24 
+           L 160 124 Z" 
+        fill="#f5a623" />
+
+  <!-- Gold Base Bar -->
+  <rect x="77" y="158" width="112" height="6" rx="3" fill="#f5a623" />
 </svg>

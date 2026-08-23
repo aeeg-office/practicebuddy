@@ -31,7 +31,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold shrink-0">L</div>
+                          <img src="/lumaani-icon-192.svg" alt="Lumaani" className="h-10 w-10 shrink-0" />
                           <span className="text-sm font-bold leading-tight">Lumaani</span>
                         </Link>
             <p className="text-sm text-blue-200 mb-4">

@@ -430,6 +430,7 @@ async function main() {
             },
           })
           totalQuestions++
+        }
 
         // Create QuestionVersion
         const vHash = crypto.createHash("sha256")

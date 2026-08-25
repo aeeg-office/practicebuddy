@@ -102,3 +102,43 @@ Complete platform build-out across 23 phases: decoupling, database architecture,
 - Local delivery (Telegram not yet configured)
 - Next scheduled run: 2026-08-23 03:30 Cairo
 - First 3–7 runs in conservative baseline mode
+
+---
+
+## Nightly Assurance Run #2 — 2026-08-25
+**Run ID:** LUMAANI-NA-2026-08-25-617812
+**Commit:** `0d23cb23` — Core English expansion + SAT gold + A2A config
+**Build:** ✅ Compiled successfully (0 errors)
+
+### Findings
+#### P1 — AEEG Brand Contamination (14 file locations)
+- **SAT Prep page** (`sat-prep/page.tsx`): Full page with AEEG CMS content, "Why AEEG" section, WhatsApp links with AEEG text, old navy-to-purple gradient colors — **DEFERRED** (requires content system overhaul)
+- **Dashboard header**: "AEEG — Student Portal" → REPAIRED
+- **Writing page**: "AEEG instructors" → REPAIRED
+- **Login modal**: "Join AEEG" → REPAIRED
+- **Teacher layout** metadata → REPAIRED
+- **Dashboard layout** metadata → REPAIRED
+- **Admin teachers page** → REPAIRED
+- **Admin courses page** → REPAIRED
+- **Parent layout** metadata → REPAIRED
+- **Speaking page** → REPAIRED
+- **Content (en/ar subjects.ts)** → REPAIRED
+
+#### P2 — Design Drift
+- **tailwind.config.ts**: Old navy `#1a237e` + gold `#f5a623` → REPAIRED to teal `#0d4f4f` + gold `#e8b84b`
+
+### Production Health
+- 28/28 routes returning 200 | Avg response 0.44s | Max 0.82s
+- SSL valid through 2026-11-20 | HSTS + CSP + XFO + XCTO all present
+- 17,074 questions | 4,848 gold | 41 tables
+
+### Remaining
+- SAT Prep page rewrite (BRAND-05) — deferred, requires content system work
+- Core English gold seeding — work in progress (uncommitted 471-line seed file)
+- SAT gold seeding — seed-sat-gold.ts exists but hasn't been run
+
+### State Files Updated
+- `PRACTICE_BUDDY_DEFECT_LEDGER.md` — Added AEEG-05 through AEEG-14, DESIGN-01, BRAND-05, BRAND-06
+- `PRACTICE_BUDDY_PROJECT_STATE.md` — Updated timestamp, metrics, status
+- `PRACTICE_BUDDY_DEPLOYMENT_STATE.md` — Updated production status
+- `PRACTICE_BUDDY_CHANGELOG.md` — This entry

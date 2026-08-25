@@ -85,7 +85,7 @@ export default function CoursesPage() {
     <AdminLayout
       activeSidebar="Courses"
       pageTitle="Course Management"
-      pageDescription="Manage all courses, subjects, and programs offered by AEEG"
+      pageDescription="Manage all courses, subjects, and programs offered by Lumaani"
       headerRight={
         <div className="flex items-center gap-2">
           <Badge variant="success" className="text-[10px] px-2 py-0.5">

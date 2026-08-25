@@ -110,7 +110,7 @@ export const content = {
   },
   cta: {
     title: "Ready to Build Academic Confidence?",
-    description: "Join hundreds of students who have transformed their English and Math skills with AEEG. Speak with our team today to find the perfect program for your child.",
+    description: "Join hundreds of students who have transformed their English and Math skills with Lumaani. Speak with our team today to find the perfect program for your child.",
     buttons: { primary: "Ask About English & Math Programs", secondary: "Contact Us" },
   },
 }

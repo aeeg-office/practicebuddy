@@ -138,7 +138,7 @@ export default function LoginModal({ open, onClose }: LoginModalProps) {
           <p className="text-sm text-muted-foreground mt-1">
             {tab === "login"
               ? "Sign in to continue to your dashboard"
-              : "Join AEEG and start your learning journey"}
+              : "Join Lumaani and start your learning journey"}
           </p>
         </div>
 

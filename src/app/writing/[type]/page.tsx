@@ -465,7 +465,7 @@ export default function WritingEditorPage() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-[rgb(13,33,55)]">Teacher Review Available</p>
-                <p className="text-xs text-gray-500">Responses can be reviewed by AEEG instructors for detailed feedback</p>
+                <p className="text-xs text-gray-500">Responses can be reviewed by Lumaani instructors for detailed feedback</p>
               </div>
             </div>
             <div className="flex gap-2">

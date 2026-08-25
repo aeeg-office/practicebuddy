@@ -117,7 +117,7 @@ export default function TeachersPage() {
     <AdminLayout
       activeSidebar="Teachers"
       pageTitle="Teacher Management"
-      pageDescription="Manage all teachers and instructors in AEEG programs"
+      pageDescription="Manage all teachers and instructors in Lumaani programs"
       headerRight={
         <div className="flex items-center gap-2">
           <Badge variant="success" className="text-[10px] px-2 py-0.5">

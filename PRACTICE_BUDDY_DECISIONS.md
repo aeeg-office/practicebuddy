@@ -22,4 +22,5 @@
 | 16 | 2026-08-21 | Internal repo stays `practicebuddy` | No unnecessary churn | M2 |
 | 17 | 2026-08-21 | `lumaani.com` as primary domain | Clean, memorable, brand matches | M2 |
 | 18 | 2026-08-21 | Conditional acceptance (69%) | 3 blockers: K–2, MAP full, gold scaling | M2 |
-| 19 | 2026-08-22 | **Nightly Assurance Cron Job** | Permanent Hermes cron: 03:30 Cairo daily, 30-stage pipeline, conservative first-run mode, Telegram-ready | M2 |
+|| 19 | 2026-08-22 | Nightly Assurance Cron Job | Permanent Hermes cron: 03:30 Cairo daily, 30-stage pipeline, conservative first-run mode, Telegram-ready | M2 |
+|| 20 | 2026-08-25 | AEEG contamination mass-removal | 14 source file locations fixed (1 deferred: SAT Prep page requires content system overhaul) | Cron-NA |

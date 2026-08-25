@@ -82,7 +82,7 @@ export default function DashboardPage() {
             A
           </div>
           <div>
-            <div className="text-sm font-bold leading-tight text-primary">AEEG</div>
+            <div className="text-sm font-bold leading-tight text-primary">Lumaani</div>
             <div className="text-[10px] leading-tight text-muted-foreground">Student Portal</div>
           </div>
         </Link>

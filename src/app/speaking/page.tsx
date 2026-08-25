@@ -311,7 +311,7 @@ export default function SpeakingPage() {
                 </div>
               ))}
               <p className="text-xs text-gray-400 mt-2 italic">
-                Responses can be reviewed by AEEG instructors for personalized feedback
+                Responses can be reviewed by Lumaani instructors for personalized feedback
               </p>
             </CardContent>
           </Card>

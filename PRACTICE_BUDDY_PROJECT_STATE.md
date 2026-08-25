@@ -1,9 +1,9 @@
 # Practice Buddy Project State
 
 ## Last Updated
-- **Timestamp:** 2026-08-22 14:30 EEST
-- **Machine:** M2 (Hermes Desktop)
-- **Status:** POST-COMPLETION — All 23 Phases Executed + Nightly Assurance Installed
+- **Timestamp:** 2026-08-25 01:00 UTC (Nightly Assurance Run)
+- **Machine:** Hermes cron (Nightly Assurance)
+- **Status:** OPERATIONAL — Production live, nightly assurance active
 - **Public Brand:** Lumaani
 
 ---
@@ -45,7 +45,7 @@
 
 | Metric | Count |
 |--------|-------|
-| Tables (excl. prisma_meta) | 40 |
+| Tables (excl. prisma_meta) | 41 |
 | Prisma migrations | 7 |
 | Programs | 6 |
 | Grades | 16 |
@@ -53,13 +53,8 @@
 | Micro-skills | 696 |
 | Gold Questions | 4,848 |
 | Questions | 17,074 |
-| Question Versions | 16,935 |
-| Question Families | 6,435 |
-| RIT Bands | 42 |
-| RIT Skill Mappings | 1,650 |
-| Student Attempts | 22 |
-| Users | 5 |
-| Tenants | 4 |
+| Gold by subject: math/read/lang/write | 4,825 / 11 / 11 / 1 |
+| Gold by program: Core Math/MAP/Core Eng/SAT | 4,800 / 40 / 5 / 5 |
 
 ### Routes
 

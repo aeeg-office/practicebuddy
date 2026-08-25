@@ -4,7 +4,7 @@
 | Environment | Status | URL | Notes |
 |-------------|--------|-----|-------|
 | **Local Dev** | ✅ RUNNING | http://localhost:3099 | Next.js dev server, build ✅ |
-| **Production** | ✅ DEPLOYED | https://lumaani.com (DNS pending) | App running via PM2 on VPS, nginx proxying |
+| **Production** | ✅ LIVE | https://lumaani.com | App running via PM2 on VPS, nginx proxying, SSL active |
 | **Staging** | ❌ NOT CONFIGURED | — | — |
 | **VPS** | ✅ ACTIVE | 191.218.165.228 | Ubuntu 24.04, Node 22, PG 16, nginx, PM2 |
 
@@ -12,6 +12,7 @@
 | # | Date | Environment | Commit | Schema Version | Status |
 |---|------|-------------|--------|---------------|--------|
 | 1 | 2026-08-22 | Production | `practice-buddy-release-1-2026-08-21` | 7 migrations applied | ✅ LIVE (port 3099) |
+| 2 | 2026-08-25 | Source (Hotfix) | `0d23cb23` (+local fixes) | 0 schema changes | ✅ 14 AEEG references removed, build passes |
 
 ---
 

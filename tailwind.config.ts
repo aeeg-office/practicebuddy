@@ -23,16 +23,16 @@ const config: Config = {
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
         primary: {
-          DEFAULT: "rgb(26 35 126)",
+          DEFAULT: "rgb(13 79 79)",
           foreground: "rgb(255 255 255)",
-          hover: "rgb(21 27 100)",
+          hover: "rgb(10 61 61)",
         },
         secondary: {
-          DEFAULT: "rgb(13 33 55)",
+          DEFAULT: "rgb(26 58 74)",
           foreground: "rgb(255 255 255)",
         },
         accent: {
-          DEFAULT: "rgb(245 166 35)",
+          DEFAULT: "rgb(232 184 75)",
           foreground: "rgb(26 26 46)",
         },
         muted: {

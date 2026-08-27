@@ -58,6 +58,18 @@ Complete platform build-out across 23 phases: decoupling, database architecture,
 - RITBand model + migration (42 bands across 3 subjects)
 - 1,650 RIT skill mappings
 - 8 MAP UI pages: math, reading, language-usage, RIT practice, mixed, warm-up, recommendations
+
+## Release 2 — 2026-08-26 (Nightly Assurance Run #2)
+**Commit:** `9b60bd1b`
+**Build:** ✅ Compiled successfully in 18.7s
+
+### Summary
+Nightly production assurance run. Discovered production running stale build with 14+ AEEG references. Deployed latest source code via rsync + rebuild. Post-deploy: 13/14 AEEG references resolved (SAT Prep deferred). Performance improved 3× (home page 0.83s → 0.28s).
+
+### Changes
+- Production deploy: rsync source → rebuild → restart (no schema changes)
+- AEEG contamination fixed: dashboard, teacher, admin, parent, speaking, writing, login modal (13 locations)
+- Post-deploy verification: all 28 routes 200, no new AEEG in fixed pages
 - 96 MAP micro-skills
 
 #### Gold Scaling (Post-Audit)
@@ -142,3 +154,77 @@ Complete platform build-out across 23 phases: decoupling, database architecture,
 - `PRACTICE_BUDDY_PROJECT_STATE.md` — Updated timestamp, metrics, status
 - `PRACTICE_BUDDY_DEPLOYMENT_STATE.md` — Updated production status
 - `PRACTICE_BUDDY_CHANGELOG.md` — This entry
+
+---
+
+## Nightly Assurance Run #3 — 2026-08-27
+**Run ID:** LUMAANI-NA-2026-08-27-757953
+**Commit:** `9b60bd1b` (no changes — same commit as Run #2)
+**Build:** ✅ Production running, no rebuild needed
+**Mode:** Conservative baseline (Run 3 of 7)
+
+### Findings
+
+#### P2 — Manifest.json theme_color (Repaired)
+- `public/manifest.json` had `theme_color: "#1a237e"` (old navy) instead of `#0d4f4f` (Lumaani teal)
+- Layout `<meta name="theme-color">` was already correct (`#0d4f4f`)
+- Root cause: Lumaani rebrand missed this token
+- **Repair:** Single line change, deployed via `docker cp` + `docker restart`
+- **Verified:** `curl https://lumaani.com/manifest.json` returns `theme_color: #0d4f4f` ✅
+
+#### Low — Purple in admin/ai-factory
+- `src/app/admin/ai-factory/page.tsx:98` — `bg-purple-100` on icon container
+- Added to defect ledger as LOW
+
+### Production Health
+- 22/22 routes HTTP 200 | Avg response ~0.38s | Max 0.89s (mock-exams)
+- SSL valid through 2026-11-20 | HSTS + CSP + XFO + XCTO all present ✅
+- 25,254 questions | 8,415 gold | 41 tables | 7 programs | 320 skills | 933 micro-skills
+- AEEG contamination: 0 references in source code ✅
+- Version endpoint verified: Lumaani, commit=9b60bd1b, environment=production
+
+### Open Items (unchanged from Run #2)
+- BRAND-07 (MAP palette migration, MEDIUM)
+- SEC-01 through SEC-05 (monitoring)
+- DESIGN-06 (purple remnants, LOW)
+
+---
+
+## Nightly Assurance Run #4 — 2026-08-27
+**Run ID:** LUMAANI-NA-2026-08-27-790620
+**Commit:** `9b60bd1b` (no changes — same commit as Run #2 & #3)
+**Build:** ✅ Production running, no build needed
+**Mode:** Conservative baseline (Run 4 of 7)
+
+### Findings
+
+#### P2 — BRAND-10 (NEW): Practice pages use old navy #1a237e
+- `src/app/practice/*` (4 files, 55 instances)
+- `src/components/admin/question-preview.tsx` (6 instances)
+- Border colors, icon backgrounds, selected states use `#1a237e` instead of teal `#0d4f4f`
+
+#### P2 — BRAND-11 (NEW): AI Tutor uses old navy #1a237e
+- `src/app/ai-tutor/layout.tsx` (6 instances) + `page.tsx` (13 instances)
+- Sidebar, breadcrumbs, subject badges all use old navy/gold palette
+- Also contains WhatsApp reference
+
+#### P2 — BRAND-12 (NEW): Legacy WhatsApp links found
+- 10 instances across 8 files: speaking, listening, subjects, parent, dashboard, ai-tutor
+- Number `wa.me/201060618899` is AEEG-era; needs Lumaani contact
+
+#### Brand Color Inventory
+- Total `#1a237e` instances: **157** across **15 source files**
+- Files affected: question-preview.tsx, ai-tutor (2 files), map-prep (7 files), practice (4 files)
+
+### Production Health
+- 24 routes verified | All 200 | Avg response ~0.30s | Max 0.50s
+- SSL valid through 2026-11-20 (85 days) | All security headers present ✅
+- AEEG contamination: 0 references in source code ✅
+- theme-color: #0d4f4f ✅ | manifest.json: #0d4f4f ✅
+- Version endpoint verified: Lumaani, commit=9b60bd1b ✅
+
+### New Defects Added
+- BRAND-10 (P2) — Practice pages old navy
+- BRAND-11 (P2) — AI Tutor old navy + WhatsApp
+- BRAND-12 (P2) — Legacy WhatsApp links across 8 files
+- K–2 curriculum, MAP programs (DEFERRED)

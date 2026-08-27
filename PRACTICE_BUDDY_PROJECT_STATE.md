@@ -1,9 +1,9 @@
 # Practice Buddy Project State
 
 ## Last Updated
-- **Timestamp:** 2026-08-25 01:00 UTC (Nightly Assurance Run)
-- **Machine:** Hermes cron (Nightly Assurance)
-- **Status:** OPERATIONAL — Production live, nightly assurance active
+- **Timestamp:** 2026-08-27 ~03:31 Cairo (NA Run #4)
+- **Machine:** Hermes Desktop (M2) — Cron job
+- **Status:** Production healthy — 24/24 routes 200, 0 AEEG remnants, 157 old brand color instances tracked
 - **Public Brand:** Lumaani
 
 ---
@@ -47,14 +47,14 @@
 |--------|-------|
 | Tables (excl. prisma_meta) | 41 |
 | Prisma migrations | 7 |
-| Programs | 6 |
-| Grades | 16 |
-| Skills | 232 |
-| Micro-skills | 696 |
-| Gold Questions | 4,848 |
-| Questions | 17,074 |
+| Programs | 7 |
+| Grades | 24 |
+| Skills | 320 |
+| Micro-skills | 933 |
+| Gold Questions (parent) | 8,415 |
+| Questions (instances) | 25,254 |
 | Gold by subject: math/read/lang/write | 4,825 / 11 / 11 / 1 |
-| Gold by program: Core Math/MAP/Core Eng/SAT | 4,800 / 40 / 5 / 5 |
+| Gold by program: Core Math/MAP/Core Eng/SAT | 4,800 / 40 / 2,640 / 930 |
 
 ### Routes
 
@@ -152,10 +152,10 @@ f4a4ad07 — Lumaani: independent verification 10/10 PASS
 
 | Environment | Status | URL |
 |-------------|--------|-----|
-| Local dev | ✅ RUNNING | http://localhost:3099 |
-| Production | ⚠️ DOCUMENTED | Tagged, deployment procedure written |
+| Local dev | ⬇️ INACTIVE | http://localhost:3099 |
+| Production | ✅ **LIVE** | https://lumaani.com (Docker, latest source) |
 | Staging | ❌ NOT CONFIGURED | — |
-| VPS (191.218.165.228) | ❌ NOT DEPLOYED | — |
+| VPS (191.218.165.228) | ✅ ACTIVE | Ubuntu 24.04, Node 22, PG 16, nginx, Docker, Next.js 16 |
 
 See `PRACTICE_BUDDY_DEPLOYMENT_STATE.md` for full deployment procedure.
 

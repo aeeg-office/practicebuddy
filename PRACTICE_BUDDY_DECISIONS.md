@@ -22,5 +22,9 @@
 | 16 | 2026-08-21 | Internal repo stays `practicebuddy` | No unnecessary churn | M2 |
 | 17 | 2026-08-21 | `lumaani.com` as primary domain | Clean, memorable, brand matches | M2 |
 | 18 | 2026-08-21 | Conditional acceptance (69%) | 3 blockers: K–2, MAP full, gold scaling | M2 |
-|| 19 | 2026-08-22 | Nightly Assurance Cron Job | Permanent Hermes cron: 03:30 Cairo daily, 30-stage pipeline, conservative first-run mode, Telegram-ready | M2 |
-|| 20 | 2026-08-25 | AEEG contamination mass-removal | 14 source file locations fixed (1 deferred: SAT Prep page requires content system overhaul) | Cron-NA |
+||| 19 | 2026-08-22 | Nightly Assurance Cron Job | Permanent Hermes cron: 03:30 Cairo daily, 30-stage pipeline, conservative first-run mode, Telegram-ready | M2 |
+||| 20 | 2026-08-25 | AEEG contamination mass-removal | 14 source file locations fixed (1 deferred: SAT Prep page requires content system overhaul) | Cron-NA |
+|||| 21 | 2026-08-26 | Production rebuild for AEEG fixes | rsync source → rebuild → restart; stale build replaced with latest commit; 13/14 AEEG references resolved | Cron-NA |
+||||| 22 | 2026-08-27 | Manifest.json theme_color fix | PWA manifest had old navy `#1a237e` — repaired to Lumaani teal `#0d4f4f`. Deployed via `docker cp` + restart | Cron-NA |
+|| 23 | 2026-08-27 | Brand color audit baseline | 157 instances of old navy `#1a237e` across 15 source files now tracked as BRAND-10, BRAND-11, BRAND-12 | Cron-NA |
+|| 24 | 2026-08-27 | WhatsApp legacy flag | `wa.me/201060618899` (AEEG-era, 10 instances across 8 files) flagged as BRAND-12; needs Lumaani contact | Cron-NA |

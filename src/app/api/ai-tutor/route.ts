@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
+import * as jwt from "jsonwebtoken"
+import { getJwtSecret } from "@/lib/auth-server"
 import { rateLimitMiddleware } from "@/lib/rate-limit"
 
 /**
@@ -261,7 +263,18 @@ function detectIntent(message: string): "hint" | "explain" | "practice" | "recom
 
 export async function POST(request: NextRequest) {
   try {
-    // Rate limit: 20 requests per minute per IP (unauthenticated endpoint)
+    // Authenticate — require valid JWT Bearer token
+    const authHeader = request.headers.get("authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+    try {
+      jwt.verify(authHeader.split(" ")[1], getJwtSecret());
+    } catch {
+      return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+    }
+
+    // Rate limit: 20 requests per minute per IP
     const rateLimitResponse = rateLimitMiddleware(request, { maxRequests: 20, windowMs: 60000 })
     if (rateLimitResponse) return rateLimitResponse
 

@@ -29,14 +29,22 @@
 | BRAND-11 | AI Tutor uses old navy `#1a237e` + WhatsApp link | `ai-tutor/layout.tsx`, `ai-tutor/page.tsx` | 🔴 OPEN (P2) | 19 instances + legacy `wa.me/201060618899` |
 | BRAND-12 | Legacy WhatsApp links (AEEG-era) across site | 8 files, 10 instances | 🔴 OPEN (P2) | `wa.me/201060618899` needs Lumaani contact |
 
+### Medium (3) — Phase-1 Fleet Audit (NEW)
+| ID | Finding | File(s) | Status | Notes |
+|----|---------|---------|--------|-------|
+| SEC-06 | `/api/chat` unauthenticated — only rate-limited (20/min) | `src/app/api/chat/route.ts` | ⏳ OPEN | Proxies to llama.cpp; resource exhaustion vector. No JWT auth. |
+| SEC-07 | `/api/ai-tutor` unauthenticated — only rate-limited (20/min) | `src/app/api/ai-tutor/route.ts` | ⏳ OPEN | Template-based currently, but if upgraded to real LLM would need auth |
+| SEC-08 | Arabic `/ar` route returns 404 server-side | Root route config | ⏳ OPEN | RTL/Arabic is client-side JS only; SSR not implemented |
+
 ### Low (Ongoing)
 | ID | Finding | Status | Notes |
-|----|---------|--------|-------|
+|---|---------|--------|-------|
 | BRAND-06 | Core English gold seeding in progress | `seed-core-english-gold.ts` | ⏳ WORK IN PROGRESS | Uncommitted 475-line seed file |
 | DESIGN-06 | Purple remnants in MAP prep data | `src/data/practice-skills.ts:185` | ⏳ NEW | `text-purple-500` on recommendations |
 | — | Purple in admin/ai-factory page | `src/app/admin/ai-factory/page.tsx:98` | ⏳ NEW | `bg-purple-100` on icon container |
+| — | Subscription uses userId from query param (controlled) | `src/app/api/user/subscription/route.ts` | ⏳ OPEN | Pattern anti-pattern; proper access control but worth tightening |
 | DESIGN-07 | CSS ring color old brand | `src/app/globals.css:40` | ✅ CLOSED | `--color-ring: #1a237e` → `#0d4f4f` |
-| CONTENT-01 | Core English/SAT 0 questions in production | Production DB | ⏳ NEW | Programs exist but no questions seeded |
+| CONTENT-01 | Core English/SAT 0 questions in production (closed) | Production DB | ✅ CLOSED | Resolved 2026-08-26 via `derive-sat-core-questions.ts` |
 
 ### Resolved (All Closed + New)
 | ID | Issue | Fixed In | Resolution |

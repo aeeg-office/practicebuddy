@@ -1,5 +1,10 @@
 # Lumaani Color Audit
 
+> **✅ OWNER SELECTED (2026-08-28): OPTION 5 — Deep Teal + Copper.** Primary `#0b4f4a`,
+> Accent `#c8785a`, Secondary `#29374a`. The canonical palette referenced below as
+> `#0d4f4f`/`#e8b84b` has been superseded by Option 5; all legacy-family removals in this
+> audit remain valid and were applied against the Option 5 tokens.
+
 > **Registry:** Audit of every active color in the Lumaani platform.
 > **Source:** `~/projects/practicebuddy` @ `8e00ec2` (branch `main`).
 > **Date:** 2026-08-28

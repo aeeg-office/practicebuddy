@@ -11,6 +11,12 @@
 
 ## 1. COLOR SYSTEM
 
+> **⭐ SELECTED DIRECTION (owner, 2026-08-28): OPTION 5 — Deep Teal + Copper**
+> Primary `#0b4f4a` (deep teal) · Accent `#c8785a` (copper) · Secondary `#29374a`.
+> This supersedes the earlier "Warm Gold" direction. The codebase (`globals.css` `@theme`,
+> `tailwind.config.ts`, logo/PWA SVGs, manifest) is synchronized to this. The three
+> candidate directions below are **historical** — kept for reference only.
+
 ### 1.1 Palette Directions — Three Candidates
 
 #### Direction A: "Luminous" ★ RECOMMENDED WINNER
@@ -60,14 +66,14 @@ All hex values with CSS variable names and usage rules.
 
 | Token | CSS Variable | Hex | Usage |
 |-------|-------------|-----|-------|
-| **Primary** | `--color-primary` | `#0d4f4f` | Buttons, links, active nav, brand elements |
+| **Primary** | `--color-primary` | `#0b4f4a` | Buttons, links, active nav, brand elements (Deep Teal) |
 | Primary Hover | `--color-primary-hover` | `#0a3d3d` | Button hover states |
 | Primary Active | `--color-primary-active` | `#072e2e` | Button pressed/active states |
 | Primary Foreground | `--color-primary-foreground` | `#ffffff` | Text on primary backgrounds |
 | **Secondary** | `--color-secondary` | `#1a3a4a` | Secondary buttons, section headers |
 | Secondary Hover | `--color-secondary-hover` | `#142e3a` | Secondary hover |
 | Secondary Foreground | `--color-secondary-foreground` | `#ffffff` | Text on secondary backgrounds |
-| **Accent** | `--color-accent` | `#e8b84b` | Highlights, stars, badges, awards |
+| **Accent** | `--color-accent` | `#c8785a` | Highlights, stars, badges, awards (Copper) |
 | Accent Hover | `--color-accent-hover` | `#d4a43c` | Accent hover states |
 | Accent Foreground | `--color-accent-foreground` | `#1a1a2e` | Text on accent backgrounds |
 | **Background** | `--color-background` | `#f4f6f9` | Page backgrounds |
@@ -78,7 +84,7 @@ All hex values with CSS variable names and usage rules.
 | Muted Foreground | `--color-muted-foreground` | `#6b7280` | Tertiary text, captions |
 | **Border** | `--color-border` | `#e2e6ed` | Card borders, dividers |
 | **Input** | `--color-input` | `#e2e6ed` | Input borders |
-| **Ring** | `--color-ring` | `#0d4f4f` | Focus rings |
+| **Ring** | `--color-ring` | `#0b4f4a` | Focus rings |
 | **Success** | `--color-success` | `#16a34a` | Correct answers, completions |
 | Success Light | `--color-success-light` | `#dcfce7` | Success backgrounds |
 | **Error** | `--color-error` | `#dc2626` | Wrong answers, alerts |
@@ -102,10 +108,10 @@ All hex values with CSS variable names and usage rules.
 | Muted Foreground | `--color-muted-foreground` | `#94a3b8` | Tertiary text |
 | Border | `--color-border` | `#2d3a4a` | Borders |
 | Input | `--color-input` | `#2d3a4a` | Input borders |
-| Primary | `--color-primary` | `#0d4f4f` | Buttons, links |
+| Primary | `--color-primary` | `#0b4f4a` | Buttons, links (Deep Teal) |
 | Primary Hover | `--color-primary-hover` | `#106060` | Button hover |
 | Primary Active | `--color-primary-active` | `#147272` | Button active |
-| Accent | `--color-accent` | `#e8b84b` | Highlights |
+| Accent | `--color-accent` | `#c8785a` | Highlights (Copper) |
 | Ring | `--color-ring` | `#1a7a7a` | Focus rings |
 
 #### Color Usage Rules
@@ -387,7 +393,7 @@ Full lockup minimum clear space:
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f4f6f9",
-  "theme_color": "#0d4f4f",
+  "theme_color": "#0b4f4a",
   "orientation": "any",
   "scope": "/",
   "icons": [
@@ -421,7 +427,7 @@ Full lockup minimum clear space:
 - `short_name`: "Lumaani" (was "PB")
 - `description`: Focused on "one screen, one task" philosophy
 - `background_color`: `#f4f6f9` (new light background)
-- `theme_color`: `#0d4f4f` (Lumaani primary teal)
+- `theme_color`: `#0b4f4a` (Lumaani primary deep teal)
 - `categories`: streamlined to `["education", "practice"]`
 
 ### 4.5 Metadata (HTML)
@@ -448,7 +454,7 @@ Full lockup minimum clear space:
 <meta name="twitter:image" content="https://lumaani.com/images/og-default.jpg" />
 
 <!-- PWA / Mobile -->
-<meta name="theme-color" content="#0d4f4f" />
+<meta name="theme-color" content="#0b4f4a" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="Lumaani" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -547,8 +553,8 @@ Compound: "Lumaani Math", "Lumaani English", "Lumaani SAT"
 
 ```css
 @theme {
-  /* Primary - Deep Teal */
-  --color-primary: #0d4f4f;
+  /* Primary - Deep Teal (Option 5) */
+  --color-primary: #0b4f4a;
   --color-primary-hover: #0a3d3d;
   --color-primary-active: #072e2e;
   --color-primary-foreground: #ffffff;
@@ -558,8 +564,8 @@ Compound: "Lumaani Math", "Lumaani English", "Lumaani SAT"
   --color-secondary-hover: #142e3a;
   --color-secondary-foreground: #ffffff;
 
-  /* Accent - Warm Gold */
-  --color-accent: #e8b84b;
+  /* Accent - Copper (Option 5) */
+  --color-accent: #c8785a;
   --color-accent-hover: #d4a43c;
   --color-accent-foreground: #1a1a2e;
 
@@ -576,7 +582,7 @@ Compound: "Lumaani Math", "Lumaani English", "Lumaani SAT"
   /* Borders & Inputs */
   --color-border: #e2e6ed;
   --color-input: #e2e6ed;
-  --color-ring: #0d4f4f;
+  --color-ring: #0b4f4a;
 
   /* Feedback */
   --color-success: #16a34a;

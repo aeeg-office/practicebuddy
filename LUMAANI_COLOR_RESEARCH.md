@@ -92,6 +92,12 @@ and re-based to `#066f5a` (6.12:1).
 
 ## 5. Recommendation (Phase 15)
 
+> **✅ OWNER SELECTED (2026-08-28): OPTION 5 — Deep Teal + Copper** (`#0b4f4a` + `#c8785a`, 82.7/100).
+> The recommendation below (Option 2) was superseded by the owner's choice of Option 5.
+> The codebase has been synchronized to Option 5.
+
+**HERMES (Phase 15)
+
 **HERMES RECOMMENDATION: Option 2 — Moonlit Teal** (as the platform's spine), with a note that
 **Option 5 — Deep Teal + Copper** is the strongest *distinctiveness upgrade* if the owner wants a
 more premium, school-facing turn.

@@ -224,7 +224,41 @@ Nightly production assurance run. Discovered production running stale build with
 - Version endpoint verified: Lumaani, commit=9b60bd1b ✅
 
 ### New Defects Added
-- BRAND-10 (P2) — Practice pages old navy
-- BRAND-11 (P2) — AI Tutor old navy + WhatsApp
-- BRAND-12 (P2) — Legacy WhatsApp links across 8 files
-- K–2 curriculum, MAP programs (DEFERRED)
+|- BRAND-10 (P2) — Practice pages old navy
+|- BRAND-11 (P2) — AI Tutor old navy + WhatsApp
+|- BRAND-12 (P2) — Legacy WhatsApp links across 8 files
+|- K–2 curriculum, MAP programs (DEFERRED)
+
+## Release 2 — 2026-08-28 (Fleet Mission Phase-1)
+**Branch:** `lumaani-fleet-audit`
+**Trigger:** Lumaani fleet-native audit/repair/re-audit mission charter
+**Build:** ✅ Compiled successfully (tsc --noEmit, 0 errors)
+
+### Summary
+Fleet-coordinated Phase-1 audit and repair across 5 nodes (M1/M2/M3/M4/M6) + VPS. Baseline 0-CRIT/0-HIGH upheld. All repairs code-only (no production DB mutation).
+
+### Major Changes
+
+#### Security (SEC-06, SEC-07)
+| ID | Change | Files | Result |
+|----|--------|-------|--------|
+| SEC-06 | Added JWT Bearer auth to `/api/chat` (llama.cpp proxy) | `src/app/api/chat/route.ts` | ✅ CLOSED |
+| SEC-07 | Added JWT Bearer auth to `/api/ai-tutor` + frontend sends token | `src/app/api/ai-tutor/route.ts`, `src/app/ai-tutor/page.tsx` | ✅ CLOSED |
+
+#### Brand Renewal (BRAND-07, BRAND-10, BRAND-11, BRAND-12)
+| ID | Change | Coverage | Result |
+|----|--------|----------|--------|
+| BRAND-07 | `#1a237e` → `#0d4f4f` in MAP prep pages | 8 files, 98 instances | ✅ CLOSED |
+| BRAND-10 | `#1a237e` → `#0d4f4f` in practice pages | 4 files + question-preview, 57 instances | ✅ CLOSED |
+| BRAND-11 | `#1a237e` → `#0d4f4f` + remove WhatsApp in AI Tutor | 2 files, 32 instances | ✅ CLOSED |
+| BRAND-12 | `wa.me/201060618899` → `mailto:hello@lumaani.com` | 17 files, 24 instances | ✅ CLOSED |
+
+#### Infrastructure
+- Feature branch created: `lumaani-fleet-audit` (4 commits)
+- Phase-0 connectivity gate: PASS (Tailscale SSH + A2A on :9900 across m1/m3/m4/m5/m6 + VPS)
+- Verified DB backup: `lumaani_prod_20260828_091821.sql` (28 MB, all 41 tables)
+- `.next/` build artifacts (2.05 GiB, 46K objects) pre-existing — push blocked; `.gitignore` cleanup needed
+- Remote `aeeg-office/practicebuddy` on GitHub empty (never pushed)
+
+### Open Items (0 Critical, 0 High, 1 Medium)
+- SEC-08: Arabic `/ar` route 404 (client-side JS only)

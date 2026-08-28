@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
       metadata: { count: accessCodes.length, role, generated: true },
     })
 
-    return NextResponse.json({ count: accessCodes.length, accessCodes: accessCodes.map(({ code }) => code) }, { status: 201 })
+    return NextResponse.json({ count: accessCodes.length, accessCodes: accessCodes.map(({ code }: { code: string }) => code) }, { status: 201 })
   } catch (error) {
     return apiError(error, "Failed to generate access codes")
   }

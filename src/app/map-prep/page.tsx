@@ -24,9 +24,9 @@ const programs = [
     description: "Number & Operations, Algebra, Geometry, Probability & Statistics — aligned to MAP Growth RIT bands.",
     icon: Calculator,
     href: "/map-prep/math",
-    color: "text-[#f5a623]",
-    bg: "bg-[#f5a623]/10",
-    gradient: "from-[#f5a623]/10 to-transparent",
+    color: "text-[#c8785a]",
+    bg: "bg-[#c8785a]/10",
+    gradient: "from-[#c8785a]/10 to-transparent",
   },
   {
     title: "MAP Reading",
@@ -42,9 +42,9 @@ const programs = [
     description: "Writing strategies, grammar & usage, and conventions — MAP-aligned practice.",
     icon: Pen,
     href: "/map-prep/language-usage",
-    color: "text-[#0d4f4f]",
-    bg: "bg-[#0d4f4f]/10",
-    gradient: "from-[#0d4f4f]/10 to-transparent",
+    color: "text-[#0b4f4a]",
+    bg: "bg-[#0b4f4a]/10",
+    gradient: "from-[#0b4f4a]/10 to-transparent",
   },
 ]
 
@@ -55,16 +55,16 @@ const quickLinks = [
     description: "Choose your RIT band and practice at the right level.",
     icon: Target,
     href: "/map-prep/rit-practice",
-    color: "text-[#f5a623]",
-    bg: "bg-[#f5a623]/10",
+    color: "text-[#c8785a]",
+    bg: "bg-[#c8785a]/10",
   },
   {
     title: "Mixed MAP Practice",
     description: "Random practice across subjects and RIT bands.",
     icon: Layers,
     href: "/map-prep/mixed",
-    color: "text-[#0d4f4f]",
-    bg: "bg-[#0d4f4f]/10",
+    color: "text-[#0b4f4a]",
+    bg: "bg-[#0b4f4a]/10",
   },
   {
     title: "MAP Warm-Up",
@@ -91,10 +91,10 @@ export default function MapPrepLandingPage() {
       {/* HERO                                    */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0b4f4a] via-[#0b4f4a] to-[#29374a] p-8 md:p-12">
           {/* Decorative orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[#f5a623]/10 blur-3xl" />
+            <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[#c8785a]/10 blur-3xl" />
             <div className="absolute -bottom-24 -left-24 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
           </div>
           <div
@@ -119,7 +119,7 @@ export default function MapPrepLandingPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/map-prep/math">
-                <Button variant="accent" size="lg" className="font-semibold shadow-lg shadow-[#f5a623]/25">
+                <Button variant="accent" size="lg" className="font-semibold shadow-lg shadow-[#c8785a]/25">
                   Start Math Practice
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -128,7 +128,7 @@ export default function MapPrepLandingPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white hover:text-[#0d4f4f]"
+                  className="border-white/30 text-white hover:bg-white hover:text-[#0b4f4a]"
                 >
                   Practice by RIT
                 </Button>
@@ -143,7 +143,7 @@ export default function MapPrepLandingPage() {
       {/* ════════════════════════════════════════ */}
       <section>
         <h2 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-[#f5a623]" />
+          <BookOpen className="h-5 w-5 text-[#c8785a]" />
           MAP Subject Practice
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -155,13 +155,13 @@ export default function MapPrepLandingPage() {
                   <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${program.bg} mb-4`}>
                     <program.icon className={`h-6 w-6 ${program.color}`} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-[#0d4f4f] transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-[#0b4f4a] transition-colors">
                     {program.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                     {program.description}
                   </p>
-                  <div className="mt-4 flex items-center text-sm font-medium text-[#0d4f4f] opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="mt-4 flex items-center text-sm font-medium text-[#0b4f4a] opacity-0 group-hover:opacity-100 transition-opacity">
                     Start Practice
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </div>
@@ -177,7 +177,7 @@ export default function MapPrepLandingPage() {
       {/* ════════════════════════════════════════ */}
       <section>
         <h2 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-          <Zap className="h-5 w-5 text-[#f5a623]" />
+          <Zap className="h-5 w-5 text-[#c8785a]" />
           Quick Links
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -201,11 +201,11 @@ export default function MapPrepLandingPage() {
       {/* ════════════════════════════════════════ */}
       {/* HOW IT WORKS                           */}
       {/* ════════════════════════════════════════ */}
-      <section className="rounded-xl bg-[#0d4f4f]/5 border border-[#0d4f4f]/10 p-6 md:p-8">
+      <section className="rounded-xl bg-[#0b4f4a]/5 border border-[#0b4f4a]/10 p-6 md:p-8">
         <h2 className="text-lg font-bold text-foreground mb-4">How MAP Prep Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0d4f4f] text-white font-bold text-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0b4f4a] text-white font-bold text-sm">
               1
             </div>
             <div>
@@ -214,7 +214,7 @@ export default function MapPrepLandingPage() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0d4f4f] text-white font-bold text-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0b4f4a] text-white font-bold text-sm">
               2
             </div>
             <div>
@@ -223,7 +223,7 @@ export default function MapPrepLandingPage() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0d4f4f] text-white font-bold text-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0b4f4a] text-white font-bold text-sm">
               3
             </div>
             <div>

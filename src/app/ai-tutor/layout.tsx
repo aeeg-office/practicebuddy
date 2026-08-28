@@ -14,11 +14,11 @@ export default function AITutorLayout({ children }: { children: React.ReactNode 
       <aside className="hidden lg:flex lg:flex-col w-64 shrink-0 bg-white border-r border-gray-200">
         {/* Logo area */}
         <Link href="/ai-tutor" className="flex items-center gap-2.5 px-6 h-16 border-b border-gray-200">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f5a623] text-white shadow-sm">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#c8785a] text-white shadow-sm">
             <GraduationCap className="h-5 w-5" />
           </div>
           <div>
-            <div className="text-sm font-bold leading-tight text-[#0d4f4f]">AI Tutor</div>
+            <div className="text-sm font-bold leading-tight text-[#0b4f4a]">AI Tutor</div>
             <div className="text-[10px] leading-tight text-gray-500">Lumaani</div>
           </div>
         </Link>
@@ -29,7 +29,7 @@ export default function AITutorLayout({ children }: { children: React.ReactNode 
             <Link
               key={link.label}
               href={link.href}
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-[#0d4f4f]/5 hover:text-[#0d4f4f] transition-all duration-200"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-[#0b4f4a]/5 hover:text-[#0b4f4a] transition-all duration-200"
             >
               <link.icon className="h-5 w-5 shrink-0" />
               {link.label}
@@ -41,7 +41,7 @@ export default function AITutorLayout({ children }: { children: React.ReactNode 
         <div className="px-3 pb-4 space-y-3 border-t border-gray-200 pt-4">
           <Link
             href="/practice"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-500 hover:text-[#0d4f4f] hover:bg-[#0d4f4f]/5 transition-all duration-200"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-500 hover:text-[#0b4f4a] hover:bg-[#0b4f4a]/5 transition-all duration-200"
           >
             <BookOpen className="h-5 w-5 shrink-0" />
             Back to Practice
@@ -63,7 +63,7 @@ export default function AITutorLayout({ children }: { children: React.ReactNode 
           <div className="flex items-center gap-3">
             {/* Mobile menu toggle */}
             <button
-              className="lg:hidden p-2 rounded-lg hover:bg-[#0d4f4f]/5 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-[#0b4f4a]/5 transition-colors"
               aria-label="Toggle sidebar"
             >
               <Brain className="h-5 w-5 text-gray-500" />
@@ -71,11 +71,11 @@ export default function AITutorLayout({ children }: { children: React.ReactNode 
 
             {/* Breadcrumbs */}
             <nav className="flex items-center gap-1.5 text-sm text-gray-500">
-              <Link href="/" className="hover:text-[#0d4f4f] transition-colors">
+              <Link href="/" className="hover:text-[#0b4f4a] transition-colors">
                 <Home className="h-4 w-4" />
               </Link>
               <ChevronRight className="h-3.5 w-3.5 text-gray-300" />
-              <Link href="/practice" className="hover:text-[#0d4f4f] transition-colors">
+              <Link href="/practice" className="hover:text-[#0b4f4a] transition-colors">
                 Practice
               </Link>
               <ChevronRight className="h-3.5 w-3.5 text-gray-300" />

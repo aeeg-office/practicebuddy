@@ -42,8 +42,8 @@ const DOMAINS = [
     name: "Writing",
     description: "Planning, organizing, revising, and editing written work across genres.",
     icon: Pen,
-    color: "text-[#f5a623]",
-    bg: "bg-[#f5a623]/10",
+    color: "text-[#c8785a]",
+    bg: "bg-[#c8785a]/10",
     skills: [
       { id: "map-lang-write-1", name: "Sentence Construction", difficulty: "easy" },
       { id: "map-lang-write-2", name: "Paragraph Organization", difficulty: "easy" },
@@ -76,8 +76,8 @@ const DOMAINS = [
     name: "Conventions",
     description: "Capitalization, punctuation, spelling, and formatting rules.",
     icon: SpellCheck,
-    color: "text-[#0d4f4f]",
-    bg: "bg-[#0d4f4f]/10",
+    color: "text-[#0b4f4a]",
+    bg: "bg-[#0b4f4a]/10",
     skills: [
       { id: "map-lang-conv-1", name: "Capitalization Rules", difficulty: "easy" },
       { id: "map-lang-conv-2", name: "End Punctuation (Period, Question Mark, Exclamation)", difficulty: "easy" },
@@ -93,7 +93,7 @@ const DOMAINS = [
 
 const difficultyColors: Record<string, string> = {
   easy: "text-emerald-600 bg-emerald-100",
-  medium: "text-[#f5a623] bg-[#f5a623]/10",
+  medium: "text-[#c8785a] bg-[#c8785a]/10",
   hard: "text-red-500 bg-red-100",
 }
 
@@ -111,7 +111,7 @@ export default function MapLanguageUsagePage() {
       {/* Back link */}
       <Link
         href="/map-prep"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0d4f4f] transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0b4f4a] transition-colors"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to MAP Test Prep
@@ -120,9 +120,9 @@ export default function MapLanguageUsagePage() {
       {/* ════════════════════════════════════════ */}
       {/* HEADER                                  */}
       {/* ════════════════════════════════════════ */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0b4f4a] via-[#0b4f4a] to-[#29374a] p-8 md:p-10">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#0d4f4f]/10 blur-3xl" />
+          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#0b4f4a]/10 blur-3xl" />
         </div>
         <div className="relative">
           <Badge variant="accent" className="mb-3 text-xs px-3 py-1.5 font-semibold uppercase tracking-wide">
@@ -143,7 +143,7 @@ export default function MapLanguageUsagePage() {
       {/* ════════════════════════════════════════ */}
       <section>
         <h2 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-          <Target className="h-4 w-4 text-[#f5a623]" />
+          <Target className="h-4 w-4 text-[#c8785a]" />
           Your RIT Band
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -153,8 +153,8 @@ export default function MapLanguageUsagePage() {
               onClick={() => setSelectedBand(band.value)}
               className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                 selectedBand === band.value
-                  ? "bg-[#0d4f4f] text-white shadow-sm ring-2 ring-[#0d4f4f]/20"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
+                  ? "bg-[#0b4f4a] text-white shadow-sm ring-2 ring-[#0b4f4a]/20"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0b4f4a]/30 hover:text-foreground"
               }`}
             >
               {band.label}
@@ -168,7 +168,7 @@ export default function MapLanguageUsagePage() {
       {/* ════════════════════════════════════════ */}
       <section className="space-y-4">
         <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
-          <Layers className="h-5 w-5 text-[#f5a623]" />
+          <Layers className="h-5 w-5 text-[#c8785a]" />
           Language Usage Domains (RIT {selectedBand})
         </h2>
 
@@ -215,8 +215,8 @@ export default function MapLanguageUsagePage() {
                         key={skill.id}
                         className={`group flex items-center justify-between p-3 rounded-lg transition-all duration-200 cursor-pointer ${
                           selectedSkill === skill.id
-                            ? "bg-[#0d4f4f]/10 border border-[#0d4f4f]/20"
-                            : "hover:bg-[#0d4f4f]/5 border border-transparent"
+                            ? "bg-[#0b4f4a]/10 border border-[#0b4f4a]/20"
+                            : "hover:bg-[#0b4f4a]/5 border border-transparent"
                         }`}
                         onClick={() => setSelectedSkill(selectedSkill === skill.id ? null : skill.id)}
                       >
@@ -224,8 +224,8 @@ export default function MapLanguageUsagePage() {
                           <div className={`w-2 h-2 rounded-full ${
                             difficultyColors[skill.difficulty]?.split(" ")[0] === "text-emerald-600"
                               ? "bg-emerald-500"
-                              : difficultyColors[skill.difficulty]?.split(" ")[0] === "text-[#f5a623]"
-                                ? "bg-[#f5a623]"
+                              : difficultyColors[skill.difficulty]?.split(" ")[0] === "text-[#c8785a]"
+                                ? "bg-[#c8785a]"
                                 : "bg-red-500"
                           }`} />
                           <span className="text-sm font-medium text-foreground">{skill.name}</span>
@@ -242,7 +242,7 @@ export default function MapLanguageUsagePage() {
                             </Button>
                           </Link>
                           {selectedSkill === skill.id && (
-                            <CheckCircle className="h-4 w-4 text-[#0d4f4f]" />
+                            <CheckCircle className="h-4 w-4 text-[#0b4f4a]" />
                           )}
                         </div>
                       </div>
@@ -260,7 +260,7 @@ export default function MapLanguageUsagePage() {
       {/* ════════════════════════════════════════ */}
       <div className="text-center py-4">
         <Link href={`/practice/writing?rit=${selectedBand}`}>
-          <Button size="xl" variant="accent" className="font-semibold shadow-lg shadow-[#f5a623]/25">
+          <Button size="xl" variant="accent" className="font-semibold shadow-lg shadow-[#c8785a]/25">
             <Sparkles className="mr-2 h-5 w-5" />
             Start Language Usage Practice (RIT {selectedBand})
           </Button>

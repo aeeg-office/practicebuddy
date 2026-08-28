@@ -23,21 +23,21 @@ const config: Config = {
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
         primary: {
-          DEFAULT: "rgb(13 79 79)",
+          DEFAULT: "rgb(11 79 74)",
           foreground: "rgb(255 255 255)",
-          hover: "rgb(10 61 61)",
+          hover: "rgb(9 66 62)",
         },
         secondary: {
-          DEFAULT: "rgb(26 58 74)",
+          DEFAULT: "rgb(41 55 74)",
           foreground: "rgb(255 255 255)",
         },
         accent: {
-          DEFAULT: "rgb(232 184 75)",
+          DEFAULT: "rgb(200 120 90)",
           foreground: "rgb(26 26 46)",
         },
         muted: {
-          DEFAULT: "rgb(156 163 175)",
-          foreground: "rgb(107 114 128)",
+          DEFAULT: "rgb(95 106 108)",
+          foreground: "rgb(95 106 108)",
         },
         destructive: {
           DEFAULT: "rgb(239 68 68)",

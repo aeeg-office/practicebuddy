@@ -37,11 +37,11 @@ export default function SatPrepPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0d4f4f] via-[#0a3d3d] to-[#0d4f4f]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0b4f4a] via-[#09423e] to-[#0b4f4a]">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
           <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-[#e8b84b]/10 blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-[#c8785a]/10 blur-3xl" />
           <div className="absolute top-1/4 right-1/4 h-48 w-48 rounded-full bg-white/[0.03] blur-2xl" />
         </div>
         <div
@@ -55,7 +55,7 @@ export default function SatPrepPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-1.5 text-sm text-white/90 backdrop-blur-sm mb-8">
-              <Star className="h-4 w-4 text-[#e8b84b] fill-[#e8b84b]" />
+              <Star className="h-4 w-4 text-[#c8785a] fill-[#c8785a]" />
               <span>{c.hero?.badge}</span>
             </div>
             <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
@@ -69,7 +69,7 @@ export default function SatPrepPage() {
                 <Button
                   size="xl"
                   variant="accent"
-                  className="font-semibold shadow-lg shadow-[#e8b84b]/25"
+                  className="font-semibold shadow-lg shadow-[#c8785a]/25"
                 >
                   {c.hero?.ctas?.primary || "Start Skill Practice"}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -118,7 +118,7 @@ export default function SatPrepPage() {
                   className="group border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <CardContent className="p-8">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0d4f4f]/10 text-[#0d4f4f] transition-colors group-hover:bg-[#0d4f4f] group-hover:text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0b4f4a]/10 text-[#0b4f4a] transition-colors group-hover:bg-[#0b4f4a] group-hover:text-white">
                       <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="mt-6 text-lg font-semibold text-foreground">{item.title}</h3>
@@ -139,7 +139,7 @@ export default function SatPrepPage() {
               {/* Reading & Writing */}
               {c.taxonomies.readingWriting && (
                 <div>
-                  <h3 className="text-xl font-bold text-[#0d4f4f] mb-6">{c.taxonomies.readingWriting.title}</h3>
+                  <h3 className="text-xl font-bold text-[#0b4f4a] mb-6">{c.taxonomies.readingWriting.title}</h3>
                   <div className="space-y-6">
                     {c.taxonomies.readingWriting.domains?.map((domain: any) => (
                       <div key={domain.name} className="rounded-xl border border-border/60 bg-card p-6 shadow-sm">
@@ -147,7 +147,7 @@ export default function SatPrepPage() {
                         <ul className="mt-3 space-y-1.5">
                           {(domain.skills ?? []).map((skill: string) => (
                             <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <CheckCircle className="h-3.5 w-3.5 text-[#0d4f4f]" />
+                              <CheckCircle className="h-3.5 w-3.5 text-[#0b4f4a]" />
                               {skill}
                             </li>
                           ))}
@@ -160,7 +160,7 @@ export default function SatPrepPage() {
               {/* Math */}
               {c.taxonomies.math && (
                 <div>
-                  <h3 className="text-xl font-bold text-[#0d4f4f] mb-6">{c.taxonomies.math.title}</h3>
+                  <h3 className="text-xl font-bold text-[#0b4f4a] mb-6">{c.taxonomies.math.title}</h3>
                   <div className="space-y-6">
                     {c.taxonomies.math.domains?.map((domain: any) => (
                       <div key={domain.name} className="rounded-xl border border-border/60 bg-card p-6 shadow-sm">
@@ -168,7 +168,7 @@ export default function SatPrepPage() {
                         <ul className="mt-3 space-y-1.5">
                           {(domain.skills ?? []).map((skill: string) => (
                             <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <CheckCircle className="h-3.5 w-3.5 text-[#0d4f4f]" />
+                              <CheckCircle className="h-3.5 w-3.5 text-[#0b4f4a]" />
                               {skill}
                             </li>
                           ))}
@@ -198,7 +198,7 @@ export default function SatPrepPage() {
                   key={index}
                   className={`rounded-2xl border bg-card shadow-sm transition-all duration-200 ${
                     openFaq === index
-                      ? "border-[#0d4f4f]/30 shadow-md"
+                      ? "border-[#0b4f4a]/30 shadow-md"
                       : "border-border/60"
                   }`}
                 >
@@ -209,7 +209,7 @@ export default function SatPrepPage() {
                     <span className="text-base font-semibold text-foreground">{faq.q || faq.question}</span>
                     <ChevronDown
                       className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-                        openFaq === index ? "rotate-180 text-[#0d4f4f]" : ""
+                        openFaq === index ? "rotate-180 text-[#0b4f4a]" : ""
                       }`}
                     />
                   </button>
@@ -230,11 +230,11 @@ export default function SatPrepPage() {
       )}
 
       {/* ==================== CTA SECTION ==================== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0d4f4f] via-[#0a3d3d] to-[#0d4f4f]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0b4f4a] via-[#09423e] to-[#0b4f4a]">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
           <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute top-1/2 right-1/3 h-64 w-64 rounded-full bg-[#e8b84b]/10 blur-3xl" />
+          <div className="absolute top-1/2 right-1/3 h-64 w-64 rounded-full bg-[#c8785a]/10 blur-3xl" />
         </div>
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -246,7 +246,7 @@ export default function SatPrepPage() {
         />
         <div className="relative mx-auto max-w-4xl px-6 py-20 sm:py-28 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <HelpCircle className="h-12 w-12 text-[#e8b84b] mb-6" />
+            <HelpCircle className="h-12 w-12 text-[#c8785a] mb-6" />
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               {c.cta?.title}
             </h2>
@@ -258,7 +258,7 @@ export default function SatPrepPage() {
                 <Button
                   size="xl"
                   variant="accent"
-                  className="font-semibold shadow-lg shadow-[#e8b84b]/25"
+                  className="font-semibold shadow-lg shadow-[#c8785a]/25"
                 >
                   {c.cta?.primary || "Start Practice"}
                   <ArrowRight className="ml-2 h-5 w-5" />

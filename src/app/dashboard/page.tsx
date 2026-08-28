@@ -54,7 +54,7 @@ const upcomingSessions = [
 
 const domainMastery = [
   { label: "Words in Context", score: 74, color: "bg-primary" },
-  { label: "Inference", score: 58, color: "bg-[#f5a623]" },
+  { label: "Inference", score: 58, color: "bg-[#c8785a]" },
   { label: "Grammar & Usage", score: 82, color: "bg-secondary" },
   { label: "Expression of Ideas", score: 69, color: "bg-emerald-500" },
   { label: "Standard English Conventions", score: 77, color: "bg-violet-500" },
@@ -342,7 +342,7 @@ export default function DashboardPage() {
                               className={`h-full rounded-full transition-all duration-700 ease-out ${
                                 skill.level === "mastered" ? "bg-emerald-500" :
                                 skill.level === "proficient" ? "bg-primary" :
-                                skill.level === "approaching" ? "bg-[#f5a623]" :
+                                skill.level === "approaching" ? "bg-[#c8785a]" :
                                 "bg-red-400"
                               }`}
                               style={{ width: `${Math.round((skill.correctCount / Math.max(skill.attemptsCount, 1)) * 100)}%` }}

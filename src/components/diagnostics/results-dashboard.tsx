@@ -53,7 +53,7 @@ function CircularProgress({ percentage, size = 140 }: { percentage: number; size
     percentage >= 80
       ? "#10b981"
       : percentage >= 60
-        ? "#f5a623"
+        ? "#c8785a"
         : "#ef4444"
 
   return (

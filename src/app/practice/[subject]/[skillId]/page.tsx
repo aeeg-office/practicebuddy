@@ -43,7 +43,7 @@ import type { MasteryLevel } from "@/data/practice-skills"
 /* ────── Difficulty Colors ────── */
 const diffColors: Record<Difficulty, string> = {
   easy: "text-emerald-600 bg-emerald-100",
-  medium: "text-[#f5a623] bg-[#f5a623]/10",
+  medium: "text-[#c8785a] bg-[#c8785a]/10",
   hard: "text-red-500 bg-red-100",
 }
 
@@ -211,7 +211,7 @@ export default function SkillPracticePage() {
     return (
       <div className="p-4 md:p-8 max-w-3xl mx-auto">
         <div className="flex flex-col items-center justify-center py-32 text-center">
-          <Loader2 className="h-10 w-10 text-[#0d4f4f] animate-spin mb-4" />
+          <Loader2 className="h-10 w-10 text-[#0b4f4a] animate-spin mb-4" />
           <h2 className="text-lg font-semibold text-foreground mb-1">Loading questions…</h2>
           <p className="text-sm text-muted-foreground">
             Fetching practice questions for {skillName} from the question bank.
@@ -234,7 +234,7 @@ export default function SkillPracticePage() {
               <Button
                 variant="default"
                 size="lg"
-                className="bg-[#0d4f4f] hover:bg-[#3a1a9c] font-semibold shadow-md"
+                className="bg-[#0b4f4a] hover:bg-[#5f6a6c] font-semibold shadow-md"
                 onClick={loadQuestions}
               >
                 <RotateCcw className="h-4 w-4 mr-2" /> Try Again
@@ -323,7 +323,7 @@ export default function SkillPracticePage() {
   const masteryColors: Record<MasteryLevel, string> = {
     "not-assessed": "bg-muted",
     beginning: "bg-red-400",
-    developing: "bg-[#f5a623]",
+    developing: "bg-[#c8785a]",
     approaching: "bg-yellow-400",
     mastered: "bg-emerald-500",
   }
@@ -338,16 +338,16 @@ export default function SkillPracticePage() {
 
     return (
       <div className="p-4 md:p-8 max-w-3xl mx-auto">
-        <Card className="border-0 shadow-lg bg-gradient-to-br from-[#0d4f4f] to-[#1e2761] text-white overflow-hidden relative">
+        <Card className="border-0 shadow-lg bg-gradient-to-br from-[#0b4f4a] to-[#0b4f4a] text-white overflow-hidden relative">
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
           <div className="relative p-8 md:p-10 text-center">
             <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-white/20 mb-6">
-              <Award className="h-10 w-10 text-[#f5a623]" />
+              <Award className="h-10 w-10 text-[#c8785a]" />
             </div>
             <h1 className="text-3xl font-bold mb-2">Session Complete!</h1>
             <p className="text-white/70 mb-6">You completed {total} questions in {minutes}m {seconds}s</p>
             {saving && (
-              <p className="text-sm text-[#f5a623] mb-4 flex items-center justify-center gap-2">
+              <p className="text-sm text-[#c8785a] mb-4 flex items-center justify-center gap-2">
                 <Loader2 className="h-4 w-4 animate-spin" />
                 Saving your progress…
               </p>
@@ -355,7 +355,7 @@ export default function SkillPracticePage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="bg-white/10 rounded-xl p-4">
-                <BarChart3 className="h-6 w-6 mx-auto mb-2 text-[#f5a623]" />
+                <BarChart3 className="h-6 w-6 mx-auto mb-2 text-[#c8785a]" />
                 <p className="text-2xl font-bold">{pct}%</p>
                 <p className="text-xs text-white/60">Score</p>
               </div>
@@ -370,7 +370,7 @@ export default function SkillPracticePage() {
                 <p className="text-xs text-white/60">Incorrect</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
-                <Target className="h-6 w-6 mx-auto mb-2 text-[#f5a623]" />
+                <Target className="h-6 w-6 mx-auto mb-2 text-[#c8785a]" />
                 <p className="text-2xl font-bold">{isPracticeAll ? allSkills.length : 1}</p>
                 <p className="text-xs text-white/60">Skills</p>
               </div>
@@ -426,7 +426,7 @@ export default function SkillPracticePage() {
           </div>
         </div>
         <div className="text-right">
-          <p className="text-sm font-medium text-[#0d4f4f]">
+          <p className="text-sm font-medium text-[#0b4f4a]">
             {Math.round((results.filter((r) => r.correct).length / Math.max(results.length, 1)) * 100)}%
           </p>
           <p className="text-xs text-muted-foreground">Current Score</p>
@@ -436,7 +436,7 @@ export default function SkillPracticePage() {
       {/* Progress bar */}
       <div className="w-full h-2 rounded-full bg-muted/60 mb-2 overflow-hidden">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-[#0d4f4f] to-[#f5a623] transition-all duration-500"
+          className="h-full rounded-full bg-gradient-to-r from-[#0b4f4a] to-[#c8785a] transition-all duration-500"
           style={{ width: `${((currentQ + 1) / questions.length) * 100}%` }}
         />
       </div>
@@ -496,7 +496,7 @@ export default function SkillPracticePage() {
           <div className="space-y-3">
             {parsedOptions.map((option, idx) => {
               const isCorrectOption = option.id === correctOptionId
-              let borderClass = "border-border/60 hover:border-[#0d4f4f]/30 hover:bg-[#0d4f4f]/5"
+              let borderClass = "border-border/60 hover:border-[#0b4f4a]/30 hover:bg-[#0b4f4a]/5"
               if (answered) {
                 if (isCorrectOption) {
                   borderClass = "border-emerald-500 bg-emerald-50"
@@ -506,7 +506,7 @@ export default function SkillPracticePage() {
                   borderClass = "border-border/30 opacity-60"
                 }
               } else if (selectedAnswer === idx) {
-                borderClass = "border-[#0d4f4f] bg-[#0d4f4f]/5"
+                borderClass = "border-[#0b4f4a] bg-[#0b4f4a]/5"
               }
 
               return (
@@ -594,7 +594,7 @@ export default function SkillPracticePage() {
           {results.filter((r) => r.correct).length} / {results.length} correct
         </p>
         {answered && attemptFeedback?.showCorrectAnswer && (
-          <Button onClick={handleNext} variant="default" size="lg" className="bg-[#0d4f4f] hover:bg-[#3a1a9c] font-semibold shadow-md">
+          <Button onClick={handleNext} variant="default" size="lg" className="bg-[#0b4f4a] hover:bg-[#5f6a6c] font-semibold shadow-md">
             {currentQ < questions.length - 1 ? (
               <>Next Question <ArrowRight className="ml-2 h-4 w-4" /></>
             ) : (

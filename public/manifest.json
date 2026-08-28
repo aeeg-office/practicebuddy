@@ -1,11 +1,11 @@
 {
   "name": "Lumaani",
   "short_name": "Lumaani",
-  "description": "Practice, learn, and master English, Math, MAP, and SAT preparation — personalized learning platform for Grades 3–10.",
+  "description": "Practice, learn, and master English, Math, MAP, and SAT preparation \u2014 personalized learning platform for Grades 3\u201310.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f6f6f6",
-  "theme_color": "#0d4f4f",
+  "background_color": "#f6f7f6",
+  "theme_color": "#0b4f4a",
   "orientation": "any",
   "scope": "/",
   "icons": [
@@ -22,7 +22,11 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["education", "practice", "testing"],
+  "categories": [
+    "education",
+    "practice",
+    "testing"
+  ],
   "lang": "en",
   "dir": "ltr"
 }

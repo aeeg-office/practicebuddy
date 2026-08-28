@@ -90,7 +90,7 @@ function formatDuration(minutes: number): string {
 /* ───────── Difficulty config ───────── */
 const difficultyConfig = {
   Easy: { color: "text-emerald-600", bg: "bg-emerald-100" },
-  Medium: { color: "text-[#f5a623]", bg: "bg-[#f5a623]/10" },
+  Medium: { color: "text-[#c8785a]", bg: "bg-[#c8785a]/10" },
   Hard: { color: "text-red-500", bg: "bg-red-100" },
 }
 

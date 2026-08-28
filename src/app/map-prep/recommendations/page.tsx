@@ -129,14 +129,14 @@ const FALLBACK_RECOMMENDATIONS: SkillRecommendation[] = [
 const masteryConfig: Record<string, { label: string; color: string; bg: string }> = {
   mastered: { label: "Mastered", color: "text-emerald-700", bg: "bg-emerald-100" },
   approaching: { label: "Approaching", color: "text-blue-700", bg: "bg-blue-100" },
-  developing: { label: "Developing", color: "text-[#f5a623]", bg: "bg-[#f5a623]/10" },
+  developing: { label: "Developing", color: "text-[#c8785a]", bg: "bg-[#c8785a]/10" },
   beginning: { label: "Beginning", color: "text-red-600", bg: "bg-red-100" },
   "not-assessed": { label: "Not Assessed", color: "text-gray-500", bg: "bg-gray-100" },
 }
 
 const priorityConfig: Record<string, { color: string; bg: string }> = {
   high: { color: "text-red-600", bg: "bg-red-100" },
-  medium: { color: "text-[#f5a623]", bg: "bg-[#f5a623]/10" },
+  medium: { color: "text-[#c8785a]", bg: "bg-[#c8785a]/10" },
   low: { color: "text-blue-600", bg: "bg-blue-100" },
 }
 
@@ -240,7 +240,7 @@ export default function MapRecommendationsPage() {
       {/* Back link */}
       <Link
         href="/map-prep"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0d4f4f] transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0b4f4a] transition-colors"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to MAP Test Prep
@@ -249,9 +249,9 @@ export default function MapRecommendationsPage() {
       {/* ════════════════════════════════════════ */}
       {/* HEADER                                  */}
       {/* ════════════════════════════════════════ */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0b4f4a] via-[#0b4f4a] to-[#29374a] p-8 md:p-10">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#f5a623]/10 blur-3xl" />
+          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#c8785a]/10 blur-3xl" />
         </div>
         <div className="relative">
           <Badge variant="accent" className="mb-3 text-xs px-3 py-1.5 font-semibold uppercase tracking-wide">
@@ -272,7 +272,7 @@ export default function MapRecommendationsPage() {
       {/* ════════════════════════════════════════ */}
       {loading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-[#0d4f4f]" />
+          <Loader2 className="h-6 w-6 animate-spin text-[#0b4f4a]" />
           <span className="ml-2 text-sm text-muted-foreground">Loading your practice data...</span>
         </div>
       ) : (
@@ -280,7 +280,7 @@ export default function MapRecommendationsPage() {
           <Card className="border border-border/60 bg-card shadow-sm">
             <CardContent className="p-5 text-center">
               <div className="flex justify-center mb-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0d4f4f]/10 text-[#0d4f4f]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b4f4a]/10 text-[#0b4f4a]">
                   <Award className="h-5 w-5" />
                 </div>
               </div>
@@ -304,7 +304,7 @@ export default function MapRecommendationsPage() {
           <Card className="border border-border/60 bg-card shadow-sm">
             <CardContent className="p-5 text-center">
               <div className="flex justify-center mb-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f5a623]/10 text-[#f5a623]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c8785a]/10 text-[#c8785a]">
                   <Star className="h-5 w-5" />
                 </div>
               </div>
@@ -352,8 +352,8 @@ export default function MapRecommendationsPage() {
                 onClick={() => setFilterSubject(subj)}
                 className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
                   filterSubject === subj
-                    ? "bg-[#0d4f4f] text-white shadow-sm"
-                    : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30"
+                    ? "bg-[#0b4f4a] text-white shadow-sm"
+                    : "bg-white text-muted-foreground border border-border/60 hover:border-[#0b4f4a]/30"
                 }`}
               >
                 {subj === "all" ? "All" : subj === "language usage" ? "Language" : subj.charAt(0).toUpperCase() + subj.slice(1)}
@@ -371,11 +371,11 @@ export default function MapRecommendationsPage() {
                   ? p === "high"
                     ? "bg-red-500 text-white"
                     : p === "medium"
-                      ? "bg-[#f5a623] text-white"
+                      ? "bg-[#c8785a] text-white"
                       : p === "low"
                         ? "bg-blue-500 text-white"
-                        : "bg-[#0d4f4f] text-white"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30"
+                        : "bg-[#0b4f4a] text-white"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0b4f4a]/30"
               }`}
             >
               {p === "all" ? "All Priority" : p.charAt(0).toUpperCase() + p.slice(1)}
@@ -389,7 +389,7 @@ export default function MapRecommendationsPage() {
       {/* ════════════════════════════════════════ */}
       <section>
         <h2 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-          <Target className="h-5 w-5 text-[#f5a623]" />
+          <Target className="h-5 w-5 text-[#c8785a]" />
           Suggested Skills to Practice
           <span className="text-xs font-normal text-muted-foreground ml-2">({filteredRecs.length} skills)</span>
         </h2>
@@ -440,7 +440,7 @@ export default function MapRecommendationsPage() {
                             <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded-full ${mastery.bg} ${mastery.color}`}>
                               {mastery.label}
                             </span>
-                            <span className="text-[10px] text-muted-foreground px-1.5 py-0.5 rounded-full bg-[#0d4f4f]/5">
+                            <span className="text-[10px] text-muted-foreground px-1.5 py-0.5 rounded-full bg-[#0b4f4a]/5">
                               RIT {rec.ritAligned}
                             </span>
                           </div>
@@ -466,7 +466,7 @@ export default function MapRecommendationsPage() {
       {/* ════════════════════════════════════════ */}
       {/* CTA                                      */}
       {/* ════════════════════════════════════════ */}
-      <div className="rounded-xl bg-gradient-to-r from-[#0d4f4f]/5 to-[#f5a623]/10 border border-[#0d4f4f]/10 p-6 text-center">
+      <div className="rounded-xl bg-gradient-to-r from-[#0b4f4a]/5 to-[#c8785a]/10 border border-[#0b4f4a]/10 p-6 text-center">
         <h2 className="text-base font-bold text-foreground mb-2">Want More Personalized Recommendations?</h2>
         <p className="text-sm text-muted-foreground mb-4 max-w-lg mx-auto">
           Complete more practice sessions to unlock data-driven recommendations tailored to your exact skill level and RIT band.
@@ -478,7 +478,7 @@ export default function MapRecommendationsPage() {
             </Button>
           </Link>
           <Link href="/map-prep/mixed">
-            <Button variant="outline" size="sm" className="border-[#0d4f4f]/30 text-[#0d4f4f]">
+            <Button variant="outline" size="sm" className="border-[#0b4f4a]/30 text-[#0b4f4a]">
               Mixed Practice
             </Button>
           </Link>

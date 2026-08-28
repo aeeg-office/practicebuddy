@@ -1,43 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #f4f6f9;
-  --color-foreground: #1a1a2e;
+  --color-background: #f6f7f6;
+  --color-foreground: #162022;
   --color-surface: #ffffff;
-  --color-elevated: #fafafa;
-  --color-border: #e2e6ed;
-  --color-input: #e2e6ed;
+  --color-elevated: #eef1f0;
+  --color-border: #e0e6e3;
+  --color-input: #e0e6e3;
 
-  /* Lumaani brand — Deep Teal + Warm Gold ("Luminous" palette) */
-  --color-primary: #0d4f4f;
-  --color-primary-hover: #0a3d3d;
-  --color-primary-active: #072e2e;
+  /* Lumaani brand — Deep Teal + Copper (Option 5: selected direction) */
+  --color-primary: #0b4f4a;
+  --color-primary-hover: #09423e;
+  --color-primary-active: #073330;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #1a3a4a;
-  --color-secondary-hover: #142e3a;
+  --color-secondary: #29374a;
+  --color-secondary-hover: #1f2a37;
   --color-secondary-foreground: #ffffff;
 
-  --color-accent: #e8b84b;
-  --color-accent-hover: #d4a43c;
+  --color-accent: #c8785a;
+  --color-accent-hover: #b0684d;
   --color-accent-foreground: #1a1a2e;
 
-  --color-muted: #9ca3af;
-  --color-muted-foreground: #6b7280;
+  --color-muted: #5f6a6c;
+  --color-muted-foreground: #5f6a6c;
 
   /* Semantic colors */
-  --color-success: #16a34a;
-  --color-success-light: #dcfce7;
-  --color-error: #dc2626;
-  --color-error-light: #fef2f2;
-  --color-warning: #d97706;
-  --color-warning-light: #fef3c7;
-  --color-info: #2563eb;
-  --color-info-light: #dbeafe;
+  --color-success: #15805a;
+  --color-success-light: #e0f1ea;
+  --color-error: #b8372b;
+  --color-error-light: #fde7e5;
+  --color-warning: #a16207;
+  --color-warning-light: #fcf0d8;
+  --color-info: #2a6fd0;
+  --color-info-light: #e2edfc;
 
-  --color-destructive: #dc2626;
+  --color-destructive: #b8372b;
   --color-destructive-foreground: #ffffff;
-  --color-ring: #0d4f4f;
+  --color-ring: #0b4f4a;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

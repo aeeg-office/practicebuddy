@@ -18,9 +18,9 @@ import {
 
 /* ───────── Options ───────── */
 const SUBJECTS = [
-  { key: "math", label: "Mathematics", icon: Calculator, color: "text-[#f5a623]", bg: "bg-[#f5a623]/10" },
+  { key: "math", label: "Mathematics", icon: Calculator, color: "text-[#c8785a]", bg: "bg-[#c8785a]/10" },
   { key: "reading", label: "Reading", icon: BookOpen, color: "text-emerald-500", bg: "bg-emerald-500/10" },
-  { key: "language-usage", label: "Language Usage", icon: Pen, color: "text-[#0d4f4f]", bg: "bg-[#0d4f4f]/10" },
+  { key: "language-usage", label: "Language Usage", icon: Pen, color: "text-[#0b4f4a]", bg: "bg-[#0b4f4a]/10" },
   { key: "all", label: "All MAP Subjects", icon: Layers, color: "text-purple-500", bg: "bg-purple-500/10" },
 ]
 
@@ -83,7 +83,7 @@ export default function MixedMapPracticePage() {
       {/* Back link */}
       <Link
         href="/map-prep"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0d4f4f] transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0b4f4a] transition-colors"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to MAP Test Prep
@@ -92,9 +92,9 @@ export default function MixedMapPracticePage() {
       {/* ════════════════════════════════════════ */}
       {/* HEADER                                  */}
       {/* ════════════════════════════════════════ */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0b4f4a] via-[#0b4f4a] to-[#29374a] p-8 md:p-10">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#f5a623]/10 blur-3xl" />
+          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#c8785a]/10 blur-3xl" />
         </div>
         <div className="relative">
           <Badge variant="accent" className="mb-3 text-xs px-3 py-1.5 font-semibold uppercase tracking-wide">
@@ -116,7 +116,7 @@ export default function MixedMapPracticePage() {
       <Card className="border border-border/60 shadow-sm">
         <CardHeader className="p-6 pb-0">
           <CardTitle className="text-lg font-bold text-foreground flex items-center gap-2">
-            <Settings className="h-5 w-5 text-[#f5a623]" />
+            <Settings className="h-5 w-5 text-[#c8785a]" />
             Configure Your Session
           </CardTitle>
         </CardHeader>
@@ -137,8 +137,8 @@ export default function MixedMapPracticePage() {
                     }}
                     className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 ${
                       isSelected
-                        ? "bg-[#0d4f4f]/5 border-[#0d4f4f]/30 ring-2 ring-[#0d4f4f]/20"
-                        : "bg-white border-border/60 hover:border-[#0d4f4f]/20"
+                        ? "bg-[#0b4f4a]/5 border-[#0b4f4a]/30 ring-2 ring-[#0b4f4a]/20"
+                        : "bg-white border-border/60 hover:border-[#0b4f4a]/20"
                     }`}
                   >
                     <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${subject.bg}`}>
@@ -162,8 +162,8 @@ export default function MixedMapPracticePage() {
                     onClick={() => toggleDomain(domain.key)}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                       selectedDomains.includes(domain.key)
-                        ? "bg-[#0d4f4f] text-white shadow-sm"
-                        : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30"
+                        ? "bg-[#0b4f4a] text-white shadow-sm"
+                        : "bg-white text-muted-foreground border border-border/60 hover:border-[#0b4f4a]/30"
                     }`}
                   >
                     {domain.label}
@@ -186,8 +186,8 @@ export default function MixedMapPracticePage() {
                   onClick={() => setSelectedBand(band)}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                     selectedBand === band
-                      ? "bg-[#0d4f4f] text-white shadow-sm ring-2 ring-[#0d4f4f]/20"
-                      : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
+                      ? "bg-[#0b4f4a] text-white shadow-sm ring-2 ring-[#0b4f4a]/20"
+                      : "bg-white text-muted-foreground border border-border/60 hover:border-[#0b4f4a]/30 hover:text-foreground"
                   }`}
                 >
                   {band}
@@ -206,8 +206,8 @@ export default function MixedMapPracticePage() {
                   onClick={() => setQuestionCount(count)}
                   className={`w-12 h-10 rounded-lg text-sm font-medium transition-all duration-200 ${
                     questionCount === count
-                      ? "bg-[#0d4f4f] text-white shadow-sm"
-                      : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
+                      ? "bg-[#0b4f4a] text-white shadow-sm"
+                      : "bg-white text-muted-foreground border border-border/60 hover:border-[#0b4f4a]/30 hover:text-foreground"
                   }`}
                 >
                   {count}
@@ -224,7 +224,7 @@ export default function MixedMapPracticePage() {
       {/* ════════════════════════════════════════ */}
       <div className="text-center py-4">
         <Link href={handleStart()}>
-          <Button size="xl" variant="accent" className="font-semibold shadow-lg shadow-[#f5a623]/25 px-10">
+          <Button size="xl" variant="accent" className="font-semibold shadow-lg shadow-[#c8785a]/25 px-10">
             <Sparkles className="mr-2 h-5 w-5" />
             Start {questionCount}-Question Mixed Session
             <ChevronRight className="ml-2 h-5 w-5" />

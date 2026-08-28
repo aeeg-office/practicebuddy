@@ -50,11 +50,11 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
       <aside className="hidden lg:flex lg:flex-col w-64 shrink-0 bg-card border-r border-border">
         {/* Logo area */}
         <Link href="/practice" className="flex items-center gap-2.5 px-6 h-16 border-b border-border">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f5a623] text-white text-sm font-bold shadow-sm">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#c8785a] text-white text-sm font-bold shadow-sm">
             P
           </div>
           <div>
-            <div className="text-sm font-bold leading-tight text-[#0d4f4f]">Practice</div>
+            <div className="text-sm font-bold leading-tight text-[#0b4f4a]">Practice</div>
             <div className="text-[10px] leading-tight text-muted-foreground">Skill Platform</div>
           </div>
         </Link>
@@ -72,13 +72,13 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
                 href={link.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-[#0d4f4f]/10 text-[#0d4f4f] shadow-sm"
+                    ? "bg-[#0b4f4a]/10 text-[#0b4f4a] shadow-sm"
                     : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                 }`}
               >
-                <link.icon className={`h-5 w-5 shrink-0 ${isActive ? "text-[#0d4f4f]" : ""}`} />
+                <link.icon className={`h-5 w-5 shrink-0 ${isActive ? "text-[#0b4f4a]" : ""}`} />
                 {link.label}
-                {isActive && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#0d4f4f]" />}
+                {isActive && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[#0b4f4a]" />}
               </Link>
             )
           })}
@@ -87,14 +87,14 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
         {/* Bottom section — Progress + Support */}
         <div className="px-3 pb-4 space-y-3 border-t border-border pt-4">
           {/* Progress mini-card */}
-          <div className="px-3 py-3 rounded-lg bg-gradient-to-r from-[#0d4f4f]/5 to-[#0d4f4f]/5">
+          <div className="px-3 py-3 rounded-lg bg-gradient-to-r from-[#0b4f4a]/5 to-[#0b4f4a]/5">
             <div className="flex items-center justify-between text-xs mb-2">
               <span className="font-semibold text-foreground">Mastery Progress</span>
-              <span className="font-bold text-[#0d4f4f]">{masteredSkills}/{totalSkills}</span>
+              <span className="font-bold text-[#0b4f4a]">{masteredSkills}/{totalSkills}</span>
             </div>
             <div className="w-full h-1.5 rounded-full bg-muted/60 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-[#0d4f4f] to-[#e8b84b]"
+                className="h-full rounded-full bg-gradient-to-r from-[#0b4f4a] to-[#c8785a]"
                 style={{ width: `${progressPct}%` }}
               />
             </div>
@@ -142,7 +142,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
 
             {/* Breadcrumbs */}
             <nav className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-[#0d4f4f] transition-colors">
+              <Link href="/" className="hover:text-[#0b4f4a] transition-colors">
                 <Home className="h-4 w-4" />
               </Link>
               {breadcrumbs.map((crumb, i) => (
@@ -153,7 +153,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
                   ) : (
                     <Link
                       href={crumb.href}
-                      className="hover:text-[#0d4f4f] transition-colors"
+                      className="hover:text-[#0b4f4a] transition-colors"
                     >
                       {crumb.label}
                     </Link>
@@ -168,7 +168,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
             <div className="hidden sm:flex items-center gap-2">
               <div className="w-24 h-2 rounded-full bg-muted/60 overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-[#0d4f4f] to-[#e8b84b]"
+                  className="h-full rounded-full bg-gradient-to-r from-[#0b4f4a] to-[#c8785a]"
                   style={{ width: `${progressPct}%` }}
                 />
               </div>

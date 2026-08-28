@@ -41,7 +41,7 @@ import {
 const masteryConfig: Record<MasteryLevel, { label: string; variant: "default" | "secondary" | "accent" | "outline" | "success" | "destructive"; color: string }> = {
   mastered: { label: "Mastered", variant: "success", color: "text-emerald-600 bg-emerald-100" },
   approaching: { label: "Approaching", variant: "accent", color: "text-[#f5a623] bg-[#f5a623]/10" },
-  developing: { label: "Developing", variant: "default", color: "text-[#1a237e] bg-[#1a237e]/10" },
+  developing: { label: "Developing", variant: "default", color: "text-[#0d4f4f] bg-[#0d4f4f]/10" },
   beginning: { label: "Beginning", variant: "secondary", color: "text-[#1e2761] bg-[#1e2761]/10" },
   "not-assessed": { label: "Not Assessed", variant: "outline", color: "text-muted-foreground bg-muted/30" },
 }
@@ -108,8 +108,8 @@ function DomainSection({
         className="w-full flex items-center justify-between px-5 py-4 hover:bg-muted/20 transition-colors text-left"
       >
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1a237e]/10">
-            <Layers className="h-4 w-4 text-[#1a237e]" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0d4f4f]/10">
+            <Layers className="h-4 w-4 text-[#0d4f4f]" />
           </div>
           <div>
             <h3 className="text-sm font-semibold text-foreground">{domain.name}</h3>
@@ -146,7 +146,7 @@ function DomainSection({
                     : skill.mastery === "approaching"
                     ? "bg-[#f5a623]"
                     : skill.mastery === "developing"
-                    ? "bg-[#1a237e]"
+                    ? "bg-[#0d4f4f]"
                     : skill.mastery === "beginning"
                     ? "bg-[#1e2761]"
                     : "bg-muted-foreground/30"
@@ -156,7 +156,7 @@ function DomainSection({
               {/* Skill info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-foreground group-hover:text-[#1a237e] transition-colors">
+                  <span className="text-sm font-medium text-foreground group-hover:text-[#0d4f4f] transition-colors">
                     {skill.name}
                   </span>
                   <Badge
@@ -180,7 +180,7 @@ function DomainSection({
                 </div>
               </div>
 
-              <ChevronRight className="h-5 w-5 text-muted-foreground/40 group-hover:text-[#1a237e] group-hover:translate-x-0.5 transition-all shrink-0" />
+              <ChevronRight className="h-5 w-5 text-muted-foreground/40 group-hover:text-[#0d4f4f] group-hover:translate-x-0.5 transition-all shrink-0" />
             </Link>
           ))}
         </div>
@@ -345,8 +345,8 @@ export default function SubjectPage() {
           </Card>
           <Card className="border border-border/50 shadow-sm">
             <CardContent className="p-4 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#1a237e]/10 shrink-0">
-                <Target className="h-5 w-5 text-[#1a237e]" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0d4f4f]/10 shrink-0">
+                <Target className="h-5 w-5 text-[#0d4f4f]" />
               </div>
               <div>
                 <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-medium">In Progress</p>
@@ -390,7 +390,7 @@ export default function SubjectPage() {
               placeholder={`Search ${data.name} skills...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-10 text-sm bg-white border-border/60 shadow-sm focus-visible:ring-[#1a237e]"
+              className="pl-10 h-10 text-sm bg-white border-border/60 shadow-sm focus-visible:ring-[#0d4f4f]"
             />
           </div>
           <div className="flex items-center gap-2">
@@ -402,8 +402,8 @@ export default function SubjectPage() {
                   onClick={() => setDifficultyFilter(f.key)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                     difficultyFilter === f.key
-                      ? "bg-[#1a237e] text-white shadow-sm"
-                      : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                      ? "bg-[#0d4f4f] text-white shadow-sm"
+                      : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
                   }`}
                 >
                   {f.label}
@@ -457,7 +457,7 @@ export default function SubjectPage() {
       {/* BOTTOM CTA                              */}
       {/* ════════════════════════════════════════ */}
       <section className="pb-8">
-        <Card className="border-0 bg-gradient-to-r from-[#1e2761] to-[#1a237e] shadow-lg">
+        <Card className="border-0 bg-gradient-to-r from-[#1e2761] to-[#0d4f4f] shadow-lg">
           <CardContent className="p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 className="text-lg font-bold text-white">Need help with {data.name}?</h3>
@@ -466,7 +466,7 @@ export default function SubjectPage() {
               </p>
             </div>
             <a
-              href="https://wa.me/201060618899"
+              href="https://mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -212,7 +212,7 @@ export default function TeacherDashboardPage() {
           {sidebarOpen && (
             <>
               <a
-                href="https://wa.me/201060618899"
+                href="https://mailto:hello@lumaani.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-emerald-600 hover:bg-emerald-50 transition-colors"
@@ -234,7 +234,7 @@ export default function TeacherDashboardPage() {
           {!sidebarOpen && (
             <>
               <a
-                href="https://wa.me/201060618899"
+                href="https://mailto:hello@lumaani.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center rounded-lg p-2.5 text-emerald-600 hover:bg-emerald-50 transition-colors"

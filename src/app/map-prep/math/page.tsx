@@ -73,8 +73,8 @@ const DOMAINS = [
     name: "Geometry",
     description: "Shapes, angles, area, volume, coordinate geometry, and geometric transformations.",
     icon: Layers,
-    color: "text-[#1a237e]",
-    bg: "bg-[#1a237e]/10",
+    color: "text-[#0d4f4f]",
+    bg: "bg-[#0d4f4f]/10",
     skills: [
       { id: "map-math-geo-1", name: "Basic Shapes & Properties", difficulty: "easy" },
       { id: "map-math-geo-2", name: "Perimeter & Area", difficulty: "easy" },
@@ -124,7 +124,7 @@ export default function MapMathPage() {
       {/* Back link */}
       <Link
         href="/map-prep"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#1a237e] transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0d4f4f] transition-colors"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to MAP Test Prep
@@ -133,7 +133,7 @@ export default function MapMathPage() {
       {/* ════════════════════════════════════════ */}
       {/* HEADER                                  */}
       {/* ════════════════════════════════════════ */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a237e] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#f5a623]/10 blur-3xl" />
         </div>
@@ -166,8 +166,8 @@ export default function MapMathPage() {
               onClick={() => setSelectedBand(band.value)}
               className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                 selectedBand === band.value
-                  ? "bg-[#1a237e] text-white shadow-sm ring-2 ring-[#1a237e]/20"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                  ? "bg-[#0d4f4f] text-white shadow-sm ring-2 ring-[#0d4f4f]/20"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
               }`}
             >
               {band.label}
@@ -228,8 +228,8 @@ export default function MapMathPage() {
                         key={skill.id}
                         className={`group flex items-center justify-between p-3 rounded-lg transition-all duration-200 cursor-pointer ${
                           selectedSkill === skill.id
-                            ? "bg-[#1a237e]/10 border border-[#1a237e]/20"
-                            : "hover:bg-[#1a237e]/5 border border-transparent"
+                            ? "bg-[#0d4f4f]/10 border border-[#0d4f4f]/20"
+                            : "hover:bg-[#0d4f4f]/5 border border-transparent"
                         }`}
                         onClick={() => setSelectedSkill(selectedSkill === skill.id ? null : skill.id)}
                       >
@@ -255,7 +255,7 @@ export default function MapMathPage() {
                             </Button>
                           </Link>
                           {selectedSkill === skill.id && (
-                            <CheckCircle className="h-4 w-4 text-[#1a237e]" />
+                            <CheckCircle className="h-4 w-4 text-[#0d4f4f]" />
                           )}
                         </div>
                       </div>

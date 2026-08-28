@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
-  description: "Administrative dashboard for American Egyptian Education Group.",
+  description: "Administrative dashboard for Lumaani.",
 }
 
 export default async function Layout({ children }: { children: React.ReactNode }) {

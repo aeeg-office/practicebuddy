@@ -335,7 +335,7 @@ export default function SpeakingPage() {
               Get one-on-one speaking practice and real-time feedback from our experienced instructors on WhatsApp.
             </p>
             <a
-              href="https://wa.me/201060618899"
+              href="https://mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"

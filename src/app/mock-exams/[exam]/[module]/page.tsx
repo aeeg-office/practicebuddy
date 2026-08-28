@@ -850,7 +850,7 @@ export default function MockExamPage() {
 
                     {/* WhatsApp Button */}
                     <a
-                      href="https://wa.me/201060618899"
+                      href="https://mailto:hello@lumaani.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex"
@@ -884,7 +884,7 @@ export default function MockExamPage() {
               <p className="text-xs text-gray-500">
                 Have questions? Reach out to us on{" "}
                 <a
-                  href="https://wa.me/201060618899"
+                  href="https://mailto:hello@lumaani.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] font-medium underline underline-offset-2"

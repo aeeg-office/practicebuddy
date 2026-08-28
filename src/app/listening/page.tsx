@@ -348,7 +348,7 @@ export default function ListeningPage() {
               Get personalized listening practice strategies and tips from our expert instructors.
             </p>
             <a
-              href="https://wa.me/201060618899"
+              href="https://mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"

@@ -76,8 +76,8 @@ const DOMAINS = [
     name: "Conventions",
     description: "Capitalization, punctuation, spelling, and formatting rules.",
     icon: SpellCheck,
-    color: "text-[#1a237e]",
-    bg: "bg-[#1a237e]/10",
+    color: "text-[#0d4f4f]",
+    bg: "bg-[#0d4f4f]/10",
     skills: [
       { id: "map-lang-conv-1", name: "Capitalization Rules", difficulty: "easy" },
       { id: "map-lang-conv-2", name: "End Punctuation (Period, Question Mark, Exclamation)", difficulty: "easy" },
@@ -111,7 +111,7 @@ export default function MapLanguageUsagePage() {
       {/* Back link */}
       <Link
         href="/map-prep"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#1a237e] transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#0d4f4f] transition-colors"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to MAP Test Prep
@@ -120,9 +120,9 @@ export default function MapLanguageUsagePage() {
       {/* ════════════════════════════════════════ */}
       {/* HEADER                                  */}
       {/* ════════════════════════════════════════ */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a237e] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-10">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#1a237e]/10 blur-3xl" />
+          <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-[#0d4f4f]/10 blur-3xl" />
         </div>
         <div className="relative">
           <Badge variant="accent" className="mb-3 text-xs px-3 py-1.5 font-semibold uppercase tracking-wide">
@@ -153,8 +153,8 @@ export default function MapLanguageUsagePage() {
               onClick={() => setSelectedBand(band.value)}
               className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                 selectedBand === band.value
-                  ? "bg-[#1a237e] text-white shadow-sm ring-2 ring-[#1a237e]/20"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                  ? "bg-[#0d4f4f] text-white shadow-sm ring-2 ring-[#0d4f4f]/20"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
               }`}
             >
               {band.label}
@@ -215,8 +215,8 @@ export default function MapLanguageUsagePage() {
                         key={skill.id}
                         className={`group flex items-center justify-between p-3 rounded-lg transition-all duration-200 cursor-pointer ${
                           selectedSkill === skill.id
-                            ? "bg-[#1a237e]/10 border border-[#1a237e]/20"
-                            : "hover:bg-[#1a237e]/5 border border-transparent"
+                            ? "bg-[#0d4f4f]/10 border border-[#0d4f4f]/20"
+                            : "hover:bg-[#0d4f4f]/5 border border-transparent"
                         }`}
                         onClick={() => setSelectedSkill(selectedSkill === skill.id ? null : skill.id)}
                       >
@@ -242,7 +242,7 @@ export default function MapLanguageUsagePage() {
                             </Button>
                           </Link>
                           {selectedSkill === skill.id && (
-                            <CheckCircle className="h-4 w-4 text-[#1a237e]" />
+                            <CheckCircle className="h-4 w-4 text-[#0d4f4f]" />
                           )}
                         </div>
                       </div>

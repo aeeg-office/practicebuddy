@@ -272,7 +272,7 @@ export default function MockExamsPage() {
               score improvement strategies, and answers to all your questions.
             </p>
             <a
-              href="https://wa.me/201060618899"
+              href="https://mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"

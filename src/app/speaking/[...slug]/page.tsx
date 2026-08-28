@@ -553,7 +553,7 @@ export default function SpeakingAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       <section className="pb-6 pt-4">
         <a
-          href="https://wa.me/201060618899"
+          href="https://mailto:hello@lumaani.com"
           target="_blank"
           rel="noopener noreferrer"
           className="block"

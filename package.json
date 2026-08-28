@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "BUILD_COMMIT=$(git rev-parse HEAD 2>/dev/null || echo unknown) BUILD_TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ) BUILD_ID=$(cat .next/BUILD_ID 2>/dev/null || echo none) next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run"

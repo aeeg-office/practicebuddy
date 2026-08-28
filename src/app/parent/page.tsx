@@ -110,7 +110,7 @@ export default function ParentDashboardPage() {
         {/* Sidebar Footer */}
         <div className="border-t border-gray-100 px-3 py-4 space-y-1">
           <a
-            href="https://wa.me/201060618899"
+            href="https://mailto:hello@lumaani.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-emerald-600 hover:bg-emerald-50 transition-colors"
@@ -496,7 +496,7 @@ export default function ParentDashboardPage() {
 
               {/* WhatsApp Support */}
               <a
-                href="https://wa.me/201060618899"
+                href="https://mailto:hello@lumaani.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-xl border border-emerald-200 bg-white p-4 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all"

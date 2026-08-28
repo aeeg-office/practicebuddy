@@ -42,9 +42,9 @@ const programs = [
     description: "Writing strategies, grammar & usage, and conventions — MAP-aligned practice.",
     icon: Pen,
     href: "/map-prep/language-usage",
-    color: "text-[#1a237e]",
-    bg: "bg-[#1a237e]/10",
-    gradient: "from-[#1a237e]/10 to-transparent",
+    color: "text-[#0d4f4f]",
+    bg: "bg-[#0d4f4f]/10",
+    gradient: "from-[#0d4f4f]/10 to-transparent",
   },
 ]
 
@@ -63,8 +63,8 @@ const quickLinks = [
     description: "Random practice across subjects and RIT bands.",
     icon: Layers,
     href: "/map-prep/mixed",
-    color: "text-[#1a237e]",
-    bg: "bg-[#1a237e]/10",
+    color: "text-[#0d4f4f]",
+    bg: "bg-[#0d4f4f]/10",
   },
   {
     title: "MAP Warm-Up",
@@ -91,7 +91,7 @@ export default function MapPrepLandingPage() {
       {/* HERO                                    */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a237e] via-[#1e2761] to-[#0d2137] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#1e2761] to-[#0d2137] p-8 md:p-12">
           {/* Decorative orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[#f5a623]/10 blur-3xl" />
@@ -128,7 +128,7 @@ export default function MapPrepLandingPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white hover:text-[#1a237e]"
+                  className="border-white/30 text-white hover:bg-white hover:text-[#0d4f4f]"
                 >
                   Practice by RIT
                 </Button>
@@ -155,13 +155,13 @@ export default function MapPrepLandingPage() {
                   <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${program.bg} mb-4`}>
                     <program.icon className={`h-6 w-6 ${program.color}`} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-[#1a237e] transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-[#0d4f4f] transition-colors">
                     {program.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                     {program.description}
                   </p>
-                  <div className="mt-4 flex items-center text-sm font-medium text-[#1a237e] opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="mt-4 flex items-center text-sm font-medium text-[#0d4f4f] opacity-0 group-hover:opacity-100 transition-opacity">
                     Start Practice
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </div>
@@ -201,11 +201,11 @@ export default function MapPrepLandingPage() {
       {/* ════════════════════════════════════════ */}
       {/* HOW IT WORKS                           */}
       {/* ════════════════════════════════════════ */}
-      <section className="rounded-xl bg-[#1a237e]/5 border border-[#1a237e]/10 p-6 md:p-8">
+      <section className="rounded-xl bg-[#0d4f4f]/5 border border-[#0d4f4f]/10 p-6 md:p-8">
         <h2 className="text-lg font-bold text-foreground mb-4">How MAP Prep Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1a237e] text-white font-bold text-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0d4f4f] text-white font-bold text-sm">
               1
             </div>
             <div>
@@ -214,7 +214,7 @@ export default function MapPrepLandingPage() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1a237e] text-white font-bold text-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0d4f4f] text-white font-bold text-sm">
               2
             </div>
             <div>
@@ -223,7 +223,7 @@ export default function MapPrepLandingPage() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1a237e] text-white font-bold text-sm">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0d4f4f] text-white font-bold text-sm">
               3
             </div>
             <div>

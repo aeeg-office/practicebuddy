@@ -460,7 +460,7 @@ export default function SubjectsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
-              href="https://wa.me/201060618899?text=Hi%2C%20I'm%20interested%20in%20your%20English%20%26%20Math%20programs.%20Can%20you%20tell%20me%20more%3F"
+              href="https://mailto:hello@lumaani.com?text=Hi%2C%20I'm%20interested%20in%20your%20English%20%26%20Math%20programs.%20Can%20you%20tell%20me%20more%3F"
               target="_blank"
               rel="noopener noreferrer"
             >

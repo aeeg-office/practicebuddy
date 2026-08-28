@@ -71,9 +71,9 @@ const quickPractices = [
     title: "Daily Challenge",
     description: "New mixed-skills challenge every day",
     icon: Sparkles,
-    color: "text-[#1a237e]",
-    bg: "bg-[#1a237e]/10",
-    gradient: "from-[#1a237e]/10 to-transparent",
+    color: "text-[#0d4f4f]",
+    bg: "bg-[#0d4f4f]/10",
+    gradient: "from-[#0d4f4f]/10 to-transparent",
   },
   {
     title: "Mixed Drill",
@@ -99,9 +99,9 @@ const assessmentTools = [
     title: "Writing Practice",
     description: "Timed essays, letters, reports & summaries with AI feedback",
     icon: Pen,
-    color: "text-[#1a237e]",
-    bg: "bg-[#1a237e]/10",
-    gradient: "from-[#1a237e]/10 to-transparent",
+    color: "text-[#0d4f4f]",
+    bg: "bg-[#0d4f4f]/10",
+    gradient: "from-[#0d4f4f]/10 to-transparent",
     href: "/writing",
   },
   {
@@ -312,7 +312,7 @@ export default function PracticeHomePage() {
       {/* HERO SECTION                            */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a237e] via-[#3a1a9c] to-[#1e2761] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d4f4f] via-[#3a1a9c] to-[#1e2761] p-8 md:p-12">
           {/* Decorative orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[#f5a623]/10 blur-3xl" />
@@ -353,7 +353,7 @@ export default function PracticeHomePage() {
               placeholder="Search skills, domains, or subjects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-11 text-sm bg-white border-border/60 shadow-sm focus-visible:ring-[#1a237e]"
+              className="pl-10 h-11 text-sm bg-white border-border/60 shadow-sm focus-visible:ring-[#0d4f4f]"
             />
           </div>
           <div className="flex items-center gap-2">
@@ -363,7 +363,7 @@ export default function PracticeHomePage() {
                 onClick={() => setViewMode("grid")}
                 className={`p-2 transition-colors ${
                   viewMode === "grid"
-                    ? "bg-[#1a237e] text-white"
+                    ? "bg-[#0d4f4f] text-white"
                     : "text-muted-foreground hover:text-foreground bg-white"
                 }`}
                 aria-label="Grid view"
@@ -374,7 +374,7 @@ export default function PracticeHomePage() {
                 onClick={() => setViewMode("list")}
                 className={`p-2 transition-colors ${
                   viewMode === "list"
-                    ? "bg-[#1a237e] text-white"
+                    ? "bg-[#0d4f4f] text-white"
                     : "text-muted-foreground hover:text-foreground bg-white"
                 }`}
                 aria-label="List view"
@@ -393,8 +393,8 @@ export default function PracticeHomePage() {
               onClick={() => setActiveFilter(opt.key)}
               className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                 activeFilter === opt.key
-                  ? "bg-[#1a237e] text-white shadow-sm"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                  ? "bg-[#0d4f4f] text-white shadow-sm"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
               }`}
             >
               {opt.label}
@@ -417,8 +417,8 @@ export default function PracticeHomePage() {
                       ? "bg-[#f5a623] text-white shadow-sm"
                       : d === "hard"
                         ? "bg-red-500 text-white shadow-sm"
-                        : "bg-[#1a237e] text-white shadow-sm"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                        : "bg-[#0d4f4f] text-white shadow-sm"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
               }`}
             >
               {d === "all" ? "All" : d.charAt(0).toUpperCase() + d.slice(1)}
@@ -445,8 +445,8 @@ export default function PracticeHomePage() {
             onClick={() => setDomainFilter("all")}
             className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
               domainFilter === "all"
-                ? "bg-[#1a237e] text-white shadow-sm"
-                : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                ? "bg-[#0d4f4f] text-white shadow-sm"
+                : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
             }`}
           >
             All
@@ -458,7 +458,7 @@ export default function PracticeHomePage() {
               className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 max-w-[180px] truncate ${
                 domainFilter === domain
                   ? "bg-[#1e2761] text-white shadow-sm"
-                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#1a237e]/30 hover:text-foreground"
+                  : "bg-white text-muted-foreground border border-border/60 hover:border-[#0d4f4f]/30 hover:text-foreground"
               }`}
             >
               {domain}
@@ -501,7 +501,7 @@ export default function PracticeHomePage() {
       {filteredAssessmentTools.length > 0 && (
       <section>
         <h2 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-          <Pen className="h-5 w-5 text-[#1a237e]" />
+          <Pen className="h-5 w-5 text-[#0d4f4f]" />
           Assessment Tools
         </h2>
         <div className={`grid grid-cols-1 gap-3 ${
@@ -538,8 +538,8 @@ export default function PracticeHomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Card className="border border-border/50 shadow-sm">
             <CardContent className="p-5 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1a237e]/10 shrink-0">
-                <CheckCircle className="h-6 w-6 text-[#1a237e]" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0d4f4f]/10 shrink-0">
+                <CheckCircle className="h-6 w-6 text-[#0d4f4f]" />
               </div>
               <div>
                 <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Questions Today</p>
@@ -614,7 +614,7 @@ export default function PracticeHomePage() {
       <section>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-[#1a237e]" />
+            <BookOpen className="h-5 w-5 text-[#0d4f4f]" />
             Browse by Subject
           </h2>
           {searchQuery && searchedSubjects.length > 0 && (
@@ -662,7 +662,7 @@ export default function PracticeHomePage() {
                     <CardHeader className="pb-2">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1a237e]/10 group-hover:bg-[#1a237e]/20 transition-colors text-lg">
+                          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0d4f4f]/10 group-hover:bg-[#0d4f4f]/20 transition-colors text-lg">
                             {subjectIconMap[key]}
                           </div>
                           <div>
@@ -670,7 +670,7 @@ export default function PracticeHomePage() {
                             <CardDescription className="text-xs">{totalDomains} domains</CardDescription>
                           </div>
                         </div>
-                        <ChevronRight className="h-5 w-5 text-muted-foreground/40 group-hover:text-[#1a237e] group-hover:translate-x-0.5 transition-all" />
+                        <ChevronRight className="h-5 w-5 text-muted-foreground/40 group-hover:text-[#0d4f4f] group-hover:translate-x-0.5 transition-all" />
                       </div>
                     </CardHeader>
                     <CardContent className="pt-2">
@@ -714,7 +714,7 @@ export default function PracticeHomePage() {
                       <p className="text-sm font-semibold text-foreground">{label}</p>
                       <p className="text-xs text-muted-foreground">{totalDomains} domains · {totalSkills} skills · {totalQuestions} questions</p>
                     </div>
-                    <ChevronRight className="h-5 w-5 text-muted-foreground/40 group-hover:text-[#1a237e] group-hover:translate-x-0.5 transition-all shrink-0" />
+                    <ChevronRight className="h-5 w-5 text-muted-foreground/40 group-hover:text-[#0d4f4f] group-hover:translate-x-0.5 transition-all shrink-0" />
                   </div>
                 </Link>
               )
@@ -727,7 +727,7 @@ export default function PracticeHomePage() {
       {/* WHATSAPP CTA                             */}
       {/* ════════════════════════════════════════ */}
       <section className="pb-8">
-        <div className="rounded-xl bg-gradient-to-r from-[#1e2761] to-[#1a237e] p-6 md:p-8 text-center relative overflow-hidden">
+        <div className="rounded-xl bg-gradient-to-r from-[#1e2761] to-[#0d4f4f] p-6 md:p-8 text-center relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-[#f5a623]/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-white/5 blur-3xl" />
@@ -741,7 +741,7 @@ export default function PracticeHomePage() {
               Our academic advisors can help you build a personalized practice plan.
             </p>
             <a
-              href="https://wa.me/201060618899"
+              href="https://mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-block"

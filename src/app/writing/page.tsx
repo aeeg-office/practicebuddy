@@ -308,7 +308,7 @@ export default function WritingPage() {
               with detailed corrections and score estimates.
             </p>
             <a
-              href="https://wa.me/201060618899"
+              href="https://mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"

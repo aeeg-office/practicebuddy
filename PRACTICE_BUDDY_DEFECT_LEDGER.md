@@ -32,9 +32,17 @@
 ### Medium (3) — Phase-1 Fleet Audit (NEW)
 | ID | Finding | File(s) | Status | Notes |
 |----|---------|---------|--------|-------|
-| SEC-06 | `/api/chat` unauthenticated — only rate-limited (20/min) | `src/app/api/chat/route.ts` | ⏳ OPEN | Proxies to llama.cpp; resource exhaustion vector. No JWT auth. |
-| SEC-07 | `/api/ai-tutor` unauthenticated — only rate-limited (20/min) | `src/app/api/ai-tutor/route.ts` | ⏳ OPEN | Template-based currently, but if upgraded to real LLM would need auth |
+| SEC-06 | `/api/chat` unauthenticated — only rate-limited (20/min) | `src/app/api/chat/route.ts` | ✅ CLOSED | JWT auth added — requires Bearer token. Commit 859e7461 |
+| SEC-07 | `/api/ai-tutor` unauthenticated — only rate-limited (20/min) | `src/app/api/ai-tutor/route.ts` + `src/app/ai-tutor/page.tsx` | ✅ CLOSED | JWT auth added + frontend sends token. Commit 859e7461 |
 | SEC-08 | Arabic `/ar` route returns 404 server-side | Root route config | ⏳ OPEN | RTL/Arabic is client-side JS only; SSR not implemented |
+
+### Closed — Brand Color Renewal
+| ID | Issue | Fixed In | Resolution |
+|----|-------|----------|-----------|
+| BRAND-07 | MAP prep pages old navy+gold palette | 2026-08-28 | ✅ 98 instances of `#1a237e` → `#0d4f4f` across 8 MAP prep files |
+| BRAND-10 | Practice pages old navy `#1a237e` | 2026-08-28 | ✅ 57 instances replaced in practice/ + question-preview.tsx |
+| BRAND-11 | AI Tutor old navy `#1a237e` + WhatsApp link | 2026-08-28 | ✅ 32 navy instances + WhatsApp link removed from AI Tutor |
+| BRAND-12 | Legacy WhatsApp links `wa.me/201060618899` | 2026-08-28 | ✅ 24 instances across 17 files → `mailto:hello@lumaani.com` |
 
 ### Low (Ongoing)
 | ID | Finding | Status | Notes |

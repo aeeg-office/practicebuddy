@@ -3,16 +3,23 @@
 ## Environment Status
 | Environment | Status | URL | Notes |
 |-------------|--------|-----|-------|
-| **Local Dev** | ✅ RUNNING | http://localhost:3099 | Next.js dev server, build ✅ |
-| **Production** | ✅ LIVE | https://lumaani.com | App running via PM2 on VPS, nginx proxying, SSL active |
+| **Local Dev** | ⬇️ INACTIVE | http://localhost:3099 | Production is primary |
+| **Production** | ✅ LIVE | https://lumaani.com | App running in Docker, latest source deployed (2026-08-26) |
 | **Staging** | ❌ NOT CONFIGURED | — | — |
-| **VPS** | ✅ ACTIVE | 191.218.165.228 | Ubuntu 24.04, Node 22, PG 16, nginx, PM2 |
+| **VPS** | ✅ ACTIVE | 191.218.165.228 | Ubuntu 24.04, Node 22, PG 16, nginx, Docker, Next.js 16 |
 
 ## Deployment History
 | # | Date | Environment | Commit | Schema Version | Status |
 |---|------|-------------|--------|---------------|--------|
 | 1 | 2026-08-22 | Production | `practice-buddy-release-1-2026-08-21` | 7 migrations applied | ✅ LIVE (port 3099) |
 | 2 | 2026-08-25 | Source (Hotfix) | `0d23cb23` (+local fixes) | 0 schema changes | ✅ 14 AEEG references removed, build passes |
+| 3 | 2026-08-26 | Production | `9b60bd1b` (NA Run #2) | 0 schema changes | ✅ Rebuilt & restarted, AEEG fixes deployed |
+| 4 | 2026-08-26 | Production | `9b60bd1b` (Full Audit Repair) | 0 schema changes | ✅ Full rebuild: version endpoint, SAT/CE inventory restored, SAT Prep page rewritten, design tokens fixed |
+| 5 | 2026-08-27 | Production | `9b60bd1b` (NA Run #3) | 0 schema changes | ✅ Hotfix: manifest.json theme_color → #0d4f4f (docker cp + restart) |
+
+## Version Endpoint
+- `/api/version` returns: app=Lumaani, commit, builtAt, buildId, environment
+- Production response verified: `commit: 9b60bd1bc872`, `environment: production`
 
 ---
 

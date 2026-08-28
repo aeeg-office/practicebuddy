@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
-import {
-  Send,
+import { Send,
   Bot,
   User,
   Sparkles,
@@ -20,6 +19,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { useAuth } from "@/lib/auth-context"
 
 // ── Types ──
 interface Message {
@@ -130,6 +130,9 @@ export default function AITutorPage() {
     setShowSubjectDropdown(false)
   }, [])
 
+  // Auth token for API calls
+  const { token } = useAuth()
+
   // Handle sending a message
   const handleSend = useCallback(
     async (text?: string) => {
@@ -145,7 +148,10 @@ export default function AITutorPage() {
       try {
         const res = await fetch("/api/ai-tutor", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
           body: JSON.stringify({
             subject,
             message: messageText,

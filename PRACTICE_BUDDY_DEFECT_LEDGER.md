@@ -1,6 +1,6 @@
 # Practice Buddy — Defect Ledger
 
-## Last Updated: 2026-08-27
+## Last Updated: 2026-08-28
 
 ### Critical (0)
 *None — all resolved.* ✅
@@ -60,7 +60,7 @@
 | CONTENT-01 | Core English/SAT 0 questions in production | 2026-08-26 | ✅ ROOT CAUSE: gold questions existed (SAT 930, CE 2,640) but Question derivation never ran → `derive-sat-core-questions.ts` created 10,710 questions. SAT Math 1,710, SAT R&W 1,080, Core English 7,920 |
 | PWA-01 | manifest.json theme_color old navy | 2026-08-27 | ✅ `#1a237e` → `#0d4f4f`, deployed to production |
 | BRAND-05 | SAT Prep page uses AEEG content/CMS | 2026-08-26 | ✅ Full page rewrite: removed Why AEEG, programs/pricing, WhatsApp links. Now features/FAQ/taxonomy only |
-| BRAND-07 | Map-prep page uses old navy+gold palette | ⏳ OPEN (MEDIUM) | MAP pages still use `#1a237e`/`#f5a623` — non-blocking UI cleanup |
+| BRAND-07 | Map-prep page uses old navy+gold palette | ✅ PRODUCTION VERIFIED | 2026-08-28: `#1a237e` → `#0d4f4f`; build `7590c716a` live |
 | DESIGN-06 | Purple remnants in MAP prep data | ⏳ OPEN (LOW) | `practice-skills.ts:185` + map-prep pages |
 | DESIGN-07 | CSS ring color old brand | 2026-08-26 | ✅ `--color-ring: #1a237e` → `#0d4f4f` |
 | DESIGN-08 | Button component legacy colors | 2026-08-26 | ✅ default `#0d4f4f`, accent `#e8b84b` |

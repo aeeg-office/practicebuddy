@@ -262,3 +262,36 @@ Fleet-coordinated Phase-1 audit and repair across 5 nodes (M1/M2/M3/M4/M6) + VPS
 
 ### Open Items (0 Critical, 0 High, 1 Medium)
 - SEC-08: Arabic `/ar` route 404 (client-side JS only)
+
+---
+
+## Release 3 — 2026-08-28 (Production Deploy + Verify)
+**Branch:** `lumaani-fleet-audit` → `main`
+**Build:** `7590c716a` — deployed to production 2026-08-28
+**Method:** Non-git (VPS git was corrupt: `fatal: bad object HEAD`)
+
+### Summary
+Repaired VPS git via verified bundle (Option 2 — best long-term site health), rebuilt the Docker deploy-only image from the fixed source, recreated the container, and verified the fixes live. Both branches pushed to origin (history cleaned of `.next/` + `node_modules/`).
+
+### Deploy Steps
+1. **VPS git repair:** shipped `fleet-audit.bundle` (verified), `git fetch` → reset working tree to `7590c716a`. Repo history restored & usable (both `main` + `lumaani-fleet-audit` point at fixed commit).
+2. **Preservation verified:** `.env` (344 B) ✅, `node_modules` (1.2G) ✅, `.next` (38M) ✅, `start.sh` ✅, `.gitignore` ✅ all intact after reset.
+3. **Rewrite to origin:** `npm run build` on VPS → `docker compose build lumaani` → `docker compose up -d` → container `Up (healthy)`.
+4. **History hygiene (`stage2`):** `git-filter-repo` stripped `node_modules/` (37,319 files) + `.next/` from local history → pack **290 MiB → 47 MiB**. Pushed `main` + `lumaani-fleet-audit` to `git@github.com:aeeg-office/practicebuddy.git` via deploy key `fleet_ed25519`.
+
+### Production Verification (live https://lumaani.com)
+| Check | Result |
+|-------|--------|
+| `/subjects` `wa.me/` links | **0** ✅ |
+| `/subjects` `#1a237e` navy | **0** ✅ |
+| `/` homepage | 200 ✅ |
+| `/practice`, `/practice/math` | 200 ✅ |
+| Container health | `Up (healthy)` ✅ |
+
+### Result
+Audit-2 live FAILs (WhatsApp links + navy branding) **resolved in production**. Critical 0, High 0 maintained. SEC-08 remains the only open item (Medium, pre-existing).
+
+### Backups
+- Pre-rewrite full history: `fleet-audit-pre-rewrite-20260828.bundle` (2.9 GB)
+- Pre-`node_modules`-strip: `fleet-audit-pre-nodemodules-20260828.bundle` (290M)
+- DB: `lumaani_prod_20260828_091821.sql` (28 MB, 41 tables)

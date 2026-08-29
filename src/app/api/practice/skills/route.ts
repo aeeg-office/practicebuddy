@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server"
 import prisma from "@/lib/prisma"
-import { mockSkills, VALID_SUBJECTS } from "@/data/practice-skills"
+import { mockSkills, VALID_SUBJECTS, LEGACY_SUBJECTS } from "@/data/practice-skills"
 import type { SubjectKey } from "@/lib/question-loader"
 import { getSkillQuestionCounts } from "@/lib/question-loader"
 
+const ALL_SUBJECTS = [...VALID_SUBJECTS, ...LEGACY_SUBJECTS]
+
 /**
- * GET /api/practice/skills?subject=math|reading|writing|science
+ * GET /api/practice/skills?subject=math|reading|writing|science|english|sat|act|ielts|toefl
  *
  * Returns the skill taxonomy for a subject with actual question counts
  * and real DB skill IDs from the database.
@@ -15,15 +17,24 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
     const raw = searchParams.get("subject")
 
-    if (!raw || !(VALID_SUBJECTS as readonly string[]).includes(raw)) {
+    if (!raw || !(ALL_SUBJECTS as readonly string[]).includes(raw)) {
       return NextResponse.json(
-        { error: `Invalid or missing subject. Valid values: ${VALID_SUBJECTS.join(", ")}` },
+        { error: `Invalid or missing subject. Valid values: ${ALL_SUBJECTS.join(", ")}` },
         { status: 400 },
       )
     }
 
     const subject = raw as SubjectKey
     const subjectData = mockSkills[subject]
+
+    // Only fetch DB counts for VALID_SUBJECTS (math, reading, writing, science, english)
+    // Legacy subjects (sat, act, ielts, toefl) have no DB data yet
+    const isLegacy = (LEGACY_SUBJECTS as readonly string[]).includes(subject)
+
+    if (isLegacy) {
+      // Return mock data as-is for legacy subjects (no DB enrichment)
+      return NextResponse.json(subjectData)
+    }
     const counts = await getSkillQuestionCounts(subject)
 
     // Fetch real DB skill IDs for the codes used in mock data

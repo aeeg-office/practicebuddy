@@ -29,22 +29,20 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { mockSkills, subjectList, getTotalSkillCount, mockSubjectMeta, type SubjectKey } from "@/data/practice-skills"
+import { type SubjectKey } from "@/data/practice-skills"
 import { useAuth } from "@/lib/auth-context"
 import { calculateSubjectProgress, type SubjectProgress } from "@/lib/progress-tracker"
+import {
+  useAllTaxonomies,
+  SUBJECT_META,
+  SUBJECT_ICON_MAP,
+  ALL_SUBJECT_KEYS,
+  countTotalSkills,
+  countTotalQuestions,
+} from "./_hooks/use-taxonomy"
 
 /* ───────── Subject Card Icons Map ───────── */
-const subjectIconMap: Record<SubjectKey, string> = {
-  sat: "🎯",
-  act: "📝",
-  ielts: "🌍",
-  toefl: "🗽",
-  english: "📖",
-  math: "🔢",
-  reading: "📖",
-  writing: "✏️",
-  science: "🔬",
-}
+const subjectIconMap = SUBJECT_ICON_MAP
 
 /* ───────── Filter Options ───────── */
 const filterOptions = [
@@ -147,12 +145,13 @@ export default function PracticeHomePage() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [showAuthModal, setShowAuthModal] = useState(false)
-  const [apiCounts, setApiCounts] = useState<Record<string, { totalQuestions: number; totalSkills: number; domains: number } | null>>({})
-  const [apiLoading, setApiLoading] = useState(true)
   const [userProgress, setUserProgress] = useState<SubjectProgress | null>(null)
   const [progressLoading, setProgressLoading] = useState(false)
   const { token, isAuthenticated } = useAuth()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  // Fetch all subject taxonomies from the API
+  const { data: taxonomyMap, loading: taxonomyLoading } = useAllTaxonomies()
 
   useEffect(() => {
     setIsLoggedIn(isAuthenticated)
@@ -173,7 +172,7 @@ export default function PracticeHomePage() {
 
     setProgressLoading(true)
     fetch("/api/practice/progress?subject=sat", {
-      headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: "Bearer " + token },
     })
       .then((res) => res.ok ? res.json() : null)
       .then((data) => {
@@ -207,39 +206,6 @@ export default function PracticeHomePage() {
   const [difficultyFilter, setDifficultyFilter] = useState("all")
   const [domainFilter, setDomainFilter] = useState("all")
 
-  // Fetch real question counts from the API for subjects that support it
-  useEffect(() => {
-    const fetchCounts = async () => {
-      const counts: Record<string, { totalQuestions: number; totalSkills: number; domains: number } | null> = {}
-      const apiSubjects = ["math", "reading", "writing", "science", "english"]
-      
-      await Promise.all(
-        apiSubjects.map(async (subject) => {
-          try {
-            const res = await fetch(`/api/practice/skills?subject=${subject}`)
-            if (!res.ok) throw new Error(`API error: ${res.status}`)
-            const data = await res.json()
-            const totalQuestions = data.domains.reduce(
-              (acc: number, d: any) => acc + d.skills.reduce((s: number, sk: any) => s + sk.questions, 0),
-              0
-            )
-            const totalSkills = data.domains.reduce((acc: number, d: any) => acc + d.skills.length, 0)
-            const domains = data.domains.length
-            counts[subject] = { totalQuestions, totalSkills, domains }
-          } catch {
-            // API failed — leave as null so mock fallback is used
-            counts[subject] = null
-          }
-        })
-      )
-      
-      setApiCounts(counts)
-      setApiLoading(false)
-    }
-    
-    fetchCounts()
-  }, [])
-
   // Debounce search input (300ms)
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -252,28 +218,33 @@ export default function PracticeHomePage() {
   const allDomains = useMemo(
     () => {
       if (activeFilter !== "all") {
-        // Only show domains for the selected assessment
-        return mockSkills[activeFilter as SubjectKey].domains.map((d) => d.name).sort()
+        const subjectData = taxonomyMap.get(activeFilter as SubjectKey)
+        if (!subjectData) return []
+        return subjectData.domains.map((d) => d.name).sort()
       }
-      // Show all domains when viewing all subjects
       return Array.from(
         new Set(
-          subjectList.flatMap((key) => mockSkills[key].domains.map((d) => d.name)),
+          ALL_SUBJECT_KEYS.flatMap((key) => {
+            const sd = taxonomyMap.get(key)
+            return sd ? sd.domains.map((d) => d.name) : []
+          }),
         ),
       ).sort()
     },
-    [activeFilter],
+    [activeFilter, taxonomyMap],
   )
 
   // Filter subjects based on selected filter
-  const filteredSubjects = subjectList.filter(
+  const filteredSubjects = ALL_SUBJECT_KEYS.filter(
     (s) => activeFilter === "all" || s === activeFilter,
   )
 
-  // Filter by difficulty (only subjects that have skills of the selected difficulty)
+  // Filter by difficulty
   const difficultyFilteredSubjects = filteredSubjects.filter((s) => {
     if (difficultyFilter === "all") return true
-    return mockSkills[s].domains.some((d) =>
+    const sd = taxonomyMap.get(s)
+    if (!sd) return false
+    return sd.domains.some((d) =>
       d.skills.some((sk) => sk.difficulty === difficultyFilter),
     )
   })
@@ -281,17 +252,20 @@ export default function PracticeHomePage() {
   // Filter by domain
   const domainFilteredSubjects = difficultyFilteredSubjects.filter((s) => {
     if (domainFilter === "all") return true
-    return mockSkills[s].domains.some((d) => d.name === domainFilter)
+    const sd = taxonomyMap.get(s)
+    if (!sd) return false
+    return sd.domains.some((d) => d.name === domainFilter)
   })
 
-  // Filter by search (using debounced value)
+  // Filter by search
   const searchedSubjects = domainFilteredSubjects.filter((s) => {
     if (!debouncedSearch) return true
     const q = debouncedSearch.toLowerCase()
-    const subject = mockSkills[s]
+    const sd = taxonomyMap.get(s)
+    if (!sd) return false
     return (
-      subject.name.toLowerCase().includes(q) ||
-      subject.domains.some(
+      sd.name.toLowerCase().includes(q) ||
+      sd.domains.some(
         (d) =>
           d.name.toLowerCase().includes(q) ||
           d.skills.some((sk) => sk.name.toLowerCase().includes(q)),
@@ -645,15 +619,12 @@ export default function PracticeHomePage() {
           /* ── Grid View ── */
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {searchedSubjects.map((key) => {
-              const data = mockSkills[key]
-              const meta = mockSubjectMeta[key]
+              const data = taxonomyMap.get(key)
+              if (!data) return null
+              const meta = SUBJECT_META[key]
               const totalDomains = data.domains.length
-              const apiData = apiCounts[key]
-              const totalSkills = apiData?.totalSkills ?? getTotalSkillCount(key)
-              const totalQuestions = apiData?.totalQuestions ?? data.domains.reduce(
-                (acc, d) => acc + d.skills.reduce((s, sk) => s + sk.questions, 0),
-                0
-              )
+              const totalSkills = countTotalSkills(data)
+              const totalQuestions = countTotalQuestions(data)
               const label = meta?.label ?? key
               return (
                 <Link key={key} href={`/practice/${key}`} className="group">
@@ -694,15 +665,12 @@ export default function PracticeHomePage() {
           /* ── List View ── */
           <div className="space-y-2">
             {searchedSubjects.map((key) => {
-              const data = mockSkills[key]
-              const meta = mockSubjectMeta[key]
+              const data = taxonomyMap.get(key)
+              if (!data) return null
+              const meta = SUBJECT_META[key]
               const totalDomains = data.domains.length
-              const apiData = apiCounts[key]
-              const totalSkills = apiData?.totalSkills ?? getTotalSkillCount(key)
-              const totalQuestions = apiData?.totalQuestions ?? data.domains.reduce(
-                (acc, d) => acc + d.skills.reduce((s, sk) => s + sk.questions, 0),
-                0
-              )
+              const totalSkills = countTotalSkills(data)
+              const totalQuestions = countTotalQuestions(data)
               const label = meta?.label ?? key
               return (
                 <Link key={key} href={`/practice/${key}`}>

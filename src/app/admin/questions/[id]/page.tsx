@@ -20,7 +20,9 @@ import {
   archiveQuestion,
   type AdminQuestion,
 } from "@/lib/admin-question-client"
-import { mockSkills, type SubjectKey } from "@/data/practice-skills"
+import { type SubjectKey } from "@/data/practice-skills"
+import { fetchSubjectTaxonomy } from "../../../practice/_hooks/use-taxonomy"
+import type { SubjectData } from "@/data/practice-skills"
 
 /* ───────── Form state ───────── */
 
@@ -148,10 +150,16 @@ export default function QuestionDetailPage() {
     return () => { live = false }
   }, [id, isNew])
 
-  // Available domains & skills for the selected subject
-  const subjectMeta = useMemo(() => {
-    const data = mockSkills[form.subject as SubjectKey]
-    return data ?? null
+  // Available domains & skills for the selected subject (fetched from API)
+  const [subjectMeta, setSubjectMeta] = useState<SubjectData | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    setSubjectMeta(null)
+    fetchSubjectTaxonomy(form.subject as SubjectKey).then((data) => {
+      if (!cancelled) setSubjectMeta(data)
+    })
+    return () => { cancelled = true }
   }, [form.subject])
 
   const domains = useMemo(() => {

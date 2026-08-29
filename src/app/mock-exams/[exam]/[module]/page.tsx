@@ -25,6 +25,7 @@ import {
   Layers,
   RefreshCw,
   Award,
+  Info,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -353,6 +354,29 @@ export default function MockExamPage() {
     )
   }
 
+  /* ─── "Coming soon" state: section has no question data yet ─── */
+  if (totalQuestions === 0) {
+    return (
+      <div className="max-w-2xl mx-auto px-6 py-16 text-center">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 mb-5">
+          <Clock className="h-8 w-8 text-amber-600" />
+        </div>
+        <h1 className="text-2xl font-bold text-[rgb(22,32,34)] mb-3">
+          {exam.name} — {getSectionLabel(exam, sectionId)} is coming soon
+        </h1>
+        <p className="text-gray-500 mb-6 max-w-md mx-auto">
+          Question content for this section isn&apos;t available yet. Only Digital SAT
+          Reading &amp; Writing and Math sections currently include sample questions.
+        </p>
+        <Link href="/mock-exams">
+          <Button variant="default" className="gap-2">
+            <ArrowLeft className="h-4 w-4" /> Back to Mock Exams
+          </Button>
+        </Link>
+      </div>
+    )
+  }
+
   const sectionName = getSectionLabel(exam, sectionId)
   const Icon = subjectInfo.Icon
 
@@ -431,6 +455,18 @@ export default function MockExamPage() {
             <p className="text-gray-500 text-base">
               Tell us a bit about yourself before starting the exam.
             </p>
+          </div>
+
+          {/* Demo notice */}
+          <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4 mb-6">
+            <Info className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <div className="text-sm text-amber-800">
+              <p className="font-semibold">Demo assessment — not a live exam.</p>
+              <p className="mt-0.5">
+                This is a static preview and your results are not saved or scored against a real
+                question bank. Full mock exams are coming soon.
+              </p>
+            </div>
           </div>
 
           <Card className="border-gray-200/60 shadow-sm">
@@ -667,6 +703,12 @@ export default function MockExamPage() {
                     {exam.name}
                   </span>
                   <span className="text-xs text-gray-500 ml-2">{sectionName}</span>
+                  <Badge
+                    variant="outline"
+                    className="ml-2 text-[10px] px-1.5 py-0.5 bg-amber-100 text-amber-700 border-amber-300"
+                  >
+                    Demo
+                  </Badge>
                 </div>
                 <div className="h-5 w-px bg-gray-200 hidden sm:block" />
                 <span className="text-xs font-medium text-gray-500 whitespace-nowrap bg-gray-100 px-2.5 py-1 rounded-full">

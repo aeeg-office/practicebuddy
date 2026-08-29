@@ -25,10 +25,6 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import {
-  mockSkills,
-  subjectList,
-  getTotalSkillCount,
-  mockSubjectMeta,
   type SubjectKey,
   type Difficulty,
   type MasteryLevel,
@@ -36,6 +32,7 @@ import {
   type Skill,
   type SubjectData,
 } from "@/data/practice-skills"
+import { useSubjectTaxonomy, SUBJECT_META, SUBJECT_ICON_MAP, countTotalSkills, countTotalQuestions } from "../_hooks/use-taxonomy"
 
 /* ───────── Mastery Badge Config ───────── */
 const masteryConfig: Record<MasteryLevel, { label: string; variant: "default" | "secondary" | "accent" | "outline" | "success" | "destructive"; color: string }> = {
@@ -197,39 +194,34 @@ export default function SubjectPage() {
   // State — declared before early returns (Rules of Hooks)
   const [difficultyFilter, setDifficultyFilter] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
-  const [apiSkills, setApiSkills] = useState<SubjectData | null>(null)
 
-  // Fetch real question counts from the API (sat/act/ielts/toefl only)
-  useEffect(() => {
-    let cancelled = false
-    if (!mockSkills[subject]) return
-    const fetchSkills = async () => {
-      try {
-        const res = await fetch(`/api/practice/skills?subject=${subject}`)
-        if (!res.ok) throw new Error(`API error: ${res.status}`)
-        const data = await res.json()
-        if (!cancelled) setApiSkills(data)
-      } catch {
-        if (!cancelled) setApiSkills(null)
-      }
-    }
-    fetchSkills()
-    return () => {
-      cancelled = true
-    }
-  }, [subject])
+  // Fetch taxonomy from API
+  const { data: taxonomyData, loading: taxonomyLoading, isValid } = useSubjectTaxonomy(subject)
 
-  // Map of skillId → real question count from the API
+  // Map of skillId → real question count from the API (already embedded in taxonomyData)
   const questionCounts = useMemo(() => {
     const counts: Record<string, number> = {}
-    if (apiSkills) {
-      apiSkills.domains.forEach((d) => d.skills.forEach((s) => { counts[s.id] = s.questions }))
+    if (taxonomyData) {
+      taxonomyData.domains.forEach((d) => d.skills.forEach((s) => { counts[s.id] = s.questions }))
     }
     return counts
-  }, [apiSkills])
+  }, [taxonomyData])
+
+  // Show loading state
+  if (taxonomyLoading) {
+    return (
+      <div className="p-8 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center justify-center py-32 text-center">
+          <div className="h-10 w-10 border-4 border-[#0b4f4a] border-t-transparent rounded-full animate-spin mb-4" />
+          <h2 className="text-lg font-semibold text-foreground mb-1">Loading {subject} skills…</h2>
+          <p className="text-sm text-muted-foreground">Fetching practice taxonomy from the question bank.</p>
+        </div>
+      </div>
+    )
+  }
 
   // Validate subject key
-  if (!mockSkills[subject]) {
+  if (!isValid) {
     return (
       <div className="p-8 max-w-7xl mx-auto">
         <div className="text-center py-20">
@@ -249,13 +241,11 @@ export default function SubjectPage() {
     )
   }
 
-  const data = mockSkills[subject]
-  const meta = mockSubjectMeta[subject]
-  const totalSkills = getTotalSkillCount(subject)
+  const data = taxonomyData!
+  const meta = SUBJECT_META[subject]
+  const totalSkills = countTotalSkills(taxonomyData)
   const totalDomains = data.domains.length
-  const totalQuestions = apiSkills
-    ? apiSkills.domains.reduce((acc, d) => acc + d.skills.reduce((s, sk) => s + sk.questions, 0), 0)
-    : data.domains.reduce((acc, d) => acc + d.skills.reduce((s, sk) => s + sk.questions, 0), 0)
+  const totalQuestions = countTotalQuestions(taxonomyData)
 
   // Calculate mastery stats
   const allSkills = data.domains.flatMap((d) => d.skills)

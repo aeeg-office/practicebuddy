@@ -13,6 +13,7 @@ import {
   ArrowRight,
   XCircle,
   RefreshCw,
+  Info,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -186,6 +187,18 @@ export default function ListeningAssessmentPage() {
         </Badge>
       </div>
 
+      {/* ── Demo notice ── */}
+      <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4">
+        <Info className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+        <div className="text-sm text-amber-800">
+          <p className="font-semibold">Demo assessment — static sample content.</p>
+          <p className="mt-0.5">
+            These {totalQuestions} questions and the audio player are fixed samples, not real audio.
+            Your results are shown here only and are not saved.
+          </p>
+        </div>
+      </div>
+
       {/* ════════════════════════════════════════ */}
       {/* AUDIO PLAYER MOCKUP                      */}
       {/* ════════════════════════════════════════ */}
@@ -203,9 +216,9 @@ export default function ListeningAssessmentPage() {
                 </div>
               </div>
               <div>
-                <p className="text-base font-bold text-[rgb(22,32,34)]">Audio Track Ready</p>
+                <p className="text-base font-bold text-[rgb(22,32,34)]">Simulated Audio Player</p>
                 <p className="text-sm text-gray-500 mt-1">
-                  Audio track would play here — click play to begin
+                  No real audio yet — click play to preview the interface
                 </p>
               </div>
               <Button

@@ -16,6 +16,7 @@ import {
   ChevronRight,
   Target,
   BarChart3,
+  Info,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -120,8 +121,22 @@ export default function MockExamsPage() {
               Mock Examinations
             </h1>
             <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed">
-              Take timed full-length mock exams with official-style pacing, question navigator,
-              flagging, and detailed score reports. Simulate the real test experience.
+              Preview our mock exam experience with timed pacing, question navigator,
+              flagging, and detailed score reports.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Demo / Preview notice ── */}
+      <section>
+        <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4">
+          <Info className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="text-sm text-amber-800">
+            <p className="font-semibold">Preview — not a live exam.</p>
+            <p className="mt-0.5">
+              This catalog and its question content are a static demo and are not yet connected
+              to our question bank. Full mock exams are coming soon.
             </p>
           </div>
         </div>
@@ -185,14 +200,22 @@ export default function MockExamsPage() {
                       <h3 className="text-base font-bold text-[rgb(22,32,34)] leading-tight group-hover:text-[rgb(11,79,74)] transition-colors">
                         {exam.name}
                       </h3>
-                      <Badge
-                        variant="outline"
-                        className={`shrink-0 text-[10px] px-2 py-0.5 ${
-                          difficultyConfig[exam.difficulty].bg
-                        } ${difficultyConfig[exam.difficulty].color} border-0`}
-                      >
-                        {exam.difficulty}
-                      </Badge>
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <Badge
+                          variant="outline"
+                          className="text-[10px] px-2 py-0.5 bg-amber-100 text-amber-700 border-amber-300"
+                        >
+                          Preview
+                        </Badge>
+                        <Badge
+                          variant="outline"
+                          className={`text-[10px] px-2 py-0.5 ${
+                            difficultyConfig[exam.difficulty].bg
+                          } ${difficultyConfig[exam.difficulty].color} border-0`}
+                        >
+                          {exam.difficulty}
+                        </Badge>
+                      </div>
                     </div>
 
                     {/* Description */}

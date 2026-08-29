@@ -1,6 +1,9 @@
 // Mock Examination Data
 // 5 mock exams per subject — SAT, ACT, IELTS, TOEFL
-// Questions are drawn from the existing diagnostic question banks
+// ⚠️ DEMO/PREVIEW ONLY: These are static catalog entries. Questions are drawn
+// from hardcoded data files (SAT only) or return empty (ACT/IELTS/TOEFL).
+// No DB backing exists yet — exams table is empty (0 rows).
+// Set `live: true` only after wiring to a real question bank.
 
 export interface MockExam {
   id: string
@@ -11,6 +14,8 @@ export interface MockExam {
   difficulty: "Easy" | "Medium" | "Hard"
   subject: "sat" | "act" | "ielts" | "toefl"
   active: boolean
+  /** Whether this exam is backed by real DB question data. false = static demo only. */
+  live: boolean
 }
 
 export const mockExams: Record<string, MockExam[]> = {
@@ -27,6 +32,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "sat",
       active: true,
+      live: false,
     },
     {
       id: "sat-2",
@@ -40,6 +46,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "sat",
       active: true,
+      live: false,
     },
     {
       id: "sat-3",
@@ -53,6 +60,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "sat",
       active: true,
+      live: false,
     },
     {
       id: "sat-4",
@@ -66,6 +74,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "sat",
       active: true,
+      live: false,
     },
     {
       id: "sat-5",
@@ -79,6 +88,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "sat",
       active: true,
+      live: false,
     },
   ],
 
@@ -97,6 +107,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "act",
       active: true,
+      live: false,
     },
     {
       id: "act-2",
@@ -112,6 +123,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "act",
       active: true,
+      live: false,
     },
     {
       id: "act-3",
@@ -127,6 +139,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "act",
       active: true,
+      live: false,
     },
     {
       id: "act-4",
@@ -142,6 +155,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "act",
       active: true,
+      live: false,
     },
     {
       id: "act-5",
@@ -157,6 +171,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "act",
       active: true,
+      live: false,
     },
   ],
 
@@ -175,6 +190,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "ielts",
       active: true,
+      live: false,
     },
     {
       id: "ielts-2",
@@ -190,6 +206,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "ielts",
       active: true,
+      live: false,
     },
     {
       id: "ielts-3",
@@ -205,6 +222,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "ielts",
       active: true,
+      live: false,
     },
     {
       id: "ielts-4",
@@ -220,6 +238,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "ielts",
       active: true,
+      live: false,
     },
     {
       id: "ielts-5",
@@ -235,6 +254,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "ielts",
       active: true,
+      live: false,
     },
   ],
 
@@ -253,6 +273,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "toefl",
       active: true,
+      live: false,
     },
     {
       id: "toefl-2",
@@ -268,6 +289,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "toefl",
       active: true,
+      live: false,
     },
     {
       id: "toefl-3",
@@ -283,6 +305,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "toefl",
       active: true,
+      live: false,
     },
     {
       id: "toefl-4",
@@ -298,6 +321,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Medium",
       subject: "toefl",
       active: true,
+      live: false,
     },
     {
       id: "toefl-5",
@@ -313,6 +337,7 @@ export const mockExams: Record<string, MockExam[]> = {
       difficulty: "Hard",
       subject: "toefl",
       active: true,
+      live: false,
     },
   ],
 }

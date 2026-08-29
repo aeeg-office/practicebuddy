@@ -21,8 +21,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import {
-  mockSkills,
-  mockSubjectMeta,
   type SubjectKey,
   type Difficulty,
   type Skill,
@@ -39,6 +37,7 @@ import {
   type SessionRecord,
 } from "@/lib/progress-tracker"
 import type { MasteryLevel } from "@/data/practice-skills"
+import { useSubjectTaxonomy, SUBJECT_META } from "../../_hooks/use-taxonomy"
 
 /* ────── Difficulty Colors ────── */
 const diffColors: Record<Difficulty, string> = {
@@ -169,8 +168,24 @@ export default function SkillPracticePage() {
     loadQuestions()
   }, [subject, skillId, isPracticeAll])
 
+  // Fetch taxonomy from API
+  const { data: taxonomyData, loading: taxonomyLoading, isValid } = useSubjectTaxonomy(subject)
+
+  // Show loading state while taxonomy loads
+  if (taxonomyLoading) {
+    return (
+      <div className="p-4 md:p-8 max-w-3xl mx-auto">
+        <div className="flex flex-col items-center justify-center py-32 text-center">
+          <Loader2 className="h-10 w-10 text-[#0b4f4a] animate-spin mb-4" />
+          <h2 className="text-lg font-semibold text-foreground mb-1">Loading…</h2>
+          <p className="text-sm text-muted-foreground">Loading practice taxonomy for {subject}.</p>
+        </div>
+      </div>
+    )
+  }
+
   // Validate subject
-  if (!mockSkills[subject]) {
+  if (!isValid) {
     return (
       <div className="p-8 max-w-7xl mx-auto text-center py-20">
         <HelpCircle className="h-16 w-16 text-muted-foreground/30 mx-auto mb-4" />
@@ -181,8 +196,8 @@ export default function SkillPracticePage() {
     )
   }
 
-  const data = mockSkills[subject]
-  const meta = mockSubjectMeta[subject]
+  const data = taxonomyData!
+  const meta = SUBJECT_META[subject]
   const allSkills = data.domains.flatMap((d) => d.skills)
 
   // Find target skill(s)

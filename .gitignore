@@ -25,3 +25,6 @@ npm-debug.log*
 # Backup / scratch
 *.bundle
 blocked-scripts/
+
+# Build-time version artifact
+public/version.json

@@ -14,6 +14,7 @@ import {
   ChevronRight,
   Clock,
   Layers,
+  Info,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -111,8 +112,22 @@ export default function ListeningPage() {
               Listening Practice
             </h1>
             <p className="text-white/70 text-base md:text-lg max-w-2xl leading-relaxed">
-              Sharpen your listening skills with realistic audio passages. Practice with
-              conversations, lectures, and announcements designed for IELTS, TOEFL, and more.
+              Preview our listening practice experience with conversations, lectures, and
+              announcements designed for IELTS, TOEFL, and more.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Demo / Preview notice ── */}
+      <section>
+        <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4">
+          <Info className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="text-sm text-amber-800">
+            <p className="font-semibold">Preview — static demo content.</p>
+            <p className="mt-0.5">
+              This uses a small set of fixed sample questions with a simulated audio player.
+              Real audio passages and our full question bank are coming soon.
             </p>
           </div>
         </div>
@@ -242,7 +257,7 @@ export default function ListeningPage() {
               <Volume2 className="h-12 w-12 text-gray-400 mx-auto mb-3" />
               <p className="text-sm font-semibold text-gray-600">Audio Preview</p>
               <p className="text-xs text-gray-400 mt-1 max-w-xs mx-auto">
-                Audio content will play here — questions appear below. Press start to begin.
+                Simulated audio preview — real audio content is coming soon. Questions appear below.
               </p>
             </div>
             <div className="mt-4">

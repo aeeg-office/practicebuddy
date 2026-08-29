@@ -64,7 +64,7 @@ const quickActions = [
   { label: "Take a Diagnostic", href: "/take-diagnostic", icon: Sparkles, variant: "accent" as const },
   { label: "Start Practice", href: "/dashboard/practice", icon: BookOpen, variant: "default" as const },
   { label: "View Schedule", href: "/dashboard/schedule", icon: Calendar, variant: "outline" as const },
-  { label: "Contact Support", href: "https://mailto:hello@lumaani.com", icon: MessageSquare, variant: "outline" as const, external: true },
+  { label: "Contact Support", href: "mailto:hello@lumaani.com", icon: MessageSquare, variant: "outline" as const, external: true },
 ]
 
 export default function DashboardPage() {
@@ -111,7 +111,7 @@ export default function DashboardPage() {
         {/* Sidebar footer — WhatsApp + Logout */}
         <div className="px-3 pb-4 space-y-1 border-t border-border pt-4">
           <a
-            href="https://mailto:hello@lumaani.com"
+            href="mailto:hello@lumaani.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-600 hover:bg-emerald-50 transition-all duration-200"
@@ -153,7 +153,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-4">
             {/* WhatsApp link in top bar (visible on mobile) */}
             <a
-              href="https://mailto:hello@lumaani.com"
+              href="mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="lg:hidden p-2 rounded-full text-emerald-500 hover:bg-emerald-50 transition-colors"
@@ -495,7 +495,7 @@ export default function DashboardPage() {
                       Account Settings
                     </Link>
                     <a
-                      href="https://mailto:hello@lumaani.com"
+                      href="mailto:hello@lumaani.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2.5 text-xs text-emerald-600 hover:text-emerald-700 transition-colors"

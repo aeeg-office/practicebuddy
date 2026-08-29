@@ -66,7 +66,7 @@ function healthColor(value: number, thresholds: [number, number]): "green" | "am
 }
 
 function HealthDot({ level }: { level: "green" | "amber" | "red" }) {
-  const colorMap = { green: "rgb(16,185,129)", amber: "rgb(245,166,35)", red: "rgb(239,68,68)" }
+  const colorMap = { green: "rgb(16,185,129)", amber: "rgb(200,120,90)", red: "rgb(239,68,68)" }
   return (
     <span
       className="inline-block h-3 w-3 rounded-full shrink-0"
@@ -183,7 +183,7 @@ export default function DatabaseIntegrityPage() {
                 overallHealth === "green"
                   ? "rgb(16,185,129)"
                   : overallHealth === "amber"
-                    ? "rgb(245,166,35)"
+                    ? "rgb(200,120,90)"
                     : "rgb(239,68,68)",
             }}
           >
@@ -191,7 +191,7 @@ export default function DatabaseIntegrityPage() {
               {overallHealth === "green" ? (
                 <CheckCircle className="h-8 w-8" style={{ color: "rgb(16,185,129)" }} />
               ) : overallHealth === "amber" ? (
-                <AlertTriangle className="h-8 w-8" style={{ color: "rgb(245,166,35)" }} />
+                <AlertTriangle className="h-8 w-8" style={{ color: "rgb(200,120,90)" }} />
               ) : (
                 <XCircle className="h-8 w-8" style={{ color: "rgb(239,68,68)" }} />
               )}

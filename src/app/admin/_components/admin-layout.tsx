@@ -29,8 +29,8 @@ import { canAccessRoute } from "@/lib/rbac"
 /* ───────── Design Tokens ───────── */
 export const colors = {
   primary: "rgb(13,79,79)",
-  secondary: "rgb(26,58,74)",
-  accent: "rgb(232,184,75)",
+  secondary: "rgb(22,32,34)",
+  accent: "rgb(200,120,90)",
   bg: "#f6f6f6",
   card: "#ffffff",
   foreground: "#281a39",

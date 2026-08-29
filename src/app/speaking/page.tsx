@@ -64,9 +64,9 @@ export default function SpeakingPage() {
       {/* HERO                                     */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(60,25,160)] to-[rgb(13,33,55)] p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(11,79,74)] via-[rgb(11,79,74)] to-[rgb(22,32,34)] p-8 md:p-12">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
+            <div className="absolute -top-24 -right-24 h-[400px] w-[400px] rounded-full bg-[rgb(200,120,90)]/10 blur-3xl" />
             <div className="absolute -bottom-24 -left-24 h-[300px] w-[300px] rounded-full bg-white/5 blur-3xl" />
           </div>
           <div className="relative">
@@ -89,8 +89,8 @@ export default function SpeakingPage() {
       {/* SUBJECT SELECTOR                         */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-[rgb(26,35,126)]" />
+        <h2 className="text-lg font-bold text-[rgb(22,32,34)] mb-4 flex items-center gap-2">
+          <BookOpen className="h-5 w-5 text-[rgb(11,79,74)]" />
           Select Exam Type
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
@@ -100,14 +100,14 @@ export default function SpeakingPage() {
               onClick={() => setSelectedSubject(subject.key)}
               className={`relative overflow-hidden rounded-xl border-2 p-4 text-left transition-all duration-300 ${
                 selectedSubject === subject.key
-                  ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5 shadow-md"
-                  : "border-gray-200 bg-white hover:border-[rgb(26,35,126)]/30 hover:shadow-sm"
+                  ? "border-[rgb(11,79,74)] bg-[rgb(11,79,74)]/5 shadow-md"
+                  : "border-gray-200 bg-white hover:border-[rgb(11,79,74)]/30 hover:shadow-sm"
               }`}
             >
               <div className="text-2xl mb-2">{subject.icon}</div>
               <h3
                 className={`text-sm font-bold ${
-                  selectedSubject === subject.key ? "text-[rgb(26,35,126)]" : "text-[rgb(13,33,55)]"
+                  selectedSubject === subject.key ? "text-[rgb(11,79,74)]" : "text-[rgb(22,32,34)]"
                 }`}
               >
                 {subject.label}
@@ -122,8 +122,8 @@ export default function SpeakingPage() {
       {/* TASK TYPE                                 */}
       {/* ════════════════════════════════════════ */}
       <section>
-        <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
-          <Camera className="h-5 w-5 text-[rgb(26,35,126)]" />
+        <h2 className="text-lg font-bold text-[rgb(22,32,34)] mb-4 flex items-center gap-2">
+          <Camera className="h-5 w-5 text-[rgb(11,79,74)]" />
           Task Type
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -133,13 +133,13 @@ export default function SpeakingPage() {
               onClick={() => setSelectedTask(task.key)}
               className={`rounded-xl border-2 p-4 text-left transition-all duration-200 ${
                 selectedTask === task.key
-                  ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5"
+                  ? "border-[rgb(11,79,74)] bg-[rgb(11,79,74)]/5"
                   : "border-gray-200 bg-white hover:border-gray-300"
               }`}
             >
               <p
                 className={`text-sm font-semibold ${
-                  selectedTask === task.key ? "text-[rgb(26,35,126)]" : "text-[rgb(13,33,55)]"
+                  selectedTask === task.key ? "text-[rgb(11,79,74)]" : "text-[rgb(22,32,34)]"
                 }`}
               >
                 {task.label}
@@ -156,8 +156,8 @@ export default function SpeakingPage() {
       <div className="grid md:grid-cols-2 gap-6">
         {/* Preparation Time */}
         <div>
-          <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
-            <Clock className="h-5 w-5 text-[rgb(245,166,35)]" />
+          <h2 className="text-lg font-bold text-[rgb(22,32,34)] mb-4 flex items-center gap-2">
+            <Clock className="h-5 w-5 text-[rgb(200,120,90)]" />
             Preparation Time
           </h2>
           <div className="grid grid-cols-3 gap-2">
@@ -167,15 +167,15 @@ export default function SpeakingPage() {
                 onClick={() => setSelectedPrepTime(opt.value)}
                 className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 text-center transition-all duration-200 ${
                   selectedPrepTime === opt.value
-                    ? "border-[rgb(245,166,35)] bg-[rgb(245,166,35)]/10"
+                    ? "border-[rgb(200,120,90)] bg-[rgb(200,120,90)]/10"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
                 <Timer className={`h-5 w-5 mb-1 ${
-                  selectedPrepTime === opt.value ? "text-[rgb(245,166,35)]" : "text-gray-400"
+                  selectedPrepTime === opt.value ? "text-[rgb(200,120,90)]" : "text-gray-400"
                 }`} />
                 <p className={`text-sm font-bold ${
-                  selectedPrepTime === opt.value ? "text-[rgb(13,33,55)]" : "text-gray-700"
+                  selectedPrepTime === opt.value ? "text-[rgb(22,32,34)]" : "text-gray-700"
                 }`}>
                   {opt.label}
                 </p>
@@ -187,8 +187,8 @@ export default function SpeakingPage() {
 
         {/* Speaking Time */}
         <div>
-          <h2 className="text-lg font-bold text-[rgb(13,33,55)] mb-4 flex items-center gap-2">
-            <Volume2 className="h-5 w-5 text-[rgb(26,35,126)]" />
+          <h2 className="text-lg font-bold text-[rgb(22,32,34)] mb-4 flex items-center gap-2">
+            <Volume2 className="h-5 w-5 text-[rgb(11,79,74)]" />
             Speaking Time
           </h2>
           <div className="grid grid-cols-2 gap-2">
@@ -198,15 +198,15 @@ export default function SpeakingPage() {
                 onClick={() => setSelectedSpeakingTime(opt.value)}
                 className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 text-center transition-all duration-200 ${
                   selectedSpeakingTime === opt.value
-                    ? "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5"
+                    ? "border-[rgb(11,79,74)] bg-[rgb(11,79,74)]/5"
                     : "border-gray-200 bg-white hover:border-gray-300"
                 }`}
               >
                 <Mic className={`h-5 w-5 mb-1 ${
-                  selectedSpeakingTime === opt.value ? "text-[rgb(26,35,126)]" : "text-gray-400"
+                  selectedSpeakingTime === opt.value ? "text-[rgb(11,79,74)]" : "text-gray-400"
                 }`} />
                 <p className={`text-sm font-bold ${
-                  selectedSpeakingTime === opt.value ? "text-[rgb(26,35,126)]" : "text-gray-700"
+                  selectedSpeakingTime === opt.value ? "text-[rgb(11,79,74)]" : "text-gray-700"
                 }`}>
                   {opt.label}
                 </p>
@@ -226,7 +226,7 @@ export default function SpeakingPage() {
         >
           <Button
             size="xl"
-            className="w-full md:w-auto font-bold text-base gap-2 shadow-lg shadow-[rgb(26,35,126)]/20"
+            className="w-full md:w-auto font-bold text-base gap-2 shadow-lg shadow-[rgb(11,79,74)]/20"
           >
             <Mic className="h-5 w-5" />
             Start Recording
@@ -242,8 +242,8 @@ export default function SpeakingPage() {
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="border-gray-200 bg-white">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
-                <Sparkles className="h-4 w-4 text-[rgb(245,166,35)]" />
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(22,32,34)]">
+                <Sparkles className="h-4 w-4 text-[rgb(200,120,90)]" />
                 Speaking Tips
               </CardTitle>
             </CardHeader>
@@ -268,8 +268,8 @@ export default function SpeakingPage() {
 
           <Card className="border-gray-200 bg-white">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
-                <HelpCircle className="h-4 w-4 text-[rgb(26,35,126)]" />
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(22,32,34)]">
+                <HelpCircle className="h-4 w-4 text-[rgb(11,79,74)]" />
                 Assessment Criteria
               </CardTitle>
             </CardHeader>
@@ -284,9 +284,9 @@ export default function SpeakingPage() {
                   <div
                     className={`flex h-8 w-8 items-center justify-center rounded-lg shrink-0 ${
                       i === 0
-                        ? "bg-[rgb(26,35,126)]/10"
+                        ? "bg-[rgb(11,79,74)]/10"
                         : i === 1
-                        ? "bg-[rgb(245,166,35)]/10"
+                        ? "bg-[rgb(200,120,90)]/10"
                         : i === 2
                         ? "bg-emerald-500/10"
                         : "bg-blue-500/10"
@@ -294,9 +294,9 @@ export default function SpeakingPage() {
                   >
                     <span className={`text-xs font-bold ${
                       i === 0
-                        ? "text-[rgb(26,35,126)]"
+                        ? "text-[rgb(11,79,74)]"
                         : i === 1
-                        ? "text-[rgb(245,166,35)]"
+                        ? "text-[rgb(200,120,90)]"
                         : i === 2
                         ? "text-emerald-600"
                         : "text-blue-600"
@@ -305,7 +305,7 @@ export default function SpeakingPage() {
                     </span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[rgb(13,33,55)]">{criterion.label}</p>
+                    <p className="text-sm font-semibold text-[rgb(22,32,34)]">{criterion.label}</p>
                     <p className="text-xs text-gray-500">{criterion.desc}</p>
                   </div>
                 </div>
@@ -322,9 +322,9 @@ export default function SpeakingPage() {
       {/* WHATSAPP CTA                              */}
       {/* ════════════════════════════════════════ */}
       <section className="pb-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(13,33,55)] to-[rgb(26,35,126)] p-8 md:p-10 text-center shadow-xl">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgb(22,32,34)] to-[rgb(11,79,74)] p-8 md:p-10 text-center shadow-xl">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
+            <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-[rgb(200,120,90)]/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-white/5 blur-3xl" />
           </div>
           <div className="relative">
@@ -335,7 +335,7 @@ export default function SpeakingPage() {
               Get one-on-one speaking practice and real-time feedback from our experienced instructors on WhatsApp.
             </p>
             <a
-              href="https://mailto:hello@lumaani.com"
+              href="mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"

@@ -170,8 +170,8 @@ export default function WritingEditorPage() {
       label: "Task Achievement",
       score: "6.5",
       comment: "Addresses the prompt but could develop ideas more fully. Consider adding specific examples.",
-      color: "text-[rgb(245,166,35)]",
-      bg: "bg-[rgb(245,166,35)]/10",
+      color: "text-[rgb(200,120,90)]",
+      bg: "bg-[rgb(200,120,90)]/10",
     },
     {
       label: "Coherence & Cohesion",
@@ -184,8 +184,8 @@ export default function WritingEditorPage() {
       label: "Lexical Resource",
       score: "6.5",
       comment: "Adequate vocabulary range with some good choices. Could include more academic terms.",
-      color: "text-[rgb(245,166,35)]",
-      bg: "bg-[rgb(245,166,35)]/10",
+      color: "text-[rgb(200,120,90)]",
+      bg: "bg-[rgb(200,120,90)]/10",
     },
     {
       label: "Grammatical Range",
@@ -203,7 +203,7 @@ export default function WritingEditorPage() {
     parseFloat(overallScore) >= 7.0
       ? "from-emerald-500 to-green-500"
       : parseFloat(overallScore) >= 6.0
-      ? "from-[rgb(245,166,35)] to-yellow-500"
+      ? "from-[rgb(200,120,90)] to-yellow-500"
       : "from-red-400 to-orange-500"
 
   const timerColor = isLow ? "text-red-500" : "text-gray-700"
@@ -215,11 +215,11 @@ export default function WritingEditorPage() {
       {/* ════════════════════════════════════════ */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(26,35,126)]/10">
-            <Pen className="h-5 w-5 text-[rgb(26,35,126)]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(11,79,74)]/10">
+            <Pen className="h-5 w-5 text-[rgb(11,79,74)]" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-[rgb(13,33,55)]">
+            <h1 className="text-lg font-bold text-[rgb(22,32,34)]">
               {taskLabel[type] || "Writing"} Practice
             </h1>
             <p className="text-xs text-gray-500">
@@ -235,7 +235,7 @@ export default function WritingEditorPage() {
               </Label>
               <div
                 className={`relative w-10 h-5 rounded-full cursor-pointer transition-colors ${
-                  spellCheck ? "bg-[rgb(26,35,126)]" : "bg-gray-300"
+                  spellCheck ? "bg-[rgb(11,79,74)]" : "bg-gray-300"
                 }`}
                 onClick={() => setSpellCheck(!spellCheck)}
               >
@@ -264,7 +264,7 @@ export default function WritingEditorPage() {
         <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
           <div
             className={`h-full rounded-full transition-all duration-1000 ${
-              isLow ? "bg-red-500" : "bg-gradient-to-r from-[rgb(26,35,126)] to-[rgb(245,166,35)]"
+              isLow ? "bg-red-500" : "bg-gradient-to-r from-[rgb(11,79,74)] to-[rgb(200,120,90)]"
             }`}
             style={{ width: `${progress}%` }}
           />
@@ -274,14 +274,14 @@ export default function WritingEditorPage() {
       {/* ════════════════════════════════════════ */}
       {/* PROMPT DISPLAY                           */}
       {/* ════════════════════════════════════════ */}
-      <Card className="border-[rgb(26,35,126)]/20 bg-gradient-to-r from-[rgb(26,35,126)]/5 to-transparent">
+      <Card className="border-[rgb(11,79,74)]/20 bg-gradient-to-r from-[rgb(11,79,74)]/5 to-transparent">
         <CardContent className="p-5">
           <div className="flex items-start gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(26,35,126)] text-white text-xs font-bold shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(11,79,74)] text-white text-xs font-bold shrink-0">
               Q
             </div>
             <div>
-              <p className="text-sm font-bold text-[rgb(13,33,55)] mb-1">{promptData.title}</p>
+              <p className="text-sm font-bold text-[rgb(22,32,34)] mb-1">{promptData.title}</p>
               <p className="text-sm text-gray-700 leading-relaxed">{promptData.prompt}</p>
               <p className="text-xs text-gray-500 mt-2">
                 Word limit: <span className="font-semibold">{promptData.wordLimit} words</span>
@@ -305,7 +305,7 @@ export default function WritingEditorPage() {
               onCopy={handleCopy}
               onPaste={handlePaste}
               spellCheck={spellCheck}
-              className="min-h-[400px] md:min-h-[500px] text-base leading-relaxed p-5 resize-y bg-white border-gray-200 focus-visible:ring-[rgb(26,35,126)]"
+              className="min-h-[400px] md:min-h-[500px] text-base leading-relaxed p-5 resize-y bg-white border-gray-200 focus-visible:ring-[rgb(11,79,74)]"
             />
             <div className="absolute bottom-3 right-3 flex items-center gap-2 text-xs text-gray-400 bg-white/90 px-2 py-1 rounded-md">
               <FileText className="h-3.5 w-3.5" />
@@ -368,8 +368,8 @@ export default function WritingEditorPage() {
           {/* Read-only writing review */}
           <Card className="border-gray-200">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
-                <FileText className="h-4 w-4 text-[rgb(26,35,126)]" />
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(22,32,34)]">
+                <FileText className="h-4 w-4 text-[rgb(11,79,74)]" />
                 Your Writing
               </CardTitle>
             </CardHeader>
@@ -388,7 +388,7 @@ export default function WritingEditorPage() {
             <div className="text-center">
               <Button
                 size="xl"
-                className="font-bold gap-2 bg-[rgb(245,166,35)] hover:bg-[rgb(220,150,30)] text-white shadow-lg"
+                className="font-bold gap-2 bg-[rgb(200,120,90)] hover:bg-[rgb(200,120,90)] text-white shadow-lg"
                 onClick={handleShowFeedback}
               >
                 <Sparkles className="h-5 w-5" />
@@ -398,10 +398,10 @@ export default function WritingEditorPage() {
           ) : (
             <>
               {/* Overall score */}
-              <Card className="border-gray-200 bg-gradient-to-br from-[rgb(26,35,126)]/5 to-[rgb(13,33,55)]/5">
+              <Card className="border-gray-200 bg-gradient-to-br from-[rgb(11,79,74)]/5 to-[rgb(22,32,34)]/5">
                 <CardContent className="p-6 text-center">
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Overall Band Score</p>
-                  <p className="text-5xl font-extrabold text-[rgb(13,33,55)]">{overallScore}</p>
+                  <p className="text-5xl font-extrabold text-[rgb(22,32,34)]">{overallScore}</p>
                   <p className="text-sm text-gray-500 mt-1">Estimate &middot; IELTS equivalent</p>
                   <div className="w-full max-w-xs mx-auto mt-4 h-2.5 rounded-full bg-gray-200 overflow-hidden">
                     <div
@@ -418,7 +418,7 @@ export default function WritingEditorPage() {
                   <Card key={cat.label} className="border-gray-200">
                     <CardContent className="p-5">
                       <div className="flex items-center justify-between mb-2">
-                        <p className="text-sm font-bold text-[rgb(13,33,55)]">{cat.label}</p>
+                        <p className="text-sm font-bold text-[rgb(22,32,34)]">{cat.label}</p>
                         <Badge className={`${cat.bg} ${cat.color} border-0`}>{cat.score}</Badge>
                       </div>
                       <p className="text-xs text-gray-600 leading-relaxed">{cat.comment}</p>
@@ -428,27 +428,27 @@ export default function WritingEditorPage() {
               </div>
 
               {/* Improvement suggestions */}
-              <Card className="border-gray-200 bg-gradient-to-r from-[rgb(245,166,35)]/5 to-transparent">
+              <Card className="border-gray-200 bg-gradient-to-r from-[rgb(200,120,90)]/5 to-transparent">
                 <CardContent className="p-5">
-                  <h3 className="text-sm font-bold text-[rgb(13,33,55)] mb-3 flex items-center gap-2">
-                    <Sparkles className="h-4 w-4 text-[rgb(245,166,35)]" />
+                  <h3 className="text-sm font-bold text-[rgb(22,32,34)] mb-3 flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-[rgb(200,120,90)]" />
                     Suggested Improvements
                   </h3>
                   <ul className="space-y-2">
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Expand your introduction with a clearer thesis statement outlining your main arguments.
                     </li>
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Add specific examples or data to strengthen your body paragraphs.
                     </li>
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Use more academic vocabulary — consider synonyms for commonly used words.
                     </li>
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Vary your sentence structures (simple, compound, complex) for a higher grammar score.
                     </li>
                   </ul>
@@ -460,11 +460,11 @@ export default function WritingEditorPage() {
           {/* Download + Teacher review */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-gray-50 rounded-xl border border-gray-200">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[rgb(26,35,126)]/10">
-                <BookOpen className="h-4 w-4 text-[rgb(26,35,126)]" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[rgb(11,79,74)]/10">
+                <BookOpen className="h-4 w-4 text-[rgb(11,79,74)]" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-[rgb(13,33,55)]">Teacher Review Available</p>
+                <p className="text-sm font-semibold text-[rgb(22,32,34)]">Teacher Review Available</p>
                 <p className="text-xs text-gray-500">Responses can be reviewed by Lumaani instructors for detailed feedback</p>
               </div>
             </div>
@@ -487,7 +487,7 @@ export default function WritingEditorPage() {
       {/* ════════════════════════════════════════ */}
       <section className="pb-6 pt-4">
         <a
-          href="https://mailto:hello@lumaani.com"
+          href="mailto:hello@lumaani.com"
           target="_blank"
           rel="noopener noreferrer"
           className="block"

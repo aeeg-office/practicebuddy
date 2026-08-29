@@ -269,7 +269,7 @@ export default function TeachersPage() {
                       <td className="px-6 py-3.5 text-right">
                         <div className="flex items-center justify-end gap-1">
                           <button
-                            className="p-1.5 rounded-md hover:bg-muted/50 text-muted-foreground hover:text-[rgb(26,35,126)] transition-colors"
+                            className="p-1.5 rounded-md hover:bg-muted/50 text-muted-foreground hover:text-[rgb(11,79,74)] transition-colors"
                             title="View"
                           >
                             <Eye className="h-4 w-4" />

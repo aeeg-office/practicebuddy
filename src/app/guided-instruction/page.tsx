@@ -113,7 +113,7 @@ function GuidedInstructionContent() {
         <Card className="max-w-lg w-full">
           <CardContent className="p-8 space-y-6">
             <div className="text-center">
-              <BookOpen className="h-16 w-16 mx-auto mb-4" style={{ color: "rgb(26,35,126)" }} />
+              <BookOpen className="h-16 w-16 mx-auto mb-4" style={{ color: "rgb(11,79,74)" }} />
               <h1 className="text-2xl font-bold text-foreground mb-2">Guided Instruction</h1>
               <p className="text-muted-foreground">Teacher-led 1:1 practice with controlled pacing</p>
             </div>
@@ -122,7 +122,7 @@ function GuidedInstructionContent() {
                 onClick={() => setRole("teacher")}
                 className="p-6 rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 transition-all text-center"
               >
-                <UserCheck className="h-10 w-10 mx-auto mb-3" style={{ color: "rgb(26,35,126)" }} />
+                <UserCheck className="h-10 w-10 mx-auto mb-3" style={{ color: "rgb(11,79,74)" }} />
                 <p className="font-semibold text-foreground">Teacher</p>
                 <p className="text-xs text-muted-foreground mt-1">Control the lesson</p>
               </button>
@@ -130,7 +130,7 @@ function GuidedInstructionContent() {
                 onClick={() => setRole("student")}
                 className="p-6 rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 transition-all text-center"
               >
-                <Users className="h-10 w-10 mx-auto mb-3" style={{ color: "rgb(26,35,126)" }} />
+                <Users className="h-10 w-10 mx-auto mb-3" style={{ color: "rgb(11,79,74)" }} />
                 <p className="font-semibold text-foreground">Student</p>
                 <p className="text-xs text-muted-foreground mt-1">Follow the teacher</p>
               </button>
@@ -193,7 +193,7 @@ function GuidedInstructionContent() {
           <div className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm" style={{ color: "rgb(26,35,126)" }}>
+                <CardTitle className="text-sm" style={{ color: "rgb(11,79,74)" }}>
                   Teacher Controls
                 </CardTitle>
               </CardHeader>

@@ -79,8 +79,8 @@ export default function QuestionRenderer({
 
           {/* Passage block */}
           {question.passage && (
-            <div className="rounded-lg border-l-4 border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5 p-4 text-sm leading-relaxed text-[rgb(13,33,55)]">
-              <p className="font-semibold text-xs uppercase tracking-wider text-[rgb(26,35,126)] mb-2">
+            <div className="rounded-lg border-l-4 border-[rgb(11,79,74)] bg-[rgb(11,79,74)]/5 p-4 text-sm leading-relaxed text-[rgb(22,32,34)]">
+              <p className="font-semibold text-xs uppercase tracking-wider text-[rgb(11,79,74)] mb-2">
                 Passage
               </p>
               <p className="italic">{question.passage}</p>
@@ -88,7 +88,7 @@ export default function QuestionRenderer({
           )}
 
           {/* Question text */}
-          <h2 className="text-lg md:text-xl font-semibold text-[rgb(13,33,55)]">
+          <h2 className="text-lg md:text-xl font-semibold text-[rgb(22,32,34)]">
             {question.text}
           </h2>
 
@@ -135,7 +135,7 @@ export default function QuestionRenderer({
                     className={cn(
                       "w-full text-left flex items-start gap-4 p-4 rounded-xl border-2 transition-all duration-150",
                       // Selected state
-                      isSelected && !showResults && "border-[rgb(26,35,126)] bg-[rgb(26,35,126)]/5 shadow-sm",
+                      isSelected && !showResults && "border-[rgb(11,79,74)] bg-[rgb(11,79,74)]/5 shadow-sm",
                       // Default state
                       !isSelected && !showResults && "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50",
                       // Results: correct answer highlighted green
@@ -151,7 +151,7 @@ export default function QuestionRenderer({
                       className={cn(
                         "flex items-center justify-center w-9 h-9 rounded-lg text-sm font-bold shrink-0 transition-colors",
                         // Selected
-                        isSelected && !showResults && "bg-[rgb(26,35,126)] text-white",
+                        isSelected && !showResults && "bg-[rgb(11,79,74)] text-white",
                         // Default
                         !isSelected && !showResults && "bg-muted text-muted-foreground",
                         // Results: correct
@@ -171,7 +171,7 @@ export default function QuestionRenderer({
                         "text-sm md:text-base pt-1.5",
                         showResults && isCorrect && "text-green-800 font-medium",
                         showResults && isWrongSelection && "text-red-800",
-                        !showResults && "text-[rgb(13,33,55)]",
+                        !showResults && "text-[rgb(22,32,34)]",
                       )}
                     >
                       {option.text}

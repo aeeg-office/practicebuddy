@@ -166,15 +166,15 @@ export default function SpeakingAssessmentPage() {
       label: "Fluency & Coherence",
       score: "7.0",
       comment: "Good flow with logical progression of ideas. Minor hesitations noted.",
-      color: "text-[rgb(26,35,126)]",
-      bg: "bg-[rgb(26,35,126)]/10",
+      color: "text-[rgb(11,79,74)]",
+      bg: "bg-[rgb(11,79,74)]/10",
     },
     {
       label: "Pronunciation",
       score: "6.5",
       comment: "Clear articulation. Work on intonation patterns and word stress.",
-      color: "text-[rgb(245,166,35)]",
-      bg: "bg-[rgb(245,166,35)]/10",
+      color: "text-[rgb(200,120,90)]",
+      bg: "bg-[rgb(200,120,90)]/10",
     },
     {
       label: "Grammar",
@@ -201,11 +201,11 @@ export default function SpeakingAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(26,35,126)]/10">
-            <Mic className="h-5 w-5 text-[rgb(26,35,126)]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(11,79,74)]/10">
+            <Mic className="h-5 w-5 text-[rgb(11,79,74)]" />
           </div>
           <div>
-            <h1 className="text-lg font-bold text-[rgb(13,33,55)]">Speaking Assessment</h1>
+            <h1 className="text-lg font-bold text-[rgb(22,32,34)]">Speaking Assessment</h1>
             <p className="text-xs text-gray-500">
               {subjectLabel[subject] || subject} &middot; {taskLabel[task] || task}
             </p>
@@ -219,7 +219,7 @@ export default function SpeakingAssessmentPage() {
             phase === "setup"
               ? "text-gray-500"
               : phase === "preparation"
-              ? "text-[rgb(245,166,35)] border-[rgb(245,166,35)]"
+              ? "text-[rgb(200,120,90)] border-[rgb(200,120,90)]"
               : phase === "recording"
               ? "text-red-500 border-red-300 animate-pulse"
               : "text-emerald-600 border-emerald-300"
@@ -238,14 +238,14 @@ export default function SpeakingAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       {/* PROMPT DISPLAY                           */}
       {/* ════════════════════════════════════════ */}
-      <Card className="border-[rgb(26,35,126)]/20 bg-gradient-to-r from-[rgb(26,35,126)]/5 to-transparent">
+      <Card className="border-[rgb(11,79,74)]/20 bg-gradient-to-r from-[rgb(11,79,74)]/5 to-transparent">
         <CardContent className="p-5">
           <div className="flex items-start gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(26,35,126)] text-white text-xs font-bold shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(11,79,74)] text-white text-xs font-bold shrink-0">
               Q
             </div>
             <div>
-              <p className="text-sm font-bold text-[rgb(13,33,55)] mb-1">{promptData.title}</p>
+              <p className="text-sm font-bold text-[rgb(22,32,34)] mb-1">{promptData.title}</p>
               <p className="text-sm text-gray-700 leading-relaxed">{promptData.instructions}</p>
             </div>
           </div>
@@ -263,12 +263,12 @@ export default function SpeakingAssessmentPage() {
           <Card className="border-gray-200">
             <CardContent className="p-8 text-center space-y-4">
               <div className="flex justify-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[rgb(26,35,126)]/10">
-                  <Mic className="h-12 w-12 text-[rgb(26,35,126)]" />
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[rgb(11,79,74)]/10">
+                  <Mic className="h-12 w-12 text-[rgb(11,79,74)]" />
                 </div>
               </div>
               <div>
-                <h2 className="text-xl font-bold text-[rgb(13,33,55)]">Ready to Record?</h2>
+                <h2 className="text-xl font-bold text-[rgb(22,32,34)]">Ready to Record?</h2>
                 <p className="text-sm text-gray-500 mt-2 max-w-md mx-auto">
                   Recording functionality requires microphone permission. Click the button below
                   to start your preparation countdown.
@@ -276,7 +276,7 @@ export default function SpeakingAssessmentPage() {
               </div>
 
               {!micGranted && (
-                <div className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[rgb(245,166,35)]/10 text-[rgb(245,166,35)] text-sm">
+                <div className="flex items-center justify-center gap-2 p-3 rounded-lg bg-[rgb(200,120,90)]/10 text-[rgb(200,120,90)] text-sm">
                   <Volume2 className="h-4 w-4" />
                   <span>Microphone access needed — click Start Preparation to request permission</span>
                 </div>
@@ -321,25 +321,25 @@ export default function SpeakingAssessmentPage() {
       {/* ── PREPARATION PHASE ── */}
       {phase === "preparation" && (
         <div className="space-y-6">
-          <Card className="border-[rgb(245,166,35)]/30 bg-gradient-to-br from-[rgb(245,166,35)]/5 to-transparent">
+          <Card className="border-[rgb(200,120,90)]/30 bg-gradient-to-br from-[rgb(200,120,90)]/5 to-transparent">
             <CardContent className="p-8 text-center space-y-4">
               <div className="flex justify-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[rgb(245,166,35)]/10">
-                  <Timer className="h-10 w-10 text-[rgb(245,166,35)]" />
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[rgb(200,120,90)]/10">
+                  <Timer className="h-10 w-10 text-[rgb(200,120,90)]" />
                 </div>
               </div>
               <div>
-                <p className="text-4xl font-extrabold text-[rgb(245,166,35)]">
+                <p className="text-4xl font-extrabold text-[rgb(200,120,90)]">
                   {prepTimer.minutes > 0 ? `${prepTimer.minutes}:` : ""}
                   {String(prepTimer.seconds).padStart(2, "0")}
                 </p>
-                <p className="text-sm font-semibold text-[rgb(13,33,55)] mt-2">Preparation Time</p>
+                <p className="text-sm font-semibold text-[rgb(22,32,34)] mt-2">Preparation Time</p>
                 <p className="text-xs text-gray-500 mt-1">Plan your response — outline 2-3 key points</p>
               </div>
               {/* Progress ring */}
               <div className="w-full max-w-xs mx-auto h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-[rgb(245,166,35)] transition-all duration-1000"
+                  className="h-full rounded-full bg-[rgb(200,120,90)] transition-all duration-1000"
                   style={{ width: `${(prepTimer.timeLeft / prepSeconds) * 100}%` }}
                 />
               </div>
@@ -438,8 +438,8 @@ export default function SpeakingAssessmentPage() {
           {/* Transcript placeholder */}
           <Card className="border-gray-200">
             <CardHeader>
-              <CardTitle className="text-base flex items-center gap-2 text-[rgb(13,33,55)]">
-                <BookOpen className="h-4 w-4 text-[rgb(26,35,126)]" />
+              <CardTitle className="text-base flex items-center gap-2 text-[rgb(22,32,34)]">
+                <BookOpen className="h-4 w-4 text-[rgb(11,79,74)]" />
                 Transcript
               </CardTitle>
             </CardHeader>
@@ -449,7 +449,7 @@ export default function SpeakingAssessmentPage() {
                 would be transcribed using automatic speech recognition.]
               </div>
               <div className="mt-3 flex items-center gap-2 text-xs text-gray-400">
-                <div className="h-1.5 w-1.5 rounded-full bg-[rgb(245,166,35)] animate-pulse" />
+                <div className="h-1.5 w-1.5 rounded-full bg-[rgb(200,120,90)] animate-pulse" />
                 Processing audio...
               </div>
             </CardContent>
@@ -460,7 +460,7 @@ export default function SpeakingAssessmentPage() {
             <div className="text-center">
               <Button
                 size="xl"
-                className="font-bold gap-2 bg-[rgb(245,166,35)] hover:bg-[rgb(220,150,30)] text-white shadow-lg"
+                className="font-bold gap-2 bg-[rgb(200,120,90)] hover:bg-[rgb(200,120,90)] text-white shadow-lg"
                 onClick={() => setShowFeedback(true)}
               >
                 <Sparkles className="h-5 w-5" />
@@ -470,10 +470,10 @@ export default function SpeakingAssessmentPage() {
           ) : (
             <>
               {/* Overall score */}
-              <Card className="border-gray-200 bg-gradient-to-br from-[rgb(26,35,126)]/5 to-[rgb(13,33,55)]/5">
+              <Card className="border-gray-200 bg-gradient-to-br from-[rgb(11,79,74)]/5 to-[rgb(22,32,34)]/5">
                 <CardContent className="p-6 text-center">
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Overall Speaking Score</p>
-                  <p className="text-5xl font-extrabold text-[rgb(13,33,55)]">{overallScore}</p>
+                  <p className="text-5xl font-extrabold text-[rgb(22,32,34)]">{overallScore}</p>
                   <p className="text-sm text-gray-500 mt-1">Estimate &middot; IELTS equivalent</p>
                   <div className="w-full max-w-xs mx-auto mt-4 h-2.5 rounded-full bg-gray-200 overflow-hidden">
                     <div
@@ -490,7 +490,7 @@ export default function SpeakingAssessmentPage() {
                   <Card key={cat.label} className="border-gray-200">
                     <CardContent className="p-5">
                       <div className="flex items-center justify-between mb-2">
-                        <p className="text-sm font-bold text-[rgb(13,33,55)]">{cat.label}</p>
+                        <p className="text-sm font-bold text-[rgb(22,32,34)]">{cat.label}</p>
                         <Badge className={`${cat.bg} ${cat.color} border-0`}>{cat.score}</Badge>
                       </div>
                       <p className="text-xs text-gray-600 leading-relaxed">{cat.comment}</p>
@@ -500,27 +500,27 @@ export default function SpeakingAssessmentPage() {
               </div>
 
               {/* Improvement suggestions */}
-              <Card className="border-gray-200 bg-gradient-to-r from-[rgb(245,166,35)]/5 to-transparent">
+              <Card className="border-gray-200 bg-gradient-to-r from-[rgb(200,120,90)]/5 to-transparent">
                 <CardContent className="p-5">
-                  <h3 className="text-sm font-bold text-[rgb(13,33,55)] mb-3 flex items-center gap-2">
-                    <Sparkles className="h-4 w-4 text-[rgb(245,166,35)]" />
+                  <h3 className="text-sm font-bold text-[rgb(22,32,34)] mb-3 flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-[rgb(200,120,90)]" />
                     Suggested Improvements
                   </h3>
                   <ul className="space-y-2">
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Work on reducing filler words (um, uh, like) for greater fluency.
                     </li>
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Practice varying your intonation to sound more engaging and natural.
                     </li>
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Expand your vocabulary with topic-specific terms relevant to the task.
                     </li>
                     <li className="flex gap-2 text-sm text-gray-600">
-                      <span className="text-[rgb(245,166,35)] font-bold">&bull;</span>
+                      <span className="text-[rgb(200,120,90)] font-bold">&bull;</span>
                       Use more complex sentence structures to demonstrate grammatical range.
                     </li>
                   </ul>
@@ -534,7 +534,7 @@ export default function SpeakingAssessmentPage() {
             <div className="flex items-center gap-3">
               <Avatar fallback="LU" size="sm" />
               <div>
-                <p className="text-sm font-semibold text-[rgb(13,33,55)]">Instructor Review Available</p>
+                <p className="text-sm font-semibold text-[rgb(22,32,34)]">Instructor Review Available</p>
                 <p className="text-xs text-gray-500">Responses can be reviewed by Lumaani instructors for detailed feedback</p>
               </div>
             </div>
@@ -553,7 +553,7 @@ export default function SpeakingAssessmentPage() {
       {/* ════════════════════════════════════════ */}
       <section className="pb-6 pt-4">
         <a
-          href="https://mailto:hello@lumaani.com"
+          href="mailto:hello@lumaani.com"
           target="_blank"
           rel="noopener noreferrer"
           className="block"

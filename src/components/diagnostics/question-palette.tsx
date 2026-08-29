@@ -31,11 +31,11 @@ function getQuestionState(
 function stateStyles(state: QuestionState): string {
   switch (state) {
     case "current":
-      return "bg-[rgb(26,35,126)] text-white ring-2 ring-[rgb(26,35,126)] ring-offset-1"
+      return "bg-[rgb(11,79,74)] text-white ring-2 ring-[rgb(11,79,74)] ring-offset-1"
     case "answered":
       return "bg-green-500 text-white hover:bg-green-600"
     case "flagged":
-      return "bg-[rgb(245,166,35)] text-white hover:bg-[rgb(220,150,30)]"
+      return "bg-[rgb(200,120,90)] text-white hover:bg-[rgb(200,120,90)]"
     case "unanswered":
       return "bg-gray-100 text-gray-500 hover:bg-gray-200"
   }
@@ -69,7 +69,7 @@ export default function QuestionPalette({
       <CardHeader className={cn("pb-3", compact && "px-4 py-3")}>
         <CardTitle
           className={cn(
-            "font-semibold text-[rgb(13,33,55)]",
+            "font-semibold text-[rgb(22,32,34)]",
             compact ? "text-xs" : "text-sm",
           )}
         >
@@ -89,7 +89,7 @@ export default function QuestionPalette({
             Answered
           </div>
           <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded-sm bg-[rgb(245,166,35)]" />
+            <div className="w-3 h-3 rounded-sm bg-[rgb(200,120,90)]" />
             Flagged
           </div>
           <div className="flex items-center gap-1">
@@ -137,7 +137,7 @@ export default function QuestionPalette({
           </div>
           <div className="flex justify-between">
             <span>Flagged</span>
-            <span className="font-bold text-[rgb(245,166,35)]">{flagged.size}</span>
+            <span className="font-bold text-[rgb(200,120,90)]">{flagged.size}</span>
           </div>
           <div className="flex justify-between">
             <span>Remaining</span>

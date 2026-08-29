@@ -430,7 +430,7 @@ export default function AITutorPage() {
               <p className="text-white/60 text-xs">Chat with a live tutor on WhatsApp</p>
             </div>
             <a
-              href="https://mailto:hello@lumaani.com"
+              href="mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors shadow-lg"

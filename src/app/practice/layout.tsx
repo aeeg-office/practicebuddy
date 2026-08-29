@@ -103,7 +103,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
 
           {/* WhatsApp support link */}
           <a
-            href="https://mailto:hello@lumaani.com"
+            href="mailto:hello@lumaani.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-600 hover:bg-emerald-50 transition-all duration-200"
@@ -175,7 +175,7 @@ export default function PracticeLayout({ children }: { children: React.ReactNode
               <span className="text-xs text-muted-foreground font-medium">{progressPct}%</span>
             </div>
             <a
-              href="https://mailto:hello@lumaani.com"
+              href="mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="lg:hidden p-2 rounded-full text-emerald-500 hover:bg-emerald-50 transition-colors"

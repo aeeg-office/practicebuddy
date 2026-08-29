@@ -123,7 +123,7 @@ function QuestionReviewRow({
             <XCircle className="h-4 w-4 text-red-500" />
           )}
         </span>
-        <span className="text-sm font-medium text-[rgb(13,33,55)] flex-1 truncate">
+        <span className="text-sm font-medium text-[rgb(22,32,34)] flex-1 truncate">
           Question {question.id}
         </span>
         <span className="text-xs text-muted-foreground shrink-0">
@@ -138,7 +138,7 @@ function QuestionReviewRow({
 
       {isExpanded && (
         <div className="px-3 pb-3 border-t pt-3 space-y-2">
-          <p className="text-sm text-[rgb(13,33,55)]">{question.text}</p>
+          <p className="text-sm text-[rgb(22,32,34)]">{question.text}</p>
 
           {question.options && (
             <div className="space-y-1.5">
@@ -233,15 +233,15 @@ export default function ResultsDashboard({
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
           <CheckCircle2 className="h-8 w-8 text-green-600" />
         </div>
-        <h1 className="text-3xl font-bold text-[rgb(13,33,55)] mb-2">Exam Complete!</h1>
+        <h1 className="text-3xl font-bold text-[rgb(22,32,34)] mb-2">Exam Complete!</h1>
         <p className="text-muted-foreground">
           Here is your personalized diagnostic report for{" "}
-          <span className="font-semibold text-[rgb(26,35,126)]">{examType}</span>.
+          <span className="font-semibold text-[rgb(11,79,74)]">{examType}</span>.
         </p>
       </div>
 
       {/* ── Score overview card ── */}
-      <Card className="bg-gradient-to-br from-[rgb(26,35,126)] to-[rgb(13,33,55)] border-0">
+      <Card className="bg-gradient-to-br from-[rgb(11,79,74)] to-[rgb(22,32,34)] border-0">
         <CardContent className="p-8">
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Circular progress */}
@@ -265,7 +265,7 @@ export default function ResultsDashboard({
                 </div>
                 <div className="w-px h-10 bg-white/20" />
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-[rgb(245,166,35)]">
+                  <p className="text-3xl font-bold text-[rgb(200,120,90)]">
                     {Math.round(percentage)}%
                   </p>
                   <p className="text-white/70 text-xs">Accuracy</p>
@@ -275,10 +275,10 @@ export default function ResultsDashboard({
               {/* Estimated score */}
               {estimatedScore !== undefined && (
                 <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm">
-                  <TrendingUp className="h-4 w-4 text-[rgb(245,166,35)]" />
+                  <TrendingUp className="h-4 w-4 text-[rgb(200,120,90)]" />
                   <span className="text-white font-medium">
                     Estimated Score:{" "}
-                    <span className="text-[rgb(245,166,35)] font-bold">{estimatedScore}</span>
+                    <span className="text-[rgb(200,120,90)] font-bold">{estimatedScore}</span>
                   </span>
                 </div>
               )}
@@ -298,8 +298,8 @@ export default function ResultsDashboard({
         {/* Section breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
-              <BarChart3 className="h-5 w-5 text-[rgb(26,35,126)]" />
+            <CardTitle className="text-lg font-semibold text-[rgb(22,32,34)] flex items-center gap-2">
+              <BarChart3 className="h-5 w-5 text-[rgb(11,79,74)]" />
               Section Breakdown
             </CardTitle>
             <CardDescription>Performance by subject area</CardDescription>
@@ -311,14 +311,14 @@ export default function ResultsDashboard({
                 sectionPct >= 80
                   ? "bg-green-500"
                   : sectionPct >= 60
-                    ? "bg-[rgb(245,166,35)]"
+                    ? "bg-[rgb(200,120,90)]"
                     : "bg-red-400"
 
               return (
                 <div key={section.name}>
                   <div className="flex items-center justify-between text-sm mb-1.5">
-                    <span className="font-medium text-[rgb(13,33,55)]">{section.name}</span>
-                    <span className="font-bold text-[rgb(13,33,55)]">
+                    <span className="font-medium text-[rgb(22,32,34)]">{section.name}</span>
+                    <span className="font-bold text-[rgb(22,32,34)]">
                       {section.score}/{section.total}
                       <span className="text-muted-foreground font-normal ml-1">
                         ({Math.round(sectionPct)}%)
@@ -342,8 +342,8 @@ export default function ResultsDashboard({
           {/* Weak areas */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
-                <Target className="h-5 w-5 text-[rgb(245,166,35)]" />
+              <CardTitle className="text-lg font-semibold text-[rgb(22,32,34)] flex items-center gap-2">
+                <Target className="h-5 w-5 text-[rgb(200,120,90)]" />
                 Areas for Improvement
               </CardTitle>
               <CardDescription>Topics that need the most attention</CardDescription>
@@ -353,7 +353,7 @@ export default function ResultsDashboard({
                 <ul className="space-y-2">
                   {weakAreas.map((area, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[rgb(245,166,35)] shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[rgb(200,120,90)] shrink-0" />
                       {area}
                     </li>
                   ))}
@@ -369,8 +369,8 @@ export default function ResultsDashboard({
           {/* Recommendations */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-[rgb(26,35,126)]" />
+              <CardTitle className="text-lg font-semibold text-[rgb(22,32,34)] flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-[rgb(11,79,74)]" />
                 Study Recommendations
               </CardTitle>
               <CardDescription>Personalized next steps</CardDescription>
@@ -396,8 +396,8 @@ export default function ResultsDashboard({
       {/* ── Per-question review ── */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg font-semibold text-[rgb(13,33,55)] flex items-center gap-2">
-            <Award className="h-5 w-5 text-[rgb(26,35,126)]" />
+          <CardTitle className="text-lg font-semibold text-[rgb(22,32,34)] flex items-center gap-2">
+            <Award className="h-5 w-5 text-[rgb(11,79,74)]" />
             Question Review
           </CardTitle>
           <CardDescription>Review each question and your answers</CardDescription>
@@ -433,7 +433,7 @@ export default function ResultsDashboard({
         <Button
           variant="default"
           size="xl"
-          className="bg-[rgb(26,35,126)] hover:bg-[rgb(21,27,100)] min-w-[200px]"
+          className="bg-[rgb(11,79,74)] hover:bg-[rgb(11,79,74)] min-w-[200px]"
           asChild
         >
           <a href={`/dashboard?exam=${examType.toLowerCase()}`}>

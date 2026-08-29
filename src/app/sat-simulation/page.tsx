@@ -182,7 +182,7 @@ export default function SATSimulationPage() {
         <Card className="max-w-2xl w-full">
           <CardContent className="p-8 space-y-6">
             <div className="text-center">
-              <BookOpen className="h-16 w-16 mx-auto mb-4" style={{ color: "rgb(26,35,126)" }} />
+              <BookOpen className="h-16 w-16 mx-auto mb-4" style={{ color: "rgb(11,79,74)" }} />
               <h1 className="text-3xl font-bold text-foreground mb-2">SAT Full-Length Simulation</h1>
               <p className="text-muted-foreground">A complete Digital SAT practice test with real timing</p>
             </div>
@@ -224,7 +224,7 @@ export default function SATSimulationPage() {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="max-w-lg w-full">
           <CardContent className="p-8 text-center space-y-4">
-            <Clock className="h-16 w-16 mx-auto mb-2" style={{ color: "rgb(26,35,126)" }} />
+            <Clock className="h-16 w-16 mx-auto mb-2" style={{ color: "rgb(11,79,74)" }} />
             <h2 className="text-2xl font-bold text-foreground">Break Time</h2>
             <p className="text-muted-foreground">You&apos;ve completed the {phase === "break_rw" ? "Reading & Writing" : "Math"} section.</p>
             <p className="text-sm text-muted-foreground">Take a short break. The next section will begin when you&apos;re ready.</p>
@@ -252,19 +252,19 @@ export default function SATSimulationPage() {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="max-w-2xl w-full">
           <CardContent className="p-8 text-center space-y-6">
-            <BarChart3 className="h-16 w-16 mx-auto mb-2" style={{ color: "rgb(26,35,126)" }} />
+            <BarChart3 className="h-16 w-16 mx-auto mb-2" style={{ color: "rgb(11,79,74)" }} />
             <h1 className="text-3xl font-bold text-foreground">Test Complete</h1>
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-muted/30 rounded-lg p-4">
-                <p className="text-3xl font-bold" style={{ color: "rgb(26,35,126)" }}>{correct}/{total}</p>
+                <p className="text-3xl font-bold" style={{ color: "rgb(11,79,74)" }}>{correct}/{total}</p>
                 <p className="text-xs text-muted-foreground">Correct</p>
               </div>
               <div className="bg-muted/30 rounded-lg p-4">
-                <p className="text-3xl font-bold" style={{ color: "rgb(245,166,35)" }}>{accuracy}%</p>
+                <p className="text-3xl font-bold" style={{ color: "rgb(200,120,90)" }}>{accuracy}%</p>
                 <p className="text-xs text-muted-foreground">Accuracy</p>
               </div>
               <div className="bg-muted/30 rounded-lg p-4">
-                <p className="text-3xl font-bold" style={{ color: "rgb(13,33,55)" }}>{total - correct}</p>
+                <p className="text-3xl font-bold" style={{ color: "rgb(22,32,34)" }}>{total - correct}</p>
                 <p className="text-xs text-muted-foreground">Incorrect</p>
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function SATSimulationPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin" style={{ color: "rgb(26,35,126)" }} />
+        <Loader2 className="h-8 w-8 animate-spin" style={{ color: "rgb(11,79,74)" }} />
         <p className="ml-3 text-muted-foreground">Loading questions...</p>
       </div>
     )

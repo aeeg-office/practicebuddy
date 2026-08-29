@@ -211,7 +211,7 @@ export default function PracticeHomePage() {
   useEffect(() => {
     const fetchCounts = async () => {
       const counts: Record<string, { totalQuestions: number; totalSkills: number; domains: number } | null> = {}
-      const apiSubjects = ["sat", "act", "ielts", "toefl"]
+      const apiSubjects = ["math", "reading", "writing", "science", "english"]
       
       await Promise.all(
         apiSubjects.map(async (subject) => {
@@ -741,7 +741,7 @@ export default function PracticeHomePage() {
               Our academic advisors can help you build a personalized practice plan.
             </p>
             <a
-              href="https://mailto:hello@lumaani.com"
+              href="mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-block"

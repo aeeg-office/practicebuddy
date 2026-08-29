@@ -36,10 +36,10 @@ export interface SubjectMeta {
   description: string
 }
 
-export const VALID_SUBJECTS: SubjectKey[] = ["math", "reading", "writing", "science"]
+export const VALID_SUBJECTS: SubjectKey[] = ["math", "reading", "writing", "science", "english"]
 
 /** Legacy subject keys for backward compatibility with admin code */
-export const LEGACY_SUBJECTS: SubjectKey[] = ["sat", "act", "ielts", "toefl", "english"]
+export const LEGACY_SUBJECTS: SubjectKey[] = ["sat", "act", "ielts", "toefl"]
 
 export const mockSkills: Record<SubjectKey, SubjectData> = {
   math: {

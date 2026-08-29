@@ -54,8 +54,8 @@ export default function AnalyticsPage() {
       </section>
       <Card>
         <CardHeader><CardTitle>Six-month trend</CardTitle><CardDescription>Live records created in the selected month.</CardDescription></CardHeader>
-        <CardContent><div className="mb-5 flex gap-2">{(["users", "revenue", "sessions"] as const).map((item) => <button key={item} onClick={() => setMetric(item)} className={`rounded-md px-3 py-1.5 text-sm capitalize ${metric === item ? "bg-[rgb(26,35,126)] text-white" : "border"}`}>{item}</button>)}</div>
-          <div className="flex h-56 items-end gap-3">{data?.months.map((month) => <div key={month.key} className="flex h-full flex-1 flex-col justify-end gap-2 text-center"><span className="text-xs font-medium">{metric === "revenue" ? formatCurrency.format(month.revenue) : month[metric].toLocaleString()}</span><div className="rounded-t bg-[rgb(26,35,126)]" style={{ height: `${(month[metric] / max) * 100}%`, minHeight: month[metric] ? "4px" : 0 }} /><span className="text-xs text-muted-foreground">{month.label}</span></div>)}</div>
+        <CardContent><div className="mb-5 flex gap-2">{(["users", "revenue", "sessions"] as const).map((item) => <button key={item} onClick={() => setMetric(item)} className={`rounded-md px-3 py-1.5 text-sm capitalize ${metric === item ? "bg-[rgb(11,79,74)] text-white" : "border"}`}>{item}</button>)}</div>
+          <div className="flex h-56 items-end gap-3">{data?.months.map((month) => <div key={month.key} className="flex h-full flex-1 flex-col justify-end gap-2 text-center"><span className="text-xs font-medium">{metric === "revenue" ? formatCurrency.format(month.revenue) : month[metric].toLocaleString()}</span><div className="rounded-t bg-[rgb(11,79,74)]" style={{ height: `${(month[metric] / max) * 100}%`, minHeight: month[metric] ? "4px" : 0 }} /><span className="text-xs text-muted-foreground">{month.label}</span></div>)}</div>
           <p className="mt-5 text-xs text-muted-foreground">Completion rate: {data?.totals.completionRate ?? 0}%. Generated {data && new Date(data.generatedAt).toLocaleString()}.</p>
         </CardContent>
       </Card>

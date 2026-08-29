@@ -466,7 +466,7 @@ export default function SubjectPage() {
               </p>
             </div>
             <a
-              href="https://mailto:hello@lumaani.com"
+              href="mailto:hello@lumaani.com"
               target="_blank"
               rel="noopener noreferrer"
             >

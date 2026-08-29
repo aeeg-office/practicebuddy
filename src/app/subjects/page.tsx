@@ -57,11 +57,11 @@ function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: b
     <div className="border border-border rounded-xl overflow-hidden transition-all duration-200 bg-white">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between px-6 py-5 text-left font-medium text-[rgb(13,33,55)] hover:bg-muted/20 transition-colors gap-4"
+        className="flex w-full items-center justify-between px-6 py-5 text-left font-medium text-[rgb(22,32,34)] hover:bg-muted/20 transition-colors gap-4"
       >
         <span className="text-sm md:text-base leading-snug">{q}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-[rgb(26,35,126)] transition-transform duration-300 ${
+          className={`h-5 w-5 shrink-0 text-[rgb(11,79,74)] transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -116,12 +116,12 @@ export default function SubjectsPage() {
       {/* ════════════════════════════════════════ */}
       {/* HERO SECTION                            */}
       {/* ════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[rgb(26,35,126)] via-[rgb(50,26,140)] to-[rgb(13,33,55)]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[rgb(11,79,74)] via-[rgb(11,79,74)] to-[rgb(22,32,34)]">
         {/* Decorative orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[rgb(245,166,35)]/8 blur-3xl" />
+          <div className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[rgb(200,120,90)]/8 blur-3xl" />
           <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] rounded-full bg-[rgb(26,35,126)]/40 blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 h-[300px] w-[300px] rounded-full bg-[rgb(11,79,74)]/40 blur-3xl" />
         </div>
 
         {/* Grid pattern overlay */}
@@ -172,11 +172,11 @@ export default function SubjectsPage() {
             </div>
             <div className="flex items-center gap-6 mt-10 text-white/60 text-xs md:text-sm">
               <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-[rgb(245,166,35)] fill-[rgb(245,166,35)]" />
+                <Star className="h-4 w-4 text-[rgb(200,120,90)] fill-[rgb(200,120,90)]" />
                 <span className="text-white/70">{c.hero?.ratings?.stars}</span>
               </div>
               <div className="flex items-center gap-2">
-                <GraduationCap className="h-4 w-4 text-[rgb(245,166,35)]" />
+                <GraduationCap className="h-4 w-4 text-[rgb(200,120,90)]" />
                 <span className="text-white/70">{c.hero?.ratings?.tutors}</span>
               </div>
             </div>
@@ -197,7 +197,7 @@ export default function SubjectsPage() {
               <Badge variant="secondary" className="mb-3 text-xs px-3 py-1">
                 {c.english?.badge}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(22,32,34)] tracking-tight">
                 {c.english?.title}
               </h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
@@ -206,7 +206,7 @@ export default function SubjectsPage() {
             </div>
             <Link
               href="/take-diagnostic"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] transition-colors group"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(11,79,74)] hover:text-[rgb(11,79,74)] transition-colors group"
             >
               {c.english?.linkText}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -222,17 +222,17 @@ export default function SubjectsPage() {
                   className="border border-border/60 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 bg-white"
                 >
                   <CardHeader className="pb-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(26,35,126)]/10 group-hover:bg-[rgb(26,35,126)]/20 transition-colors mb-2">
-                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(26,35,126)]" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(11,79,74)]/10 group-hover:bg-[rgb(11,79,74)]/20 transition-colors mb-2">
+                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(11,79,74)]" />
                     </div>
-                    <CardTitle className="text-base text-[rgb(13,33,55)]">{topic.title}</CardTitle>
+                    <CardTitle className="text-base text-[rgb(22,32,34)]">{topic.title}</CardTitle>
                     <CardDescription className="mt-1 text-xs leading-relaxed">{topic.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-1.5">
                       {topic.highlights.map((h: string) => (
                         <li key={h} className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[rgb(245,166,35)] mt-0.5" />
+                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[rgb(200,120,90)] mt-0.5" />
                           {h}
                         </li>
                       ))}
@@ -255,7 +255,7 @@ export default function SubjectsPage() {
               <Badge variant="secondary" className="mb-3 text-xs px-3 py-1">
                 {c.math?.badge}
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[rgb(22,32,34)] tracking-tight">
                 {c.math?.title}
               </h2>
               <p className="mt-3 text-muted-foreground leading-relaxed">
@@ -264,7 +264,7 @@ export default function SubjectsPage() {
             </div>
             <Link
               href="/take-diagnostic"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(26,35,126)] hover:text-[rgb(21,27,100)] transition-colors group"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-medium text-[rgb(11,79,74)] hover:text-[rgb(11,79,74)] transition-colors group"
             >
               {c.math?.linkText}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -280,17 +280,17 @@ export default function SubjectsPage() {
                   className="border border-border/60 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 bg-white"
                 >
                   <CardHeader className="pb-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(13,33,55)]/10 group-hover:bg-[rgb(13,33,55)]/20 transition-colors mb-2">
-                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(13,33,55)]" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(22,32,34)]/10 group-hover:bg-[rgb(22,32,34)]/20 transition-colors mb-2">
+                      <TopicIcon className="h-5.5 w-5.5 text-[rgb(22,32,34)]" />
                     </div>
-                    <CardTitle className="text-base text-[rgb(13,33,55)]">{topic.title}</CardTitle>
+                    <CardTitle className="text-base text-[rgb(22,32,34)]">{topic.title}</CardTitle>
                     <CardDescription className="mt-1 text-xs leading-relaxed">{topic.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-1.5">
                       {topic.highlights.map((h: string) => (
                         <li key={h} className="flex items-start gap-2 text-xs text-muted-foreground">
-                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[rgb(245,166,35)] mt-0.5" />
+                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[rgb(200,120,90)] mt-0.5" />
                           {h}
                         </li>
                       ))}
@@ -302,13 +302,13 @@ export default function SubjectsPage() {
           </div>
 
           {/* CTA banner within math section */}
-          <div className="mt-12 rounded-2xl bg-gradient-to-r from-[rgb(26,35,126)] to-[rgb(13,33,55)] p-8 md:p-10 text-center relative overflow-hidden">
+          <div className="mt-12 rounded-2xl bg-gradient-to-r from-[rgb(11,79,74)] to-[rgb(22,32,34)] p-8 md:p-10 text-center relative overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[rgb(245,166,35)]/10 blur-3xl" />
+              <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[rgb(200,120,90)]/10 blur-3xl" />
               <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-white/5 blur-3xl" />
             </div>
             <div className="relative">
-              <HelpCircle className="h-10 w-10 text-[rgb(245,166,35)] mx-auto mb-4" />
+              <HelpCircle className="h-10 w-10 text-[rgb(200,120,90)] mx-auto mb-4" />
               <h3 className="text-xl md:text-2xl font-bold text-white">
                 {c.math?.cta?.title}
               </h3>
@@ -335,7 +335,7 @@ export default function SubjectsPage() {
             <Badge variant="default" className="mb-3 text-xs px-3 py-1">
               {c.formats?.badge}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(22,32,34)] tracking-tight">
               {c.formats?.title}
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -351,7 +351,7 @@ export default function SubjectsPage() {
                 <Card
                   key={format.title}
                   className={`relative border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white ${
-                    format.badge === "Most Popular" ? "ring-2 ring-[rgb(245,166,35)] shadow-lg shadow-[rgb(245,166,35)]/10" : ""
+                    format.badge === "Most Popular" ? "ring-2 ring-[rgb(200,120,90)] shadow-lg shadow-[rgb(200,120,90)]/10" : ""
                   }`}
                 >
                   {format.badge === "Most Popular" && (
@@ -363,11 +363,11 @@ export default function SubjectsPage() {
                     </div>
                   )}
                   <CardHeader className={`pb-3 ${format.badge === "Most Popular" ? "pt-8" : "pt-7"}`}>
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgb(26,35,126)]/10 mb-3">
-                      <FormatIcon className="h-7 w-7 text-[rgb(26,35,126)]" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgb(11,79,74)]/10 mb-3">
+                      <FormatIcon className="h-7 w-7 text-[rgb(11,79,74)]" />
                     </div>
                     <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg text-[rgb(13,33,55)]">{format.title}</CardTitle>
+                      <CardTitle className="text-lg text-[rgb(22,32,34)]">{format.title}</CardTitle>
                       {format.badge !== "Most Popular" && (
                         <Badge variant={badgeVariant} className="text-[10px] px-2 py-0">
                           {format.badge}
@@ -410,7 +410,7 @@ export default function SubjectsPage() {
             <Badge variant="secondary" className="mb-3 text-xs px-3 py-1">
               {c.faqs?.badge}
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(13,33,55)] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[rgb(22,32,34)] tracking-tight">
               {c.faqs?.title}
             </h2>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
@@ -441,16 +441,16 @@ export default function SubjectsPage() {
       {/* ════════════════════════════════════════ */}
       {/* FINAL CTA — WhatsApp                    */}
       {/* ════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[rgb(26,35,126)] to-[rgb(13,33,55)] py-16 md:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-r from-[rgb(11,79,74)] to-[rgb(22,32,34)] py-16 md:py-20">
         {/* Decorative orbs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-64 h-64 rounded-full bg-[rgb(245,166,35)]/8 blur-3xl" />
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-64 h-64 rounded-full bg-[rgb(200,120,90)]/8 blur-3xl" />
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-white/10 backdrop-blur-sm mb-6">
-            <MessageCircle className="h-8 w-8 text-[rgb(245,166,35)]" />
+            <MessageCircle className="h-8 w-8 text-[rgb(200,120,90)]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
             {c.cta?.title}
@@ -460,7 +460,7 @@ export default function SubjectsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
-              href="https://mailto:hello@lumaani.com?text=Hi%2C%20I'm%20interested%20in%20your%20English%20%26%20Math%20programs.%20Can%20you%20tell%20me%20more%3F"
+              href="mailto:hello@lumaani.com?text=Hi%2C%20I'm%20interested%20in%20your%20English%20%26%20Math%20programs.%20Can%20you%20tell%20me%20more%3F"
               target="_blank"
               rel="noopener noreferrer"
             >

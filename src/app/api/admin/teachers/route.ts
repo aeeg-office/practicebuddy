@@ -14,12 +14,8 @@ import {
 type TeacherPayload = {
   id?: unknown
   userId?: unknown
-  employeeId?: unknown
-  title?: unknown
   bio?: unknown
-  expertise?: unknown
   isActive?: unknown
-  hiredAt?: unknown
 }
 
 function text(value: unknown, field: string, required = false): string | null | undefined {
@@ -36,41 +32,15 @@ function optionalBoolean(value: unknown, field: string): boolean | undefined {
   return value
 }
 
-function optionalDate(value: unknown, field: string): Date | null | undefined {
-  if (value === undefined) return undefined
-  if (value === null || value === "") return null
-  if (typeof value !== "string") throw new Error(`${field} must be an ISO date`)
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) throw new Error(`${field} must be an ISO date`)
-  return date
-}
-
-function optionalExpertise(value: unknown): string[] | null | undefined {
-  if (value === undefined) return undefined
-  if (value === null) return null
-  if (!Array.isArray(value) || value.length > 50 || value.some((item) => typeof item !== "string" || !item.trim() || item.trim().length > 100)) {
-    throw new Error("expertise must be an array of up to 50 non-empty text values")
-  }
-  return [...new Set(value.map((item) => (item as string).trim()))]
-}
-
 function parsePayload(body: TeacherPayload, creating: boolean): Prisma.TeacherUncheckedCreateInput | Prisma.TeacherUncheckedUpdateInput {
   const userId = text(body.userId, "userId", creating)
-  const employeeId = text(body.employeeId, "employeeId")
-  const title = text(body.title, "title")
   const bio = text(body.bio, "bio")
-  const expertise = optionalExpertise(body.expertise)
   const isActive = optionalBoolean(body.isActive, "isActive")
-  const hiredAt = optionalDate(body.hiredAt, "hiredAt")
 
   return {
     ...(typeof userId === "string" ? { userId } : {}),
-    ...(employeeId !== undefined ? { employeeId: employeeId?.toUpperCase() ?? null } : {}),
-    ...(title !== undefined ? { title } : {}),
     ...(bio !== undefined ? { bio } : {}),
-    ...(expertise !== undefined ? { expertise: expertise === null ? Prisma.DbNull : expertise as Prisma.InputJsonValue } : {}),
     ...(isActive !== undefined ? { isActive } : {}),
-    ...(hiredAt !== undefined ? { hiredAt } : {}),
   }
 }
 

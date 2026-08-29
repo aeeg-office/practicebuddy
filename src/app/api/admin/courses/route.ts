@@ -13,15 +13,9 @@ import {
 
 type CoursePayload = {
   code?: unknown
-  title?: unknown
+  name?: unknown
   description?: unknown
-  subject?: unknown
-  level?: unknown
-  teacherId?: unknown
-  capacity?: unknown
   isActive?: unknown
-  startsAt?: unknown
-  endsAt?: unknown
 }
 
 function text(value: unknown, field: string, required = false): string | null | undefined {
@@ -32,24 +26,6 @@ function text(value: unknown, field: string, required = false): string | null | 
   return normalized || null
 }
 
-function optionalDate(value: unknown, field: string): Date | null | undefined {
-  if (value === undefined) return undefined
-  if (value === null || value === "") return null
-  if (typeof value !== "string") throw new Error(`${field} must be an ISO date`)
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) throw new Error(`${field} must be an ISO date`)
-  return date
-}
-
-function optionalCapacity(value: unknown): number | null | undefined {
-  if (value === undefined) return undefined
-  if (value === null || value === "") return null
-  if (!Number.isInteger(value) || (value as number) < 1 || (value as number) > 100000) {
-    throw new Error("capacity must be an integer between 1 and 100000")
-  }
-  return value as number
-}
-
 function optionalBoolean(value: unknown, field: string): boolean | undefined {
   if (value === undefined) return undefined
   if (typeof value !== "boolean") throw new Error(`${field} must be true or false`)
@@ -58,24 +34,12 @@ function optionalBoolean(value: unknown, field: string): boolean | undefined {
 
 function parsePayload(body: CoursePayload, creating: boolean) {
   const code = text(body.code, "code", creating)
-  const title = text(body.title, "title", creating)
-  const startsAt = optionalDate(body.startsAt, "startsAt")
-  const endsAt = optionalDate(body.endsAt, "endsAt")
-  if (startsAt instanceof Date && endsAt instanceof Date && endsAt <= startsAt) {
-    throw new Error("endsAt must be later than startsAt")
-  }
-
+  const name = text(body.name, "name", creating)
   return {
     ...(code !== undefined ? { code: code === null ? null : code.toUpperCase() } : {}),
-    ...(title !== undefined ? { title } : {}),
+    ...(name !== undefined ? { name } : {}),
     ...(body.description !== undefined ? { description: text(body.description, "description") } : {}),
-    ...(body.subject !== undefined ? { subject: text(body.subject, "subject") } : {}),
-    ...(body.level !== undefined ? { level: text(body.level, "level") } : {}),
-    ...(body.teacherId !== undefined ? { teacherId: text(body.teacherId, "teacherId") } : {}),
-    ...(body.capacity !== undefined ? { capacity: optionalCapacity(body.capacity) } : {}),
     ...(body.isActive !== undefined ? { isActive: optionalBoolean(body.isActive, "isActive") } : {}),
-    ...(startsAt !== undefined ? { startsAt } : {}),
-    ...(endsAt !== undefined ? { endsAt } : {}),
   }
 }
 

@@ -61,7 +61,6 @@ function validationError(error: unknown) {
 }
 
 const studentInclude = {
-  subscription: { select: { id: true, planId: true, isActive: true, endDate: true } },
   _count: { select: { enrollments: true, payments: true } },
 } as const
 

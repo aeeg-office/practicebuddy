@@ -3,6 +3,7 @@
 ## Environment Status
 | Environment | Status | URL | Notes |
 |-------------|--------|-----|-------|
+| 6 | 2026-08-29 | Production | `264da99` (Option 5: Deep Teal + Copper) | 0 schema changes | ✅ 801 All legacy colors removed; rendered live #0b4f4a teal + #c8785a copper; container healthy |
 | **Local Dev** | ⬇️ INACTIVE | http://localhost:3099 | Production is primary |
 | **Production** | ✅ LIVE | https://lumaani.com | App running in Docker, latest source deployed (2026-08-26) |
 | **Staging** | ❌ NOT CONFIGURED | — | — |

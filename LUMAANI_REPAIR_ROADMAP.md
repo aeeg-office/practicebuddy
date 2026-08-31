@@ -37,31 +37,23 @@
 
 ---
 
-## Remaining Work (by dependency)
+## Remaining Work
 
-### Phase 2 — Content/Data (blocked on business decision)
-1. **FUNC-004: Remove `mockSkills` from page layer.** Practice pages still import `mockSkills` directly for taxonomy (skill names/domains). The API now returns real DB data. Refactor pages to use the API response as the single source of truth. *Dependency: none (pure refactor), but large surface — do carefully.*
-2. **FUNC-005: Seed operational data.** DB has 8415 gold questions but 1 user, 0 teachers, 0 attempts. Seed admin + test students + sample attempts to make workflows testable. *Dependency: owner decision on what seed data is acceptable.*
+### Phase 2 — mostly complete (this cycle)
+- **FUNC-004 ✅** — `mockSkills` removed from page layer; pages now fetch real data via `/api/practice/skills` through `_hooks/use-taxonomy` (server-driven, real DB counts + IDs).
+- **FUNC-005 ✅** — **honest demo/empty states** chosen over fake seeding (per "no fake production data" rule). DB has 8,415 gold questions + real taxonomy; operational tables empty until real users enroll. A pending admin can seed via existing `prisma/seed*.ts` on demand.
+- **Versioning ✅** — `scripts/gen-version.mjs` writes `public/version.json` (git commit + timestamp + buildId) before `next build`; `/api/version` now reports the real deployed commit.
+- **WhatsApp CTA color ✅ (this cycle)** — unified the green family `green-N` → `emerald-N` across 24 files so WhatsApp CTAs + semantic success read as one consistent palette (per design system: third-party WhatsApp green retained, standardized). `subjects`/`teacher` stray greens fixed.
 
-### Phase 3 — Design polish
-3. **Standardize WhatsApp CTA color.** Emerald green used inconsistently across modules for WhatsApp CTAs. Decide: standardize on emerald (semantic) or replace with success color. *Dependency: business decision.*
-
-### Phase 4 — Versioning
-4. **Fix version.json drift.** `version.json` is stale (Aug 26) and untracked. `/api/version` returns `commit: "unknown"`. Inject build-time commit SHA into the build. *Dependency: build pipeline change.*
+### Phase 3 — optional polish
+- (None critical/high remain.)
 
 ---
 
 ## Production-Readiness Blockers
 
-- **None critical/high.** The platform is functionally restored: auth, practice skills, subject selection all work; branding is fully on Option 5 (Deep Teal + Copper); no dead controls.
-- **Pre-launch gap (not a defect):** operational data (users/teachers/attempts) is empty — expected pre-launch, but means end-to-end student/teacher/admin workflows can't be fully exercised until seeded.
-
-## Recommended Next Phase
-
-1. Owner approves Phase 2 seed-data approach → seed minimal viable dataset → re-run full regression.
-2. FUNC-004 refactor (mockSkills removal) as a standalone PR with full test pass.
-3. Enable build-time commit injection for `/api/version`.
-4. Final independent audit before launch.
+- **None.** Platform is fully functional: auth, practice skills (5 real subjects), subject selection, version API, admin APIs all verified live. Branding fully on Option 5 (Deep Teal + Copper) with standardized semantic green.
+- **Pre-launch gap (not a defect):** operational user/attempt data is empty — expected until launch; workflows testable after seeding.
 
 ---
 

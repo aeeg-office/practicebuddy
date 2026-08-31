@@ -281,7 +281,7 @@ function PreviewResults({
         </p>
         <div className="flex gap-2 text-xs">
           {valid.length > 0 && (
-            <span className="text-green-600">
+            <span className="text-emerald-600">
               {valid.length} valid
             </span>
           )}
@@ -307,7 +307,7 @@ function PreviewResults({
       {valid.length > 0 && (
         <div className="max-h-48 overflow-y-auto space-y-1">
           {valid.map((q, i) => (
-            <p key={i} className="truncate rounded bg-green-50 px-2 py-1 text-[11px] text-green-700">
+            <p key={i} className="truncate rounded bg-emerald-50 px-2 py-1 text-[11px] text-emerald-700">
               [#{i + 1}] {q.stem.slice(0, 80)}{q.stem.length > 80 ? "…" : ""}
             </p>
           ))}
@@ -337,10 +337,10 @@ function ImportResultSummary({
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
-        <Card className="border-green-200 bg-green-50/50">
+        <Card className="border-emerald-200 bg-emerald-50/50">
           <CardContent className="p-4 text-center">
-            <p className="text-2xl font-bold text-green-700">{result.imported}</p>
-            <p className="text-xs text-green-600">Imported</p>
+            <p className="text-2xl font-bold text-emerald-700">{result.imported}</p>
+            <p className="text-xs text-emerald-600">Imported</p>
           </CardContent>
         </Card>
         <Card className="border-red-200 bg-red-50/50">
@@ -372,7 +372,7 @@ function ImportResultSummary({
 
       {result.importedIds.length > 0 && (
         <div>
-          <h4 className="mb-2 text-sm font-medium text-green-700">Imported IDs</h4>
+          <h4 className="mb-2 text-sm font-medium text-emerald-700">Imported IDs</h4>
           <div className="max-h-32 overflow-y-auto rounded bg-muted/20 p-2 font-mono text-[10px]">
             {result.importedIds.join(", ")}
           </div>

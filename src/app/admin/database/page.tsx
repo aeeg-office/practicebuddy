@@ -309,7 +309,7 @@ export default function DatabaseIntegrityPage() {
                       <HealthDot level={healthColor(value, thresholds)} />
                       <span className="text-sm font-medium">{label}</span>
                     </div>
-                    <span className={`text-lg font-bold ${value > thresholds[1] ? "text-red-600" : value > thresholds[0] ? "text-amber-600" : "text-green-600"}`}>
+                    <span className={`text-lg font-bold ${value > thresholds[1] ? "text-red-600" : value > thresholds[0] ? "text-amber-600" : "text-emerald-600"}`}>
                       {value}
                     </span>
                   </div>
@@ -338,7 +338,7 @@ export default function DatabaseIntegrityPage() {
                       <HealthDot level={healthColor(value, thresholds)} />
                       <span className="text-sm font-medium">{label}</span>
                     </div>
-                    <span className={`text-lg font-bold ${value > thresholds[1] ? "text-red-600" : value > thresholds[0] ? "text-amber-600" : "text-green-600"}`}>
+                    <span className={`text-lg font-bold ${value > thresholds[1] ? "text-red-600" : value > thresholds[0] ? "text-amber-600" : "text-emerald-600"}`}>
                       {value}
                     </span>
                   </div>
@@ -358,7 +358,7 @@ export default function DatabaseIntegrityPage() {
             </CardHeader>
             <CardContent>
               {data.duplicates.length === 0 ? (
-                <p className="text-sm text-green-600">No duplicate candidates found.</p>
+                <p className="text-sm text-emerald-600">No duplicate candidates found.</p>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -416,7 +416,7 @@ export default function DatabaseIntegrityPage() {
                   <p
                     className={`mb-3 rounded-md p-2 text-sm ${
                       quarantineResult.startsWith("Success")
-                        ? "bg-green-50 text-green-700"
+                        ? "bg-emerald-50 text-emerald-700"
                         : "bg-red-50 text-red-700"
                     }`}
                   >

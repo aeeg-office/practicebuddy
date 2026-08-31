@@ -26,7 +26,7 @@ export default function AdminDashboardPage() {
       {/* Question Bank Summary Card */}
       <QuestionBankSummary />
 
-      <section className="grid gap-6 lg:grid-cols-2"><Card><CardHeader><CardTitle>Recent students</CardTitle><CardDescription><Link className="underline" href="/admin/students">Manage students</Link></CardDescription></CardHeader><CardContent><ul className="space-y-3">{data.recentStudents.map((student) => <li key={student.id} className="flex justify-between gap-4 border-b pb-3 text-sm"><span><b>{student.name ?? student.email}</b><br /><span className="text-muted-foreground">{student.enrollments[0]?.course.title ?? "No enrollment"}</span></span><span className={student.isActive ? "text-green-700" : "text-muted-foreground"}>{student.isActive ? "Active" : "Inactive"}</span></li>)}{!data.recentStudents.length && <li className="text-sm text-muted-foreground">No students yet.</li>}</ul></CardContent></Card>
+      <section className="grid gap-6 lg:grid-cols-2"><Card><CardHeader><CardTitle>Recent students</CardTitle><CardDescription><Link className="underline" href="/admin/students">Manage students</Link></CardDescription></CardHeader><CardContent><ul className="space-y-3">{data.recentStudents.map((student) => <li key={student.id} className="flex justify-between gap-4 border-b pb-3 text-sm"><span><b>{student.name ?? student.email}</b><br /><span className="text-muted-foreground">{student.enrollments[0]?.course.title ?? "No enrollment"}</span></span><span className={student.isActive ? "text-emerald-700" : "text-muted-foreground"}>{student.isActive ? "Active" : "Inactive"}</span></li>)}{!data.recentStudents.length && <li className="text-sm text-muted-foreground">No students yet.</li>}</ul></CardContent></Card>
       <Card><CardHeader><CardTitle>Recent payments</CardTitle><CardDescription><Link className="underline" href="/admin/payments">Manage payments</Link></CardDescription></CardHeader><CardContent><ul className="space-y-3">{data.recentPayments.map((payment) => <li key={payment.id} className="flex justify-between gap-4 border-b pb-3 text-sm"><span><b>{payment.user.name ?? payment.user.email}</b><br /><span className="text-muted-foreground">{payment.status}</span></span><span>{Number(payment.amount).toFixed(2)} {payment.currency}</span></li>)}{!data.recentPayments.length && <li className="text-sm text-muted-foreground">No payments yet.</li>}</ul></CardContent></Card></section>
     </>}
   </AdminLayout>
@@ -77,7 +77,7 @@ function QuestionBankSummary() {
               <p className="text-[10px] text-muted-foreground">Total</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-green-600">{stats.published}</p>
+              <p className="text-2xl font-bold text-emerald-600">{stats.published}</p>
               <p className="text-[10px] text-muted-foreground">Published</p>
             </div>
             <div>

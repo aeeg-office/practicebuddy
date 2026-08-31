@@ -73,12 +73,12 @@ export default function AIFactoryPage() {
         </Card>
         <Card style={{ borderColor: colors.border }}>
           <CardContent className="flex items-center gap-3 p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
-              <CheckCircle className="h-5 w-5 text-green-600" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100">
+              <CheckCircle className="h-5 w-5 text-emerald-600" />
             </div>
             <div>
               <p className="text-xs text-muted-foreground">Published</p>
-              <p className="text-xl font-bold text-green-600">{stats?.published ?? 0}</p>
+              <p className="text-xl font-bold text-emerald-600">{stats?.published ?? 0}</p>
             </div>
           </CardContent>
         </Card>
@@ -108,7 +108,7 @@ export default function AIFactoryPage() {
 
       {/* Generation result */}
       {result && (
-        <div className="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
           {result}
         </div>
       )}

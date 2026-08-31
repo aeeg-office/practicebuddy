@@ -33,7 +33,7 @@ function stateStyles(state: QuestionState): string {
     case "current":
       return "bg-[rgb(11,79,74)] text-white ring-2 ring-[rgb(11,79,74)] ring-offset-1"
     case "answered":
-      return "bg-green-500 text-white hover:bg-green-600"
+      return "bg-emerald-500 text-white hover:bg-emerald-600"
     case "flagged":
       return "bg-[rgb(200,120,90)] text-white hover:bg-[rgb(200,120,90)]"
     case "unanswered":
@@ -85,7 +85,7 @@ export default function QuestionPalette({
           )}
         >
           <div className="flex items-center gap-1">
-            <div className="w-3 h-3 rounded-sm bg-green-500" />
+            <div className="w-3 h-3 rounded-sm bg-emerald-500" />
             Answered
           </div>
           <div className="flex items-center gap-1">
@@ -131,7 +131,7 @@ export default function QuestionPalette({
         >
           <div className="flex justify-between">
             <span>Answered</span>
-            <span className="font-bold text-green-600">
+            <span className="font-bold text-emerald-600">
               {answeredCount}/{totalQuestions}
             </span>
           </div>

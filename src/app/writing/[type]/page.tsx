@@ -201,7 +201,7 @@ export default function WritingEditorPage() {
   // Score bar color
   const scoreColor =
     parseFloat(overallScore) >= 7.0
-      ? "from-emerald-500 to-green-500"
+      ? "from-emerald-500 to-emerald-500"
       : parseFloat(overallScore) >= 6.0
       ? "from-[rgb(200,120,90)] to-yellow-500"
       : "from-red-400 to-orange-500"

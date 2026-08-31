@@ -87,7 +87,7 @@ export default function StudentsPage() {
     }>
       <div className="grid grid-cols-3 gap-4">
         <Metric icon={<Users className="h-5 w-5" />} label="Total students" value={data.total} />
-        <Metric icon={<Users className="h-5 w-5 text-green-600" />} label="Active on this page" value={activeStudents} />
+        <Metric icon={<Users className="h-5 w-5 text-emerald-600" />} label="Active on this page" value={activeStudents} />
         <Metric icon={<Users className="h-5 w-5" style={{ color: colors.accent }} />} label="Active subscriptions" value={subscribedStudents} />
       </div>
 

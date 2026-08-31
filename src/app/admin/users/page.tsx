@@ -110,7 +110,7 @@ export default function AdminUsersPage() {
                     </td>
                     <td className="py-2.5 pr-4 text-muted-foreground">{u.tenant?.name || "—"}</td>
                     <td className="py-2.5 pr-4">
-                      <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${u.isActive ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"}`}>
+                      <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${u.isActive ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-700"}`}>
                         {u.isActive ? "Active" : "Inactive"}
                       </span>
                     </td>

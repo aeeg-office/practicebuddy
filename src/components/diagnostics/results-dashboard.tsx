@@ -114,11 +114,11 @@ function QuestionReviewRow({
         <span
           className={cn(
             "flex items-center justify-center w-7 h-7 rounded-full shrink-0",
-            isCorrect ? "bg-green-100" : "bg-red-100",
+            isCorrect ? "bg-emerald-100" : "bg-red-100",
           )}
         >
           {isCorrect ? (
-            <CheckCircle2 className="h-4 w-4 text-green-600" />
+            <CheckCircle2 className="h-4 w-4 text-emerald-600" />
           ) : (
             <XCircle className="h-4 w-4 text-red-500" />
           )}
@@ -150,14 +150,14 @@ function QuestionReviewRow({
                     key={opt.id}
                     className={cn(
                       "flex items-center gap-2 px-3 py-1.5 rounded-md text-sm",
-                      isOptCorrect && "bg-green-50 text-green-800",
+                      isOptCorrect && "bg-emerald-50 text-emerald-800",
                       isOptSelected && !isOptCorrect && "bg-red-50 text-red-800",
                       !isOptCorrect && !isOptSelected && "text-muted-foreground",
                     )}
                   >
                     <span className="font-bold w-5">{opt.id}</span>
                     <span>{opt.text}</span>
-                    {isOptCorrect && <CheckCircle2 className="h-3.5 w-3.5 text-green-600 ml-auto shrink-0" />}
+                    {isOptCorrect && <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 ml-auto shrink-0" />}
                     {isOptSelected && !isOptCorrect && <XCircle className="h-3.5 w-3.5 text-red-500 ml-auto shrink-0" />}
                   </div>
                 )
@@ -171,7 +171,7 @@ function QuestionReviewRow({
               <span className="font-medium text-red-600">{studentAnswer || "No answer"}</span>
               {" | "}
               Correct:{" "}
-              <span className="font-medium text-green-600">{question.correctAnswer}</span>
+              <span className="font-medium text-emerald-600">{question.correctAnswer}</span>
             </p>
           )}
         </div>
@@ -230,8 +230,8 @@ export default function ResultsDashboard({
     <div className="max-w-4xl mx-auto space-y-6">
       {/* ── Header ── */}
       <div className="text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
-          <CheckCircle2 className="h-8 w-8 text-green-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4">
+          <CheckCircle2 className="h-8 w-8 text-emerald-600" />
         </div>
         <h1 className="text-3xl font-bold text-[rgb(22,32,34)] mb-2">Exam Complete!</h1>
         <p className="text-muted-foreground">
@@ -309,7 +309,7 @@ export default function ResultsDashboard({
               const sectionPct = section.total > 0 ? (section.score / section.total) * 100 : 0
               const barColor =
                 sectionPct >= 80
-                  ? "bg-green-500"
+                  ? "bg-emerald-500"
                   : sectionPct >= 60
                     ? "bg-[rgb(200,120,90)]"
                     : "bg-red-400"

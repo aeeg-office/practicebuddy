@@ -538,7 +538,7 @@ export default function TeacherDashboardPage() {
                   <div className="divide-y divide-gray-100">
                     {(recentActivity.items ?? []).map((item: { text: string; time: string }, i: number) => {
                       const activityColors = [
-                        "text-green-600 bg-green-100",
+                        "text-emerald-600 bg-emerald-100",
                         "text-[rgb(11,79,74)] bg-[rgb(11,79,74)]/10",
                         "text-[rgb(200,120,90)] bg-[rgb(200,120,90)]/10",
                         "text-emerald-600 bg-emerald-100",

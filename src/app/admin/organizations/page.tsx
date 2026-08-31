@@ -79,7 +79,7 @@ export default function AdminOrganizationsPage() {
                       <td className="py-2.5">{t.userCount}</td>
                       <td className="py-2.5">{t.studentCount}</td>
                       <td className="py-2.5">
-                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${t.isActive ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"}`}>
+                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${t.isActive ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-700"}`}>
                           {t.isActive ? "Active" : "Inactive"}
                         </span>
                       </td>

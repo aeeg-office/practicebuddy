@@ -106,7 +106,7 @@ export default function QuestionRenderer({
                   "max-w-[200px] text-center text-lg font-bold",
                   showResults &&
                     selectedAnswer === effectiveCorrect &&
-                    "border-green-500 ring-green-500",
+                    "border-emerald-500 ring-emerald-500",
                   showResults &&
                     selectedAnswer !== effectiveCorrect &&
                     "border-red-500 ring-red-500",
@@ -115,7 +115,7 @@ export default function QuestionRenderer({
               {showResults && (
                 <p className="text-sm text-muted-foreground">
                   Correct answer:{" "}
-                  <span className="font-bold text-green-600">{effectiveCorrect}</span>
+                  <span className="font-bold text-emerald-600">{effectiveCorrect}</span>
                 </p>
               )}
             </div>
@@ -139,7 +139,7 @@ export default function QuestionRenderer({
                       // Default state
                       !isSelected && !showResults && "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50",
                       // Results: correct answer highlighted green
-                      showResults && isCorrect && "border-green-500 bg-green-50",
+                      showResults && isCorrect && "border-emerald-500 bg-emerald-50",
                       // Results: wrong selection highlighted red
                       showResults && isWrongSelection && "border-red-500 bg-red-50",
                       // Results: unselected options
@@ -155,7 +155,7 @@ export default function QuestionRenderer({
                         // Default
                         !isSelected && !showResults && "bg-muted text-muted-foreground",
                         // Results: correct
-                        showResults && isCorrect && "bg-green-500 text-white",
+                        showResults && isCorrect && "bg-emerald-500 text-white",
                         // Results: wrong
                         showResults && isWrongSelection && "bg-red-500 text-white",
                         // Results: unselected
@@ -169,7 +169,7 @@ export default function QuestionRenderer({
                     <span
                       className={cn(
                         "text-sm md:text-base pt-1.5",
-                        showResults && isCorrect && "text-green-800 font-medium",
+                        showResults && isCorrect && "text-emerald-800 font-medium",
                         showResults && isWrongSelection && "text-red-800",
                         !showResults && "text-[rgb(22,32,34)]",
                       )}
@@ -179,7 +179,7 @@ export default function QuestionRenderer({
 
                     {/* Correct / Incorrect icon */}
                     {showResults && isCorrect && (
-                      <CheckCircle2 className="h-5 w-5 text-green-600 mt-1.5 ml-auto shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 mt-1.5 ml-auto shrink-0" />
                     )}
                     {showResults && isWrongSelection && (
                       <XCircle className="h-5 w-5 text-red-500 mt-1.5 ml-auto shrink-0" />

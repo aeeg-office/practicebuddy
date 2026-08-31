@@ -93,7 +93,7 @@ export default function ReviewQueuePage() {
                       <Button
                         variant="default"
                         size="sm"
-                        className="h-8 text-xs bg-green-600 hover:bg-green-700"
+                        className="h-8 text-xs bg-emerald-600 hover:bg-emerald-700"
                         disabled={actionLoading === q.id}
                         onClick={() => handleAction(q.id, "approve")}
                       >

@@ -81,7 +81,7 @@ function MultipleChoiceRenderer({ question, selectedAnswer, onSelect, disabled, 
               disabled ? "cursor-default" : "cursor-pointer hover:bg-muted/20"
             } ${
               isCorrect
-                ? "border-green-500 bg-green-50"
+                ? "border-emerald-500 bg-emerald-50"
                 : isWrong
                 ? "border-red-500 bg-red-50"
                 : isSelected
@@ -92,7 +92,7 @@ function MultipleChoiceRenderer({ question, selectedAnswer, onSelect, disabled, 
             }`}
           >
             <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-medium ${
-              isCorrect ? "bg-green-500 text-white" :
+              isCorrect ? "bg-emerald-500 text-white" :
               isWrong ? "bg-red-500 text-white" :
               isSelected ? "bg-primary text-white" :
               "bg-muted text-muted-foreground"
@@ -100,7 +100,7 @@ function MultipleChoiceRenderer({ question, selectedAnswer, onSelect, disabled, 
               {String.fromCharCode(65 + i)}
             </span>
             <span className="flex-1 text-sm">{opt.text}</span>
-            {isCorrect && <CheckCircle2 className="h-5 w-5 text-green-600 shrink-0" />}
+            {isCorrect && <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />}
             {isWrong && <XCircle className="h-5 w-5 text-red-500 shrink-0" />}
           </button>
         )
@@ -273,16 +273,16 @@ export function QuestionRenderer({
       {attemptResult && showResult && (
         <Card className={`p-5 border-l-4 ${
           attemptResult.correct
-            ? "border-green-500 bg-green-50"
+            ? "border-emerald-500 bg-emerald-50"
             : "border-red-500 bg-red-50"
         }`}>
           <div className="flex items-center gap-2 mb-2">
             {attemptResult.correct
-              ? <CheckCircle2 className="h-5 w-5 text-green-600" />
+              ? <CheckCircle2 className="h-5 w-5 text-emerald-600" />
               : <XCircle className="h-5 w-5 text-red-500" />
             }
             <h4 className={`font-semibold ${
-              attemptResult.correct ? "text-green-800" : "text-red-800"
+              attemptResult.correct ? "text-emerald-800" : "text-red-800"
             }`}>
               {attemptResult.correct
                 ? isAttempt2 ? "Correct on second attempt!" : "Correct!"

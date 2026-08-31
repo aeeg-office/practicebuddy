@@ -380,7 +380,7 @@ export default function SubjectsPage() {
                     <ul className="space-y-2.5">
                       {format.features.map((f: string) => (
                         <li key={f} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                          <CheckCircle2 className="h-4 w-4 shrink-0 text-green-500" />
+                          <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
                           {f}
                         </li>
                       ))}

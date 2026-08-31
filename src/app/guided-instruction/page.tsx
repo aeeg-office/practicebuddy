@@ -223,7 +223,7 @@ function GuidedInstructionContent() {
                   className="w-full justify-start"
                   onClick={() => setAllowAttempt2(!allowAttempt2)}
                 >
-                  <UserCheck className={`h-4 w-4 mr-2 ${allowAttempt2 ? "text-green-500" : ""}`} />
+                  <UserCheck className={`h-4 w-4 mr-2 ${allowAttempt2 ? "text-emerald-500" : ""}`} />
                   {allowAttempt2 ? "Allow" : "Block"} Attempt 2
                 </Button>
                 <Button

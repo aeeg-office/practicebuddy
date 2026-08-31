@@ -211,7 +211,7 @@ function LiveClassroomContent() {
                       <span className="text-xs font-mono w-6">{String.fromCharCode(65 + i)}</span>
                       <div className="flex-1 h-6 bg-muted rounded-full overflow-hidden">
                         <div
-                          className={`h-full rounded-full transition-all ${opt.id === currentQuestion.correctAnswer ? "bg-green-500" : "bg-primary/30"}`}
+                          className={`h-full rounded-full transition-all ${opt.id === currentQuestion.correctAnswer ? "bg-emerald-500" : "bg-primary/30"}`}
                           style={{ width: `${Math.random() * 60 + 10}%` }}
                         />
                       </div>
@@ -232,7 +232,7 @@ function LiveClassroomContent() {
                   <div key={i} className="flex items-center justify-between text-sm py-1">
                     <span className="font-medium">{s.name}</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      s.status === "correct" ? "bg-green-100 text-green-700" :
+                      s.status === "correct" ? "bg-emerald-100 text-emerald-700" :
                       s.status === "incorrect" ? "bg-red-100 text-red-700" :
                       s.status === "answered" ? "bg-blue-100 text-blue-700" :
                       "bg-muted text-muted-foreground"

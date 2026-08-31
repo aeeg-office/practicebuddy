@@ -330,7 +330,7 @@ export default function SATSimulationPage() {
                 ? "bg-primary text-white border-primary"
                 : results[questions[i]?.id]
                 ? results[questions[i]?.id].correct
-                  ? "bg-green-100 text-green-700 border-green-300"
+                  ? "bg-emerald-100 text-emerald-700 border-emerald-300"
                   : "bg-red-100 text-red-700 border-red-300"
                 : flagged.has(i)
                 ? "bg-amber-100 text-amber-700 border-amber-300"

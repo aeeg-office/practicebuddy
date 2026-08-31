@@ -135,7 +135,7 @@ export default function AdminQuestionsPage() {
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <Metric icon={<FileQuestion className="h-5 w-5" />} label="Total questions" value={data.total} />
         <Metric
-          icon={<FileQuestion className="h-5 w-5 text-green-600" />}
+          icon={<FileQuestion className="h-5 w-5 text-emerald-600" />}
           label="Published"
           value={data.items.filter((q) => q.qualityStatus === "published").length}
         />
